@@ -1,0 +1,12 @@
+import sys
+sys.path.insert(0, '../tools')
+import assetcompiler.Core
+
+def options(ctx):
+	assetcompiler.Core.options(ctx)
+
+def configure(ctx):
+	assetcompiler.Core.configure(ctx)
+
+def build(ctx):
+	assetcompiler.Core.build(ctx)

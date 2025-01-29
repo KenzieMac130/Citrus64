@@ -1,7 +1,8 @@
-[submodule "libdragon"]
+[submodule "libs/libdragon"]
 	path = libs/libdragon
 	url = https://github.com/DragonMinded/libdragon
+	branch = preview
 
-[submodule "tiny3d"]
+[submodule "libs/tiny3d"]
 	path = libs/tiny3d
 	url = https://github.com/HailToDodongo/tiny3d

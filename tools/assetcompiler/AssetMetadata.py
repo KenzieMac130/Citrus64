@@ -28,7 +28,5 @@ class AssetMetaData:
     def dumps(self) -> str:
         dump = self.raw_json
         dump["args"] = self.args
-        for key, value in self.guids.items():
-            dump[key] = value.hex
         dump["type"] = self.type
         return json.dumps(dump, indent=2)

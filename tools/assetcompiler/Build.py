@@ -40,6 +40,16 @@ def build_step_checkin_all_assets(ctx):
 			continue
 		checkin_asset(file.abspath())
 
+def delete_dfs(ctx):
+	try:
+		ctx.path.find_or_declare("game.dfs").delete()
+	except AttributeError:
+		pass
+
+def ensure_dfs_placeholder(ctx):
+	ctx.path.find_or_declare("data/NULL").write("")
+
+
 def build_step_compile(ctx):
 	for task_type in TaskList.task_types:
 		ctx.add_group(task_type.name)
@@ -49,3 +59,5 @@ def build_step_compile(ctx):
 				task = task_type(env=ctx.env)
 				task.setup(ctx, file, metadata)
 				ctx.add_to_group(task)
+	delete_dfs(ctx)
+	ensure_dfs_placeholder(ctx)

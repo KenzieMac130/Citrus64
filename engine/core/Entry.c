@@ -9,7 +9,7 @@ int main(void)
     debug_init_usblog();
     console_set_debug(true);
 
-    printf("Hello world!\n");
+    printf("Hello world!!!!!\n");
 
     while(1) {}
 }

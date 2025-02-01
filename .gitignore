@@ -52,5 +52,20 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# Dot-hidden on Unix-like systems
+.waf-*-*/
+.waf3-*-*/
+# Hidden directory on Windows (no dot)
+waf-*-*/
+waf3-*-*/
+# Lockfile
+.lock-waf_*_build
+
+__pycache__/
+
 # Builds
 build/
+
+# Developer Environment
+ares/
+devsetup.json

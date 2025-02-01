@@ -6,3 +6,6 @@
 [submodule "libs/tiny3d"]
 	path = libs/tiny3d
 	url = https://github.com/HailToDodongo/tiny3d
+[submodule "thirdparty/utf8"]
+	path = thirdparty/utf8
+	url = https://github.com/sheredom/utf8.h.git

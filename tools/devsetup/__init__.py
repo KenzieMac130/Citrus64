@@ -9,3 +9,4 @@ def package_setup():
     PipModules.main()
     LibdragonSetup.main()
     AresSetup.main()
+    WafConfigure.main()

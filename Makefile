@@ -3,6 +3,7 @@ V=1
 SOURCE_DIR=.
 BUILD_DIR=build
 include $(N64_INST)/include/n64.mk
+include $(N64_INST)/include/t3d.mk
 
 all: game.z64
 .PHONY: all

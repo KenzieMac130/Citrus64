@@ -2,33 +2,24 @@ import urllib.request
 from .Shared import ask_install
 from .Shared import ask_yn_question
 from .Shared import get_project_root
+from .Shared import get_dev_env_data
+from .Shared import save_dev_env_data
 import webbrowser
 import urllib
 import json
 import platform
 import zipfile
 
-def get_ares_data():
-    try:
-        with open(get_project_root() / "devsetup.json") as jsonfile:
-            data = json.load(jsonfile)
-            return data
-    except FileNotFoundError:
-        return {"ares_path": ""}
-    except json.JSONDecodeError:
-        return {"ares_path": ""}
-
 def get_ares_path():
-    return get_ares_data()["ares_path"]
+    return get_dev_env_data()["ares_path"]
 
 def set_ares_path(ares_path : str = ""):
     if not ares_path:
         ares_path = input("Please enter the path/variable to your ares executable (or leave blank to discard changes)")
     if ares_path:
-        data = get_ares_data()
+        data = get_dev_env_data()
         data["ares_path"] = str(ares_path)
-        with open(get_project_root() / "devsetup.json", "w") as jsonfile:
-            json.dump(data, jsonfile)
+        save_dev_env_data(data)
 
 def install_ares_windows():
     ares_path = get_project_root() / "ares"
@@ -57,7 +48,6 @@ def install_ares():
         install_ares_manual()
 
 def main():
-    print(get_project_root())
     if not get_ares_path():
         if ask_install("ares hardware emulator"):
             install_ares()

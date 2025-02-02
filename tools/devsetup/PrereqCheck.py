@@ -13,16 +13,15 @@ import platform
 def check_pip():
     if not command_expect_start([sys.executable, "-m", "pip", "--version"]):
         if ask_install("python pip"):
-            execute_command([sys.executable, "-m", "ensurepip"])
+            print(execute_command([sys.executable, "-m", "ensurepip"]))
 
 def check_npm():
     if not command_expect_start(["npm", "version"]):
         if ask_install("npm and fnm"):
-            if not command_expect_start(["fnm", "-V",], "fnm"):
-                if os.name == 'nt': # Windows
-                    execute_command(["winget", "install", "Schniz.fnm"])
-                else: # Linux / Mac
-                    execute_command(["curl", "-o-", "https://fnm.vercel.app/install", "|", "bash"])
+            if os.name == 'nt': # Windows
+                print(execute_command(["winget", "install", "Schniz.fnm"]))
+            else: # Linux / Mac
+                print(execute_command(["curl", "-o-", "https://fnm.vercel.app/install", "|", "bash"]))
 
 def open_docker_help():
     if platform.system() == "Windows":

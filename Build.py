@@ -7,11 +7,7 @@ import sys
 import tools.devsetup
 
 def setup():
-    tools.devsetup.PrereqCheck.main()
-    tools.devsetup.PipModules.main()
-    tools.devsetup.LibdragonSetup.main()
-    tools.devsetup.AresSetup.main()
-    tools.devsetup.WafConfigure.main()
+    tools.devsetup.package_setup()
 
 def send2trash_lazy(path):
     try:

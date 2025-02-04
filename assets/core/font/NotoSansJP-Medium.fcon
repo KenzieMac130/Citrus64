@@ -1,0 +1,7 @@
+{
+    "font": "NotoSansJP-Medium.ttf",
+    "ranges": ["0020-052F", "2200-22FF", "3000-30FF", "20A0-20CF", "2025-2026", "FF00-FFEF"],
+    "ellipsis": "2026,1",
+    "outline": 0,
+    "monochrome": false
+}

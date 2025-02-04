@@ -8,7 +8,7 @@ class SpriteAssetTask(TaskBase):
 	out_extension = ".sprite"
 
 	def poll_file_path(path : Path) -> bool:
-		return path.suffix in ['.png']
+		return path.suffix in ['.png'] and 'bmfont_pages' not in str(path)
 
 	def run(self):
 		input_path = libdragon_asset_path(self.inputs[0].relpath())

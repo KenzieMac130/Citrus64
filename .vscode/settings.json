@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.ctsh": "hlsl",
+        "*.ctsi": "hlsl",
+        "*.ctac": "json",
+        "*.fcon": "json",
+        "libdragon.h": "c",
+        "stdio.h": "c"
+    },
+    "C_Cpp.default.compilerPath": "c:\\msys64\\usr\\bin\\gcc.exe"
+}

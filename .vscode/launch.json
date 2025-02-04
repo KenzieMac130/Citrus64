@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Connect Debugger",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/game.elf",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "windows": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "C:/msys64/mingw64/bin/gdb-multiarch.exe",
+                "miDebuggerServerAddress": "127.0.0.1:9123"
+            },
+            "linux": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb-multiarch",
+                "miDebuggerServerAddress": "127.0.0.1:9123"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}

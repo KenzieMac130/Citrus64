@@ -5,6 +5,17 @@ BUILD_DIR=build
 include $(N64_INST)/include/n64.mk
 include $(N64_INST)/include/t3d.mk
 
+# Uncomment this to check for memory usage errors 
+# this will use address sanitizer to look for possible bugs
+# upon success your build will be broken but address errors
+# will be gone. to fix your build comment the CFLAGS line and
+# then delete the .o files from build folder and rebuild.
+# fsanizer runtime cannot actually exist in a N64 rom
+#CFLAGS:=-fsanitize=address
+
+# Debug Symbols (COMMENT FOR FINAL RELEASE)
+OPTFLAGS := -Os -ggdb
+
 all: game.z64
 .PHONY: all
 

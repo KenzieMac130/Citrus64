@@ -21,7 +21,7 @@ def has_pip_modules(modules):
     return True
 
 def main():
-    modules = ["polib", "Send2Trash"]
+    modules = ["polib", "Send2Trash", "fonttools"]
     if not has_pip_modules(modules):
         if ask_install("python dependencies"):
             for module in modules:

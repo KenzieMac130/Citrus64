@@ -29,6 +29,7 @@ def main():
     parser.add_argument('--clean', help="delete the build directory", action='store_true')
     parser.add_argument('-b', '--build', help="build the project", action='store_true')
     dhelp = parser.add_argument_group("build options", "Pass these to --build/-b to help with debugging")
+    dhelp.add_argument('-a', '--asset', default="", help="name of asset to preview", type=str)
     dhelp.add_argument('-l', '--level', default="", help="starter level name", type=str)
     dhelp.add_argument('-c', '--checkpoint', default="", help="starter checkpoint name", type=str)
     dhelp.add_argument('-d', '--define', default="", nargs="*", help="list of C defines", type=str)

@@ -3,6 +3,7 @@ from . import SpriteAsset
 from . import AudioAsset
 from . import MusicSequenceAsset
 from . import ModelAsset
+from . import FontAsset
 
 task_types = [
     RawAsset.RawAssetTask,
@@ -10,5 +11,6 @@ task_types = [
     AudioAsset.AudioAssetTask,
     MusicSequenceAsset.YMAssetTask,
     MusicSequenceAsset.XMAssetTask,
-    ModelAsset.ModelAssetTask
+    ModelAsset.ModelAssetTask,
+    FontAsset.FontAssetTask
 ]

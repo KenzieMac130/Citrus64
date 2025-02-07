@@ -4,8 +4,13 @@
         "*.ctsi": "hlsl",
         "*.ctac": "json",
         "*.fcon": "json",
-        "libdragon.h": "c",
-        "stdio.h": "c"
+        "*.h": "c",
+        "*.c": "c",
+        "system_error": "c",
+        "random": "c",
+        "*.inc": "c",
+        "limits": "c",
+        "cstdlib": "c"
     },
     "C_Cpp.default.compilerPath": "c:\\msys64\\usr\\bin\\gcc.exe"
 }

@@ -1,22 +1,21 @@
-#include <stdio.h>
+/* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 
-#include <libdragon.h>
+#include "engine/utilities/Common.h"
+
+#if CT_BUILD_UNIT_TESTS
+#include "engine/tests/UnitTester.h"
+#endif
 
 int main(void)
 {
     console_init();
-
     debug_init_usblog();
     debug_init_isviewer();
     console_set_debug(true);
-    while(1){
-        printf("Hello world!!!!!\n");
-        debugf("Error message");
-        wait_ms(10000);
-        float icecream = 32.0f;
-        icecream += 4.0f;
-        assert(0);
-    }
+#if CT_BUILD_UNIT_TESTS
+    return _ctUnitTestsMain();
+#endif
 
-    while(1) {}
+    while(1){};
+    return 0;
 }

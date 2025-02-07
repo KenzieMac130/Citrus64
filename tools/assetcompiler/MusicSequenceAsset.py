@@ -28,6 +28,7 @@ class XMAssetTask(TaskBase):
 	def run(self):
 		input_path = libdragon_asset_path(self.inputs[0].relpath())
 		output_path = libdragon_build_path(Path(self.outputs[0].relpath()).parent)
+		# todo: sound mix sidecar info
 		final_args = ['-o', str(output_path), '-v']
 		final_args += [str(input_path)]
 		return self.exec_libdragon_command(['audioconv64'] + final_args)

@@ -58,7 +58,7 @@ SOURCES += $(wildcard engine/**/*.c)
 SOURCES += $(wildcard engine/**/**/*.c)
 SOURCES += $(wildcard engine/**/**/**/*.c)
 SOURCES += $(wildcard engine/**/**/**/**/*.c)
-OBJECTS := $(SOURCES:.c=.o)
+OBJECTS := $(subst engine/,$(BUILD_DIR)/engine/,$(SOURCES:.c=.o))
 $(BUILD_DIR)/$(ROM_NAME).elf: $(OBJECTS) $(MAIN_ELF_EXTERNS)
 -include $(OBJECTS:.o=.d)
 

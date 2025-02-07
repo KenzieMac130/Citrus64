@@ -65,7 +65,7 @@ $(BUILD_DIR)/$(ROM_NAME).elf: $(OBJECTS) $(MAIN_ELF_EXTERNS)
 # Data
 $(ROM_NAME).z64: N64_MKDFS_ROOT="$(BUILD_DIR)/data"
 $(ROM_NAME).z64: $(BUILD_DIR)/$(ROM_NAME).dfs
-$(BUILD_DIR)/$(ROM_NAME).dfs: $(wildcard $(BUILD_DIR)/data/*) $(DSO_LIST)
+$(BUILD_DIR)/$(ROM_NAME).dfs: $(wildcard $(BUILD_DIR)/data/*)
 
 # Cleanup
 clean:

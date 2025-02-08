@@ -1,0 +1,64 @@
+\doxysection{engine/tests/\+Unit\+Tester.c File Reference}
+\hypertarget{_unit_tester_8c}{}\label{_unit_tester_8c}\index{engine/tests/UnitTester.c@{engine/tests/UnitTester.c}}
+{\ttfamily \#include "{}Unit\+Tester.\+h"{}}\newline
+{\ttfamily \#include "{}All\+Engine\+Tests.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_unit_tester_8c_a1dc6743d2dfcc176e64f04da89f6f7c3}{tester}} ()
+\item 
+void \mbox{\hyperlink{_unit_tester_8c_acbfd6e9a4201d415335828f8f1435cb2}{ct\+Unit\+Test\+Run}} (const struct \mbox{\hyperlink{structct_unit_test}{ct\+Unit\+Test}} \texorpdfstring{$\ast$}{*}unit\+Test)
+\item 
+void \mbox{\hyperlink{_unit_tester_8c_a57c0dab549219aac1ab56ec3483e9b39}{ct\+Unit\+Test\+Run\+Array}} (const struct \mbox{\hyperlink{structct_unit_test}{ct\+Unit\+Test}} \texorpdfstring{$\ast$}{*}unit\+Tests)
+\item 
+int \mbox{\hyperlink{_unit_tester_8c_ab9780ccc62defc183e338986bd0e5fe8}{\+\_\+ct\+Unit\+Tests\+Main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const struct \mbox{\hyperlink{structct_unit_test}{ct\+Unit\+Test}} \mbox{\hyperlink{_unit_tester_8c_a5a0f02be36e94ccd654b8a586b7a5b0c}{g\+All\+Engine\+Tests}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_unit_tester_8c_ab9780ccc62defc183e338986bd0e5fe8}\index{UnitTester.c@{UnitTester.c}!\_ctUnitTestsMain@{\_ctUnitTestsMain}}
+\index{\_ctUnitTestsMain@{\_ctUnitTestsMain}!UnitTester.c@{UnitTester.c}}
+\doxysubsubsection{\texorpdfstring{\_ctUnitTestsMain()}{\_ctUnitTestsMain()}}
+{\footnotesize\ttfamily \label{_unit_tester_8c_ab9780ccc62defc183e338986bd0e5fe8} 
+int \+\_\+ct\+Unit\+Tests\+Main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_unit_tester_8c_acbfd6e9a4201d415335828f8f1435cb2}\index{UnitTester.c@{UnitTester.c}!ctUnitTestRun@{ctUnitTestRun}}
+\index{ctUnitTestRun@{ctUnitTestRun}!UnitTester.c@{UnitTester.c}}
+\doxysubsubsection{\texorpdfstring{ctUnitTestRun()}{ctUnitTestRun()}}
+{\footnotesize\ttfamily \label{_unit_tester_8c_acbfd6e9a4201d415335828f8f1435cb2} 
+void ct\+Unit\+Test\+Run (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structct_unit_test}{ct\+Unit\+Test}} \texorpdfstring{$\ast$}{*}}]{unit\+Test}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_unit_tester_8c_a57c0dab549219aac1ab56ec3483e9b39}\index{UnitTester.c@{UnitTester.c}!ctUnitTestRunArray@{ctUnitTestRunArray}}
+\index{ctUnitTestRunArray@{ctUnitTestRunArray}!UnitTester.c@{UnitTester.c}}
+\doxysubsubsection{\texorpdfstring{ctUnitTestRunArray()}{ctUnitTestRunArray()}}
+{\footnotesize\ttfamily \label{_unit_tester_8c_a57c0dab549219aac1ab56ec3483e9b39} 
+void ct\+Unit\+Test\+Run\+Array (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{structct_unit_test}{ct\+Unit\+Test}} \texorpdfstring{$\ast$}{*}}]{unit\+Tests}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_unit_tester_8c_a1dc6743d2dfcc176e64f04da89f6f7c3}\index{UnitTester.c@{UnitTester.c}!tester@{tester}}
+\index{tester@{tester}!UnitTester.c@{UnitTester.c}}
+\doxysubsubsection{\texorpdfstring{tester()}{tester()}}
+{\footnotesize\ttfamily \label{_unit_tester_8c_a1dc6743d2dfcc176e64f04da89f6f7c3} 
+void tester (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_unit_tester_8c_a5a0f02be36e94ccd654b8a586b7a5b0c}\index{UnitTester.c@{UnitTester.c}!gAllEngineTests@{gAllEngineTests}}
+\index{gAllEngineTests@{gAllEngineTests}!UnitTester.c@{UnitTester.c}}
+\doxysubsubsection{\texorpdfstring{gAllEngineTests}{gAllEngineTests}}
+{\footnotesize\ttfamily \label{_unit_tester_8c_a5a0f02be36e94ccd654b8a586b7a5b0c} 
+const struct \mbox{\hyperlink{structct_unit_test}{ct\+Unit\+Test}} g\+All\+Engine\+Tests\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{_all_engine_tests_8h_a1c815796ba6de0b0faf03b8affbd3e5b}{CT\_ALL\_TESTS}},}
+\DoxyCodeLine{\ \ \ \ \{NULL,\ NULL,\ \textcolor{keyword}{false}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

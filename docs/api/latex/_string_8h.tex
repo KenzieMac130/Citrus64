@@ -1,0 +1,325 @@
+\doxysection{String.\+h File Reference}
+\hypertarget{_string_8h}{}\label{_string_8h}\index{String.h@{String.h}}
+
+
+UTF8 aware string library targeted at simple game use cases.  
+
+
+{\ttfamily \#include "{}Common.\+h"{}}\newline
+{\ttfamily \#include "{}thirdparty/utf8/utf8.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_string_8h_a5259930ea5d068eacc5c5ae0ff76fd55}{ct\+String\+Equal}}(\+\_\+left\+String,  \+\_\+right\+String)
+\begin{DoxyCompactList}\small\item\em Check if two string\textquotesingle{}s contents are the same. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_string_8h_af314d9b27eef40ad7a1138fbe73efdf1}{ct\+Code\+Point\+Is\+Digit}}(c)
+\item 
+\#define \mbox{\hyperlink{_string_8h_af030b4b58807416e2163fe1f83574c4a}{ct\+Code\+Point\+Is\+Alpha}}(c)
+\item 
+\#define \mbox{\hyperlink{_string_8h_a5e4ddd37eb0cd372d132f6833cc2b874}{ct\+Code\+Point\+Is\+Alnum}}(c)
+\item 
+\#define \mbox{\hyperlink{_string_8h_ac64731fb8055a12d096d132e65eeee49}{ct\+Code\+Point\+Is\+Unicode}}(c)
+\item 
+\#define \mbox{\hyperlink{_string_8h_a16d8772cf57376ad2ba3cde32af5d328}{ct\+Code\+Point\+Is\+Ascii}}(c)
+\item 
+\#define \mbox{\hyperlink{_string_8h_ab3f39c754d6cca517f0a23dbc65cc7b0}{ct\+Code\+Point\+Is\+Alpha\+Unicode}}(c)
+\item 
+\#define \mbox{\hyperlink{_string_8h_a81bd4b15132a4da80744bfe9b58d07ce}{ct\+Code\+Point\+Is\+Alnum\+Unicode}}(c)
+\item 
+\#define \mbox{\hyperlink{_string_8h_ae3290547942e2f388b2ada0bbaebb271}{ct\+Code\+Point\+Is\+Upper}}(c)
+\item 
+\#define \mbox{\hyperlink{_string_8h_abd50effefbdb048601b2d1dfe6449ba0}{ct\+Code\+Point\+Is\+Lower}}(c)
+\item 
+\#define \mbox{\hyperlink{_string_8h_a27d05dfc148908be8c355dc1852ae91c}{ct\+Code\+Point\+To\+Upper}}(c)
+\item 
+\#define \mbox{\hyperlink{_string_8h_aea4cbfe03d9cadf517be1f11224db095}{ct\+Code\+Point\+To\+Lower}}(c)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{_string_8h_a96e084722f0cf84cb01f5435d70a28f0}{ct\+String\+Byte\+Size}} (const char \texorpdfstring{$\ast$}{*}string)
+\begin{DoxyCompactList}\small\item\em Get size of null-\/terminated string in bytes (including null terminator) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{_string_8h_aa1728b71d93511c84653d2c8c8ae1527}{ct\+String\+Get\+Unicode\+Codepoint\+Count}} (const char \texorpdfstring{$\ast$}{*}string)
+\begin{DoxyCompactList}\small\item\em Get the amount of codepoints in a null terminated string (including null terminator) \end{DoxyCompactList}\item 
+\Hypertarget{_string_8h_af14727a31cc0a9933cc2928284d59df9}\label{_string_8h_af14727a31cc0a9933cc2928284d59df9} 
+void {\bfseries ct\+String\+Ensure\+Null\+Terminated} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Ensure the text buffer ends in a null terminator. \end{DoxyCompactList}\item 
+\Hypertarget{_string_8h_a966ba4f8ed1a8a8cba7241f00a99d007}\label{_string_8h_a966ba4f8ed1a8a8cba7241f00a99d007} 
+void {\bfseries ct\+String\+Ensure\+Unicode\+Valid} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Ensure the text buffer is valid unicode (replaces garbage with ?) \end{DoxyCompactList}\item 
+\Hypertarget{_string_8h_aa3c3bc7281e95453e0a4af7b6ac806dd}\label{_string_8h_aa3c3bc7281e95453e0a4af7b6ac806dd} 
+int {\bfseries ct\+String\+Cmp} (const char \texorpdfstring{$\ast$}{*}left\+String, const char \texorpdfstring{$\ast$}{*}right\+String)
+\begin{DoxyCompactList}\small\item\em Unicode aware lexographical comparison. \end{DoxyCompactList}\item 
+\Hypertarget{_string_8h_a86a5efbd6bc1d9a370c2631171d301b8}\label{_string_8h_a86a5efbd6bc1d9a370c2631171d301b8} 
+void {\bfseries ct\+String\+To\+Upper} (char \texorpdfstring{$\ast$}{*}string)
+\begin{DoxyCompactList}\small\item\em Convert string text to upper case as applicable. \end{DoxyCompactList}\item 
+\Hypertarget{_string_8h_a832d515380c547ce21eb77a679b01a73}\label{_string_8h_a832d515380c547ce21eb77a679b01a73} 
+void {\bfseries ct\+String\+To\+Lower} (char \texorpdfstring{$\ast$}{*}string)
+\begin{DoxyCompactList}\small\item\em Convert string text to lower case as applicable. \end{DoxyCompactList}\item 
+\Hypertarget{_string_8h_a139663e58537bca1ffc763dc625e66bd}\label{_string_8h_a139663e58537bca1ffc763dc625e66bd} 
+void {\bfseries ct\+String\+Clear} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Clear existing bytes in a buffer holding a string. \end{DoxyCompactList}\item 
+\Hypertarget{_string_8h_a0e4ff66943db092c153b02be94df8930}\label{_string_8h_a0e4ff66943db092c153b02be94df8930} 
+void {\bfseries ct\+String\+Copy} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, const char \texorpdfstring{$\ast$}{*}source\+String)
+\begin{DoxyCompactList}\small\item\em Copy a source string into a target buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_string_8h_a3f176888d1c4e3d30b0ff8ef4001f184}{ct\+String\+Format}} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, const char \texorpdfstring{$\ast$}{*}format,...)
+\begin{DoxyCompactList}\small\item\em Fill a string buffer with text following the printf() format. \end{DoxyCompactList}\item 
+\Hypertarget{_string_8h_a994ace4361bf7866236095bb548be0db}\label{_string_8h_a994ace4361bf7866236095bb548be0db} 
+void {\bfseries ct\+String\+Format\+VArgs} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, const char \texorpdfstring{$\ast$}{*}format, va\+\_\+list vargs)
+\begin{DoxyCompactList}\small\item\em Same as \doxylink{_string_8h_a3f176888d1c4e3d30b0ff8ef4001f184}{ct\+String\+Format()} but lets you pass a manual va\+\_\+list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_string_8h_aeeb8936d8a8b5d44b3f1010195737f86}{ct\+String\+Convert\+To\+Utf32}} (int32\+\_\+t \texorpdfstring{$\ast$}{*}output\+Buffer, size\+\_\+t output\+Buffer\+Size, const char \texorpdfstring{$\ast$}{*}input\+Buffer, size\+\_\+t input\+Buffer\+Size)
+\begin{DoxyCompactList}\small\item\em UTF8 to UTF32. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_string_8h_a55ef6e92551bf330ef26c75f10b4c04b}{ct\+String\+Convert\+From\+Utf32}} (char \texorpdfstring{$\ast$}{*}output\+Buffer, size\+\_\+t output\+Buffer\+Size, const int32\+\_\+t \texorpdfstring{$\ast$}{*}input\+Buffer, size\+\_\+t input\+Buffer\+Size)
+\begin{DoxyCompactList}\small\item\em UTF32 to UTF8. \end{DoxyCompactList}\item 
+\Hypertarget{_string_8h_a9bd22de561fc559a59a025a9bdde35be}\label{_string_8h_a9bd22de561fc559a59a025a9bdde35be} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+Bool} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, bool \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_a146eb97615ae4f76b57b40f794b005d3}\label{_string_8h_a146eb97615ae4f76b57b40f794b005d3} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+Int8} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, int8\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_a111a42f934ada23e7753e73ca5c3f9d8}\label{_string_8h_a111a42f934ada23e7753e73ca5c3f9d8} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+UInt8} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, uint8\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_a22b2c04fc715bfdb8248da1dffd578c3}\label{_string_8h_a22b2c04fc715bfdb8248da1dffd578c3} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+Int16} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, int16\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_af9c330d0bd975c8215b4aa82f0244854}\label{_string_8h_af9c330d0bd975c8215b4aa82f0244854} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+UInt16} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, uint16\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_a6bb932cca2b857ba847e64e512e9681f}\label{_string_8h_a6bb932cca2b857ba847e64e512e9681f} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+Int32} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, int32\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_ac150b9bd78de2a79bb5cb2a054dc9c8e}\label{_string_8h_ac150b9bd78de2a79bb5cb2a054dc9c8e} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+UInt32} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, uint32\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_a3d699cb3b4edf98a7c871fd798b939b6}\label{_string_8h_a3d699cb3b4edf98a7c871fd798b939b6} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+Int64} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, int64\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_aaa46c6123ff0d82130e8097e765716be}\label{_string_8h_aaa46c6123ff0d82130e8097e765716be} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+UInt64} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, uint64\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_ac97fc4c20bc10a2fbabb3a1e7edd5039}\label{_string_8h_ac97fc4c20bc10a2fbabb3a1e7edd5039} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+Float} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, float \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_a1fddfd943c8c86a216d1a3b0e3f9e2cc}\label{_string_8h_a1fddfd943c8c86a216d1a3b0e3f9e2cc} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+Double} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, double \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_aa076787d9c3994545ac55dd7ecaa7947}\label{_string_8h_aa076787d9c3994545ac55dd7ecaa7947} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+String\+To\+Long\+Double} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+Size, long double \texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{_string_8h_a14de5979cfb3546d8260473a1938105f}\label{_string_8h_a14de5979cfb3546d8260473a1938105f} 
+void {\bfseries ct\+Hex\+To\+Bytes} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}byte\+Buffer, size\+\_\+t byte\+Buffer\+Size, const char \texorpdfstring{$\ast$}{*}hex\+Buffer, size\+\_\+t hex\+Buffer\+Size)
+\item 
+\Hypertarget{_string_8h_af29d5c479b07f18a6f9280603edf411b}\label{_string_8h_af29d5c479b07f18a6f9280603edf411b} 
+void {\bfseries ct\+Bytes\+To\+Hex} (char \texorpdfstring{$\ast$}{*}hex\+Buffer, size\+\_\+t hex\+Buffer\+Size, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}byte\+Buffer, size\+\_\+t byte\+Buffer\+Size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+UTF8 aware string library targeted at simple game use cases. 
+
+This library differs from other string libraries in the fact that it treats strings not as arrays of characters but rather command buffers which hold text rendering intent. Strings share cultures with everyone and many progammers overlook this with ascii centric bias. By treating bytes as characters you can mangle and break strings with text from other languages. This library discourages byte manual manipulation as and provides simple ways of manipulating strings designed for common game usage. For safer string manipulation see UTF32 functions. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_string_8h_a5e4ddd37eb0cd372d132f6833cc2b874}\index{String.h@{String.h}!ctCodePointIsAlnum@{ctCodePointIsAlnum}}
+\index{ctCodePointIsAlnum@{ctCodePointIsAlnum}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctCodePointIsAlnum}{ctCodePointIsAlnum}}
+{\footnotesize\ttfamily \label{_string_8h_a5e4ddd37eb0cd372d132f6833cc2b874} 
+\#define ct\+Code\+Point\+Is\+Alnum(\begin{DoxyParamCaption}\item[{}]{c}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(ctIsDigit(c)\ ||\ ctIsAlpha(c))}
+
+\end{DoxyCode}
+\Hypertarget{_string_8h_a81bd4b15132a4da80744bfe9b58d07ce}\index{String.h@{String.h}!ctCodePointIsAlnumUnicode@{ctCodePointIsAlnumUnicode}}
+\index{ctCodePointIsAlnumUnicode@{ctCodePointIsAlnumUnicode}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctCodePointIsAlnumUnicode}{ctCodePointIsAlnumUnicode}}
+{\footnotesize\ttfamily \label{_string_8h_a81bd4b15132a4da80744bfe9b58d07ce} 
+\#define ct\+Code\+Point\+Is\+Alnum\+Unicode(\begin{DoxyParamCaption}\item[{}]{c}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(ctIsAlnum(c)\ ||\ ctIsUnicode(c))}
+
+\end{DoxyCode}
+\Hypertarget{_string_8h_af030b4b58807416e2163fe1f83574c4a}\index{String.h@{String.h}!ctCodePointIsAlpha@{ctCodePointIsAlpha}}
+\index{ctCodePointIsAlpha@{ctCodePointIsAlpha}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctCodePointIsAlpha}{ctCodePointIsAlpha}}
+{\footnotesize\ttfamily \label{_string_8h_af030b4b58807416e2163fe1f83574c4a} 
+\#define ct\+Code\+Point\+Is\+Alpha(\begin{DoxyParamCaption}\item[{}]{c}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((c\ >=\ \textcolor{charliteral}{'A'}\ \&\&\ c\ <=\ \textcolor{charliteral}{'Z'})\ ||\ (c\ >=\ \textcolor{charliteral}{'a'}\ \&\&\ c\ <=\ \textcolor{charliteral}{'z'}))}
+
+\end{DoxyCode}
+\Hypertarget{_string_8h_ab3f39c754d6cca517f0a23dbc65cc7b0}\index{String.h@{String.h}!ctCodePointIsAlphaUnicode@{ctCodePointIsAlphaUnicode}}
+\index{ctCodePointIsAlphaUnicode@{ctCodePointIsAlphaUnicode}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctCodePointIsAlphaUnicode}{ctCodePointIsAlphaUnicode}}
+{\footnotesize\ttfamily \label{_string_8h_ab3f39c754d6cca517f0a23dbc65cc7b0} 
+\#define ct\+Code\+Point\+Is\+Alpha\+Unicode(\begin{DoxyParamCaption}\item[{}]{c}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(ctIsAlpha(c)\ ||\ ctIsUnicode(c))}
+
+\end{DoxyCode}
+\Hypertarget{_string_8h_a16d8772cf57376ad2ba3cde32af5d328}\index{String.h@{String.h}!ctCodePointIsAscii@{ctCodePointIsAscii}}
+\index{ctCodePointIsAscii@{ctCodePointIsAscii}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctCodePointIsAscii}{ctCodePointIsAscii}}
+{\footnotesize\ttfamily \label{_string_8h_a16d8772cf57376ad2ba3cde32af5d328} 
+\#define ct\+Code\+Point\+Is\+Ascii(\begin{DoxyParamCaption}\item[{}]{c}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(c\ <=\ 127\ \&\&\ c\ >=\ 0)}
+
+\end{DoxyCode}
+\Hypertarget{_string_8h_af314d9b27eef40ad7a1138fbe73efdf1}\index{String.h@{String.h}!ctCodePointIsDigit@{ctCodePointIsDigit}}
+\index{ctCodePointIsDigit@{ctCodePointIsDigit}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctCodePointIsDigit}{ctCodePointIsDigit}}
+{\footnotesize\ttfamily \label{_string_8h_af314d9b27eef40ad7a1138fbe73efdf1} 
+\#define ct\+Code\+Point\+Is\+Digit(\begin{DoxyParamCaption}\item[{}]{c}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(c\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ c\ <=\ \textcolor{charliteral}{'9'})}
+
+\end{DoxyCode}
+\Hypertarget{_string_8h_abd50effefbdb048601b2d1dfe6449ba0}\index{String.h@{String.h}!ctCodePointIsLower@{ctCodePointIsLower}}
+\index{ctCodePointIsLower@{ctCodePointIsLower}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctCodePointIsLower}{ctCodePointIsLower}}
+{\footnotesize\ttfamily \label{_string_8h_abd50effefbdb048601b2d1dfe6449ba0} 
+\#define ct\+Code\+Point\+Is\+Lower(\begin{DoxyParamCaption}\item[{}]{c}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{utf8islower(c)}
+
+\end{DoxyCode}
+\Hypertarget{_string_8h_ac64731fb8055a12d096d132e65eeee49}\index{String.h@{String.h}!ctCodePointIsUnicode@{ctCodePointIsUnicode}}
+\index{ctCodePointIsUnicode@{ctCodePointIsUnicode}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctCodePointIsUnicode}{ctCodePointIsUnicode}}
+{\footnotesize\ttfamily \label{_string_8h_ac64731fb8055a12d096d132e65eeee49} 
+\#define ct\+Code\+Point\+Is\+Unicode(\begin{DoxyParamCaption}\item[{}]{c}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(c\ >\ 127\ ||\ c\ <\ 0)}
+
+\end{DoxyCode}
+\Hypertarget{_string_8h_ae3290547942e2f388b2ada0bbaebb271}\index{String.h@{String.h}!ctCodePointIsUpper@{ctCodePointIsUpper}}
+\index{ctCodePointIsUpper@{ctCodePointIsUpper}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctCodePointIsUpper}{ctCodePointIsUpper}}
+{\footnotesize\ttfamily \label{_string_8h_ae3290547942e2f388b2ada0bbaebb271} 
+\#define ct\+Code\+Point\+Is\+Upper(\begin{DoxyParamCaption}\item[{}]{c}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{utf8isupper(c)}
+
+\end{DoxyCode}
+\Hypertarget{_string_8h_aea4cbfe03d9cadf517be1f11224db095}\index{String.h@{String.h}!ctCodePointToLower@{ctCodePointToLower}}
+\index{ctCodePointToLower@{ctCodePointToLower}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctCodePointToLower}{ctCodePointToLower}}
+{\footnotesize\ttfamily \label{_string_8h_aea4cbfe03d9cadf517be1f11224db095} 
+\#define ct\+Code\+Point\+To\+Lower(\begin{DoxyParamCaption}\item[{}]{c}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{utf8lwrcodepoint(c)}
+
+\end{DoxyCode}
+\Hypertarget{_string_8h_a27d05dfc148908be8c355dc1852ae91c}\index{String.h@{String.h}!ctCodePointToUpper@{ctCodePointToUpper}}
+\index{ctCodePointToUpper@{ctCodePointToUpper}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctCodePointToUpper}{ctCodePointToUpper}}
+{\footnotesize\ttfamily \label{_string_8h_a27d05dfc148908be8c355dc1852ae91c} 
+\#define ct\+Code\+Point\+To\+Upper(\begin{DoxyParamCaption}\item[{}]{c}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{utf8uprcodepoint(c)}
+
+\end{DoxyCode}
+\Hypertarget{_string_8h_a5259930ea5d068eacc5c5ae0ff76fd55}\index{String.h@{String.h}!ctStringEqual@{ctStringEqual}}
+\index{ctStringEqual@{ctStringEqual}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctStringEqual}{ctStringEqual}}
+{\footnotesize\ttfamily \label{_string_8h_a5259930ea5d068eacc5c5ae0ff76fd55} 
+\#define ct\+String\+Equal(\begin{DoxyParamCaption}\item[{}]{\+\_\+left\+String}{, }\item[{}]{\+\_\+right\+String}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(ctStringCmp(\_leftString,\ \_rightString)\ ==\ 0)}
+
+\end{DoxyCode}
+
+
+Check if two string\textquotesingle{}s contents are the same. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_string_8h_a96e084722f0cf84cb01f5435d70a28f0}\index{String.h@{String.h}!ctStringByteSize@{ctStringByteSize}}
+\index{ctStringByteSize@{ctStringByteSize}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctStringByteSize()}{ctStringByteSize()}}
+{\footnotesize\ttfamily \label{_string_8h_a96e084722f0cf84cb01f5435d70a28f0} 
+size\+\_\+t ct\+String\+Byte\+Size (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{string}{}\end{DoxyParamCaption})}
+
+
+
+Get size of null-\/terminated string in bytes (including null terminator) 
+
+\begin{DoxyWarning}{Warning}
+Bytes are not characters as they can consist of only parts of codepoints 
+\end{DoxyWarning}
+\Hypertarget{_string_8h_a55ef6e92551bf330ef26c75f10b4c04b}\index{String.h@{String.h}!ctStringConvertFromUtf32@{ctStringConvertFromUtf32}}
+\index{ctStringConvertFromUtf32@{ctStringConvertFromUtf32}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctStringConvertFromUtf32()}{ctStringConvertFromUtf32()}}
+{\footnotesize\ttfamily \label{_string_8h_a55ef6e92551bf330ef26c75f10b4c04b} 
+void ct\+String\+Convert\+From\+Utf32 (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{output\+Buffer}{, }\item[{size\+\_\+t}]{output\+Buffer\+Size}{, }\item[{const int32\+\_\+t \texorpdfstring{$\ast$}{*}}]{input\+Buffer}{, }\item[{size\+\_\+t}]{input\+Buffer\+Size}{}\end{DoxyParamCaption})}
+
+
+
+UTF32 to UTF8. 
+
+Return trip from \doxylink{_string_8h_aeeb8936d8a8b5d44b3f1010195737f86}{ct\+String\+Convert\+To\+Utf32()} \Hypertarget{_string_8h_aeeb8936d8a8b5d44b3f1010195737f86}\index{String.h@{String.h}!ctStringConvertToUtf32@{ctStringConvertToUtf32}}
+\index{ctStringConvertToUtf32@{ctStringConvertToUtf32}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctStringConvertToUtf32()}{ctStringConvertToUtf32()}}
+{\footnotesize\ttfamily \label{_string_8h_aeeb8936d8a8b5d44b3f1010195737f86} 
+void ct\+String\+Convert\+To\+Utf32 (\begin{DoxyParamCaption}\item[{int32\+\_\+t \texorpdfstring{$\ast$}{*}}]{output\+Buffer}{, }\item[{size\+\_\+t}]{output\+Buffer\+Size}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{input\+Buffer}{, }\item[{size\+\_\+t}]{input\+Buffer\+Size}{}\end{DoxyParamCaption})}
+
+
+
+UTF8 to UTF32. 
+
+Converts to UTF32. The UTF32 buffer can be (more) safely manipulated as an array without breaking codepoints. Remember that codepoints are still not character but text rendering commands. When writing text manipulation code keep in the back of your mind that there are languages that use multiple codepoints to define characters or can even change the direction which text is rendering. If you are unsure how your logic translates accross cultures try to comminucate with your translators to extensively bug test for your target languages.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+Buffer} & assumed to be atleast input\+Buffer\+Size \texorpdfstring{$\ast$}{*} 4 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_string_8h_a3f176888d1c4e3d30b0ff8ef4001f184}\index{String.h@{String.h}!ctStringFormat@{ctStringFormat}}
+\index{ctStringFormat@{ctStringFormat}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctStringFormat()}{ctStringFormat()}}
+{\footnotesize\ttfamily \label{_string_8h_a3f176888d1c4e3d30b0ff8ef4001f184} 
+void ct\+String\+Format (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{buffer\+Size}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{format}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+
+
+Fill a string buffer with text following the printf() format. 
+
+See \href{https://en.wikipedia.org/wiki/Printf\#Format_specifier}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Printf\#\+Format\+\_\+specifier}} \Hypertarget{_string_8h_aa1728b71d93511c84653d2c8c8ae1527}\index{String.h@{String.h}!ctStringGetUnicodeCodepointCount@{ctStringGetUnicodeCodepointCount}}
+\index{ctStringGetUnicodeCodepointCount@{ctStringGetUnicodeCodepointCount}!String.h@{String.h}}
+\doxysubsubsection{\texorpdfstring{ctStringGetUnicodeCodepointCount()}{ctStringGetUnicodeCodepointCount()}}
+{\footnotesize\ttfamily \label{_string_8h_aa1728b71d93511c84653d2c8c8ae1527} 
+size\+\_\+t ct\+String\+Get\+Unicode\+Codepoint\+Count (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{string}{}\end{DoxyParamCaption})}
+
+
+
+Get the amount of codepoints in a null terminated string (including null terminator) 
+
+\begin{DoxyWarning}{Warning}
+Codepoints are still not "{}characters"{} but text rendering commands 
+\end{DoxyWarning}

@@ -1,4 +1,9 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
+/*! @file Common.h
+
+Common library includes for Citrus64
+*/
+
 #pragma once
 
 #define __STDC_FORMAT_MACROS
@@ -19,7 +24,7 @@
 
 #include "engine/Config.h"
 
-/* Errors */
+/*! @brief Return Codes for the engine's runtime errors */
 enum ctResults {
    CT_SUCCESS = 0,
    CT_FAILURE_UNKNOWN = -1,
@@ -51,34 +56,43 @@ enum ctResults {
 
 /*Debug*/
 #ifdef NDEBUG
-#define CITRUS_IS_DEBUG 0
+#define CT_IS_DEBUG 0
 #else
-#define CITRUS_IS_DEBUG 1
+#define CT_IS_DEBUG 1
 #endif
 
-/*Assert*/
+/*! @brief Runtime Fatal Error Throwing */
 #define ctAssert(e) assert(e)
 
+/*! @brief Offline Compile-time Error Throwing */
+#define ctStaticAssert(e) static_assert(e)
+
+/*! @brief Checks if a ctResults was unsucessful */
 #define ctErrorCheck(_msg) (_msg != CT_SUCCESS)
 
+/*! @brief Raise a fatal error while the game is running */
 #define ctFatalError(_MESSAGE) ctAssert(0 && _MESSAGE)
 
+/*! @brief Raise a fatal error if a ctResults runtime error occured */
 #define CT_PANIC_FAIL(_arg, _message)                                                    \
    {                                                                                     \
       if (_arg != CT_SUCCESS) { ctFatalError(_message); }                                \
    }
 
+/*! @brief Raise a fatal error if a truth check failed */
 #define CT_PANIC_UNTRUE(_arg, _message)                                                  \
    {                                                                                     \
       if (!_arg) { ctFatalError(_message); }                                             \
    }
 
+/*! @brief Bubble up the ctResults error to the owning function */
 #define CT_RETURN_FAIL(_arg)                                                             \
    {                                                                                     \
       enum ctResults __res = (_arg);                                                     \
       if (__res != CT_SUCCESS) { return __res; }                                         \
    }
 
+/*! @brief Same as CT_RETURN_FAIL() but can do cleanup before exiting */
 #define CT_RETURN_FAIL_CLEAN(_arg, _cleanup)                                             \
    {                                                                                     \
       enum ctResults __res = (_arg);                                                     \
@@ -88,16 +102,22 @@ enum ctResults {
       }                                                                                  \
    }
 
-#define CT_RETURN_ON_FAIL(_arg, _code)                                                   \
-   if ((_arg) != CT_SUCCESS) { return _code; }
+/*! @brief Return a given value upon a ctResults error */
+#define CT_RETURN_ON_FAIL(_arg, _result)                                                   \
+   if ((_arg) != CT_SUCCESS) { return _result; }
 
-#define CT_RETURN_ON_UNTRUE(_arg, _code)                                                 \
-   if (!(_arg)) { return _code; }
+/*! @brief Return a given value upon a truth check failure */
+#define CT_RETURN_ON_UNTRUE(_arg, _result)                                                 \
+   if (!(_arg)) { return _result; }
 
 #define CT_RETURN_ON_NULL(_arg, _code) CT_RETURN_ON_UNTRUE(_arg, _code)
 
 /*C Helpers*/
+
+/*! @brief Check if (f) bit was turned on in (v) bitmask */
 #define ctCFlagCheck(v, f)      ((v & f) == f)
+
+/*! @brief move (v) byte pointer forward to satisfy (a) alignment */
 #define ctAlign(v, a)           ((v + (a - 1)) & -a)
 
 /*Include common c files*/
@@ -105,3 +125,4 @@ enum ctResults {
 #include "Memory.h"
 #include "Math.h"
 #include "String.h"
+#include "Math3d.h"

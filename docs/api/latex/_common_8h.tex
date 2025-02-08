@@ -1,0 +1,309 @@
+\doxysection{Common.\+h File Reference}
+\hypertarget{_common_8h}{}\label{_common_8h}\index{Common.h@{Common.h}}
+
+
+Common library includes for Citrus64.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$libdragon.\+h$>$}\newline
+{\ttfamily \#include "{}engine/\+Config.\+h"{}}\newline
+{\ttfamily \#include "{}Shared\+Logging.\+h"{}}\newline
+{\ttfamily \#include "{}Memory.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_common_8h_aacbb9e1f38be71e22df1584a37c56693}\label{_common_8h_aacbb9e1f38be71e22df1584a37c56693} 
+\#define {\bfseries \+\_\+\+\_\+\+STDC\+\_\+\+FORMAT\+\_\+\+MACROS}
+\item 
+\Hypertarget{_common_8h_a3e805f2f847b30f1050d0775862fd714}\label{_common_8h_a3e805f2f847b30f1050d0775862fd714} 
+\#define {\bfseries CT\+\_\+\+IS\+\_\+\+DEBUG}~1
+\item 
+\#define \mbox{\hyperlink{_common_8h_a78cc814ce040c5aad462746110b04959}{ct\+Assert}}(e)
+\begin{DoxyCompactList}\small\item\em Runtime Fatal Error Throwing. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_common_8h_a4ae02fd19fdee3ba52c2ae14da7e6f80}{ct\+Static\+Assert}}(e)
+\begin{DoxyCompactList}\small\item\em Offline Compile-\/time Error Throwing. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_common_8h_a21546bfc8a1507d2cf2c3d6c7d294706}{ct\+Error\+Check}}(\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Checks if a \doxylink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results} was unsucessful. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_common_8h_a42a39e382b87221e68e91b8b55d35eaa}{ct\+Fatal\+Error}}(\+\_\+\+MESSAGE)
+\begin{DoxyCompactList}\small\item\em Raise a fatal error while the game is running. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_common_8h_a34197314c1aa083ac062754d33e44442}{CT\+\_\+\+PANIC\+\_\+\+FAIL}}(\+\_\+arg,  \+\_\+message)
+\begin{DoxyCompactList}\small\item\em Raise a fatal error if a \doxylink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results} runtime error occured. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_common_8h_a455216280be8d2c97cd2709dcd10ffb8}{CT\+\_\+\+PANIC\+\_\+\+UNTRUE}}(\+\_\+arg,  \+\_\+message)
+\begin{DoxyCompactList}\small\item\em Raise a fatal error if a truth check failed. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_common_8h_a6a6a8891407da421984a38b5908fd541}{CT\+\_\+\+RETURN\+\_\+\+FAIL}}(\+\_\+arg)
+\begin{DoxyCompactList}\small\item\em Bubble up the \doxylink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results} error to the owning function. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_common_8h_a4a75e59e02ed9ce57e6f90108a505e1a}{CT\+\_\+\+RETURN\+\_\+\+FAIL\+\_\+\+CLEAN}}(\+\_\+arg,  \+\_\+cleanup)
+\begin{DoxyCompactList}\small\item\em Same as \doxylink{_common_8h_a6a6a8891407da421984a38b5908fd541}{CT\+\_\+\+RETURN\+\_\+\+FAIL()} but can do cleanup before exiting. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_common_8h_afc2098d19c63eb23a41950e2be55dd3d}{CT\+\_\+\+RETURN\+\_\+\+ON\+\_\+\+FAIL}}(\+\_\+arg,  \+\_\+result)
+\begin{DoxyCompactList}\small\item\em Return a given value upon a \doxylink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results} error. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_common_8h_aeb669c9ffe81aa21fb967a45afc6306e}{CT\+\_\+\+RETURN\+\_\+\+ON\+\_\+\+UNTRUE}}(\+\_\+arg,  \+\_\+result)
+\begin{DoxyCompactList}\small\item\em Return a given value upon a truth check failure. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_common_8h_a9b38c5c01037cce6d747393f2557e15b}{CT\+\_\+\+RETURN\+\_\+\+ON\+\_\+\+NULL}}(\+\_\+arg,  \+\_\+code)
+\item 
+\#define \mbox{\hyperlink{_common_8h_a08422623bdd4af9a73c3e9d97e21a1b6}{ct\+CFlag\+Check}}(v,  f)
+\begin{DoxyCompactList}\small\item\em Check if (f) bit was turned on in (v) bitmask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_common_8h_a53d9b03d8399b132ce037fed7db52931}{ct\+Align}}(v,  a)
+\begin{DoxyCompactList}\small\item\em move (v) byte pointer forward to satisfy (a) alignment \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_common_8h_a4c2ef51e097a480311ca51322ef203ca}\label{_common_8h_a4c2ef51e097a480311ca51322ef203ca} 
+enum \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} \{ \newline
+{\bfseries CT\+\_\+\+SUCCESS} = 0
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+UNKNOWN} = -\/1
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+OUT\+\_\+\+OF\+\_\+\+MEMORY} = -\/2
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+INVALID\+\_\+\+PARAMETER} = -\/3
+, \newline
+{\bfseries CT\+\_\+\+FAILURE\+\_\+\+UNSUPPORTED\+\_\+\+HARDWARE} = -\/4
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+UNKNOWN\+\_\+\+FORMAT} = -\/5
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+OUT\+\_\+\+OF\+\_\+\+BOUNDS} = -\/6
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+PARSE\+\_\+\+ERROR} = -\/7
+, \newline
+{\bfseries CT\+\_\+\+FAILURE\+\_\+\+DECOMPRESSION\+\_\+\+ERROR} = -\/8
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+FILE\+\_\+\+NOT\+\_\+\+FOUND} = -\/9
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+INACCESSIBLE} = -\/10
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+DATA\+\_\+\+DOES\+\_\+\+NOT\+\_\+\+EXIST} = -\/11
+, \newline
+{\bfseries CT\+\_\+\+FAILURE\+\_\+\+DUPLICATE\+\_\+\+ENTRY} = -\/12
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+NOT\+\_\+\+UPDATABLE} = -\/13
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+COULD\+\_\+\+NOT\+\_\+\+SHRINK} = -\/14
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+CORRUPTED\+\_\+\+CONTENTS} = -\/15
+, \newline
+{\bfseries CT\+\_\+\+FAILURE\+\_\+\+DEPENDENCY\+\_\+\+NOT\+\_\+\+MET} = -\/16
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+MODULE\+\_\+\+NOT\+\_\+\+INITIALIZED} = -\/17
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+NOT\+\_\+\+FOUND} = -\/18
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+SYNTAX\+\_\+\+ERROR} = -\/19
+, \newline
+{\bfseries CT\+\_\+\+FAILURE\+\_\+\+RUNTIME\+\_\+\+ERROR} = -\/19
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+TYPE\+\_\+\+ERROR} = -\/20
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+NOT\+\_\+\+FINISHED} = -\/21
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+SKIPPED} = -\/22
+, \newline
+{\bfseries CT\+\_\+\+FAILURE\+\_\+\+INCORRECT\+\_\+\+VERSION} = -\/23
+, {\bfseries CT\+\_\+\+FAILURE\+\_\+\+END\+\_\+\+OF\+\_\+\+STREAM} = -\/24
+ \}
+\begin{DoxyCompactList}\small\item\em Return Codes for the engine\textquotesingle{}s runtime errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common library includes for Citrus64. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_common_8h_a34197314c1aa083ac062754d33e44442}\index{Common.h@{Common.h}!CT\_PANIC\_FAIL@{CT\_PANIC\_FAIL}}
+\index{CT\_PANIC\_FAIL@{CT\_PANIC\_FAIL}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{CT\_PANIC\_FAIL}{CT\_PANIC\_FAIL}}
+{\footnotesize\ttfamily \label{_common_8h_a34197314c1aa083ac062754d33e44442} 
+\#define CT\+\_\+\+PANIC\+\_\+\+FAIL(\begin{DoxyParamCaption}\item[{}]{\+\_\+arg}{, }\item[{}]{\+\_\+message}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ if\ (\_arg\ !=\ CT\_SUCCESS)\ \{\ \mbox{\hyperlink{_common_8h_a42a39e382b87221e68e91b8b55d35eaa}{ctFatalError}}(\_message);\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \}}
+
+\end{DoxyCode}
+
+
+Raise a fatal error if a \doxylink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results} runtime error occured. 
+
+\Hypertarget{_common_8h_a455216280be8d2c97cd2709dcd10ffb8}\index{Common.h@{Common.h}!CT\_PANIC\_UNTRUE@{CT\_PANIC\_UNTRUE}}
+\index{CT\_PANIC\_UNTRUE@{CT\_PANIC\_UNTRUE}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{CT\_PANIC\_UNTRUE}{CT\_PANIC\_UNTRUE}}
+{\footnotesize\ttfamily \label{_common_8h_a455216280be8d2c97cd2709dcd10ffb8} 
+\#define CT\+\_\+\+PANIC\+\_\+\+UNTRUE(\begin{DoxyParamCaption}\item[{}]{\+\_\+arg}{, }\item[{}]{\+\_\+message}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ if\ (!\_arg)\ \{\ \mbox{\hyperlink{_common_8h_a42a39e382b87221e68e91b8b55d35eaa}{ctFatalError}}(\_message);\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \}}
+
+\end{DoxyCode}
+
+
+Raise a fatal error if a truth check failed. 
+
+\Hypertarget{_common_8h_a6a6a8891407da421984a38b5908fd541}\index{Common.h@{Common.h}!CT\_RETURN\_FAIL@{CT\_RETURN\_FAIL}}
+\index{CT\_RETURN\_FAIL@{CT\_RETURN\_FAIL}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{CT\_RETURN\_FAIL}{CT\_RETURN\_FAIL}}
+{\footnotesize\ttfamily \label{_common_8h_a6a6a8891407da421984a38b5908fd541} 
+\#define CT\+\_\+\+RETURN\+\_\+\+FAIL(\begin{DoxyParamCaption}\item[{}]{\+\_\+arg}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \_\_res\ =\ (\_arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ if\ (\_\_res\ !=\ CT\_SUCCESS)\ \{\ \textcolor{keywordflow}{return}\ \_\_res;\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \}}
+
+\end{DoxyCode}
+
+
+Bubble up the \doxylink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results} error to the owning function. 
+
+\Hypertarget{_common_8h_a4a75e59e02ed9ce57e6f90108a505e1a}\index{Common.h@{Common.h}!CT\_RETURN\_FAIL\_CLEAN@{CT\_RETURN\_FAIL\_CLEAN}}
+\index{CT\_RETURN\_FAIL\_CLEAN@{CT\_RETURN\_FAIL\_CLEAN}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{CT\_RETURN\_FAIL\_CLEAN}{CT\_RETURN\_FAIL\_CLEAN}}
+{\footnotesize\ttfamily \label{_common_8h_a4a75e59e02ed9ce57e6f90108a505e1a} 
+\#define CT\+\_\+\+RETURN\+\_\+\+FAIL\+\_\+\+CLEAN(\begin{DoxyParamCaption}\item[{}]{\+\_\+arg}{, }\item[{}]{\+\_\+cleanup}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \_\_res\ =\ (\_arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ if\ (\_\_res\ !=\ CT\_SUCCESS)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \_cleanup;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_\_res;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \}}
+
+\end{DoxyCode}
+
+
+Same as \doxylink{_common_8h_a6a6a8891407da421984a38b5908fd541}{CT\+\_\+\+RETURN\+\_\+\+FAIL()} but can do cleanup before exiting. 
+
+\Hypertarget{_common_8h_afc2098d19c63eb23a41950e2be55dd3d}\index{Common.h@{Common.h}!CT\_RETURN\_ON\_FAIL@{CT\_RETURN\_ON\_FAIL}}
+\index{CT\_RETURN\_ON\_FAIL@{CT\_RETURN\_ON\_FAIL}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{CT\_RETURN\_ON\_FAIL}{CT\_RETURN\_ON\_FAIL}}
+{\footnotesize\ttfamily \label{_common_8h_afc2098d19c63eb23a41950e2be55dd3d} 
+\#define CT\+\_\+\+RETURN\+\_\+\+ON\+\_\+\+FAIL(\begin{DoxyParamCaption}\item[{}]{\+\_\+arg}{, }\item[{}]{\+\_\+result}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ ((\_arg)\ !=\ CT\_SUCCESS)\ \{\ \textcolor{keywordflow}{return}\ \_result;\ \}}
+
+\end{DoxyCode}
+
+
+Return a given value upon a \doxylink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results} error. 
+
+\Hypertarget{_common_8h_a9b38c5c01037cce6d747393f2557e15b}\index{Common.h@{Common.h}!CT\_RETURN\_ON\_NULL@{CT\_RETURN\_ON\_NULL}}
+\index{CT\_RETURN\_ON\_NULL@{CT\_RETURN\_ON\_NULL}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{CT\_RETURN\_ON\_NULL}{CT\_RETURN\_ON\_NULL}}
+{\footnotesize\ttfamily \label{_common_8h_a9b38c5c01037cce6d747393f2557e15b} 
+\#define CT\+\_\+\+RETURN\+\_\+\+ON\+\_\+\+NULL(\begin{DoxyParamCaption}\item[{}]{\+\_\+arg}{, }\item[{}]{\+\_\+code}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_common_8h_aeb669c9ffe81aa21fb967a45afc6306e}{CT\_RETURN\_ON\_UNTRUE}}(\_arg,\ \_code)}
+
+\end{DoxyCode}
+\Hypertarget{_common_8h_aeb669c9ffe81aa21fb967a45afc6306e}\index{Common.h@{Common.h}!CT\_RETURN\_ON\_UNTRUE@{CT\_RETURN\_ON\_UNTRUE}}
+\index{CT\_RETURN\_ON\_UNTRUE@{CT\_RETURN\_ON\_UNTRUE}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{CT\_RETURN\_ON\_UNTRUE}{CT\_RETURN\_ON\_UNTRUE}}
+{\footnotesize\ttfamily \label{_common_8h_aeb669c9ffe81aa21fb967a45afc6306e} 
+\#define CT\+\_\+\+RETURN\+\_\+\+ON\+\_\+\+UNTRUE(\begin{DoxyParamCaption}\item[{}]{\+\_\+arg}{, }\item[{}]{\+\_\+result}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ (!(\_arg))\ \{\ \textcolor{keywordflow}{return}\ \_result;\ \}}
+
+\end{DoxyCode}
+
+
+Return a given value upon a truth check failure. 
+
+\Hypertarget{_common_8h_a53d9b03d8399b132ce037fed7db52931}\index{Common.h@{Common.h}!ctAlign@{ctAlign}}
+\index{ctAlign@{ctAlign}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{ctAlign}{ctAlign}}
+{\footnotesize\ttfamily \label{_common_8h_a53d9b03d8399b132ce037fed7db52931} 
+\#define ct\+Align(\begin{DoxyParamCaption}\item[{}]{v}{, }\item[{}]{a}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((v\ +\ (a\ -\/\ 1))\ \&\ -\/a)}
+
+\end{DoxyCode}
+
+
+move (v) byte pointer forward to satisfy (a) alignment 
+
+\Hypertarget{_common_8h_a78cc814ce040c5aad462746110b04959}\index{Common.h@{Common.h}!ctAssert@{ctAssert}}
+\index{ctAssert@{ctAssert}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{ctAssert}{ctAssert}}
+{\footnotesize\ttfamily \label{_common_8h_a78cc814ce040c5aad462746110b04959} 
+\#define ct\+Assert(\begin{DoxyParamCaption}\item[{}]{e}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{assert(e)}
+
+\end{DoxyCode}
+
+
+Runtime Fatal Error Throwing. 
+
+\Hypertarget{_common_8h_a08422623bdd4af9a73c3e9d97e21a1b6}\index{Common.h@{Common.h}!ctCFlagCheck@{ctCFlagCheck}}
+\index{ctCFlagCheck@{ctCFlagCheck}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{ctCFlagCheck}{ctCFlagCheck}}
+{\footnotesize\ttfamily \label{_common_8h_a08422623bdd4af9a73c3e9d97e21a1b6} 
+\#define ct\+CFlag\+Check(\begin{DoxyParamCaption}\item[{}]{v}{, }\item[{}]{f}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((v\ \&\ f)\ ==\ f)}
+
+\end{DoxyCode}
+
+
+Check if (f) bit was turned on in (v) bitmask. 
+
+\Hypertarget{_common_8h_a21546bfc8a1507d2cf2c3d6c7d294706}\index{Common.h@{Common.h}!ctErrorCheck@{ctErrorCheck}}
+\index{ctErrorCheck@{ctErrorCheck}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{ctErrorCheck}{ctErrorCheck}}
+{\footnotesize\ttfamily \label{_common_8h_a21546bfc8a1507d2cf2c3d6c7d294706} 
+\#define ct\+Error\+Check(\begin{DoxyParamCaption}\item[{}]{\+\_\+msg}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(\_msg\ !=\ CT\_SUCCESS)}
+
+\end{DoxyCode}
+
+
+Checks if a \doxylink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results} was unsucessful. 
+
+\Hypertarget{_common_8h_a42a39e382b87221e68e91b8b55d35eaa}\index{Common.h@{Common.h}!ctFatalError@{ctFatalError}}
+\index{ctFatalError@{ctFatalError}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{ctFatalError}{ctFatalError}}
+{\footnotesize\ttfamily \label{_common_8h_a42a39e382b87221e68e91b8b55d35eaa} 
+\#define ct\+Fatal\+Error(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+MESSAGE}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_common_8h_a78cc814ce040c5aad462746110b04959}{ctAssert}}(0\ \&\&\ \_MESSAGE)}
+
+\end{DoxyCode}
+
+
+Raise a fatal error while the game is running. 
+
+\Hypertarget{_common_8h_a4ae02fd19fdee3ba52c2ae14da7e6f80}\index{Common.h@{Common.h}!ctStaticAssert@{ctStaticAssert}}
+\index{ctStaticAssert@{ctStaticAssert}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{ctStaticAssert}{ctStaticAssert}}
+{\footnotesize\ttfamily \label{_common_8h_a4ae02fd19fdee3ba52c2ae14da7e6f80} 
+\#define ct\+Static\+Assert(\begin{DoxyParamCaption}\item[{}]{e}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static\_assert}(e)}
+
+\end{DoxyCode}
+
+
+Offline Compile-\/time Error Throwing. 
+

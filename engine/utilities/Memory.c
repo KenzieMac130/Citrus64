@@ -1,7 +1,7 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 #include "Memory.h"
 
-struct alignedAllocTracker {
+struct ctAllocTracker {
    void* rawMemory;
    size_t originalSize;
 };
@@ -9,22 +9,22 @@ struct alignedAllocTracker {
 int64_t gAllocCount = 0;
 
 void* ctAlignedMalloc(size_t size, size_t alignment) {
-   const size_t allocSize = size + alignment + sizeof(struct alignedAllocTracker);
+   const size_t allocSize = size + alignment + sizeof(struct ctAllocTracker);
    char* rawMemory = (char*)malloc(allocSize);
    CT_PANIC_UNTRUE(rawMemory, "OUT OF MEMORY!");
    gAllocCount++;
-   struct alignedAllocTracker* ptr =
-     (struct alignedAllocTracker*)((uintptr_t)(rawMemory + alignment +
-                                sizeof(struct alignedAllocTracker)) &
+   struct ctAllocTracker* ptr =
+     (struct ctAllocTracker*)((uintptr_t)(rawMemory + alignment +
+                                sizeof(struct ctAllocTracker)) &
                                 ~(alignment - 1));
-   ptr[-1] = (struct alignedAllocTracker){(void*)rawMemory, size};
+   ptr[-1] = (struct ctAllocTracker){(void*)rawMemory, size};
    return (void*)ptr;
 }
 
 void* ctAlignedRealloc(void* block, size_t size, size_t alignment) {
    void* pNew = ctAlignedMalloc(size, alignment);
    if (block) {
-      memcpy(pNew, block, ((struct alignedAllocTracker*)block)[-1].originalSize);
+      memcpy(pNew, block, ((struct ctAllocTracker*)block)[-1].originalSize);
       ctAlignedFree(block);
    }
    return pNew;
@@ -32,7 +32,7 @@ void* ctAlignedRealloc(void* block, size_t size, size_t alignment) {
 
 void ctAlignedFree(void* block) {
    if (!block) { return; }
-   void* pFinal = ((struct alignedAllocTracker*)block)[-1].rawMemory;
+   void* pFinal = ((struct ctAllocTracker*)block)[-1].rawMemory;
    gAllocCount++;
    free(pFinal);
 }

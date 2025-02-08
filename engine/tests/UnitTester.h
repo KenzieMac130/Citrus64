@@ -9,4 +9,10 @@ struct ctUnitTest {
     bool requireEngine;
 };
 
+#if CT_IS_DEBUG
+#define ctUnitTestAssert(_expression) ctAssert(_expression)
+#else
+#define ctUnitTestAssert(_expression) _expression
+#endif
+
 int _ctUnitTestsMain();

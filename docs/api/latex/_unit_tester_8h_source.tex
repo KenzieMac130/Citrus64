@@ -1,0 +1,24 @@
+\doxysection{Unit\+Tester.\+h}
+\hypertarget{_unit_tester_8h_source}{}\label{_unit_tester_8h_source}\index{UnitTester.h@{UnitTester.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ By\ Kenzie\ Wright\ -\/\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_8h}{engine/utilities/Common.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{struct\ }ctUnitTest\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name;}
+\DoxyCodeLine{00008\ \ \ \ \ void(*function)(void);}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{bool}\ requireEngine;}
+\DoxyCodeLine{00010\ \};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#if\ CT\_IS\_DEBUG}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ ctUnitTestAssert(\_expression)\ ctAssert(\_expression)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ ctUnitTestAssert(\_expression)\ \_expression}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{int}\ \_ctUnitTestsMain();}
+
+\end{DoxyCode}

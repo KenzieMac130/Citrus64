@@ -1,0 +1,19 @@
+\doxysection{All\+Engine\+Tests.\+h}
+\hypertarget{_all_engine_tests_8h_source}{}\label{_all_engine_tests_8h_source}\index{AllEngineTests.h@{AllEngineTests.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ By\ Kenzie\ Wright\ -\/\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestMemory();}
+\DoxyCodeLine{00005\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestString();}
+\DoxyCodeLine{00006\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestMath();}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ see\ ctUnitTest\ (name,\ function,\ requires\ engine)\ */}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CT\_ALL\_TESTS\ \(\backslash\)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \ \ \ \{"{}Memory"{},\ ctUnitTestMemory,\ false\},\(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \{"{}String"{},\ ctUnitTestString,\ false\},\(\backslash\)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \{"{}Math"{},\ ctUnitTestMath,\ false\}}}
+\DoxyCodeLine{00013\ }
+
+\end{DoxyCode}

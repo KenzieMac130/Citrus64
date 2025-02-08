@@ -1,43 +1,93 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 #pragma once
+/*! @file String.h
+
+UTF8 aware string library targeted at simple game use cases
+
+This library differs from other string libraries in the fact that it treats
+strings not as arrays of characters but rather command buffers which hold text rendering intent.
+Strings share cultures with everyone and many progammers overlook this with ascii centric bias.
+By treating bytes as characters you can mangle and break strings with text from other languages.
+This library discourages byte manual manipulation as and provides simple ways of manipulating 
+strings designed for common game usage. For safer string manipulation see UTF32 functions.
+*/
+
 
 #include "Common.h"
 #include "thirdparty/utf8/utf8.h"
 
-/*
-Assumes strings will always know their buffer size and be null terminated
-*/
 
 /* ------- Common ------- */
 
+/*! @brief Get size of null-terminated string in bytes (including null terminator)
+    @warning Bytes are not characters as they can consist of only parts of codepoints
+ */
 size_t ctStringByteSize(const char* string);
+
+/*! @brief Get the amount of codepoints in a null terminated string (including null terminator) 
+    @warning Codepoints are still not "characters" but text rendering commands
+*/
 size_t ctStringGetUnicodeCodepointCount(const char* string);
 
+/*! @brief Ensure the text buffer ends in a null terminator 
+*/
 void ctStringEnsureNullTerminated(char* buffer, size_t bufferSize);
+
+/*! @brief Ensure the text buffer is valid unicode (replaces garbage with ?) */
 void ctStringEnsureUnicodeValid(char* buffer, size_t bufferSize);
 
 /* ------- Comparison ------- */
 
+/*! @brief Unicode aware lexographical comparison */
 int ctStringCmp(const char* leftString, const char* rightString);
 
+/*! @brief Check if two string's contents are the same */
 #define ctStringEqual(_leftString, _rightString) \
 (ctStringCmp(_leftString, _rightString) == 0)
 
 /* ------- Case ------- */
 
-void ctStringToUpper(char* buffer, size_t bufferSize);
-void ctStringToLower(char* buffer, size_t bufferSize);
+/*! @brief Convert string text to upper case as applicable */
+void ctStringToUpper(char* string);
+
+/*! @brief Convert string text to lower case as applicable */
+void ctStringToLower(char* string);
 
 /* ------- String Creation ------- */
 
+/*! @brief Clear existing bytes in a buffer holding a string */
 void ctStringClear(char* buffer, size_t bufferSize);
+
+/*! @brief Copy a source string into a target buffer */
 void ctStringCopy(char* buffer, size_t bufferSize, const char* sourceString);
+
+/*! @brief Fill a string buffer with text following the printf() format 
+
+    See https://en.wikipedia.org/wiki/Printf#Format_specifier
+*/
 void ctStringFormat(char* buffer, size_t bufferSize, const char* format, ...);
+
+/*! @brief Same as ctStringFormat() but lets you pass a manual va_list */
 void ctStringFormatVArgs(char* buffer, size_t bufferSize, const char* format, va_list vargs);
 
 /* ------- Unicode 32 Conversion ------- */
 
+/*! @brief UTF8 to UTF32 
+
+    Converts to UTF32. The UTF32 buffer can be (more) safely manipulated as an array without breaking codepoints.
+    Remember that codepoints are still not character but text rendering commands. When writing text manipulation
+    code keep in the back of your mind that there are languages that use multiple codepoints to define characters
+    or can even change the direction which text is rendering. If you are unsure how your logic translates accross
+    cultures try to comminucate with your translators to extensively bug test for your target languages. 
+
+    @param outputBuffer assumed to be atleast inputBufferSize * 4
+*/
 void ctStringConvertToUtf32(int32_t* outputBuffer, size_t outputBufferSize, const char* inputBuffer, size_t inputBufferSize);
+
+/*! @brief UTF32 to UTF8
+
+    Return trip from ctStringConvertToUtf32()
+*/
 void ctStringConvertFromUtf32(char* outputBuffer, size_t outputBufferSize, const int32_t* inputBuffer, size_t inputBufferSize);
 
 /* ------- Codepoint ------- */

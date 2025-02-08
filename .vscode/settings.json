@@ -10,7 +10,10 @@
         "random": "c",
         "*.inc": "c",
         "limits": "c",
-        "cstdlib": "c"
+        "cstdlib": "c",
+        "cstdint": "c",
+        "type_traits": "c",
+        "functional": "c"
     },
     "C_Cpp.default.compilerPath": "c:\\msys64\\usr\\bin\\gcc.exe"
 }

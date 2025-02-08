@@ -2,7 +2,7 @@
 #include "SharedLogging.h"
 
 void ctDebugLog(const char* format, ...) {
-#if CITRUS_IS_DEBUG || CT_BUILD_UNIT_TESTS
+#if CT_IS_DEBUG || CT_BUILD_UNIT_TESTS
    va_list args;
    va_start(args, format);
    fprintf(stderr, "[INFO] ");
@@ -17,7 +17,7 @@ void ctDebugLog(const char* format, ...) {
 }
 
 void ctDebugWarning(const char* format, ...) {
-#if CITRUS_IS_DEBUG
+#if CT_IS_DEBUG
    va_list args;
    va_start(args, format);
    fprintf(stderr, "[WARNING] ");
@@ -32,7 +32,7 @@ void ctDebugWarning(const char* format, ...) {
 }
 
 void ctDebugError(const char* format, ...) {
-#if CITRUS_IS_DEBUG
+#if CT_IS_DEBUG
    va_list args;
    va_start(args, format);
    fprintf(stderr, "[ERROR] ");

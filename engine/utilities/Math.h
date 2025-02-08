@@ -1,119 +1,189 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
+/*! @file Math.h
+
+Math library for extended floating point and integer math
+*/
 #pragma once
 
 #include "Common.h"
 
+/*! @brief Mathematical constant PI */
 #define CT_PI   3.141592653589793238462643383279f
-#define CT_PI_D 3.141592653589793238462643383279
 
-/* Float Compare */
-inline bool ctFloatEqual(const float a, const float b, const float threshold);
+/*! @brief Float equality check
 
-/* Compare multiple floats */
-inline bool ctMultiFloatEqual(const uint32_t count,
+   Compares two floats for equality within 0.0001f difference
+*/
+inline bool ctFloatApproxEqual(const float a, const float b);
+
+/*! @brief Float Compare
+   Compares two floats for equality within a given threshold
+*/
+inline bool ctFloatCompare(const float a, const float b, const float threshold);
+
+/*! @brief Compare multiple floats
+
+   Similar to ctFloatCompare() but for multiple floats two a packed arrays
+*/
+inline bool ctMultiFloatCompare(const uint32_t count,
                                 const float* a,
                                 const float* b,
                                 const float threshold);
 
-/* Lerp */
+/*! @brief Linear interpolation
+
+   Mixes two numbers together based on a given factor
+*/
 inline float ctLerpf(const float a, const float b, const float factor);
 
-/* Smoothstep */
+/*! @brief Smoothstep interpolation
+
+   See https://en.wikipedia.org/wiki/Smoothstep
+*/
 inline float ctSmoothStepf(const float a, const float b, const float factor);
 
-/* Power */
-inline float ctPowf(const float a, const float b);
+/*! @brief Raises a value to an exponent */
+inline float ctPowf(const float value, const float exponent);
 
-/* Log */
+/*! @brief Natural Logarithm */
 inline float ctLogf(const float a);
 
-/* Sqrt */
+/*! @brief Square Root */
 inline float ctSqrtf(const float a);
 
-/* Abs */
+/*! @brief Inverse Square Root */
+inline float ctInvSqrtf(const float a);
+
+/*! @brief Absolute value */
 inline float ctAbsf(const float a);
 
-/* Exp */
-inline float ctExpf(const float a);
+/*! @brief Eulers number for a given power
 
-/* Max */
+   See https://en.wikipedia.org/wiki/E_(mathematical_constant)
+*/
+inline float ctExpf(const float power);
+
+/*! @brief Take the maximum value between two numbers */
 inline float ctMaxf(const float a, const float b);
 
-/* Min */
+/*! @brief Take the minimum value between two numbers */
 inline float ctMinf(const float a, const float b);
 
-/* Clamp */
+/*! @brief Clamp number between a minimum and maximum range 
+*/
 inline float ctClampf(const float a, const float min, const float max);
 
-/* Remapping */
+/*! @brief Remap a number from a minimum and maximum range to a new minimum and maximum range 
+*/
 inline float ctRemapf(
   const float v, const float in_min, const float in_max, float out_min, float out_max);
 
-/* Saturate */
+/*! @brief Saturate clamps a value to a 0-1 range
+*/
 inline float ctSaturatef(const float a);
 
-/* Floor */
+/*! @brief Round down a number to the last integer
+*/
 inline float ctFloorf(const float a);
 
-/* Ceil */
+/*! @brief Round up a number to the next integer
+*/
 inline float ctCeilf(const float a);
 
-/* Round */
+/*! @brief Round a number to the nearest integer
+*/
 inline float ctRoundf(const float a);
 
-/* Frac */
+/*! @brief The remainder of a number after truncation   
+*/
 inline float ctFracf(const float a);
 
-/* RadiansToDegrees */
+/*! @brief Radians to Degrees */
 inline float ctRad2Degf(const float a);
 
-/* DegreesToRadians */
+/*! @brief Degrees to Radians */
 inline float ctDeg2Radf(const float a);
 
-/* Sine */
+/*! @brief Sine */
 inline float ctSinf(const float a);
+
+/*! @brief Approximate Sine Wave 
+
+   Do not use for anything requiring precision
+   Useful for pulsing animation effects
+*/
 inline float ctSinApproxf(const float a);
+
+/*! @brief Accurate Sine 
+
+   A more accurate version of ctSinf()
+   Use if you hit an edge case requiring a higher accuracy
+*/
 inline float ctSinAccuratef(const float a);
 
-/* Cosine */
+/*! @brief Cosine */
 inline float ctCosf(const float a);
+
+/*! @brief Accurate Cosine 
+
+   A more accurate version of ctCosf()
+   Use if you hit an edge case requiring a higher accuracy
+*/
 inline float ctCosAccuratef(const float a);
 
-/* Sign and cosine at once */
+/*! @brief Sign and cosine at once
+
+   If you need to calculate both you can optimize by using this function   
+*/
 inline void ctSinCosf(const float a, float* sin, float* cos);
 
-/* Tan */
+/*! @brief Tangent */
 inline float ctTanf(const float a);
 
-/* ArcSin */
+/*! @brief Arcsine */
 inline float ctArcSinf(const float a);
 
-/* ArcCos */
+/*! @brief Arccosine */
 inline float ctArcCosf(const float a);
 
-/* ArcTan */
+/*! @brief Arctangent */
 inline float ctArcTanf(const float a);
 
-/* ArcTan2 */
+/*! @brief ArcTan2 (atan2)
+
+   See https://en.wikipedia.org/wiki/Atan2
+*/
 inline float ctArcTan2f(const float a, const float b);
+
+/*! @brief Accurate Arctan2 (atan2)
+
+   A more accurate version of ctArcTan2f()
+   Use if you hit an edge case requiring a higher accuracy
+*/
 inline float ctArcTan2Accuratef(const float a, const float b);
 
-/* Prime number */
+/*! @brief Check if input is prime number */
 inline bool ctIsPrime(const uint32_t x);
+
+/*! @brief Find the next prime number after the input */
 inline uint32_t ctNextPrime(uint32_t x);
 
 /* ------------------ Implementations ------------------ */
 
-inline bool ctFloatEqual(const float a, const float b, const float threshold) {
+inline bool ctFloatCompare(const float a, const float b, const float threshold) {
    return ctAbsf(a - b) < threshold;
 }
 
-inline bool ctMultiFloatEqual(const uint32_t count,
+inline bool ctFloatApproxEqual(const float a, const float b) {
+   return ctFloatCompare(a, b, 0.0001f);
+}
+
+inline bool ctMultiFloatCompare(const uint32_t count,
                                 const float* a,
                                 const float* b,
                                 const float threshold) {
    for (uint32_t i = 0; i < count; i++) {
-      bool result = ctFloatEqual(a[i], b[i], threshold);
+      bool result = ctFloatCompare(a[i], b[i], threshold);
       if (!result) { return false; }
    }
    return true;
@@ -140,12 +210,16 @@ inline float ctSqrtf(const float a) {
    return sqrtf(a);
 }
 
+inline float ctInvSqrtf(const float a) {
+   return 1.0f / ctSqrtf(a);
+}
+
 inline float ctAbsf(const float a) {
    return fabsf(a);
 }
 
-inline float ctExpf(const float a) {
-   return expf(a);
+inline float ctExpf(const float power) {
+   return expf(power);
 }
 
 inline float ctMaxf(const float a, const float b) {

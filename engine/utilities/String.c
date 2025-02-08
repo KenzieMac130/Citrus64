@@ -23,6 +23,26 @@ void ctStringEnsureUnicodeValid(char* buffer, size_t bufferSize) {
     utf8makevalid(buffer, '?');
 }
 
+/* --------------------------------- Comparison --------------------------------- */
+
+int ctStringCmp(const char* leftString, const char* rightString) {
+    ctAssert(leftString);
+    ctAssert(rightString);
+    return utf8cmp(leftString, rightString);
+ }
+
+/* --------------------------------- Case --------------------------------- */
+
+void ctStringToUpper(char* string) {
+    ctAssert(string);
+    utf8upr(string);
+}
+
+void ctStringToLower(char* string) {
+    ctAssert(string);
+    utf8lwr(string);
+}
+
 /* --------------------------------- Creation --------------------------------- */
 
 void ctStringClear(char* buffer, size_t bufferSize) {
@@ -49,14 +69,6 @@ void ctStringFormat(char* buffer, size_t bufferSize, const char* format, ...) {
    va_start(args, format);
    ctStringFormatVArgs(buffer, bufferSize, format, args);
    va_end(args);
-}
-
-/* --------------------------------- Comparison --------------------------------- */
-
-int ctStringCmp(const char* leftString, const char* rightString) {
-   ctAssert(leftString);
-   ctAssert(rightString);
-   return utf8cmp(leftString, rightString);
 }
 
 /* --------------------------------- Unicode 32 Conversion --------------------------------- */

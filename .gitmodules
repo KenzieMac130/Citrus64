@@ -9,3 +9,6 @@
 [submodule "thirdparty/utf8"]
 	path = thirdparty/utf8
 	url = https://github.com/sheredom/utf8.h.git
+[submodule "thirdparty/xxHash"]
+	path = thirdparty/xxHash
+	url = https://github.com/Cyan4973/xxHash

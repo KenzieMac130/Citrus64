@@ -125,12 +125,16 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab5fc76095d9dc5c3bb19ac2600d10ee0" id="r_ab5fc76095d9dc5c3bb19ac2600d10ee0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5fc76095d9dc5c3bb19ac2600d10ee0">ctFloatEqual</a> (const float a, const float b, const float threshold)</td></tr>
-<tr class="memdesc:ab5fc76095d9dc5c3bb19ac2600d10ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Float Compare.  <br /></td></tr>
-<tr class="separator:ab5fc76095d9dc5c3bb19ac2600d10ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af049fcde419931cb7605901b7512f5f8" id="r_af049fcde419931cb7605901b7512f5f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af049fcde419931cb7605901b7512f5f8">ctMultiFloatEqual</a> (const uint32_t count, const float *a, const float *b, const float threshold)</td></tr>
-<tr class="memdesc:af049fcde419931cb7605901b7512f5f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare multiple floats.  <br /></td></tr>
-<tr class="separator:af049fcde419931cb7605901b7512f5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d0736fe60c79bbfdff7d6574e1385db" id="r_a1d0736fe60c79bbfdff7d6574e1385db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d0736fe60c79bbfdff7d6574e1385db">ctFloatApproxEqual</a> (const float a, const float b)</td></tr>
+<tr class="memdesc:a1d0736fe60c79bbfdff7d6574e1385db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Float equality check.  <br /></td></tr>
+<tr class="separator:a1d0736fe60c79bbfdff7d6574e1385db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8a9ae6d3d73845d742914d2da8c34b" id="r_aed8a9ae6d3d73845d742914d2da8c34b"><td class="memItemLeft" align="right" valign="top"><a id="aed8a9ae6d3d73845d742914d2da8c34b" name="aed8a9ae6d3d73845d742914d2da8c34b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctFloatCompare</b> (const float a, const float b, const float threshold)</td></tr>
+<tr class="memdesc:aed8a9ae6d3d73845d742914d2da8c34b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Float Compare Compares two floats for equality within a given threshold. <br /></td></tr>
+<tr class="separator:aed8a9ae6d3d73845d742914d2da8c34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db0553d4ab54b98bd2a98ca8734be2c" id="r_a9db0553d4ab54b98bd2a98ca8734be2c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9db0553d4ab54b98bd2a98ca8734be2c">ctMultiFloatCompare</a> (const uint32_t count, const float *a, const float *b, const float threshold)</td></tr>
+<tr class="memdesc:a9db0553d4ab54b98bd2a98ca8734be2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare multiple floats.  <br /></td></tr>
+<tr class="separator:a9db0553d4ab54b98bd2a98ca8734be2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a291d9ee6a32a9ab9b5e3e17a18017318" id="r_a291d9ee6a32a9ab9b5e3e17a18017318"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a291d9ee6a32a9ab9b5e3e17a18017318">ctLerpf</a> (const float a, const float b, const float factor)</td></tr>
 <tr class="memdesc:a291d9ee6a32a9ab9b5e3e17a18017318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear interpolation.  <br /></td></tr>
 <tr class="separator:a291d9ee6a32a9ab9b5e3e17a18017318"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,6 +153,10 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>ctLogf</b> (const fl
 float&#160;</td><td class="memItemRight" valign="bottom"><b>ctSqrtf</b> (const float a)</td></tr>
 <tr class="memdesc:a109b327ec3619cc4a2e5aca4cf743eeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Square Root. <br /></td></tr>
 <tr class="separator:a109b327ec3619cc4a2e5aca4cf743eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2cc39fedb0ed501ce5cad5febc09e9f" id="r_ac2cc39fedb0ed501ce5cad5febc09e9f"><td class="memItemLeft" align="right" valign="top"><a id="ac2cc39fedb0ed501ce5cad5febc09e9f" name="ac2cc39fedb0ed501ce5cad5febc09e9f"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>ctInvSqrtf</b> (const float a)</td></tr>
+<tr class="memdesc:ac2cc39fedb0ed501ce5cad5febc09e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse Square Root. <br /></td></tr>
+<tr class="separator:ac2cc39fedb0ed501ce5cad5febc09e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae664c8ee820f95066a4b6ab68b337da9" id="r_ae664c8ee820f95066a4b6ab68b337da9"><td class="memItemLeft" align="right" valign="top"><a id="ae664c8ee820f95066a4b6ab68b337da9" name="ae664c8ee820f95066a4b6ab68b337da9"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>ctAbsf</b> (const float a)</td></tr>
 <tr class="memdesc:ae664c8ee820f95066a4b6ab68b337da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute value. <br /></td></tr>
@@ -259,9 +267,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float ctArcTan2Accuratef </td>
@@ -274,11 +279,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
           <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Accurate Arctan2 (atan2) </p>
@@ -291,9 +291,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float ctArcTan2f </td>
@@ -306,11 +303,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
           <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>ArcTan2 (atan2) </p>
@@ -323,9 +315,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float ctCosAccuratef </td>
@@ -334,11 +323,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Accurate Cosine. </p>
@@ -351,9 +335,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float ctExpf </td>
@@ -362,11 +343,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Eulers number for a given power. </p>
@@ -374,40 +350,27 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
 
 </div>
 </div>
-<a id="ab5fc76095d9dc5c3bb19ac2600d10ee0" name="ab5fc76095d9dc5c3bb19ac2600d10ee0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5fc76095d9dc5c3bb19ac2600d10ee0">&#9670;&#160;</a></span>ctFloatEqual()</h2>
+<a id="a1d0736fe60c79bbfdff7d6574e1385db" name="a1d0736fe60c79bbfdff7d6574e1385db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d0736fe60c79bbfdff7d6574e1385db">&#9670;&#160;</a></span>ctFloatApproxEqual()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ctFloatEqual </td>
+          <td class="memname">bool ctFloatApproxEqual </td>
           <td>(</td>
           <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>threshold</em></span>&#160;)</td>
+          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Float Compare. </p>
-<p>Compares two floats for equality within a given threshold </p>
+<p>Float equality check. </p>
+<p>Compares two floats for equality within 0.0001f difference </p>
 
 </div>
 </div>
@@ -416,9 +379,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float ctLerpf </td>
@@ -436,11 +396,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
           <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>factor</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Linear interpolation. </p>
@@ -448,17 +403,14 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
 
 </div>
 </div>
-<a id="af049fcde419931cb7605901b7512f5f8" name="af049fcde419931cb7605901b7512f5f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af049fcde419931cb7605901b7512f5f8">&#9670;&#160;</a></span>ctMultiFloatEqual()</h2>
+<a id="a9db0553d4ab54b98bd2a98ca8734be2c" name="a9db0553d4ab54b98bd2a98ca8734be2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db0553d4ab54b98bd2a98ca8734be2c">&#9670;&#160;</a></span>ctMultiFloatCompare()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ctMultiFloatEqual </td>
+          <td class="memname">bool ctMultiFloatCompare </td>
           <td>(</td>
           <td class="paramtype">const uint32_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
         </tr>
@@ -478,15 +430,10 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
           <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>threshold</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Compare multiple floats. </p>
-<p>Similar to <a class="el" href="#ab5fc76095d9dc5c3bb19ac2600d10ee0" title="Float Compare.">ctFloatEqual()</a> but for multiple floats two a packed arrays </p>
+<p>Similar to <a class="el" href="#aed8a9ae6d3d73845d742914d2da8c34b" title="Float Compare Compares two floats for equality within a given threshold.">ctFloatCompare()</a> but for multiple floats two a packed arrays </p>
 
 </div>
 </div>
@@ -495,9 +442,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float ctSinAccuratef </td>
@@ -506,11 +450,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Accurate Sine. </p>
@@ -523,9 +462,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float ctSinApproxf </td>
@@ -534,11 +470,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Approximate Sine Wave. </p>
@@ -551,9 +482,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ctSinCosf </td>
@@ -571,11 +499,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
           <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>cos</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Sign and cosine at once. </p>
@@ -588,9 +511,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float ctSmoothStepf </td>
@@ -608,11 +528,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctNextPrime</b> (
           <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>factor</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Smoothstep interpolation. </p>

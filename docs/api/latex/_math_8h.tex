@@ -15,9 +15,12 @@ Math library for extended floating point and integer math.
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{_math_8h_ab5fc76095d9dc5c3bb19ac2600d10ee0}{ct\+Float\+Equal}} (const float a, const float b, const float threshold)
-\begin{DoxyCompactList}\small\item\em Float Compare. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{_math_8h_af049fcde419931cb7605901b7512f5f8}{ct\+Multi\+Float\+Equal}} (const uint32\+\_\+t count, const float \texorpdfstring{$\ast$}{*}a, const float \texorpdfstring{$\ast$}{*}b, const float threshold)
+bool \mbox{\hyperlink{_math_8h_a1d0736fe60c79bbfdff7d6574e1385db}{ct\+Float\+Approx\+Equal}} (const float a, const float b)
+\begin{DoxyCompactList}\small\item\em Float equality check. \end{DoxyCompactList}\item 
+\Hypertarget{_math_8h_aed8a9ae6d3d73845d742914d2da8c34b}\label{_math_8h_aed8a9ae6d3d73845d742914d2da8c34b} 
+bool {\bfseries ct\+Float\+Compare} (const float a, const float b, const float threshold)
+\begin{DoxyCompactList}\small\item\em Float Compare Compares two floats for equality within a given threshold. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_math_8h_a9db0553d4ab54b98bd2a98ca8734be2c}{ct\+Multi\+Float\+Compare}} (const uint32\+\_\+t count, const float \texorpdfstring{$\ast$}{*}a, const float \texorpdfstring{$\ast$}{*}b, const float threshold)
 \begin{DoxyCompactList}\small\item\em Compare multiple floats. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{_math_8h_a291d9ee6a32a9ab9b5e3e17a18017318}{ct\+Lerpf}} (const float a, const float b, const float factor)
 \begin{DoxyCompactList}\small\item\em Linear interpolation. \end{DoxyCompactList}\item 
@@ -32,6 +35,9 @@ float {\bfseries ct\+Logf} (const float a)
 \Hypertarget{_math_8h_a109b327ec3619cc4a2e5aca4cf743eeb}\label{_math_8h_a109b327ec3619cc4a2e5aca4cf743eeb} 
 float {\bfseries ct\+Sqrtf} (const float a)
 \begin{DoxyCompactList}\small\item\em Square Root. \end{DoxyCompactList}\item 
+\Hypertarget{_math_8h_ac2cc39fedb0ed501ce5cad5febc09e9f}\label{_math_8h_ac2cc39fedb0ed501ce5cad5febc09e9f} 
+float {\bfseries ct\+Inv\+Sqrtf} (const float a)
+\begin{DoxyCompactList}\small\item\em Inverse Square Root. \end{DoxyCompactList}\item 
 \Hypertarget{_math_8h_ae664c8ee820f95066a4b6ab68b337da9}\label{_math_8h_ae664c8ee820f95066a4b6ab68b337da9} 
 float {\bfseries ct\+Absf} (const float a)
 \begin{DoxyCompactList}\small\item\em Absolute value. \end{DoxyCompactList}\item 
@@ -118,7 +124,7 @@ Math library for extended floating point and integer math.
 \index{ctArcTan2Accuratef@{ctArcTan2Accuratef}!Math.h@{Math.h}}
 \doxysubsubsection{\texorpdfstring{ctArcTan2Accuratef()}{ctArcTan2Accuratef()}}
 {\footnotesize\ttfamily \label{_math_8h_aa5129bbf470616cc40d7fb1849c75933} 
-float ct\+Arc\+Tan2\+Accuratef (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+float ct\+Arc\+Tan2\+Accuratef (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})}
 
 
 
@@ -128,7 +134,7 @@ A more accurate version of \doxylink{_math_8h_a8349ca2f4e532f62be8ee294934724b5}
 \index{ctArcTan2f@{ctArcTan2f}!Math.h@{Math.h}}
 \doxysubsubsection{\texorpdfstring{ctArcTan2f()}{ctArcTan2f()}}
 {\footnotesize\ttfamily \label{_math_8h_a8349ca2f4e532f62be8ee294934724b5} 
-float ct\+Arc\+Tan2f (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+float ct\+Arc\+Tan2f (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})}
 
 
 
@@ -138,7 +144,7 @@ See \href{https://en.wikipedia.org/wiki/Atan2}{\texttt{ https\+://en.\+wikipedia
 \index{ctCosAccuratef@{ctCosAccuratef}!Math.h@{Math.h}}
 \doxysubsubsection{\texorpdfstring{ctCosAccuratef()}{ctCosAccuratef()}}
 {\footnotesize\ttfamily \label{_math_8h_a9dcd0e5bed4ae2f0921d12fb660d2c63} 
-float ct\+Cos\+Accuratef (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+float ct\+Cos\+Accuratef (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
 
 
 
@@ -148,47 +154,47 @@ A more accurate version of \doxylink{_math_8h_aecda2241b2bb5e458ca8a0bab1c8c867}
 \index{ctExpf@{ctExpf}!Math.h@{Math.h}}
 \doxysubsubsection{\texorpdfstring{ctExpf()}{ctExpf()}}
 {\footnotesize\ttfamily \label{_math_8h_ab8aff24ff5880c626877c6ee1eb2ee9e} 
-float ct\+Expf (\begin{DoxyParamCaption}\item[{const float}]{power}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+float ct\+Expf (\begin{DoxyParamCaption}\item[{const float}]{power}{}\end{DoxyParamCaption})}
 
 
 
 Eulers number for a given power. 
 
-See \href{https://en.wikipedia.org/wiki/E_(mathematical_constant)}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+E\+\_\+(mathematical\+\_\+constant)}} \Hypertarget{_math_8h_ab5fc76095d9dc5c3bb19ac2600d10ee0}\index{Math.h@{Math.h}!ctFloatEqual@{ctFloatEqual}}
-\index{ctFloatEqual@{ctFloatEqual}!Math.h@{Math.h}}
-\doxysubsubsection{\texorpdfstring{ctFloatEqual()}{ctFloatEqual()}}
-{\footnotesize\ttfamily \label{_math_8h_ab5fc76095d9dc5c3bb19ac2600d10ee0} 
-bool ct\+Float\+Equal (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{, }\item[{const float}]{threshold}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+See \href{https://en.wikipedia.org/wiki/E_(mathematical_constant)}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+E\+\_\+(mathematical\+\_\+constant)}} \Hypertarget{_math_8h_a1d0736fe60c79bbfdff7d6574e1385db}\index{Math.h@{Math.h}!ctFloatApproxEqual@{ctFloatApproxEqual}}
+\index{ctFloatApproxEqual@{ctFloatApproxEqual}!Math.h@{Math.h}}
+\doxysubsubsection{\texorpdfstring{ctFloatApproxEqual()}{ctFloatApproxEqual()}}
+{\footnotesize\ttfamily \label{_math_8h_a1d0736fe60c79bbfdff7d6574e1385db} 
+bool ct\+Float\+Approx\+Equal (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})}
 
 
 
-Float Compare. 
+Float equality check. 
 
-Compares two floats for equality within a given threshold \Hypertarget{_math_8h_a291d9ee6a32a9ab9b5e3e17a18017318}\index{Math.h@{Math.h}!ctLerpf@{ctLerpf}}
+Compares two floats for equality within 0.\+0001f difference \Hypertarget{_math_8h_a291d9ee6a32a9ab9b5e3e17a18017318}\index{Math.h@{Math.h}!ctLerpf@{ctLerpf}}
 \index{ctLerpf@{ctLerpf}!Math.h@{Math.h}}
 \doxysubsubsection{\texorpdfstring{ctLerpf()}{ctLerpf()}}
 {\footnotesize\ttfamily \label{_math_8h_a291d9ee6a32a9ab9b5e3e17a18017318} 
-float ct\+Lerpf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{, }\item[{const float}]{factor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+float ct\+Lerpf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{, }\item[{const float}]{factor}{}\end{DoxyParamCaption})}
 
 
 
 Linear interpolation. 
 
-Mixes two numbers together based on a given factor \Hypertarget{_math_8h_af049fcde419931cb7605901b7512f5f8}\index{Math.h@{Math.h}!ctMultiFloatEqual@{ctMultiFloatEqual}}
-\index{ctMultiFloatEqual@{ctMultiFloatEqual}!Math.h@{Math.h}}
-\doxysubsubsection{\texorpdfstring{ctMultiFloatEqual()}{ctMultiFloatEqual()}}
-{\footnotesize\ttfamily \label{_math_8h_af049fcde419931cb7605901b7512f5f8} 
-bool ct\+Multi\+Float\+Equal (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t}]{count}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{b}{, }\item[{const float}]{threshold}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+Mixes two numbers together based on a given factor \Hypertarget{_math_8h_a9db0553d4ab54b98bd2a98ca8734be2c}\index{Math.h@{Math.h}!ctMultiFloatCompare@{ctMultiFloatCompare}}
+\index{ctMultiFloatCompare@{ctMultiFloatCompare}!Math.h@{Math.h}}
+\doxysubsubsection{\texorpdfstring{ctMultiFloatCompare()}{ctMultiFloatCompare()}}
+{\footnotesize\ttfamily \label{_math_8h_a9db0553d4ab54b98bd2a98ca8734be2c} 
+bool ct\+Multi\+Float\+Compare (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t}]{count}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{b}{, }\item[{const float}]{threshold}{}\end{DoxyParamCaption})}
 
 
 
 Compare multiple floats. 
 
-Similar to \doxylink{_math_8h_ab5fc76095d9dc5c3bb19ac2600d10ee0}{ct\+Float\+Equal()} but for multiple floats two a packed arrays \Hypertarget{_math_8h_ac29964c26408110c5e75d128d91718f6}\index{Math.h@{Math.h}!ctSinAccuratef@{ctSinAccuratef}}
+Similar to \doxylink{_math_8h_aed8a9ae6d3d73845d742914d2da8c34b}{ct\+Float\+Compare()} but for multiple floats two a packed arrays \Hypertarget{_math_8h_ac29964c26408110c5e75d128d91718f6}\index{Math.h@{Math.h}!ctSinAccuratef@{ctSinAccuratef}}
 \index{ctSinAccuratef@{ctSinAccuratef}!Math.h@{Math.h}}
 \doxysubsubsection{\texorpdfstring{ctSinAccuratef()}{ctSinAccuratef()}}
 {\footnotesize\ttfamily \label{_math_8h_ac29964c26408110c5e75d128d91718f6} 
-float ct\+Sin\+Accuratef (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+float ct\+Sin\+Accuratef (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
 
 
 
@@ -198,7 +204,7 @@ A more accurate version of \doxylink{_math_8h_a207bc857e3c69e138b068c83bac34633}
 \index{ctSinApproxf@{ctSinApproxf}!Math.h@{Math.h}}
 \doxysubsubsection{\texorpdfstring{ctSinApproxf()}{ctSinApproxf()}}
 {\footnotesize\ttfamily \label{_math_8h_a6d787c5320c1516788ea237d9b8c58da} 
-float ct\+Sin\+Approxf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+float ct\+Sin\+Approxf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
 
 
 
@@ -208,7 +214,7 @@ Do not use for anything requiring precision Useful for pulsing animation effects
 \index{ctSinCosf@{ctSinCosf}!Math.h@{Math.h}}
 \doxysubsubsection{\texorpdfstring{ctSinCosf()}{ctSinCosf()}}
 {\footnotesize\ttfamily \label{_math_8h_a5acceab3cc472879b3586a716aa15195} 
-void ct\+Sin\+Cosf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{sin}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{cos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void ct\+Sin\+Cosf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{sin}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{cos}{}\end{DoxyParamCaption})}
 
 
 
@@ -218,7 +224,7 @@ If you need to calculate both you can optimize by using this function \Hypertarg
 \index{ctSmoothStepf@{ctSmoothStepf}!Math.h@{Math.h}}
 \doxysubsubsection{\texorpdfstring{ctSmoothStepf()}{ctSmoothStepf()}}
 {\footnotesize\ttfamily \label{_math_8h_aa770bffafd1b77b5dc20c03b9d45ddf5} 
-float ct\+Smooth\+Stepf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{, }\item[{const float}]{factor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+float ct\+Smooth\+Stepf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{, }\item[{const float}]{factor}{}\end{DoxyParamCaption})}
 
 
 

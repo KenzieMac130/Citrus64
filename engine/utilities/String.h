@@ -106,25 +106,39 @@ void ctStringConvertFromUtf32(char* outputBuffer, size_t outputBufferSize, const
 
 /* ------- String to Type Conversion ------- */
 
-enum ctResults ctStringToBool(const char* buffer, size_t bufferSize, bool* result);
+/*! @brief Sets the dest to a bool value if a conversion is possible */
+enum ctResults ctStringToBool(const char* buffer, size_t bufferSize, bool* dest);
 
-enum ctResults ctStringToInt8(const char* buffer, size_t bufferSize, int8_t* result);
-enum ctResults ctStringToUInt8(const char* buffer, size_t bufferSize, uint8_t* result);
+/*! @brief Sets the dest to a int8_t value if a conversion is possible */
+enum ctResults ctStringToInt8(const char* buffer, size_t bufferSize, int8_t* dest);
+/*! @brief Sets the dest to a uint8_t value if a conversion is possible */
+enum ctResults ctStringToUInt8(const char* buffer, size_t bufferSize, uint8_t* dest);
 
-enum ctResults ctStringToInt16(const char* buffer, size_t bufferSize, int16_t* result);
-enum ctResults ctStringToUInt16(const char* buffer, size_t bufferSize, uint16_t* result);
+/*! @brief Sets the dest to a int16_t value if a conversion is possible */
+enum ctResults ctStringToInt16(const char* buffer, size_t bufferSize, int16_t* dest);
+/*! @brief Sets the dest to a uint16_t value if a conversion is possible */
+enum ctResults ctStringToUInt16(const char* buffer, size_t bufferSize, uint16_t* dest);
 
-enum ctResults ctStringToInt32(const char* buffer, size_t bufferSize, int32_t* result);
-enum ctResults ctStringToUInt32(const char* buffer, size_t bufferSize, uint32_t* result);
+/*! @brief Sets the dest to a int32_t value if a conversion is possible */
+enum ctResults ctStringToInt32(const char* buffer, size_t bufferSize, int32_t* dest);
+/*! @brief Sets the dest to a uint32_t value if a conversion is possible */
+enum ctResults ctStringToUInt32(const char* buffer, size_t bufferSize, uint32_t* dest);
 
-enum ctResults ctStringToInt64(const char* buffer, size_t bufferSize, int64_t* result);
-enum ctResults ctStringToUInt64(const char* buffer, size_t bufferSize, uint64_t* result);
+/*! @brief Sets the dest to a int64_t value if a conversion is possible */
+enum ctResults ctStringToInt64(const char* buffer, size_t bufferSize, int64_t* dest);
+/*! @brief Sets the dest to a uint64_t value if a conversion is possible */
+enum ctResults ctStringToUInt64(const char* buffer, size_t bufferSize, uint64_t* dest);
 
-enum ctResults ctStringToFloat(const char* buffer, size_t bufferSize, float* result);
-enum ctResults ctStringToDouble(const char* buffer, size_t bufferSize, double* result);
-enum ctResults ctStringToLongDouble(const char* buffer, size_t bufferSize, long double* result);
+/*! @brief Sets the dest to a float value if a conversion is possible */
+enum ctResults ctStringToFloat(const char* buffer, size_t bufferSize, float* dest);
+/*! @brief Sets the dest to a double value if a conversion is possible */
+enum ctResults ctStringToDouble(const char* buffer, size_t bufferSize, double* dest);
+/*! @brief Sets the dest to a long double value if a conversion is possible */
+enum ctResults ctStringToLongDouble(const char* buffer, size_t bufferSize, long double* dest);
 
 /* ------- Hexidecimal Conversion ------- */
 
+/*! @brief Encodes a buffer of bytes into a string of hexidecimal character */
 void ctHexToBytes(uint8_t* byteBuffer, size_t byteBufferSize, const char* hexBuffer, size_t hexBufferSize);
+/*! @brief Decodes a string of hexidecimal charactes into a buffer of bytes */
 void ctBytesToHex(char* hexBuffer, size_t hexBufferSize, const uint8_t* byteBuffer, size_t byteBufferSize);

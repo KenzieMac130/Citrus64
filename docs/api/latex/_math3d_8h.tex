@@ -1,2 +1,236 @@
-\doxysection{engine/utilities/\+Math3d.h File Reference}
-\hypertarget{_math3d_8h}{}\label{_math3d_8h}\index{engine/utilities/Math3d.h@{engine/utilities/Math3d.h}}
+\doxysection{Math3d.\+h File Reference}
+\hypertarget{_math3d_8h}{}\label{_math3d_8h}\index{Math3d.h@{Math3d.h}}
+
+
+Math functions for working with 3D space.  
+
+
+{\ttfamily \#include "{}Common.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structct_vec3}{ct\+Vec3}}
+\begin{DoxyCompactList}\small\item\em 3D Vector \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structct_quat}{ct\+Quat}}
+\begin{DoxyCompactList}\small\item\em Represents a 3D rotation using imaginary numbers. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}}
+\begin{DoxyCompactList}\small\item\em Represents a color using 8 bit unsigned normalized values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_math3d_8h_acf393b8d6ba122b67d9b21c2eb7267fe}\label{_math3d_8h_acf393b8d6ba122b67d9b21c2eb7267fe} 
+\#define {\bfseries CT\+\_\+\+UP}~0.\+0f,  1.\+0f,  0.\+0f
+\item 
+\Hypertarget{_math3d_8h_af20b4602d4a6c1898977601f75017152}\label{_math3d_8h_af20b4602d4a6c1898977601f75017152} 
+\#define {\bfseries CT\+\_\+\+DOWN}~0.\+0f, -\/1.\+0f,  0.\+0f
+\item 
+\Hypertarget{_math3d_8h_a6c5ca139abccb55be2f8ad87a8ed9cd1}\label{_math3d_8h_a6c5ca139abccb55be2f8ad87a8ed9cd1} 
+\#define {\bfseries CT\+\_\+\+FORWARD}~0.\+0f,  0.\+0f,  1.\+0f
+\item 
+\Hypertarget{_math3d_8h_a4b22e5043e8fe50caffa7f65372f166e}\label{_math3d_8h_a4b22e5043e8fe50caffa7f65372f166e} 
+\#define {\bfseries CT\+\_\+\+BACK}~0.\+0f,  0.\+0f, -\/1.\+0f
+\item 
+\Hypertarget{_math3d_8h_ac10d7061abee30fbd96d667511df6b61}\label{_math3d_8h_ac10d7061abee30fbd96d667511df6b61} 
+\#define {\bfseries CT\+\_\+\+RIGHT}~-\/1.\+0f,  0.\+0f,  0.\+0f
+\item 
+\Hypertarget{_math3d_8h_a2882e05460314a00019e370c0fb3dd6c}\label{_math3d_8h_a2882e05460314a00019e370c0fb3dd6c} 
+\#define {\bfseries CT\+\_\+\+LEFT}~1.\+0f,  0.\+0f,  0.\+0f
+\item 
+\Hypertarget{_math3d_8h_a4f86236532d29a3b4d69f2b2669cd6d2}\label{_math3d_8h_a4f86236532d29a3b4d69f2b2669cd6d2} 
+\#define {\bfseries CT\+\_\+\+VEC3\+\_\+\+UP}~(\mbox{\hyperlink{structct_vec3}{ct\+Vec3}})\{CT\+\_\+\+UP\}
+\item 
+\Hypertarget{_math3d_8h_a32ab5d7029956441cae15142f6cd1827}\label{_math3d_8h_a32ab5d7029956441cae15142f6cd1827} 
+\#define {\bfseries CT\+\_\+\+VEC3\+\_\+\+DOWN}~(\mbox{\hyperlink{structct_vec3}{ct\+Vec3}})\{CT\+\_\+\+DOWN\}
+\item 
+\Hypertarget{_math3d_8h_ad910dfcd9b065832f836e5e8546d37b2}\label{_math3d_8h_ad910dfcd9b065832f836e5e8546d37b2} 
+\#define {\bfseries CT\+\_\+\+VEC3\+\_\+\+FORWARD}~(\mbox{\hyperlink{structct_vec3}{ct\+Vec3}})\{CT\+\_\+\+FORWARD\}
+\item 
+\Hypertarget{_math3d_8h_a46072bc01a50a545f2957e75e13dd8ab}\label{_math3d_8h_a46072bc01a50a545f2957e75e13dd8ab} 
+\#define {\bfseries CT\+\_\+\+VEC3\+\_\+\+BACK}~(\mbox{\hyperlink{structct_vec3}{ct\+Vec3}})\{CT\+\_\+\+BACK\}
+\item 
+\Hypertarget{_math3d_8h_a9be92c223c1b067f7fe73e584d693b82}\label{_math3d_8h_a9be92c223c1b067f7fe73e584d693b82} 
+\#define {\bfseries CT\+\_\+\+VEC3\+\_\+\+RIGHT}~(\mbox{\hyperlink{structct_vec3}{ct\+Vec3}})\{CT\+\_\+\+RIGHT\}
+\item 
+\Hypertarget{_math3d_8h_a21795e3d9bb90cecf2472b6dc0676348}\label{_math3d_8h_a21795e3d9bb90cecf2472b6dc0676348} 
+\#define {\bfseries CT\+\_\+\+VEC3\+\_\+\+LEFT}~(\mbox{\hyperlink{structct_vec3}{ct\+Vec3}})\{CT\+\_\+\+LEFT\}
+\item 
+\Hypertarget{_math3d_8h_ade8836a834345d0bdc59f917d25e44ef}\label{_math3d_8h_ade8836a834345d0bdc59f917d25e44ef} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+BLACK}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{000, 000, 000, 255\}
+\item 
+\Hypertarget{_math3d_8h_ade46905e84e771a479bab106be142179}\label{_math3d_8h_ade46905e84e771a479bab106be142179} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+GREY}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{127, 127, 127, 255\}
+\item 
+\Hypertarget{_math3d_8h_a4e877f4eefce47e691e3521d32eb2d60}\label{_math3d_8h_a4e877f4eefce47e691e3521d32eb2d60} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+WHITE}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{255, 255, 255, 255\}
+\item 
+\Hypertarget{_math3d_8h_abe1ec5e7ebfd08c5f8ecec62b4e596cb}\label{_math3d_8h_abe1ec5e7ebfd08c5f8ecec62b4e596cb} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+INVISIBLE\+\_\+\+BLACK}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{000, 000, 000, 000\}
+\item 
+\Hypertarget{_math3d_8h_a1931c921bef8cdc0a2c140c4972d2391}\label{_math3d_8h_a1931c921bef8cdc0a2c140c4972d2391} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+INVISIBLE\+\_\+\+GREY}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{127, 127, 127, 000\}
+\item 
+\Hypertarget{_math3d_8h_a04c24e96b07222c3ecd3bffc9dc76f19}\label{_math3d_8h_a04c24e96b07222c3ecd3bffc9dc76f19} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+INVISIBLE\+\_\+\+WHITE}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{255, 255, 255, 000\}
+\item 
+\Hypertarget{_math3d_8h_a7d7b0a22679854e4de641df65d8e69ed}\label{_math3d_8h_a7d7b0a22679854e4de641df65d8e69ed} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+RED}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{255, 000, 000, 255\}
+\item 
+\Hypertarget{_math3d_8h_a7b0e3ef0041afac2e10b6e4f94f0849c}\label{_math3d_8h_a7b0e3ef0041afac2e10b6e4f94f0849c} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+GREEN}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{000, 255, 000, 255\}
+\item 
+\Hypertarget{_math3d_8h_abb3120c4fd8e25b81ba0ee0a52597708}\label{_math3d_8h_abb3120c4fd8e25b81ba0ee0a52597708} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+BLUE}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{000, 000, 255, 255\}
+\item 
+\Hypertarget{_math3d_8h_a63b1973bea06a1cc50e5eea16955ca09}\label{_math3d_8h_a63b1973bea06a1cc50e5eea16955ca09} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+YELLOW}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{255, 255, 000, 255\}
+\item 
+\Hypertarget{_math3d_8h_a15a733f9765ad6f3ccdcafeea60d5d49}\label{_math3d_8h_a15a733f9765ad6f3ccdcafeea60d5d49} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+ORANGE}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{255, 127, 000, 255\}
+\item 
+\Hypertarget{_math3d_8h_aa6d08c80ad479fd81316cf325fa5095b}\label{_math3d_8h_aa6d08c80ad479fd81316cf325fa5095b} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+PURPLE}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{127, 000, 255, 255\}
+\item 
+\Hypertarget{_math3d_8h_a42230b4becb16564313b6478e7a121ed}\label{_math3d_8h_a42230b4becb16564313b6478e7a121ed} 
+\#define {\bfseries CT\+\_\+\+COLOR\+\_\+\+PINK}~(\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}})\{255, 000, 255, 255\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_math3d_8h_a3c3217c66adaf3bdb60b3e734e78f227}\label{_math3d_8h_a3c3217c66adaf3bdb60b3e734e78f227} 
+enum \mbox{\hyperlink{_math3d_8h_a3c3217c66adaf3bdb60b3e734e78f227}{ct\+Color\+Components}} \{ \newline
+{\bfseries CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+\+NONE} = 0x00
+, {\bfseries CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+R} = 0x01
+, {\bfseries CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+G} = 0x02
+, {\bfseries CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+B} = 0x04
+, \newline
+{\bfseries CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+A} = 0x08
+, {\bfseries CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+\+RG} = CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+R \texorpdfstring{$\vert$}{|} CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+G
+, {\bfseries CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+\+RGB} = CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+\+RG \texorpdfstring{$\vert$}{|} CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+B
+, {\bfseries CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+\+RGBA} = CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+\+RGB \texorpdfstring{$\vert$}{|} CT\+\_\+\+COLOR\+\_\+\+COMPONENT\+\_\+A
+ \}
+\begin{DoxyCompactList}\small\item\em Represents one or more color channels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_math3d_8h_a973c8ba868094c948cee5c8c35387f4e}\label{_math3d_8h_a973c8ba868094c948cee5c8c35387f4e} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Vec3\+Zero} ()
+\begin{DoxyCompactList}\small\item\em Construct a (0, 0, 0) vector. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a8c63cf1129dd81900be518f331bcb667}\label{_math3d_8h_a8c63cf1129dd81900be518f331bcb667} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Vec3\+Make} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Construct a vector from XYZ. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a87bf9e5915712360bf9a01e9615cdd68}\label{_math3d_8h_a87bf9e5915712360bf9a01e9615cdd68} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Vec3\+Identity} ()
+\begin{DoxyCompactList}\small\item\em Construct a (1, 1, 1) vector. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a8e9bd43ed65dd3f58ca66a327a8509c6}\label{_math3d_8h_a8e9bd43ed65dd3f58ca66a327a8509c6} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Vec3\+From\+Float3} (const float data\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Construct a vector from a float triplet pointer. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_aee5b2601e1a312fb4ad115a53434db8a}\label{_math3d_8h_aee5b2601e1a312fb4ad115a53434db8a} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Vec3\+From\+Float} (float value)
+\begin{DoxyCompactList}\small\item\em Construct a vector filled with a single value. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a6d410ffa1ed2c9879791103003a8c2c5}\label{_math3d_8h_a6d410ffa1ed2c9879791103003a8c2c5} 
+bool {\bfseries ct\+Vec3\+Approx\+Equal} (const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} a, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} b)
+\begin{DoxyCompactList}\small\item\em Is this vector approximately equal to another. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_aa95a7c976d2a6781ebcdbb2ba7c902f4}\label{_math3d_8h_aa95a7c976d2a6781ebcdbb2ba7c902f4} 
+void {\bfseries ct\+Vec3\+Add} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}a, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} b)
+\begin{DoxyCompactList}\small\item\em Add another vector to this vector. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_ab7356e038176d26add978edc35d0608e}\label{_math3d_8h_ab7356e038176d26add978edc35d0608e} 
+void {\bfseries ct\+Vec3\+Sub} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}a, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} b)
+\begin{DoxyCompactList}\small\item\em Subtract another vector from this vector. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a80932ec5f849cd382886a2f053657d33}\label{_math3d_8h_a80932ec5f849cd382886a2f053657d33} 
+void {\bfseries ct\+Vec3\+Negate} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Invert this vector\textquotesingle{}s component\textquotesingle{}s signs. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a210096b5113e6809bf070a4c72474e78}\label{_math3d_8h_a210096b5113e6809bf070a4c72474e78} 
+void {\bfseries ct\+Vec3\+Mult} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}a, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} b)
+\begin{DoxyCompactList}\small\item\em Multiply this vector by another vector. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_adb4dd4f1cba3e1ef175b42322341f302}\label{_math3d_8h_adb4dd4f1cba3e1ef175b42322341f302} 
+void {\bfseries ct\+Vec3\+Scale} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}a, const float b)
+\begin{DoxyCompactList}\small\item\em Multiply this vector by a float. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a42cadeea1153e61fe54c4c921287f23d}\label{_math3d_8h_a42cadeea1153e61fe54c4c921287f23d} 
+void {\bfseries ct\+Vec3\+Divide} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}a, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} b)
+\begin{DoxyCompactList}\small\item\em Divide this vector by another vector. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a309a94f23e9b63ac001707407ded60bf}\label{_math3d_8h_a309a94f23e9b63ac001707407ded60bf} 
+void {\bfseries ct\+Vec3\+Divide\+Float} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}a, const float b)
+\begin{DoxyCompactList}\small\item\em Divide this vector by a float. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a4acd0503ae8f868cf98e009fbacfd08e}\label{_math3d_8h_a4acd0503ae8f868cf98e009fbacfd08e} 
+float {\bfseries ct\+Vec3\+Dot} (const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} a, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} b)
+\begin{DoxyCompactList}\small\item\em Get a dot product between two vectors. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_acda2007909a49b633b453114ccd65557}\label{_math3d_8h_acda2007909a49b633b453114ccd65557} 
+float {\bfseries ct\+Vec3\+Distance} (const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} a, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} b)
+\begin{DoxyCompactList}\small\item\em Get the distance between two vectors. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_aff290f24075f354132c6ec1c503bbe77}\label{_math3d_8h_aff290f24075f354132c6ec1c503bbe77} 
+float {\bfseries ct\+Vec3\+Length} (const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} v)
+\begin{DoxyCompactList}\small\item\em Get the length (magnitude) of a vector. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_ac6449cc91cda83eb72e523a6ec4d092d}\label{_math3d_8h_ac6449cc91cda83eb72e523a6ec4d092d} 
+void {\bfseries ct\+Vec3\+Abs} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Make this vector\textquotesingle{}s components positive. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a09015aac89e5e3fbcf233e56e0072584}\label{_math3d_8h_a09015aac89e5e3fbcf233e56e0072584} 
+void {\bfseries ct\+Vec3\+Normalize} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Make this vector a unit length vector. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a8aa2ba784a1dd72942c7c255f2ca232e}\label{_math3d_8h_a8aa2ba784a1dd72942c7c255f2ca232e} 
+void {\bfseries ct\+Vec3\+Saturate} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Clamp this vector from 0-\/1. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a40978499fcb24bc70ed9f75535ae63e2}\label{_math3d_8h_a40978499fcb24bc70ed9f75535ae63e2} 
+void {\bfseries ct\+Vec3\+Cross} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}out, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} a, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} b)
+\begin{DoxyCompactList}\small\item\em Fill this vector with the cross product between two vectors. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a0a39d1653aaf2f2960a7c70ac8fe72f8}\label{_math3d_8h_a0a39d1653aaf2f2960a7c70ac8fe72f8} 
+void {\bfseries ct\+Vec3\+Lerp} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}out, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} a, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} b, const float t)
+\begin{DoxyCompactList}\small\item\em Fill this vector with the lerp result between two vectors. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a741aa20db9fb3627c4d376529bf70f12}\label{_math3d_8h_a741aa20db9fb3627c4d376529bf70f12} 
+\mbox{\hyperlink{structct_quat}{ct\+Quat}} {\bfseries ct\+Quat\+Identity} ()
+\begin{DoxyCompactList}\small\item\em Construct a quaternion that has no affect when rotated. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_ae9dae4e846a77751cfbba690c3965feb}\label{_math3d_8h_ae9dae4e846a77751cfbba690c3965feb} 
+\mbox{\hyperlink{structct_quat}{ct\+Quat}} {\bfseries ct\+Quat\+From\+Float4} (const float v\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em Construct a quaternion from a float pointer to 4 values. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a19b29b8e8368e4f6bc15e6cf3e87858b}\label{_math3d_8h_a19b29b8e8368e4f6bc15e6cf3e87858b} 
+\mbox{\hyperlink{structct_quat}{ct\+Quat}} {\bfseries ct\+Quat\+From\+Axis\+Angle} (const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} axis, float angle)
+\begin{DoxyCompactList}\small\item\em Construct a quaternion that represents a rotation around an axis. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a3f4cd47ef3c0759f65e49ce96e14da02}\label{_math3d_8h_a3f4cd47ef3c0759f65e49ce96e14da02} 
+\mbox{\hyperlink{structct_quat}{ct\+Quat}} {\bfseries ct\+Quat\+From\+Euler} (const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} euler)
+\begin{DoxyCompactList}\small\item\em Construct a quaternion from a euler rotation. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a4f4dc3aa3e871b1fa2e717b5300fe737}\label{_math3d_8h_a4f4dc3aa3e871b1fa2e717b5300fe737} 
+void {\bfseries ct\+Quat\+Rotate} (\mbox{\hyperlink{structct_quat}{ct\+Quat}} \texorpdfstring{$\ast$}{*}a, const \mbox{\hyperlink{structct_quat}{ct\+Quat}} b)
+\begin{DoxyCompactList}\small\item\em Rotate this quaternion by another quaternion. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_ac71ef810801e8bb5762d0274205ef49f}\label{_math3d_8h_ac71ef810801e8bb5762d0274205ef49f} 
+void {\bfseries ct\+Quat\+Invert} (\mbox{\hyperlink{structct_quat}{ct\+Quat}} \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Invert the rotation of this quaternion. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a760670d4fc5d53b20fe3ff8209d43632}\label{_math3d_8h_a760670d4fc5d53b20fe3ff8209d43632} 
+void {\bfseries ct\+Quat\+Normalize} (\mbox{\hyperlink{structct_quat}{ct\+Quat}} \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Fix any issues in this quaternion. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a8be6e9f1aac1749a65e4dbcf6c2d1326}\label{_math3d_8h_a8be6e9f1aac1749a65e4dbcf6c2d1326} 
+void {\bfseries ct\+Quat\+Rotate\+Vec3} (\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \texorpdfstring{$\ast$}{*}vector, const \mbox{\hyperlink{structct_quat}{ct\+Quat}} q)
+\begin{DoxyCompactList}\small\item\em Rotate a vector by a given quaternion. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a63d53064b09885a133b58754cc564e75}\label{_math3d_8h_a63d53064b09885a133b58754cc564e75} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Quat\+Get\+Forward} (const \mbox{\hyperlink{structct_quat}{ct\+Quat}} q)
+\begin{DoxyCompactList}\small\item\em Get the forward vector of this quaternion. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_afaa8869926806b0546899f142e26d996}\label{_math3d_8h_afaa8869926806b0546899f142e26d996} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Quat\+Get\+Back} (const \mbox{\hyperlink{structct_quat}{ct\+Quat}} q)
+\begin{DoxyCompactList}\small\item\em Get the back vector of this quaternion. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a3cf95b9cc5e6a67e1d956cc5401828b2}\label{_math3d_8h_a3cf95b9cc5e6a67e1d956cc5401828b2} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Quat\+Get\+Up} (const \mbox{\hyperlink{structct_quat}{ct\+Quat}} q)
+\begin{DoxyCompactList}\small\item\em Get the up vector of this quaternion. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a12500b190440237da3f25e4fe2f113d3}\label{_math3d_8h_a12500b190440237da3f25e4fe2f113d3} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Quat\+Get\+Down} (const \mbox{\hyperlink{structct_quat}{ct\+Quat}} q)
+\begin{DoxyCompactList}\small\item\em Get the down vector of this quaternion. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a812de81c96cfce7bfd7417b6c5cf0d69}\label{_math3d_8h_a812de81c96cfce7bfd7417b6c5cf0d69} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Quat\+Get\+Right} (const \mbox{\hyperlink{structct_quat}{ct\+Quat}} q)
+\begin{DoxyCompactList}\small\item\em Get the right vector of this quaternion. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_ad99053e6695775e8bb14a9abe215c3e3}\label{_math3d_8h_ad99053e6695775e8bb14a9abe215c3e3} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Quat\+Get\+Left} (const \mbox{\hyperlink{structct_quat}{ct\+Quat}} q)
+\begin{DoxyCompactList}\small\item\em Get the left vector of this quaternion. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_acc2da5bbc5efc2e07d61a451ba5fdda2}\label{_math3d_8h_acc2da5bbc5efc2e07d61a451ba5fdda2} 
+\mbox{\hyperlink{structct_quat}{ct\+Quat}} {\bfseries ct\+Quat\+Look\+At} (const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} direction, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} forward, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} up)
+\begin{DoxyCompactList}\small\item\em Construct a quaternion that looks at a target from a given orientation. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_a7bb69e6f9562447be23b3fa52b2761f9}\label{_math3d_8h_a7bb69e6f9562447be23b3fa52b2761f9} 
+void {\bfseries ct\+Quat\+Slerp} (\mbox{\hyperlink{structct_quat}{ct\+Quat}} \texorpdfstring{$\ast$}{*}dest, const \mbox{\hyperlink{structct_quat}{ct\+Quat}} a, const \mbox{\hyperlink{structct_quat}{ct\+Quat}} b, float t)
+\begin{DoxyCompactList}\small\item\em Construct a quaternion that takes part of the shortest path on a sphere between two rotations. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_ae5bf42150b8c6476618d35c038fe2675}\label{_math3d_8h_ae5bf42150b8c6476618d35c038fe2675} 
+\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}} {\bfseries ct\+Color\+RGBA8\+From\+Float4} (float input\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em Convert a pointer to four floats into a color. \end{DoxyCompactList}\item 
+\Hypertarget{_math3d_8h_afcacb7192b1500423682404d41c88afe}\label{_math3d_8h_afcacb7192b1500423682404d41c88afe} 
+\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}} {\bfseries ct\+Color\+RGBA8\+From\+Vec3} (const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} rgb, const float a)
+\begin{DoxyCompactList}\small\item\em Convert vector representing rgb into a color with a given alpha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Math functions for working with 3D space. 
+

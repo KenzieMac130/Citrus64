@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['function_0',['function',['../structct_unit_test.html#a199895e01c2b017e3820f92cfc1cd64b',1,'ctUnitTest']]]
+  ['sharedlogging_2eh_0',['SharedLogging.h',['../_shared_logging_8h.html',1,'']]],
+  ['size_1',['size',['../structct_group_alloc_desc.html#a854352f53b148adc24983a58a1866d66',1,'ctGroupAllocDesc']]],
+  ['string_2eh_2',['String.h',['../_string_8h.html',1,'']]]
 ];

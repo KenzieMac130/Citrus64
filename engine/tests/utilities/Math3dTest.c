@@ -89,4 +89,5 @@ void ctUnitTestMath3D() {
     /* Quaternion Axis Angle */
     //ctQuat q = ctQuatFromAxisAngle(CT_VEC3_UP, ctDeg2Radf(90.0f));
     //ctUnitTestAssert()
+    //ctAssert(0);
 }

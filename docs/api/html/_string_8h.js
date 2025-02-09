@@ -1,6 +1,8 @@
 var _string_8h =
 [
     [ "ctStringEqual", "_string_8h.html#a5259930ea5d068eacc5c5ae0ff76fd55", null ],
+    [ "ctBytesToHex", "_string_8h.html#af29d5c479b07f18a6f9280603edf411b", null ],
+    [ "ctHexToBytes", "_string_8h.html#a14de5979cfb3546d8260473a1938105f", null ],
     [ "ctStringByteSize", "_string_8h.html#a96e084722f0cf84cb01f5435d70a28f0", null ],
     [ "ctStringClear", "_string_8h.html#a139663e58537bca1ffc763dc625e66bd", null ],
     [ "ctStringCmp", "_string_8h.html#aa3c3bc7281e95453e0a4af7b6ac806dd", null ],
@@ -12,6 +14,18 @@ var _string_8h =
     [ "ctStringFormat", "_string_8h.html#a3f176888d1c4e3d30b0ff8ef4001f184", null ],
     [ "ctStringFormatVArgs", "_string_8h.html#a994ace4361bf7866236095bb548be0db", null ],
     [ "ctStringGetUnicodeCodepointCount", "_string_8h.html#aa1728b71d93511c84653d2c8c8ae1527", null ],
+    [ "ctStringToBool", "_string_8h.html#a07ced6aea7d0912a17416d538db8ca3d", null ],
+    [ "ctStringToDouble", "_string_8h.html#a579df013ab87e51d738487dc1d1c1156", null ],
+    [ "ctStringToFloat", "_string_8h.html#ae209ea2d2722c09f3b9add5fae8575ab", null ],
+    [ "ctStringToInt16", "_string_8h.html#ab4976ae46c28955644dcf45d2511892b", null ],
+    [ "ctStringToInt32", "_string_8h.html#afb4289b7737bfd789b41c873e4fae1e2", null ],
+    [ "ctStringToInt64", "_string_8h.html#a633c936ebeb71ab59a33ef3a76210c59", null ],
+    [ "ctStringToInt8", "_string_8h.html#a49c5965631372548bdebf374e70e4fcc", null ],
+    [ "ctStringToLongDouble", "_string_8h.html#a4d4bdac6039ef92ebd0179f6aace8561", null ],
     [ "ctStringToLower", "_string_8h.html#a832d515380c547ce21eb77a679b01a73", null ],
+    [ "ctStringToUInt16", "_string_8h.html#aa604300af5cf5250d4d674afff16d12b", null ],
+    [ "ctStringToUInt32", "_string_8h.html#aad0c962925da56e6a138f5e6b4f0ba3b", null ],
+    [ "ctStringToUInt64", "_string_8h.html#a2d3fd36515df24abc27b5cd13cc60fc3", null ],
+    [ "ctStringToUInt8", "_string_8h.html#a5f4ad00be5da02f22d20036fd5fabb64", null ],
     [ "ctStringToUpper", "_string_8h.html#a86a5efbd6bc1d9a370c2631171d301b8", null ]
 ];

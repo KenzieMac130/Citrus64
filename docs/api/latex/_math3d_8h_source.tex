@@ -1,8 +1,155 @@
 \doxysection{Math3d.\+h}
 \hypertarget{_math3d_8h_source}{}\label{_math3d_8h_source}\index{Math3d.h@{Math3d.h}}
-
+\mbox{\hyperlink{_math3d_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{/*\ By\ Kenzie\ Wright\ -\/\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_8h}{Common.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Vector3\ -\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ Hard-\/coded\ coordinate\ spaces\ (based\ on\ glTF)\ */}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ clang-\/format\ off}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ CT\_UP\ \ \ \ \ \ \ \ \ \ \ 0.0f,\ \ 1.0f,\ \ 0.0f\ \ \ \ }}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ CT\_DOWN\ \ \ \ \ \ \ \ \ 0.0f,\ -\/1.0f,\ \ 0.0f\ \ \ }}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ CT\_FORWARD\ \ \ \ \ \ 0.0f,\ \ 0.0f,\ \ 1.0f\ \ \ }}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ CT\_BACK\ \ \ \ \ \ \ \ \ 0.0f,\ \ 0.0f,\ -\/1.0f\ \ \ \ }}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ CT\_RIGHT\ \ \ \ \ \ \ -\/1.0f,\ \ 0.0f,\ \ 0.0f\ \ \ }}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ CT\_LEFT\ \ \ \ \ \ \ \ \ 1.0f,\ \ 0.0f,\ \ 0.0f}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ clang-\/format\ on}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ CT\_VEC3\_UP\ \ \ \ \ \ (ctVec3)\{CT\_UP\}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ CT\_VEC3\_DOWN\ \ \ \ (ctVec3)\{CT\_DOWN\}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ CT\_VEC3\_FORWARD\ (ctVec3)\{CT\_FORWARD\}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ CT\_VEC3\_BACK\ \ \ \ (ctVec3)\{CT\_BACK\}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ CT\_VEC3\_RIGHT\ \ \ (ctVec3)\{CT\_RIGHT\}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ CT\_VEC3\_LEFT\ \ \ \ (ctVec3)\{CT\_LEFT\}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{float}\ x;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ y;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{float}\ z;}
+\DoxyCodeLine{00033\ \}\ \_\_attribute\_\_((aligned(16)))\ \mbox{\hyperlink{structct_vec3}{ctVec3}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ ctVec3Zero();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ ctVec3Make(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ ctVec3Identity();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ ctVec3FromFloat3(const\ \textcolor{keywordtype}{float}\ data[3]);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ ctVec3FromFloat(\textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{bool}\ ctVec3ApproxEqual(const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ a,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ b);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ ctVec3Add(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ a,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ b);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ ctVec3Sub(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ a,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ b);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ ctVec3Negate(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ v);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ ctVec3Mult(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ a,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ b);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ ctVec3Scale(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ a,\ const\ \textcolor{keywordtype}{float}\ b);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ ctVec3Divide(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ a,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ b);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ ctVec3DivideFloat(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ a,\ const\ \textcolor{keywordtype}{float}\ b);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{float}\ ctVec3Dot(const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ a,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ b);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{float}\ ctVec3Distance(const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ a,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ b);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{float}\ ctVec3Length(const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ v);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ ctVec3Abs(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ v);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ ctVec3Normalize(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ v);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ ctVec3Saturate(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ v);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ ctVec3Cross(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ out,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ a,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ b);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ ctVec3Lerp(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ out,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ a,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ b,\ const\ \textcolor{keywordtype}{float}\ t);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Quaternion\ -\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00101\ typedef\ struct\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{float}\ x;}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{float}\ y;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{float}\ z;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{float}\ w;}
+\DoxyCodeLine{00106\ \}\ \_\_attribute\_\_((aligned(16)))\ \mbox{\hyperlink{structct_quat}{ctQuat}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ ctQuatIdentity();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ ctQuatFromFloat4(const\ \textcolor{keywordtype}{float}\ v[4]);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ ctQuatFromAxisAngle(const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ axis,\ \textcolor{keywordtype}{float}\ angle);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ ctQuatFromEuler(const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ euler);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{void}\ ctQuatRotate(\mbox{\hyperlink{structct_quat}{ctQuat}}*\ a,\ const\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ b);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{void}\ ctQuatInvert(\mbox{\hyperlink{structct_quat}{ctQuat}}*\ v);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \textcolor{keywordtype}{void}\ ctQuatNormalize(\mbox{\hyperlink{structct_quat}{ctQuat}}*\ v);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{void}\ ctQuatRotateVec3(\mbox{\hyperlink{structct_vec3}{ctVec3}}*\ vector,\ const\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ q);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00133\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ ctQuatGetForward(const\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ q);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ ctQuatGetBack(const\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ q);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00139\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ ctQuatGetUp(const\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ q);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ ctQuatGetDown(const\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ q);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ ctQuatGetRight(const\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ q);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00148\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ ctQuatGetLeft(const\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ q);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00151\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ ctQuatLookAt(const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ direction,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ forward,\ const\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ up);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00154\ \textcolor{keywordtype}{void}\ ctQuatSlerp(\mbox{\hyperlink{structct_quat}{ctQuat}}*\ dest,\ const\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ a,\ const\ \mbox{\hyperlink{structct_quat}{ctQuat}}\ b,\ \textcolor{keywordtype}{float}\ t);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Color\ -\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00159\ enum\ \mbox{\hyperlink{_math3d_8h_a3c3217c66adaf3bdb60b3e734e78f227}{ctColorComponents}}\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ CT\_COLOR\_COMPONENT\_NONE\ =\ 0x00,}
+\DoxyCodeLine{00161\ \ \ \ \ CT\_COLOR\_COMPONENT\_R\ =\ 0x01,}
+\DoxyCodeLine{00162\ \ \ \ \ CT\_COLOR\_COMPONENT\_G\ =\ 0x02,}
+\DoxyCodeLine{00163\ \ \ \ \ CT\_COLOR\_COMPONENT\_B\ =\ 0x04,}
+\DoxyCodeLine{00164\ \ \ \ \ CT\_COLOR\_COMPONENT\_A\ =\ 0x08,}
+\DoxyCodeLine{00165\ \ \ \ \ CT\_COLOR\_COMPONENT\_RG\ =\ CT\_COLOR\_COMPONENT\_R\ |\ CT\_COLOR\_COMPONENT\_G,}
+\DoxyCodeLine{00166\ \ \ \ \ CT\_COLOR\_COMPONENT\_RGB\ =\ CT\_COLOR\_COMPONENT\_RG\ |\ CT\_COLOR\_COMPONENT\_B,}
+\DoxyCodeLine{00167\ \ \ \ \ CT\_COLOR\_COMPONENT\_RGBA\ =\ CT\_COLOR\_COMPONENT\_RGB\ |\ CT\_COLOR\_COMPONENT\_A,}
+\DoxyCodeLine{00168\ \};}
+\DoxyCodeLine{00169\ \ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_BLACK\ \ \ \ \ \ \ \ \ \ \ (ctColorRGBA8)\{000,\ 000,\ 000,\ 255\}}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_GREY\ \ \ \ \ \ \ \ \ \ \ \ (ctColorRGBA8)\{127,\ 127,\ 127,\ 255\}}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_WHITE\ \ \ \ \ \ \ \ \ \ \ (ctColorRGBA8)\{255,\ 255,\ 255,\ 255\}}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_INVISIBLE\_BLACK\ (ctColorRGBA8)\{000,\ 000,\ 000,\ 000\}}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_INVISIBLE\_GREY\ \ (ctColorRGBA8)\{127,\ 127,\ 127,\ 000\}}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_INVISIBLE\_WHITE\ (ctColorRGBA8)\{255,\ 255,\ 255,\ 000\}}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ (ctColorRGBA8)\{255,\ 000,\ 000,\ 255\}}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_GREEN\ \ \ \ \ \ \ \ \ \ \ (ctColorRGBA8)\{000,\ 255,\ 000,\ 255\}}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ (ctColorRGBA8)\{000,\ 000,\ 255,\ 255\}}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_YELLOW\ \ \ \ \ \ \ \ \ \ (ctColorRGBA8)\{255,\ 255,\ 000,\ 255\}}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_ORANGE\ \ \ \ \ \ \ \ \ \ (ctColorRGBA8)\{255,\ 127,\ 000,\ 255\}}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_PURPLE\ \ \ \ \ \ \ \ \ \ (ctColorRGBA8)\{127,\ 000,\ 255,\ 255\}}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ CT\_COLOR\_PINK\ \ \ \ \ \ \ \ \ \ \ \ (ctColorRGBA8)\{255,\ 000,\ 255,\ 255\}}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00185\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ }
+\DoxyCodeLine{00186\ \ \ \ \ uint8\_t\ r;}
+\DoxyCodeLine{00187\ \ \ \ \ uint8\_t\ g;}
+\DoxyCodeLine{00188\ \ \ \ \ uint8\_t\ b;}
+\DoxyCodeLine{00189\ \ \ \ \ uint8\_t\ a;}
+\DoxyCodeLine{00190\ \}\ \mbox{\hyperlink{structct_color_r_g_b_a8}{ctColorRGBA8}};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00193\ \mbox{\hyperlink{structct_color_r_g_b_a8}{ctColorRGBA8}}\ \mbox{\hyperlink{_math3d_8h_ae5bf42150b8c6476618d35c038fe2675}{ctColorRGBA8FromFloat4}}(\textcolor{keywordtype}{float}\ input[4]);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00196\ \mbox{\hyperlink{structct_color_r_g_b_a8}{ctColorRGBA8}}\ \mbox{\hyperlink{_math3d_8h_afcacb7192b1500423682404d41c88afe}{ctColorRGBA8FromVec3}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ rgb,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
 
 \end{DoxyCode}

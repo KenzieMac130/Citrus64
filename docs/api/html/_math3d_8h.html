@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Citrus 64: engine/utilities/Math3d.h File Reference</title>
+<title>Citrus 64: Math3d.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,12 +103,290 @@ $(function(){initNavTree('_math3d_8h.html',''); initResizable(true); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Math3d.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>Math functions for working with 3D space.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_common_8h_source.html">Common.h</a>&quot;</code><br />
+</div>
 <p><a href="_math3d_8h_source.html">Go to the source code of this file.</a></p>
-</div><!-- contents -->
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structct_vec3.html">ctVec3</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D Vector  <a href="structct_vec3.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structct_quat.html">ctQuat</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 3D rotation using imaginary numbers.  <a href="structct_quat.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a color using 8 bit unsigned normalized values.  <a href="structct_color_r_g_b_a8.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:acf393b8d6ba122b67d9b21c2eb7267fe" id="r_acf393b8d6ba122b67d9b21c2eb7267fe"><td class="memItemLeft" align="right" valign="top"><a id="acf393b8d6ba122b67d9b21c2eb7267fe" name="acf393b8d6ba122b67d9b21c2eb7267fe"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_UP</b>&#160;&#160;&#160;0.0f,  1.0f,  0.0f</td></tr>
+<tr class="separator:acf393b8d6ba122b67d9b21c2eb7267fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20b4602d4a6c1898977601f75017152" id="r_af20b4602d4a6c1898977601f75017152"><td class="memItemLeft" align="right" valign="top"><a id="af20b4602d4a6c1898977601f75017152" name="af20b4602d4a6c1898977601f75017152"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_DOWN</b>&#160;&#160;&#160;0.0f, -1.0f,  0.0f</td></tr>
+<tr class="separator:af20b4602d4a6c1898977601f75017152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5ca139abccb55be2f8ad87a8ed9cd1" id="r_a6c5ca139abccb55be2f8ad87a8ed9cd1"><td class="memItemLeft" align="right" valign="top"><a id="a6c5ca139abccb55be2f8ad87a8ed9cd1" name="a6c5ca139abccb55be2f8ad87a8ed9cd1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_FORWARD</b>&#160;&#160;&#160;0.0f,  0.0f,  1.0f</td></tr>
+<tr class="separator:a6c5ca139abccb55be2f8ad87a8ed9cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b22e5043e8fe50caffa7f65372f166e" id="r_a4b22e5043e8fe50caffa7f65372f166e"><td class="memItemLeft" align="right" valign="top"><a id="a4b22e5043e8fe50caffa7f65372f166e" name="a4b22e5043e8fe50caffa7f65372f166e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_BACK</b>&#160;&#160;&#160;0.0f,  0.0f, -1.0f</td></tr>
+<tr class="separator:a4b22e5043e8fe50caffa7f65372f166e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac10d7061abee30fbd96d667511df6b61" id="r_ac10d7061abee30fbd96d667511df6b61"><td class="memItemLeft" align="right" valign="top"><a id="ac10d7061abee30fbd96d667511df6b61" name="ac10d7061abee30fbd96d667511df6b61"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_RIGHT</b>&#160;&#160;&#160;-1.0f,  0.0f,  0.0f</td></tr>
+<tr class="separator:ac10d7061abee30fbd96d667511df6b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2882e05460314a00019e370c0fb3dd6c" id="r_a2882e05460314a00019e370c0fb3dd6c"><td class="memItemLeft" align="right" valign="top"><a id="a2882e05460314a00019e370c0fb3dd6c" name="a2882e05460314a00019e370c0fb3dd6c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_LEFT</b>&#160;&#160;&#160;1.0f,  0.0f,  0.0f</td></tr>
+<tr class="separator:a2882e05460314a00019e370c0fb3dd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f86236532d29a3b4d69f2b2669cd6d2" id="r_a4f86236532d29a3b4d69f2b2669cd6d2"><td class="memItemLeft" align="right" valign="top"><a id="a4f86236532d29a3b4d69f2b2669cd6d2" name="a4f86236532d29a3b4d69f2b2669cd6d2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_VEC3_UP</b>&#160;&#160;&#160;(<a class="el" href="structct_vec3.html">ctVec3</a>){CT_UP}</td></tr>
+<tr class="separator:a4f86236532d29a3b4d69f2b2669cd6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ab5d7029956441cae15142f6cd1827" id="r_a32ab5d7029956441cae15142f6cd1827"><td class="memItemLeft" align="right" valign="top"><a id="a32ab5d7029956441cae15142f6cd1827" name="a32ab5d7029956441cae15142f6cd1827"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_VEC3_DOWN</b>&#160;&#160;&#160;(<a class="el" href="structct_vec3.html">ctVec3</a>){CT_DOWN}</td></tr>
+<tr class="separator:a32ab5d7029956441cae15142f6cd1827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad910dfcd9b065832f836e5e8546d37b2" id="r_ad910dfcd9b065832f836e5e8546d37b2"><td class="memItemLeft" align="right" valign="top"><a id="ad910dfcd9b065832f836e5e8546d37b2" name="ad910dfcd9b065832f836e5e8546d37b2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_VEC3_FORWARD</b>&#160;&#160;&#160;(<a class="el" href="structct_vec3.html">ctVec3</a>){CT_FORWARD}</td></tr>
+<tr class="separator:ad910dfcd9b065832f836e5e8546d37b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46072bc01a50a545f2957e75e13dd8ab" id="r_a46072bc01a50a545f2957e75e13dd8ab"><td class="memItemLeft" align="right" valign="top"><a id="a46072bc01a50a545f2957e75e13dd8ab" name="a46072bc01a50a545f2957e75e13dd8ab"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_VEC3_BACK</b>&#160;&#160;&#160;(<a class="el" href="structct_vec3.html">ctVec3</a>){CT_BACK}</td></tr>
+<tr class="separator:a46072bc01a50a545f2957e75e13dd8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be92c223c1b067f7fe73e584d693b82" id="r_a9be92c223c1b067f7fe73e584d693b82"><td class="memItemLeft" align="right" valign="top"><a id="a9be92c223c1b067f7fe73e584d693b82" name="a9be92c223c1b067f7fe73e584d693b82"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_VEC3_RIGHT</b>&#160;&#160;&#160;(<a class="el" href="structct_vec3.html">ctVec3</a>){CT_RIGHT}</td></tr>
+<tr class="separator:a9be92c223c1b067f7fe73e584d693b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21795e3d9bb90cecf2472b6dc0676348" id="r_a21795e3d9bb90cecf2472b6dc0676348"><td class="memItemLeft" align="right" valign="top"><a id="a21795e3d9bb90cecf2472b6dc0676348" name="a21795e3d9bb90cecf2472b6dc0676348"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_VEC3_LEFT</b>&#160;&#160;&#160;(<a class="el" href="structct_vec3.html">ctVec3</a>){CT_LEFT}</td></tr>
+<tr class="separator:a21795e3d9bb90cecf2472b6dc0676348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade8836a834345d0bdc59f917d25e44ef" id="r_ade8836a834345d0bdc59f917d25e44ef"><td class="memItemLeft" align="right" valign="top"><a id="ade8836a834345d0bdc59f917d25e44ef" name="ade8836a834345d0bdc59f917d25e44ef"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_BLACK</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){000, 000, 000, 255}</td></tr>
+<tr class="separator:ade8836a834345d0bdc59f917d25e44ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade46905e84e771a479bab106be142179" id="r_ade46905e84e771a479bab106be142179"><td class="memItemLeft" align="right" valign="top"><a id="ade46905e84e771a479bab106be142179" name="ade46905e84e771a479bab106be142179"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_GREY</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){127, 127, 127, 255}</td></tr>
+<tr class="separator:ade46905e84e771a479bab106be142179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e877f4eefce47e691e3521d32eb2d60" id="r_a4e877f4eefce47e691e3521d32eb2d60"><td class="memItemLeft" align="right" valign="top"><a id="a4e877f4eefce47e691e3521d32eb2d60" name="a4e877f4eefce47e691e3521d32eb2d60"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_WHITE</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){255, 255, 255, 255}</td></tr>
+<tr class="separator:a4e877f4eefce47e691e3521d32eb2d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe1ec5e7ebfd08c5f8ecec62b4e596cb" id="r_abe1ec5e7ebfd08c5f8ecec62b4e596cb"><td class="memItemLeft" align="right" valign="top"><a id="abe1ec5e7ebfd08c5f8ecec62b4e596cb" name="abe1ec5e7ebfd08c5f8ecec62b4e596cb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_INVISIBLE_BLACK</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){000, 000, 000, 000}</td></tr>
+<tr class="separator:abe1ec5e7ebfd08c5f8ecec62b4e596cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1931c921bef8cdc0a2c140c4972d2391" id="r_a1931c921bef8cdc0a2c140c4972d2391"><td class="memItemLeft" align="right" valign="top"><a id="a1931c921bef8cdc0a2c140c4972d2391" name="a1931c921bef8cdc0a2c140c4972d2391"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_INVISIBLE_GREY</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){127, 127, 127, 000}</td></tr>
+<tr class="separator:a1931c921bef8cdc0a2c140c4972d2391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c24e96b07222c3ecd3bffc9dc76f19" id="r_a04c24e96b07222c3ecd3bffc9dc76f19"><td class="memItemLeft" align="right" valign="top"><a id="a04c24e96b07222c3ecd3bffc9dc76f19" name="a04c24e96b07222c3ecd3bffc9dc76f19"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_INVISIBLE_WHITE</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){255, 255, 255, 000}</td></tr>
+<tr class="separator:a04c24e96b07222c3ecd3bffc9dc76f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d7b0a22679854e4de641df65d8e69ed" id="r_a7d7b0a22679854e4de641df65d8e69ed"><td class="memItemLeft" align="right" valign="top"><a id="a7d7b0a22679854e4de641df65d8e69ed" name="a7d7b0a22679854e4de641df65d8e69ed"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_RED</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){255, 000, 000, 255}</td></tr>
+<tr class="separator:a7d7b0a22679854e4de641df65d8e69ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b0e3ef0041afac2e10b6e4f94f0849c" id="r_a7b0e3ef0041afac2e10b6e4f94f0849c"><td class="memItemLeft" align="right" valign="top"><a id="a7b0e3ef0041afac2e10b6e4f94f0849c" name="a7b0e3ef0041afac2e10b6e4f94f0849c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_GREEN</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){000, 255, 000, 255}</td></tr>
+<tr class="separator:a7b0e3ef0041afac2e10b6e4f94f0849c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3120c4fd8e25b81ba0ee0a52597708" id="r_abb3120c4fd8e25b81ba0ee0a52597708"><td class="memItemLeft" align="right" valign="top"><a id="abb3120c4fd8e25b81ba0ee0a52597708" name="abb3120c4fd8e25b81ba0ee0a52597708"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_BLUE</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){000, 000, 255, 255}</td></tr>
+<tr class="separator:abb3120c4fd8e25b81ba0ee0a52597708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63b1973bea06a1cc50e5eea16955ca09" id="r_a63b1973bea06a1cc50e5eea16955ca09"><td class="memItemLeft" align="right" valign="top"><a id="a63b1973bea06a1cc50e5eea16955ca09" name="a63b1973bea06a1cc50e5eea16955ca09"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_YELLOW</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){255, 255, 000, 255}</td></tr>
+<tr class="separator:a63b1973bea06a1cc50e5eea16955ca09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a733f9765ad6f3ccdcafeea60d5d49" id="r_a15a733f9765ad6f3ccdcafeea60d5d49"><td class="memItemLeft" align="right" valign="top"><a id="a15a733f9765ad6f3ccdcafeea60d5d49" name="a15a733f9765ad6f3ccdcafeea60d5d49"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_ORANGE</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){255, 127, 000, 255}</td></tr>
+<tr class="separator:a15a733f9765ad6f3ccdcafeea60d5d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d08c80ad479fd81316cf325fa5095b" id="r_aa6d08c80ad479fd81316cf325fa5095b"><td class="memItemLeft" align="right" valign="top"><a id="aa6d08c80ad479fd81316cf325fa5095b" name="aa6d08c80ad479fd81316cf325fa5095b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_PURPLE</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){127, 000, 255, 255}</td></tr>
+<tr class="separator:aa6d08c80ad479fd81316cf325fa5095b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42230b4becb16564313b6478e7a121ed" id="r_a42230b4becb16564313b6478e7a121ed"><td class="memItemLeft" align="right" valign="top"><a id="a42230b4becb16564313b6478e7a121ed" name="a42230b4becb16564313b6478e7a121ed"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CT_COLOR_PINK</b>&#160;&#160;&#160;(<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>){255, 000, 255, 255}</td></tr>
+<tr class="separator:a42230b4becb16564313b6478e7a121ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a3c3217c66adaf3bdb60b3e734e78f227" id="r_a3c3217c66adaf3bdb60b3e734e78f227"><td class="memItemLeft" align="right" valign="top"><a id="a3c3217c66adaf3bdb60b3e734e78f227" name="a3c3217c66adaf3bdb60b3e734e78f227"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c3217c66adaf3bdb60b3e734e78f227">ctColorComponents</a> { <br />
+&#160;&#160;<b>CT_COLOR_COMPONENT_NONE</b> = 0x00
+, <b>CT_COLOR_COMPONENT_R</b> = 0x01
+, <b>CT_COLOR_COMPONENT_G</b> = 0x02
+, <b>CT_COLOR_COMPONENT_B</b> = 0x04
+, <br />
+&#160;&#160;<b>CT_COLOR_COMPONENT_A</b> = 0x08
+, <b>CT_COLOR_COMPONENT_RG</b> = CT_COLOR_COMPONENT_R | CT_COLOR_COMPONENT_G
+, <b>CT_COLOR_COMPONENT_RGB</b> = CT_COLOR_COMPONENT_RG | CT_COLOR_COMPONENT_B
+, <b>CT_COLOR_COMPONENT_RGBA</b> = CT_COLOR_COMPONENT_RGB | CT_COLOR_COMPONENT_A
+<br />
+ }</td></tr>
+<tr class="memdesc:a3c3217c66adaf3bdb60b3e734e78f227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents one or more color channels. <br /></td></tr>
+<tr class="separator:a3c3217c66adaf3bdb60b3e734e78f227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a973c8ba868094c948cee5c8c35387f4e" id="r_a973c8ba868094c948cee5c8c35387f4e"><td class="memItemLeft" align="right" valign="top"><a id="a973c8ba868094c948cee5c8c35387f4e" name="a973c8ba868094c948cee5c8c35387f4e"></a>
+<a class="el" href="structct_vec3.html">ctVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Zero</b> ()</td></tr>
+<tr class="memdesc:a973c8ba868094c948cee5c8c35387f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a (0, 0, 0) vector. <br /></td></tr>
+<tr class="separator:a973c8ba868094c948cee5c8c35387f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c63cf1129dd81900be518f331bcb667" id="r_a8c63cf1129dd81900be518f331bcb667"><td class="memItemLeft" align="right" valign="top"><a id="a8c63cf1129dd81900be518f331bcb667" name="a8c63cf1129dd81900be518f331bcb667"></a>
+<a class="el" href="structct_vec3.html">ctVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Make</b> (float x, float y, float z)</td></tr>
+<tr class="memdesc:a8c63cf1129dd81900be518f331bcb667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector from XYZ. <br /></td></tr>
+<tr class="separator:a8c63cf1129dd81900be518f331bcb667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87bf9e5915712360bf9a01e9615cdd68" id="r_a87bf9e5915712360bf9a01e9615cdd68"><td class="memItemLeft" align="right" valign="top"><a id="a87bf9e5915712360bf9a01e9615cdd68" name="a87bf9e5915712360bf9a01e9615cdd68"></a>
+<a class="el" href="structct_vec3.html">ctVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Identity</b> ()</td></tr>
+<tr class="memdesc:a87bf9e5915712360bf9a01e9615cdd68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a (1, 1, 1) vector. <br /></td></tr>
+<tr class="separator:a87bf9e5915712360bf9a01e9615cdd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e9bd43ed65dd3f58ca66a327a8509c6" id="r_a8e9bd43ed65dd3f58ca66a327a8509c6"><td class="memItemLeft" align="right" valign="top"><a id="a8e9bd43ed65dd3f58ca66a327a8509c6" name="a8e9bd43ed65dd3f58ca66a327a8509c6"></a>
+<a class="el" href="structct_vec3.html">ctVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3FromFloat3</b> (const float data[3])</td></tr>
+<tr class="memdesc:a8e9bd43ed65dd3f58ca66a327a8509c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector from a float triplet pointer. <br /></td></tr>
+<tr class="separator:a8e9bd43ed65dd3f58ca66a327a8509c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee5b2601e1a312fb4ad115a53434db8a" id="r_aee5b2601e1a312fb4ad115a53434db8a"><td class="memItemLeft" align="right" valign="top"><a id="aee5b2601e1a312fb4ad115a53434db8a" name="aee5b2601e1a312fb4ad115a53434db8a"></a>
+<a class="el" href="structct_vec3.html">ctVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3FromFloat</b> (float value)</td></tr>
+<tr class="memdesc:aee5b2601e1a312fb4ad115a53434db8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector filled with a single value. <br /></td></tr>
+<tr class="separator:aee5b2601e1a312fb4ad115a53434db8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d410ffa1ed2c9879791103003a8c2c5" id="r_a6d410ffa1ed2c9879791103003a8c2c5"><td class="memItemLeft" align="right" valign="top"><a id="a6d410ffa1ed2c9879791103003a8c2c5" name="a6d410ffa1ed2c9879791103003a8c2c5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3ApproxEqual</b> (const <a class="el" href="structct_vec3.html">ctVec3</a> a, const <a class="el" href="structct_vec3.html">ctVec3</a> b)</td></tr>
+<tr class="memdesc:a6d410ffa1ed2c9879791103003a8c2c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this vector approximately equal to another. <br /></td></tr>
+<tr class="separator:a6d410ffa1ed2c9879791103003a8c2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa95a7c976d2a6781ebcdbb2ba7c902f4" id="r_aa95a7c976d2a6781ebcdbb2ba7c902f4"><td class="memItemLeft" align="right" valign="top"><a id="aa95a7c976d2a6781ebcdbb2ba7c902f4" name="aa95a7c976d2a6781ebcdbb2ba7c902f4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Add</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *a, const <a class="el" href="structct_vec3.html">ctVec3</a> b)</td></tr>
+<tr class="memdesc:aa95a7c976d2a6781ebcdbb2ba7c902f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add another vector to this vector. <br /></td></tr>
+<tr class="separator:aa95a7c976d2a6781ebcdbb2ba7c902f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7356e038176d26add978edc35d0608e" id="r_ab7356e038176d26add978edc35d0608e"><td class="memItemLeft" align="right" valign="top"><a id="ab7356e038176d26add978edc35d0608e" name="ab7356e038176d26add978edc35d0608e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Sub</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *a, const <a class="el" href="structct_vec3.html">ctVec3</a> b)</td></tr>
+<tr class="memdesc:ab7356e038176d26add978edc35d0608e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract another vector from this vector. <br /></td></tr>
+<tr class="separator:ab7356e038176d26add978edc35d0608e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80932ec5f849cd382886a2f053657d33" id="r_a80932ec5f849cd382886a2f053657d33"><td class="memItemLeft" align="right" valign="top"><a id="a80932ec5f849cd382886a2f053657d33" name="a80932ec5f849cd382886a2f053657d33"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Negate</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *v)</td></tr>
+<tr class="memdesc:a80932ec5f849cd382886a2f053657d33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert this vector's component's signs. <br /></td></tr>
+<tr class="separator:a80932ec5f849cd382886a2f053657d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a210096b5113e6809bf070a4c72474e78" id="r_a210096b5113e6809bf070a4c72474e78"><td class="memItemLeft" align="right" valign="top"><a id="a210096b5113e6809bf070a4c72474e78" name="a210096b5113e6809bf070a4c72474e78"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Mult</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *a, const <a class="el" href="structct_vec3.html">ctVec3</a> b)</td></tr>
+<tr class="memdesc:a210096b5113e6809bf070a4c72474e78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply this vector by another vector. <br /></td></tr>
+<tr class="separator:a210096b5113e6809bf070a4c72474e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4dd4f1cba3e1ef175b42322341f302" id="r_adb4dd4f1cba3e1ef175b42322341f302"><td class="memItemLeft" align="right" valign="top"><a id="adb4dd4f1cba3e1ef175b42322341f302" name="adb4dd4f1cba3e1ef175b42322341f302"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Scale</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *a, const float b)</td></tr>
+<tr class="memdesc:adb4dd4f1cba3e1ef175b42322341f302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply this vector by a float. <br /></td></tr>
+<tr class="separator:adb4dd4f1cba3e1ef175b42322341f302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42cadeea1153e61fe54c4c921287f23d" id="r_a42cadeea1153e61fe54c4c921287f23d"><td class="memItemLeft" align="right" valign="top"><a id="a42cadeea1153e61fe54c4c921287f23d" name="a42cadeea1153e61fe54c4c921287f23d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Divide</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *a, const <a class="el" href="structct_vec3.html">ctVec3</a> b)</td></tr>
+<tr class="memdesc:a42cadeea1153e61fe54c4c921287f23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide this vector by another vector. <br /></td></tr>
+<tr class="separator:a42cadeea1153e61fe54c4c921287f23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a309a94f23e9b63ac001707407ded60bf" id="r_a309a94f23e9b63ac001707407ded60bf"><td class="memItemLeft" align="right" valign="top"><a id="a309a94f23e9b63ac001707407ded60bf" name="a309a94f23e9b63ac001707407ded60bf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3DivideFloat</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *a, const float b)</td></tr>
+<tr class="memdesc:a309a94f23e9b63ac001707407ded60bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide this vector by a float. <br /></td></tr>
+<tr class="separator:a309a94f23e9b63ac001707407ded60bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4acd0503ae8f868cf98e009fbacfd08e" id="r_a4acd0503ae8f868cf98e009fbacfd08e"><td class="memItemLeft" align="right" valign="top"><a id="a4acd0503ae8f868cf98e009fbacfd08e" name="a4acd0503ae8f868cf98e009fbacfd08e"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Dot</b> (const <a class="el" href="structct_vec3.html">ctVec3</a> a, const <a class="el" href="structct_vec3.html">ctVec3</a> b)</td></tr>
+<tr class="memdesc:a4acd0503ae8f868cf98e009fbacfd08e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a dot product between two vectors. <br /></td></tr>
+<tr class="separator:a4acd0503ae8f868cf98e009fbacfd08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda2007909a49b633b453114ccd65557" id="r_acda2007909a49b633b453114ccd65557"><td class="memItemLeft" align="right" valign="top"><a id="acda2007909a49b633b453114ccd65557" name="acda2007909a49b633b453114ccd65557"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Distance</b> (const <a class="el" href="structct_vec3.html">ctVec3</a> a, const <a class="el" href="structct_vec3.html">ctVec3</a> b)</td></tr>
+<tr class="memdesc:acda2007909a49b633b453114ccd65557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the distance between two vectors. <br /></td></tr>
+<tr class="separator:acda2007909a49b633b453114ccd65557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff290f24075f354132c6ec1c503bbe77" id="r_aff290f24075f354132c6ec1c503bbe77"><td class="memItemLeft" align="right" valign="top"><a id="aff290f24075f354132c6ec1c503bbe77" name="aff290f24075f354132c6ec1c503bbe77"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Length</b> (const <a class="el" href="structct_vec3.html">ctVec3</a> v)</td></tr>
+<tr class="memdesc:aff290f24075f354132c6ec1c503bbe77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length (magnitude) of a vector. <br /></td></tr>
+<tr class="separator:aff290f24075f354132c6ec1c503bbe77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6449cc91cda83eb72e523a6ec4d092d" id="r_ac6449cc91cda83eb72e523a6ec4d092d"><td class="memItemLeft" align="right" valign="top"><a id="ac6449cc91cda83eb72e523a6ec4d092d" name="ac6449cc91cda83eb72e523a6ec4d092d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Abs</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *v)</td></tr>
+<tr class="memdesc:ac6449cc91cda83eb72e523a6ec4d092d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make this vector's components positive. <br /></td></tr>
+<tr class="separator:ac6449cc91cda83eb72e523a6ec4d092d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09015aac89e5e3fbcf233e56e0072584" id="r_a09015aac89e5e3fbcf233e56e0072584"><td class="memItemLeft" align="right" valign="top"><a id="a09015aac89e5e3fbcf233e56e0072584" name="a09015aac89e5e3fbcf233e56e0072584"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Normalize</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *v)</td></tr>
+<tr class="memdesc:a09015aac89e5e3fbcf233e56e0072584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make this vector a unit length vector. <br /></td></tr>
+<tr class="separator:a09015aac89e5e3fbcf233e56e0072584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aa2ba784a1dd72942c7c255f2ca232e" id="r_a8aa2ba784a1dd72942c7c255f2ca232e"><td class="memItemLeft" align="right" valign="top"><a id="a8aa2ba784a1dd72942c7c255f2ca232e" name="a8aa2ba784a1dd72942c7c255f2ca232e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Saturate</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *v)</td></tr>
+<tr class="memdesc:a8aa2ba784a1dd72942c7c255f2ca232e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamp this vector from 0-1. <br /></td></tr>
+<tr class="separator:a8aa2ba784a1dd72942c7c255f2ca232e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40978499fcb24bc70ed9f75535ae63e2" id="r_a40978499fcb24bc70ed9f75535ae63e2"><td class="memItemLeft" align="right" valign="top"><a id="a40978499fcb24bc70ed9f75535ae63e2" name="a40978499fcb24bc70ed9f75535ae63e2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Cross</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *out, const <a class="el" href="structct_vec3.html">ctVec3</a> a, const <a class="el" href="structct_vec3.html">ctVec3</a> b)</td></tr>
+<tr class="memdesc:a40978499fcb24bc70ed9f75535ae63e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill this vector with the cross product between two vectors. <br /></td></tr>
+<tr class="separator:a40978499fcb24bc70ed9f75535ae63e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a39d1653aaf2f2960a7c70ac8fe72f8" id="r_a0a39d1653aaf2f2960a7c70ac8fe72f8"><td class="memItemLeft" align="right" valign="top"><a id="a0a39d1653aaf2f2960a7c70ac8fe72f8" name="a0a39d1653aaf2f2960a7c70ac8fe72f8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctVec3Lerp</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *out, const <a class="el" href="structct_vec3.html">ctVec3</a> a, const <a class="el" href="structct_vec3.html">ctVec3</a> b, const float t)</td></tr>
+<tr class="memdesc:a0a39d1653aaf2f2960a7c70ac8fe72f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill this vector with the lerp result between two vectors. <br /></td></tr>
+<tr class="separator:a0a39d1653aaf2f2960a7c70ac8fe72f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741aa20db9fb3627c4d376529bf70f12" id="r_a741aa20db9fb3627c4d376529bf70f12"><td class="memItemLeft" align="right" valign="top"><a id="a741aa20db9fb3627c4d376529bf70f12" name="a741aa20db9fb3627c4d376529bf70f12"></a>
+<a class="el" href="structct_quat.html">ctQuat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatIdentity</b> ()</td></tr>
+<tr class="memdesc:a741aa20db9fb3627c4d376529bf70f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a quaternion that has no affect when rotated. <br /></td></tr>
+<tr class="separator:a741aa20db9fb3627c4d376529bf70f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9dae4e846a77751cfbba690c3965feb" id="r_ae9dae4e846a77751cfbba690c3965feb"><td class="memItemLeft" align="right" valign="top"><a id="ae9dae4e846a77751cfbba690c3965feb" name="ae9dae4e846a77751cfbba690c3965feb"></a>
+<a class="el" href="structct_quat.html">ctQuat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatFromFloat4</b> (const float v[4])</td></tr>
+<tr class="memdesc:ae9dae4e846a77751cfbba690c3965feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a quaternion from a float pointer to 4 values. <br /></td></tr>
+<tr class="separator:ae9dae4e846a77751cfbba690c3965feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b29b8e8368e4f6bc15e6cf3e87858b" id="r_a19b29b8e8368e4f6bc15e6cf3e87858b"><td class="memItemLeft" align="right" valign="top"><a id="a19b29b8e8368e4f6bc15e6cf3e87858b" name="a19b29b8e8368e4f6bc15e6cf3e87858b"></a>
+<a class="el" href="structct_quat.html">ctQuat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatFromAxisAngle</b> (const <a class="el" href="structct_vec3.html">ctVec3</a> axis, float angle)</td></tr>
+<tr class="memdesc:a19b29b8e8368e4f6bc15e6cf3e87858b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a quaternion that represents a rotation around an axis. <br /></td></tr>
+<tr class="separator:a19b29b8e8368e4f6bc15e6cf3e87858b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f4cd47ef3c0759f65e49ce96e14da02" id="r_a3f4cd47ef3c0759f65e49ce96e14da02"><td class="memItemLeft" align="right" valign="top"><a id="a3f4cd47ef3c0759f65e49ce96e14da02" name="a3f4cd47ef3c0759f65e49ce96e14da02"></a>
+<a class="el" href="structct_quat.html">ctQuat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatFromEuler</b> (const <a class="el" href="structct_vec3.html">ctVec3</a> euler)</td></tr>
+<tr class="memdesc:a3f4cd47ef3c0759f65e49ce96e14da02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a quaternion from a euler rotation. <br /></td></tr>
+<tr class="separator:a3f4cd47ef3c0759f65e49ce96e14da02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4dc3aa3e871b1fa2e717b5300fe737" id="r_a4f4dc3aa3e871b1fa2e717b5300fe737"><td class="memItemLeft" align="right" valign="top"><a id="a4f4dc3aa3e871b1fa2e717b5300fe737" name="a4f4dc3aa3e871b1fa2e717b5300fe737"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatRotate</b> (<a class="el" href="structct_quat.html">ctQuat</a> *a, const <a class="el" href="structct_quat.html">ctQuat</a> b)</td></tr>
+<tr class="memdesc:a4f4dc3aa3e871b1fa2e717b5300fe737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate this quaternion by another quaternion. <br /></td></tr>
+<tr class="separator:a4f4dc3aa3e871b1fa2e717b5300fe737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac71ef810801e8bb5762d0274205ef49f" id="r_ac71ef810801e8bb5762d0274205ef49f"><td class="memItemLeft" align="right" valign="top"><a id="ac71ef810801e8bb5762d0274205ef49f" name="ac71ef810801e8bb5762d0274205ef49f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatInvert</b> (<a class="el" href="structct_quat.html">ctQuat</a> *v)</td></tr>
+<tr class="memdesc:ac71ef810801e8bb5762d0274205ef49f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert the rotation of this quaternion. <br /></td></tr>
+<tr class="separator:ac71ef810801e8bb5762d0274205ef49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a760670d4fc5d53b20fe3ff8209d43632" id="r_a760670d4fc5d53b20fe3ff8209d43632"><td class="memItemLeft" align="right" valign="top"><a id="a760670d4fc5d53b20fe3ff8209d43632" name="a760670d4fc5d53b20fe3ff8209d43632"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatNormalize</b> (<a class="el" href="structct_quat.html">ctQuat</a> *v)</td></tr>
+<tr class="memdesc:a760670d4fc5d53b20fe3ff8209d43632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fix any issues in this quaternion. <br /></td></tr>
+<tr class="separator:a760670d4fc5d53b20fe3ff8209d43632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8be6e9f1aac1749a65e4dbcf6c2d1326" id="r_a8be6e9f1aac1749a65e4dbcf6c2d1326"><td class="memItemLeft" align="right" valign="top"><a id="a8be6e9f1aac1749a65e4dbcf6c2d1326" name="a8be6e9f1aac1749a65e4dbcf6c2d1326"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatRotateVec3</b> (<a class="el" href="structct_vec3.html">ctVec3</a> *vector, const <a class="el" href="structct_quat.html">ctQuat</a> q)</td></tr>
+<tr class="memdesc:a8be6e9f1aac1749a65e4dbcf6c2d1326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate a vector by a given quaternion. <br /></td></tr>
+<tr class="separator:a8be6e9f1aac1749a65e4dbcf6c2d1326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d53064b09885a133b58754cc564e75" id="r_a63d53064b09885a133b58754cc564e75"><td class="memItemLeft" align="right" valign="top"><a id="a63d53064b09885a133b58754cc564e75" name="a63d53064b09885a133b58754cc564e75"></a>
+<a class="el" href="structct_vec3.html">ctVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatGetForward</b> (const <a class="el" href="structct_quat.html">ctQuat</a> q)</td></tr>
+<tr class="memdesc:a63d53064b09885a133b58754cc564e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the forward vector of this quaternion. <br /></td></tr>
+<tr class="separator:a63d53064b09885a133b58754cc564e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaa8869926806b0546899f142e26d996" id="r_afaa8869926806b0546899f142e26d996"><td class="memItemLeft" align="right" valign="top"><a id="afaa8869926806b0546899f142e26d996" name="afaa8869926806b0546899f142e26d996"></a>
+<a class="el" href="structct_vec3.html">ctVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatGetBack</b> (const <a class="el" href="structct_quat.html">ctQuat</a> q)</td></tr>
+<tr class="memdesc:afaa8869926806b0546899f142e26d996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the back vector of this quaternion. <br /></td></tr>
+<tr class="separator:afaa8869926806b0546899f142e26d996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cf95b9cc5e6a67e1d956cc5401828b2" id="r_a3cf95b9cc5e6a67e1d956cc5401828b2"><td class="memItemLeft" align="right" valign="top"><a id="a3cf95b9cc5e6a67e1d956cc5401828b2" name="a3cf95b9cc5e6a67e1d956cc5401828b2"></a>
+<a class="el" href="structct_vec3.html">ctVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatGetUp</b> (const <a class="el" href="structct_quat.html">ctQuat</a> q)</td></tr>
+<tr class="memdesc:a3cf95b9cc5e6a67e1d956cc5401828b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the up vector of this quaternion. <br /></td></tr>
+<tr class="separator:a3cf95b9cc5e6a67e1d956cc5401828b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12500b190440237da3f25e4fe2f113d3" id="r_a12500b190440237da3f25e4fe2f113d3"><td class="memItemLeft" align="right" valign="top"><a id="a12500b190440237da3f25e4fe2f113d3" name="a12500b190440237da3f25e4fe2f113d3"></a>
+<a class="el" href="structct_vec3.html">ctVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatGetDown</b> (const <a class="el" href="structct_quat.html">ctQuat</a> q)</td></tr>
+<tr class="memdesc:a12500b190440237da3f25e4fe2f113d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the down vector of this quaternion. <br /></td></tr>
+<tr class="separator:a12500b190440237da3f25e4fe2f113d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a812de81c96cfce7bfd7417b6c5cf0d69" id="r_a812de81c96cfce7bfd7417b6c5cf0d69"><td class="memItemLeft" align="right" valign="top"><a id="a812de81c96cfce7bfd7417b6c5cf0d69" name="a812de81c96cfce7bfd7417b6c5cf0d69"></a>
+<a class="el" href="structct_vec3.html">ctVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatGetRight</b> (const <a class="el" href="structct_quat.html">ctQuat</a> q)</td></tr>
+<tr class="memdesc:a812de81c96cfce7bfd7417b6c5cf0d69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the right vector of this quaternion. <br /></td></tr>
+<tr class="separator:a812de81c96cfce7bfd7417b6c5cf0d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad99053e6695775e8bb14a9abe215c3e3" id="r_ad99053e6695775e8bb14a9abe215c3e3"><td class="memItemLeft" align="right" valign="top"><a id="ad99053e6695775e8bb14a9abe215c3e3" name="ad99053e6695775e8bb14a9abe215c3e3"></a>
+<a class="el" href="structct_vec3.html">ctVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatGetLeft</b> (const <a class="el" href="structct_quat.html">ctQuat</a> q)</td></tr>
+<tr class="memdesc:ad99053e6695775e8bb14a9abe215c3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the left vector of this quaternion. <br /></td></tr>
+<tr class="separator:ad99053e6695775e8bb14a9abe215c3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc2da5bbc5efc2e07d61a451ba5fdda2" id="r_acc2da5bbc5efc2e07d61a451ba5fdda2"><td class="memItemLeft" align="right" valign="top"><a id="acc2da5bbc5efc2e07d61a451ba5fdda2" name="acc2da5bbc5efc2e07d61a451ba5fdda2"></a>
+<a class="el" href="structct_quat.html">ctQuat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatLookAt</b> (const <a class="el" href="structct_vec3.html">ctVec3</a> direction, const <a class="el" href="structct_vec3.html">ctVec3</a> forward, const <a class="el" href="structct_vec3.html">ctVec3</a> up)</td></tr>
+<tr class="memdesc:acc2da5bbc5efc2e07d61a451ba5fdda2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a quaternion that looks at a target from a given orientation. <br /></td></tr>
+<tr class="separator:acc2da5bbc5efc2e07d61a451ba5fdda2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bb69e6f9562447be23b3fa52b2761f9" id="r_a7bb69e6f9562447be23b3fa52b2761f9"><td class="memItemLeft" align="right" valign="top"><a id="a7bb69e6f9562447be23b3fa52b2761f9" name="a7bb69e6f9562447be23b3fa52b2761f9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctQuatSlerp</b> (<a class="el" href="structct_quat.html">ctQuat</a> *dest, const <a class="el" href="structct_quat.html">ctQuat</a> a, const <a class="el" href="structct_quat.html">ctQuat</a> b, float t)</td></tr>
+<tr class="memdesc:a7bb69e6f9562447be23b3fa52b2761f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a quaternion that takes part of the shortest path on a sphere between two rotations. <br /></td></tr>
+<tr class="separator:a7bb69e6f9562447be23b3fa52b2761f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5bf42150b8c6476618d35c038fe2675" id="r_ae5bf42150b8c6476618d35c038fe2675"><td class="memItemLeft" align="right" valign="top"><a id="ae5bf42150b8c6476618d35c038fe2675" name="ae5bf42150b8c6476618d35c038fe2675"></a>
+<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctColorRGBA8FromFloat4</b> (float input[4])</td></tr>
+<tr class="memdesc:ae5bf42150b8c6476618d35c038fe2675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a pointer to four floats into a color. <br /></td></tr>
+<tr class="separator:ae5bf42150b8c6476618d35c038fe2675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcacb7192b1500423682404d41c88afe" id="r_afcacb7192b1500423682404d41c88afe"><td class="memItemLeft" align="right" valign="top"><a id="afcacb7192b1500423682404d41c88afe" name="afcacb7192b1500423682404d41c88afe"></a>
+<a class="el" href="structct_color_r_g_b_a8.html">ctColorRGBA8</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctColorRGBA8FromVec3</b> (const <a class="el" href="structct_vec3.html">ctVec3</a> rgb, const float a)</td></tr>
+<tr class="memdesc:afcacb7192b1500423682404d41c88afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert vector representing rgb into a color with a given alpha. <br /></td></tr>
+<tr class="separator:afcacb7192b1500423682404d41c88afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Math functions for working with 3D space. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

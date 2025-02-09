@@ -25,134 +25,79 @@ Math functions for working with 3D space
 #define CT_VEC3_RIGHT   (ctVec3){CT_RIGHT}
 #define CT_VEC3_LEFT    (ctVec3){CT_LEFT}
 
+/*! @brief 3D Vector */
 typedef struct {
     float x;
     float y;
     float z;
 } __attribute__((aligned(16))) ctVec3;
 
-inline ctVec3 ctVec3Zero() {
-    return (ctVec3){0.0f, 0.0f, 0.0f};
-}
+/*! @brief Construct a (0, 0, 0) vector */
+ctVec3 ctVec3Zero();
 
-inline ctVec3 ctVec3Make(float x, float y, float z) {
-    return (ctVec3){x, y, z};
-}
+/*! @brief Construct a vector from XYZ */
+ctVec3 ctVec3Make(float x, float y, float z);
 
-inline ctVec3 ctVec3Identity() {
-    return (ctVec3){1.0f, 1.0f, 1.0f};
-}
+/*! @brief Construct a (1, 1, 1) vector */
+ctVec3 ctVec3Identity();
 
-inline ctVec3 ctVec3FromFloat3(const float data[3]) {
-    ctAssert(data);
-    return (ctVec3){data[0], data[1], data[2]};
-}
+/*! @brief Construct a vector from a float triplet pointer */
+ctVec3 ctVec3FromFloat3(const float data[3]);
 
-inline ctVec3 ctVec3FromFloat(float value) {
-    return (ctVec3){value, value, value};
-}
+/*! @brief Construct a vector filled with a single value */
+ctVec3 ctVec3FromFloat(float value);
 
-inline bool ctVec3ApproxEqual(const ctVec3 a, const ctVec3 b) {
-    return ctMultiFloatCompare(3, (float*)&a, (float*)&b, 0.0001f);
-}
+/*! @brief Is this vector approximately equal to another */
+bool ctVec3ApproxEqual(const ctVec3 a, const ctVec3 b);
 
-inline void ctVec3Add(ctVec3* a, const ctVec3 b) {
-    ctAssert(a);
-    a->x += b.x;
-    a->y += b.y;
-    a->z += b.z;
-}
+/*! @brief Add another vector to this vector */
+void ctVec3Add(ctVec3* a, const ctVec3 b);
 
-inline void ctVec3Sub(ctVec3* a, const ctVec3 b) {
-    ctAssert(a);
-    a->x -= b.x;
-    a->y -= b.y;
-    a->z -= b.z;
-}
+/*! @brief Subtract another vector from this vector */
+void ctVec3Sub(ctVec3* a, const ctVec3 b);
 
-inline void ctVec3Negate(ctVec3* v) {
-    ctAssert(v);
-    v->x = -v->x;
-    v->y = -v->y;
-    v->z = -v->z;
-}
+/*! @brief Invert this vector's component's signs */
+void ctVec3Negate(ctVec3* v);
 
-inline void ctVec3Mult(ctVec3* a, const ctVec3 b) {
-    ctAssert(a);
-    a->x *= b.x;
-    a->y *= b.y;
-    a->z *= b.z;
-}
+/*! @brief Multiply this vector by another vector */
+void ctVec3Mult(ctVec3* a, const ctVec3 b);
 
-inline void ctVec3Scale(ctVec3* a, const float b) {
-    ctAssert(a);
-    a->x *= b;
-    a->y *= b;
-    a->z *= b;
-}
+/*! @brief Multiply this vector by a float */
+void ctVec3Scale(ctVec3* a, const float b);
 
-inline void ctVec3Divide(ctVec3* a, const ctVec3 b) {
-    ctAssert(a);
-    a->x /= b.x;
-    a->y /= b.y;
-    a->z /= b.z;
-}
+/*! @brief Divide this vector by another vector */
+void ctVec3Divide(ctVec3* a, const ctVec3 b);
 
-inline void ctVec3DivideFloat(ctVec3* a, const float b) {
-    ctAssert(a);
-    a->x /= b;
-    a->y /= b;
-    a->z /= b;
-}
+/*! @brief Divide this vector by a float */
+void ctVec3DivideFloat(ctVec3* a, const float b);
 
-inline float ctVec3Dot(const ctVec3 a, const ctVec3 b) {
-    return a.x * b.x + a.y * b.y + a.z * b.z;
-}
+/*! @brief Get a dot product between two vectors */
+float ctVec3Dot(const ctVec3 a, const ctVec3 b);
 
-inline float ctVec3Distance(const ctVec3 a, const ctVec3 b) {
-    return ctSqrtf(ctPowf(a.x - b.x, 2.0f) + ctPowf(a.y - b.y, 2.0f) +
-                   ctPowf(a.z - b.z, 2.0f));
-}
+/*! @brief Get the distance between two vectors */
+float ctVec3Distance(const ctVec3 a, const ctVec3 b);
 
-inline float ctVec3Length(const ctVec3 v) {
-    return ctSqrtf(ctVec3Dot(v, v));
-}
+/*! @brief Get the length (magnitude) of a vector */
+float ctVec3Length(const ctVec3 v);
 
-inline void ctVec3Abs(ctVec3* v) {
-    ctAssert(v);
-    v->x = ctAbsf(v->x);
-    v->y = ctAbsf(v->y);
-    v->z = ctAbsf(v->z);
-}
+/*! @brief Make this vector's components positive */
+void ctVec3Abs(ctVec3* v);
 
-inline void ctVec3Normalize(ctVec3* v) {
-    ctAssert(v);
-    ctVec3DivideFloat(v, ctVec3Length(*v));
-}
+/*! @brief Make this vector a unit length vector */
+void ctVec3Normalize(ctVec3* v);
 
-inline void ctVec3Saturate(ctVec3* v) {
-    ctAssert(v);
-    v->x = ctSaturatef(v->x);
-    v->y = ctSaturatef(v->y);
-    v->z = ctSaturatef(v->z);
-}
+/*! @brief Clamp this vector from 0-1 */
+void ctVec3Saturate(ctVec3* v);
 
-inline void ctVec3Cross(ctVec3* out, const ctVec3 a, const ctVec3 b) {
-    ctAssert(out);
-    out->x = a.y * b.z - b.y * a.z;
-    out->y = a.z * b.x - b.z * a.x;
-    out->z = a.x * b.y - b.x * a.y;
-}
+/*! @brief Fill this vector with the cross product between two vectors */
+void ctVec3Cross(ctVec3* out, const ctVec3 a, const ctVec3 b);
 
-inline void ctVec3Lerp(ctVec3* out, const ctVec3 a, const ctVec3 b, const float t) {
-    ctAssert(out);
-    out->x = ctLerpf(a.x, b.x, t);
-    out->y = ctLerpf(a.y, b.y, t);
-    out->z = ctLerpf(a.z, b.z, t);
-}
+/*! @brief Fill this vector with the lerp result between two vectors */
+void ctVec3Lerp(ctVec3* out, const ctVec3 a, const ctVec3 b, const float t);
 
 /* ------- Quaternion -------*/
 
+/*! @brief Represents a 3D rotation using imaginary numbers */
 typedef struct {
     float x;
     float y;
@@ -160,142 +105,57 @@ typedef struct {
     float w;
 } __attribute__((aligned(16))) ctQuat;
 
-inline ctQuat ctQuatIdentity() {
-    return (ctQuat){0.0f, 0.0f, 0.0f, 1.0f};
-}
-inline ctQuat ctQuatFromFloat4(const float v[4]) {
-    return (ctQuat){v[0], v[1], v[2], v[3]};
-}
+/*! @brief Construct a quaternion that has no affect when rotated */
+ctQuat ctQuatIdentity();
 
-inline ctQuat ctQuatFromAxisAngle(const ctVec3 axis, float angle) {
-    /* https://www.euclideanspace.com/maths/geometry/rotations/conversions/angleToQuaternion/index.htm */
-    ctQuat result;
-    float sin;
-    float cos;
-    ctSinCosf(angle * 0.5f, &sin, &cos);
-    result.x = axis.x * sin;
-    result.y = axis.y * sin;
-    result.z = axis.z * sin;
-    result.w = cos;
-    return result;
-}
+/*! @brief Construct a quaternion from a float pointer to 4 values */
+ctQuat ctQuatFromFloat4(const float v[4]);
 
-inline ctQuat ctQuatFromEuler(const ctVec3 euler) {
-/* https://www.euclideanspace.com/maths/geometry/rotations/conversions/eulerToQuaternion/index.htm */
-    // Assuming the angles are in radians.
-      float c1, s1, c2, s2, c3, s3;
-      ctSinCosf(euler.y * 0.5f, &s1, &c1);
-      ctSinCosf(euler.z * 0.5f, &s2, &c2);
-      ctSinCosf(-euler.x * 0.5f, &s3, &c3);
+/*! @brief Construct a quaternion that represents a rotation around an axis */
+ctQuat ctQuatFromAxisAngle(const ctVec3 axis, float angle);
 
-      const float c1c2 = c1*c2;
-      const float s1s2 = s1*s2;
+/*! @brief Construct a quaternion from a euler rotation */
+ctQuat ctQuatFromEuler(const ctVec3 euler);
 
-      ctQuat result;
-      result.x =c1c2*s3 + s1s2*c3;
-      result.y =s1*c2*c3 + c1*s2*s3;
-      result.z =c1*s2*c3 - s1*c2*s3;
-      result.w =c1c2*c3 - s1s2*s3;
-      return result;
-}
+/*! @brief Rotate this quaternion by another quaternion */
+void ctQuatRotate(ctQuat* a, const ctQuat b);
 
-inline void ctQuatRotate(ctQuat* a, const ctQuat b) {
-    ctQuat result;
-    result.x = a->w * b.x + a->x * b.w + a->y * b.z - a->z * b.y;
-    result.y = a->w * b.y - a->x * b.z + a->y * b.w + a->z * b.x;
-    result.z = a->w * b.z + a->x * b.y - a->y * b.x + a->z * b.w;
-    result.w = a->w * b.w - a->x * b.x - a->y * b.y - a->z - b.z;
-    *a = result;
-}
+/*! @brief Invert the rotation of this quaternion */
+void ctQuatInvert(ctQuat* v);
 
-inline void ctQuatInvert(ctQuat* v) {
-    /* todo */
-}
+/*! @brief Fix any issues in this quaternion */
+void ctQuatNormalize(ctQuat* v);
 
-inline void ctQuatNormalize(ctQuat* v) {
-    /* https://www.cprogramming.com/tutorial/3d/quaternions.html */
-    const float ilen = ctInvSqrtf(ctPowf(v->x, 2.0f) + ctPowf(v->y, 2.0f) +
-                   ctPowf(v->z, 2.0f) + ctPowf(v->w, 2.0f));
-    if(ilen <= 0.0f){
-        *v = ctQuatIdentity();
-        return;
-    }
-    v->x *= ilen;
-    v->y *= ilen;
-    v->z *= ilen;
-    v->w *= ilen;
-}
+/*! @brief Rotate a vector by a given quaternion */
+void ctQuatRotateVec3(ctVec3* vector, const ctQuat q);
 
-inline void ctQuatRotateVec3(ctVec3* vector, const ctQuat q) {
-    /* logic borrowed from cglm */
-    ctVec3 u, v1, v2;
-    float s;
-  
-    u = ctVec3Make(q.x, q.y, q.z);
-    s = q.w;
-  
-    v1 = u;
-    v2 = *vector;
-    ctVec3Scale(&v1, 2.0f * ctVec3Dot(u, *vector));
-    ctVec3Scale(&v2, s * s - ctVec3Dot(u, u));
-    ctVec3Add(&v1, v2);
-  
-    ctVec3Cross(&v2, u, *vector);
-    ctVec3Scale(&v2, 2.0f * s);
-  
-    *vector = v1;
-    ctVec3Add(vector, v2);
-}
+/*! @brief Get the forward vector of this quaternion */
+ctVec3 ctQuatGetForward(const ctQuat q);
 
-inline ctVec3 ctQuatGetForward(const ctQuat q) {
-    ctVec3 axis = CT_VEC3_FORWARD;
-    ctQuatRotateVec3(&axis, q);
-    return axis;
-}
+/*! @brief Get the back vector of this quaternion */
+ctVec3 ctQuatGetBack(const ctQuat q);
 
-inline ctVec3 ctQuatGetBack(const ctQuat q) {
-    ctVec3 axis = CT_VEC3_BACK;
-    ctQuatRotateVec3(&axis, q);
-    return axis;
-}
+/*! @brief Get the up vector of this quaternion */
+ctVec3 ctQuatGetUp(const ctQuat q);
 
-inline ctVec3 ctQuatGetUp(const ctQuat q) {
-    ctVec3 axis = CT_VEC3_UP;
-    ctQuatRotateVec3(&axis, q);
-    return axis;
-}
+/*! @brief Get the down vector of this quaternion */
+ctVec3 ctQuatGetDown(const ctQuat q);
 
-inline ctVec3 ctQuatGetDown(const ctQuat q) {
-    ctVec3 axis = CT_VEC3_DOWN;
-    ctQuatRotateVec3(&axis, q);
-    return axis;
-}
+/*! @brief Get the right vector of this quaternion */
+ctVec3 ctQuatGetRight(const ctQuat q);
 
-inline ctVec3 ctQuatGetRight(const ctQuat q) {
-    ctVec3 axis = CT_VEC3_RIGHT;
-    ctQuatRotateVec3(&axis, q);
-    return axis;
-}
+/*! @brief Get the left vector of this quaternion */
+ctVec3 ctQuatGetLeft(const ctQuat q);
 
-inline ctVec3 ctQuatGetLeft(const ctQuat q) {
-    ctVec3 axis = CT_VEC3_LEFT;
-    ctQuatRotateVec3(&axis, q);
-    return axis;
-}
+/*! @brief Construct a quaternion that looks at a target from a given orientation */
+ctQuat ctQuatLookAt(const ctVec3 direction, const ctVec3 forward, const ctVec3 up);
 
-inline ctQuat ctQuatLookAt(const ctVec3 direction, const ctVec3 forward, const ctVec3 up) {
-// ctQuat result;
-// glm_quat_for((float*)dir.data, (float*)fwd.data, (float*)up.data, (float*)result.data);
-// return result;
-}
-
-inline void ctQuatSlerp(ctQuat* a, const ctQuat b, float t) {
-    //float cosTheta, sinTheta, angle;
-    /* https://github.com/recp/cglm/blob/master/include/cglm/quat.h#L321 */
-}
+/*! @brief Construct a quaternion that takes part of the shortest path on a sphere between two rotations */
+void ctQuatSlerp(ctQuat* dest, const ctQuat a, const ctQuat b, float t);
 
 /* ------- Color -------*/
 
+/*! @brief Represents one or more color channels */
 enum ctColorComponents {
     CT_COLOR_COMPONENT_NONE = 0x00,
     CT_COLOR_COMPONENT_R = 0x01,
@@ -321,6 +181,7 @@ enum ctColorComponents {
 #define CT_COLOR_PURPLE          (ctColorRGBA8){127, 000, 255, 255}
 #define CT_COLOR_PINK            (ctColorRGBA8){255, 000, 255, 255}
 
+/*! @brief Represents a color using 8 bit unsigned normalized values */
 typedef struct { 
     uint8_t r;
     uint8_t g;
@@ -328,20 +189,8 @@ typedef struct {
     uint8_t a;
 } ctColorRGBA8;
 
-inline ctColorRGBA8 ctColorRGBA8FromFloat4(float input[4]) {
-    ctColorRGBA8 result;
-    result.r = (uint8_t)(ctSaturatef(input[0]) * 255.0f);
-    result.g = (uint8_t)(ctSaturatef(input[1]) * 255.0f);
-    result.b = (uint8_t)(ctSaturatef(input[2]) * 255.0f);
-    result.a = (uint8_t)(ctSaturatef(input[3]) * 255.0f);
-    return result;
-}
+/*! @brief Convert a pointer to four floats into a color */
+ctColorRGBA8 ctColorRGBA8FromFloat4(float input[4]);
 
-inline ctColorRGBA8 ctColorRGBA8FromVec3(const ctVec3 rgb, const float a) {
-    ctColorRGBA8 result;
-    result.r = (uint8_t)(ctSaturatef(rgb.x) * 255.0f);
-    result.g = (uint8_t)(ctSaturatef(rgb.y) * 255.0f);
-    result.b = (uint8_t)(ctSaturatef(rgb.z) * 255.0f);
-    result.a = (uint8_t)(ctSaturatef(a) * 255.0f);
-    return result;
-}
+/*! @brief Convert vector representing rgb into a color with a given alpha */
+ctColorRGBA8 ctColorRGBA8FromVec3(const ctVec3 rgb, const float a);

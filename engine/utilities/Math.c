@@ -1,6 +1,8 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 #include "Math.h"
 
+#include "codegen/engine/utilities/Math.c.gen.h"
+
 bool ctFloatCompare(const float a, const float b, const float threshold) {
    return ctAbsf(a - b) < threshold;
 }

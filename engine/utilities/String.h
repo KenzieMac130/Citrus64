@@ -16,6 +16,7 @@ strings designed for common game usage. For safer string manipulation see UTF32 
 #include "Common.h"
 #include "thirdparty/utf8/utf8.h"
 
+#include "codegen/engine/utilities/String.h.gen.h"
 
 /* ------- Common ------- */
 

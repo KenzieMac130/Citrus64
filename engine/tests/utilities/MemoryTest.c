@@ -3,6 +3,7 @@
 #include "engine/utilities/Memory.h"
 #include "engine/tests/UnitTester.h"
 
+#include "codegen/engine/tests/utilities/MemoryTest.c.gen.h"
 
 void ctUnitTestMemory() {
     ctUnitTestAssert(CT_ALIGNMENT_CACHE == 16);

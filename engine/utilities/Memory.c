@@ -1,5 +1,6 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 #include "Memory.h"
+#include "codegen/engine/utilities/Memory.c.gen.h"
 
 struct ctAllocTracker {
    void* rawMemory;

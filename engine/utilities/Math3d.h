@@ -7,6 +7,8 @@ Math functions for working with 3D space
 
 #include "Common.h"
 
+#include "codegen/engine/utilities/Math3d.h.gen.h"
+
 /* ------- Vector3 -------*/
 
 /* Hard-coded coordinate spaces (based on glTF) */

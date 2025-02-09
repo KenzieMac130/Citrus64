@@ -3,6 +3,8 @@
 #include "engine/tests/UnitTester.h"
 #include "engine/utilities/String.h"
 
+#include "codegen/engine/tests/utilities/StringTest.c.gen.h"
+
 void ctUnitTestString() {
     /* ------- Comparison ------- */
     ctUnitTestAssert(ctStringCmp("String A", "String B") != 0);

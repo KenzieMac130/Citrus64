@@ -7,6 +7,8 @@ Math library for extended floating point and integer math
 
 #include "Common.h"
 
+#include "codegen/engine/utilities/Math.h.gen.h"
+
 /*! @brief Mathematical constant PI */
 #define CT_PI   3.141592653589793238462643383279f
 

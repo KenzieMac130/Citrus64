@@ -26,6 +26,10 @@ all: ${ROM_NAME}.z64
 # Rom Info
 ${ROM_NAME}.z64: N64_ROM_TITLE=${ROM_TITLE}
 
+# Includes
+CFLAGS += -I$(SOURCE_DIR)
+CFLAGS += -I$(BUILD_DIR)
+
 # Game Modules
 GAME_MODULE_DIR = game/modules
 GAME_MODULE_BUILD_DIR = ${BUILD_DIR}/data
@@ -51,8 +55,6 @@ MAIN_ELF_EXTERNS := $(BUILD_DIR)/$(ROM_NAME).externs
 $(MAIN_ELF_EXTERNS): $(DSO_LIST)
 
 # Engine Code
-INC_DIR +=.
-CFLAGS += -I$(INC_DIR)
 SOURCES := $(wildcard engine/*.c)
 SOURCES += $(wildcard engine/**/*.c)
 SOURCES += $(wildcard engine/**/**/*.c)

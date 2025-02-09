@@ -1,6 +1,8 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 #pragma once
 
+#include "codegen/engine/tests/AllEngineTests.h.gen.h"
+
 extern void ctUnitTestMemory();
 extern void ctUnitTestString();
 extern void ctUnitTestMath();

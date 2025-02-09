@@ -5,6 +5,7 @@ from send2trash import send2trash
 import sys
 
 import tools.devsetup
+from tools.codegen import Codegen
 
 def generate_build_config(args):
     Path("build/codegen").mkdir(exist_ok=True)
@@ -58,6 +59,8 @@ def clean():
     send2trash_lazy(Path("game.z64").resolve())
 
 def build(args):
+    Codegen.generate_code_recursive(Path("engine").resolve(), Path("build/codegen/engine").resolve())
+    Codegen.generate_code_recursive(Path("game").resolve(), Path("build/codegen/game").resolve())
     generate_build_config(args)
     subprocess.run([sys.executable, 'waf'], cwd=Path("assets").resolve(), shell=True)
     subprocess.run(['libdragon', 'make'], shell=True)

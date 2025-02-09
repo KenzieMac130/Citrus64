@@ -1,5 +1,6 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 #include "String.h"
+#include "codegen/engine/utilities/String.c.gen.h"
 
 size_t ctStringByteSize(const char* string) {
     ctAssert(string);

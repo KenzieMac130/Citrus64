@@ -126,3 +126,6 @@ enum ctResults {
 #include "Math.h"
 #include "String.h"
 #include "Math3d.h"
+#include "Hash.h"
+
+#include "codegen/engine/utilities/Common.h.gen.h"

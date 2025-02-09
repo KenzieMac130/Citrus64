@@ -8,6 +8,8 @@ Debug logging
 
 #include "Common.h"
 
+#include "codegen/engine/utilities/SharedLogging.h.gen.h"
+
 /*! @brief Print a line of debug info to the console */
 void ctDebugLog(const char* format, ...);
 

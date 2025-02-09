@@ -6,6 +6,8 @@
 #include "engine/tests/UnitTester.h"
 #endif
 
+#include "codegen/engine/core/Entry.c.gen.h"
+
 int main(void)
 {
     console_init();

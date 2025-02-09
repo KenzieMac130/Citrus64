@@ -3,6 +3,8 @@
 #include "engine/tests/UnitTester.h"
 #include "engine/utilities/Common.h"
 
+#include "codegen/engine/tests/utilities/Math3dTest.c.gen.h"
+
 void ctUnitTestMath3D() {
     ctVec3 v = ctVec3Zero();
     float f;

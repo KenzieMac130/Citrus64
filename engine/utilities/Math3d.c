@@ -1,5 +1,6 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 #include "Math3d.h"
+#include "codegen/engine/utilities/Math3d.c.gen.h"
 
 /* ------- Vector3 -------*/
 

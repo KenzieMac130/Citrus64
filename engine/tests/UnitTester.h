@@ -3,6 +3,8 @@
 
 #include "engine/utilities/Common.h"
 
+#include "codegen/engine/tests/UnitTester.h.gen.h"
+
 struct ctUnitTest {
     const char* name;
     void(*function)(void);

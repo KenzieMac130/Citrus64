@@ -3,6 +3,8 @@
 #include "UnitTester.h"
 #include "AllEngineTests.h"
 
+#include "codegen/engine/tests/UnitTester.c.gen.h"
+
 void tester() {
     char* bytes = ctMalloc(32);
     ctStringCopy(bytes, 32, "Test");

@@ -7,6 +7,8 @@ Memory allocation and manipulation utilities
 
 #include "Common.h"
 
+#include "codegen/engine/utilities/Memory.h.gen.h"
+
 /* ------- Alignment ------- */
 
 /*! @brief The size of the platform's CPU cache line */

@@ -79,6 +79,7 @@ build/
 
 # Developer Environment
 *.zip
+*.pak
 ares/
 blender-*/
 devsetup.json

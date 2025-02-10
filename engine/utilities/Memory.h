@@ -1,7 +1,7 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 /*! @file Memory.h
 
-Memory allocation and manipulation utilities 
+Memory allocation and manipulation utilities
 */
 #pragma once
 
@@ -61,20 +61,20 @@ void* ctAlignedRealloc(void* block, size_t size, size_t alignment);
 void ctAlignedFree(void* block);
 
 /*! @brief Allocation group descriptor for ctGroupAlloc() */
-struct ctGroupAllocDesc {
+typedef struct {
    /*! alignment of block */
-   size_t alignment; 
+   size_t alignment;
    /*! size of block */
    size_t size;
-    /*! pointer to write the sub-allocation address to */
+   /*! pointer to write the sub-allocation address to */
    void** output;
-};
+} ctGroupAllocDesc;
 
 /*! @brief Optimized group allocation
 
    Instead of allocating blocks of data which will share similar lifetime seperately you
-   can use this function to allocate a single block of data which can be shared by multiple
-   members of a data structure.
+   can use this function to allocate a single block of data which can be shared by
+   multiple members of a data structure.
 
    @param count number of groups to pass
    @param groups list of groups and their allocation descriptions
@@ -82,7 +82,7 @@ struct ctGroupAllocDesc {
    @returns A pointer to the shared block of data
    @warning Only call ctFree() on the shared block
 */
-void* ctGroupAlloc(size_t count, struct ctGroupAllocDesc* groups, size_t* sizeOut);
+void* ctGroupAlloc(size_t count, ctGroupAllocDesc* groups, size_t* sizeOut);
 
 /*! @brief Allocate memory on the stack
    @warning Only use for small allocations whose size cannot be known at compile time
@@ -98,16 +98,19 @@ int64_t ctGetAliveAllocations();
 /* ------- Buffer Over/Underflow Checking ------- */
 
 /*! @brief Assert memory block against parent bounds */
-void ctBufferAssert(void* parentBuffer, size_t parentBufferSize, void* childBuffer, size_t childBufferSize);
+void ctBufferAssert(void* parentBuffer,
+                    size_t parentBufferSize,
+                    void* childBuffer,
+                    size_t childBufferSize);
 
 /*! @brief ctBufferAssert() for single objects */
-#define ctBufferAssertSingle(_parentBuffer, _parentBufferSize, _ptr) \
-ctBufferAssert(_parentBuffer, _parentBufferSize, _ptr, sizeof(_ptr))
+#define ctBufferAssertSingle(_parentBuffer, _parentBufferSize, _ptr)                     \
+   ctBufferAssert(_parentBuffer, _parentBufferSize, _ptr, sizeof(_ptr))
 
 /*! @brief ctBufferAssert() for a begin-end pointer pair */
-#define ctBufferAssertRange(_parentBuffer, _parentBufferSize, _ptrMin, _ptrMax) \
-ctBufferAssert(_parentBuffer, _parentBufferSize, _ptrMin, (size_t)(_ptrMax - _ptrMin))
+#define ctBufferAssertRange(_parentBuffer, _parentBufferSize, _ptrMin, _ptrMax)          \
+   ctBufferAssert(_parentBuffer, _parentBufferSize, _ptrMin, (size_t)(_ptrMax - _ptrMin))
 
 /*! @brief ctBufferAssert() for a array indexing */
-#define ctBufferAssertIndex(_parentBuffer, _parentBufferSize, _idx) \
-ctBufferAssertSingle(_parentBuffer, _parentBufferSize, _parentBuffer + _idx)
+#define ctBufferAssertIndex(_parentBuffer, _parentBufferSize, _idx)                      \
+   ctBufferAssertSingle(_parentBuffer, _parentBufferSize, _parentBuffer + _idx)

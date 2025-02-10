@@ -13,7 +13,19 @@
         "cstdlib": "c",
         "cstdint": "c",
         "type_traits": "c",
-        "functional": "c"
+        "functional": "c",
+        "any": "c",
+        "bit": "c",
+        "codecvt": "c",
+        "compare": "c",
+        "condition_variable": "c",
+        "cstddef": "c",
+        "forward_list": "c",
+        "string": "c",
+        "optional": "c",
+        "memory": "c",
+        "mutex": "c",
+        "new": "c"
     },
     "C_Cpp.default.compilerPath": "c:\\msys64\\usr\\bin\\gcc.exe"
 }

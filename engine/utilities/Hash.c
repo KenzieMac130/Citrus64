@@ -9,9 +9,9 @@
 #include "codegen/engine/utilities/Hash.c.gen.h"
 
 uint32_t ctXXHash32Bytes(const void* buffer, size_t size) {
-    return XXH32(buffer, size, 0);
+   return XXH32(buffer, size, 0);
 }
 
 uint32_t ctXXHash32String(const char* string) {
-    return ctXXHash32Bytes(string, strlen(string));
+   return ctXXHash32Bytes(string, strlen(string));
 }

@@ -1,9 +1,9 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
-#pragma once
 /*! @file Math3d.h
 
 Math functions for working with 3D space
 */
+#pragma once
 
 #include "Common.h"
 
@@ -20,18 +20,36 @@ Math functions for working with 3D space
 #define CT_RIGHT       -1.0f,  0.0f,  0.0f   
 #define CT_LEFT         1.0f,  0.0f,  0.0f
 // clang-format on
-#define CT_VEC3_UP      (ctVec3){CT_UP}
-#define CT_VEC3_DOWN    (ctVec3){CT_DOWN}
-#define CT_VEC3_FORWARD (ctVec3){CT_FORWARD}
-#define CT_VEC3_BACK    (ctVec3){CT_BACK}
-#define CT_VEC3_RIGHT   (ctVec3){CT_RIGHT}
-#define CT_VEC3_LEFT    (ctVec3){CT_LEFT}
+#define CT_VEC3_UP                                                                       \
+   (ctVec3) {                                                                            \
+      CT_UP                                                                              \
+   }
+#define CT_VEC3_DOWN                                                                     \
+   (ctVec3) {                                                                            \
+      CT_DOWN                                                                            \
+   }
+#define CT_VEC3_FORWARD                                                                  \
+   (ctVec3) {                                                                            \
+      CT_FORWARD                                                                         \
+   }
+#define CT_VEC3_BACK                                                                     \
+   (ctVec3) {                                                                            \
+      CT_BACK                                                                            \
+   }
+#define CT_VEC3_RIGHT                                                                    \
+   (ctVec3) {                                                                            \
+      CT_RIGHT                                                                           \
+   }
+#define CT_VEC3_LEFT                                                                     \
+   (ctVec3) {                                                                            \
+      CT_LEFT                                                                            \
+   }
 
 /*! @brief 3D Vector */
 typedef struct {
-    float x;
-    float y;
-    float z;
+   float x;
+   float y;
+   float z;
 } __attribute__((aligned(16))) ctVec3;
 
 /*! @brief Construct a (0, 0, 0) vector */
@@ -101,10 +119,10 @@ void ctVec3Lerp(ctVec3* out, const ctVec3 a, const ctVec3 b, const float t);
 
 /*! @brief Represents a 3D rotation using imaginary numbers */
 typedef struct {
-    float x;
-    float y;
-    float z;
-    float w;
+   float x;
+   float y;
+   float z;
+   float w;
 } __attribute__((aligned(16))) ctQuat;
 
 /*! @brief Construct a quaternion that has no affect when rotated */
@@ -152,43 +170,44 @@ ctVec3 ctQuatGetLeft(const ctQuat q);
 /*! @brief Construct a quaternion that looks at a target from a given orientation */
 ctQuat ctQuatLookAt(const ctVec3 direction, const ctVec3 forward, const ctVec3 up);
 
-/*! @brief Construct a quaternion that takes part of the shortest path on a sphere between two rotations */
+/*! @brief Construct a quaternion that takes part of the shortest path on a sphere between
+ * two rotations */
 void ctQuatSlerp(ctQuat* dest, const ctQuat a, const ctQuat b, float t);
 
 /* ------- Color -------*/
 
 /*! @brief Represents one or more color channels */
 enum ctColorComponents {
-    CT_COLOR_COMPONENT_NONE = 0x00,
-    CT_COLOR_COMPONENT_R = 0x01,
-    CT_COLOR_COMPONENT_G = 0x02,
-    CT_COLOR_COMPONENT_B = 0x04,
-    CT_COLOR_COMPONENT_A = 0x08,
-    CT_COLOR_COMPONENT_RG = CT_COLOR_COMPONENT_R | CT_COLOR_COMPONENT_G,
-    CT_COLOR_COMPONENT_RGB = CT_COLOR_COMPONENT_RG | CT_COLOR_COMPONENT_B,
-    CT_COLOR_COMPONENT_RGBA = CT_COLOR_COMPONENT_RGB | CT_COLOR_COMPONENT_A,
+   CT_COLOR_COMPONENT_NONE = 0x00,
+   CT_COLOR_COMPONENT_R = 0x01,
+   CT_COLOR_COMPONENT_G = 0x02,
+   CT_COLOR_COMPONENT_B = 0x04,
+   CT_COLOR_COMPONENT_A = 0x08,
+   CT_COLOR_COMPONENT_RG = CT_COLOR_COMPONENT_R | CT_COLOR_COMPONENT_G,
+   CT_COLOR_COMPONENT_RGB = CT_COLOR_COMPONENT_RG | CT_COLOR_COMPONENT_B,
+   CT_COLOR_COMPONENT_RGBA = CT_COLOR_COMPONENT_RGB | CT_COLOR_COMPONENT_A,
 };
- 
-#define CT_COLOR_BLACK           (ctColorRGBA8){000, 000, 000, 255}
-#define CT_COLOR_GREY            (ctColorRGBA8){127, 127, 127, 255}
-#define CT_COLOR_WHITE           (ctColorRGBA8){255, 255, 255, 255}
-#define CT_COLOR_INVISIBLE_BLACK (ctColorRGBA8){000, 000, 000, 000}
-#define CT_COLOR_INVISIBLE_GREY  (ctColorRGBA8){127, 127, 127, 000}
-#define CT_COLOR_INVISIBLE_WHITE (ctColorRGBA8){255, 255, 255, 000}
-#define CT_COLOR_RED             (ctColorRGBA8){255, 000, 000, 255}
-#define CT_COLOR_GREEN           (ctColorRGBA8){000, 255, 000, 255}
-#define CT_COLOR_BLUE            (ctColorRGBA8){000, 000, 255, 255}
-#define CT_COLOR_YELLOW          (ctColorRGBA8){255, 255, 000, 255}
-#define CT_COLOR_ORANGE          (ctColorRGBA8){255, 127, 000, 255}
-#define CT_COLOR_PURPLE          (ctColorRGBA8){127, 000, 255, 255}
-#define CT_COLOR_PINK            (ctColorRGBA8){255, 000, 255, 255}
+
+#define CT_COLOR_BLACK           (ctColorRGBA8) {000, 000, 000, 255}
+#define CT_COLOR_GREY            (ctColorRGBA8) {127, 127, 127, 255}
+#define CT_COLOR_WHITE           (ctColorRGBA8) {255, 255, 255, 255}
+#define CT_COLOR_INVISIBLE_BLACK (ctColorRGBA8) {000, 000, 000, 000}
+#define CT_COLOR_INVISIBLE_GREY  (ctColorRGBA8) {127, 127, 127, 000}
+#define CT_COLOR_INVISIBLE_WHITE (ctColorRGBA8) {255, 255, 255, 000}
+#define CT_COLOR_RED             (ctColorRGBA8) {255, 000, 000, 255}
+#define CT_COLOR_GREEN           (ctColorRGBA8) {000, 255, 000, 255}
+#define CT_COLOR_BLUE            (ctColorRGBA8) {000, 000, 255, 255}
+#define CT_COLOR_YELLOW          (ctColorRGBA8) {255, 255, 000, 255}
+#define CT_COLOR_ORANGE          (ctColorRGBA8) {255, 127, 000, 255}
+#define CT_COLOR_PURPLE          (ctColorRGBA8) {127, 000, 255, 255}
+#define CT_COLOR_PINK            (ctColorRGBA8) {255, 000, 255, 255}
 
 /*! @brief Represents a color using 8 bit unsigned normalized values */
-typedef struct { 
-    uint8_t r;
-    uint8_t g;
-    uint8_t b;
-    uint8_t a;
+typedef struct {
+   uint8_t r;
+   uint8_t g;
+   uint8_t b;
+   uint8_t a;
 } ctColorRGBA8;
 
 /*! @brief Convert a pointer to four floats into a color */

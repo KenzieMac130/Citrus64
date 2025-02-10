@@ -1,5 +1,5 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
-/*! @file SharedLogging.h
+/*! @file Logging.h
 
 Debug logging
 */
@@ -8,7 +8,7 @@ Debug logging
 
 #include "Common.h"
 
-#include "codegen/engine/utilities/SharedLogging.h.gen.h"
+#include "codegen/engine/utilities/Logging.h.gen.h"
 
 /*! @brief Print a line of debug info to the console */
 void ctDebugLog(const char* format, ...);

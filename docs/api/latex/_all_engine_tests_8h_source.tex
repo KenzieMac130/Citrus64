@@ -5,17 +5,23 @@
 \DoxyCodeLine{00001\ \textcolor{comment}{/*\ By\ Kenzie\ Wright\ -\/\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestMemory();}
-\DoxyCodeLine{00005\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestString();}
-\DoxyCodeLine{00006\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestMath();}
-\DoxyCodeLine{00007\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestMath3D();}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{comment}{/*\ see\ ctUnitTest\ (name,\ function,\ requires\ engine)\ */}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ CT\_ALL\_TESTS\ \(\backslash\)}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \{"{}Memory"{},\ ctUnitTestMemory,\ false\},\(\backslash\)}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \{"{}String"{},\ ctUnitTestString,\ false\},\(\backslash\)}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ \{"{}Math"{},\ ctUnitTestMath,\ false\},\(\backslash\)}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ \{"{}Math3D"{},\ ctUnitTestMath3D,\ false\}}}
-\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}codegen/engine/tests/AllEngineTests.h.gen.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestMemory();}
+\DoxyCodeLine{00007\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestString();}
+\DoxyCodeLine{00008\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestMath();}
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestMath3D();}
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestHash();}
+\DoxyCodeLine{00011\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ctUnitTestRandom();}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ see\ ctUnitTest\ (name,\ function,\ requires\ engine)\ */}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ CT\_ALL\_TESTS\ \(\backslash\)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \{"{}Memory"{},\ ctUnitTestMemory,\ false\},\(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \{"{}String"{},\ ctUnitTestString,\ false\},\(\backslash\)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \{"{}Math"{},\ ctUnitTestMath,\ false\},\(\backslash\)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \{"{}Math3D"{},\ ctUnitTestMath3D,\ false\},\(\backslash\)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ \{"{}Hash"{},\ ctUnitTestHash,\ false\},\(\backslash\)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ \{"{}Random"{},\ ctUnitTestRandom,\ false\}}}
+\DoxyCodeLine{00021\ }
 
 \end{DoxyCode}

@@ -24,7 +24,7 @@
 \DoxyCodeLine{00024\ }
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}engine/Config.h"{}}}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00028\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
 \DoxyCodeLine{00029\ \ \ \ CT\_SUCCESS\ =\ 0,}
 \DoxyCodeLine{00030\ \ \ \ CT\_FAILURE\_UNKNOWN\ =\ -\/1,}
 \DoxyCodeLine{00031\ \ \ \ CT\_FAILURE\_OUT\_OF\_MEMORY\ =\ -\/2,}
@@ -51,7 +51,7 @@
 \DoxyCodeLine{00052\ \ \ \ CT\_FAILURE\_SKIPPED\ =\ -\/22,}
 \DoxyCodeLine{00053\ \ \ \ CT\_FAILURE\_INCORRECT\_VERSION\ =\ -\/23,}
 \DoxyCodeLine{00054\ \ \ \ CT\_FAILURE\_END\_OF\_STREAM\ =\ -\/24}
-\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00055\ \}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}};}
 \DoxyCodeLine{00056\ }
 \DoxyCodeLine{00057\ \textcolor{comment}{/*Debug*/}}
 \DoxyCodeLine{00058\ \textcolor{preprocessor}{\#ifdef\ NDEBUG}}
@@ -80,13 +80,13 @@
 \DoxyCodeLine{00087\ }
 \DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ CT\_RETURN\_FAIL(\_arg)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \ \ \ \ enum\ ctResults\ \_\_res\ =\ (\_arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \ \ \ \ ctResults\ \_\_res\ =\ (\_arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \ \ \ \ if\ (\_\_res\ !=\ CT\_SUCCESS)\ \{\ return\ \_\_res;\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \}}}
 \DoxyCodeLine{00094\ }
 \DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ CT\_RETURN\_FAIL\_CLEAN(\_arg,\ \_cleanup)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \ \ \ \ enum\ ctResults\ \_\_res\ =\ (\_arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \ \ \ \ ctResults\ \_\_res\ =\ (\_arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ \ \ if\ (\_\_res\ !=\ CT\_SUCCESS)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \_cleanup;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ return\ \_\_res;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
@@ -107,11 +107,6 @@
 \DoxyCodeLine{00119\ }
 \DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ ctAlign(v,\ a)\ \ \ \ \ \ \ \ \ \ \ ((v\ +\ (a\ -\/\ 1))\ \&\ -\/a)}}
 \DoxyCodeLine{00122\ }
-\DoxyCodeLine{00123\ \textcolor{comment}{/*Include\ common\ c\ files*/}}
-\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shared_logging_8h}{SharedLogging.h}}"{}}}
-\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_memory_8h}{Memory.h}}"{}}}
-\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_math_8h}{Math.h}}"{}}}
-\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_string_8h}{String.h}}"{}}}
-\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_math3d_8h}{Math3d.h}}"{}}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#include\ "{}codegen/engine/utilities/Common.h.gen.h"{}}}
 
 \end{DoxyCode}

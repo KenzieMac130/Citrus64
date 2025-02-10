@@ -5,12 +5,6 @@
 
 #include "codegen/engine/tests/UnitTester.c.gen.h"
 
-void tester() {
-    char* bytes = ctMalloc(32);
-    ctStringCopy(bytes, 32, "Test");
-    ctDebugLog(bytes);
-}
-
 const struct ctUnitTest gAllEngineTests[] = {
     CT_ALL_TESTS,
     {NULL, NULL, false}

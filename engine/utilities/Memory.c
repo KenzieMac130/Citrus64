@@ -2,30 +2,29 @@
 #include "Memory.h"
 #include "codegen/engine/utilities/Memory.c.gen.h"
 
-struct ctAllocTracker {
+typedef struct {
    void* rawMemory;
    size_t originalSize;
-};
+} ctAllocTracker;
 
 int64_t gAllocCount = 0;
 
 void* ctAlignedMalloc(size_t size, size_t alignment) {
-   const size_t allocSize = size + alignment + sizeof(struct ctAllocTracker);
+   const size_t allocSize = size + alignment + sizeof(ctAllocTracker);
    char* rawMemory = (char*)malloc(allocSize);
    CT_PANIC_UNTRUE(rawMemory, "OUT OF MEMORY!");
    gAllocCount++;
-   struct ctAllocTracker* ptr =
-     (struct ctAllocTracker*)((uintptr_t)(rawMemory + alignment +
-                                sizeof(struct ctAllocTracker)) &
-                                ~(alignment - 1));
-   ptr[-1] = (struct ctAllocTracker){(void*)rawMemory, size};
+   ctAllocTracker* ptr =
+     (ctAllocTracker*)((uintptr_t)(rawMemory + alignment + sizeof(ctAllocTracker)) &
+                       ~(alignment - 1));
+   ptr[-1] = (ctAllocTracker) {(void*)rawMemory, size};
    return (void*)ptr;
 }
 
 void* ctAlignedRealloc(void* block, size_t size, size_t alignment) {
    void* pNew = ctAlignedMalloc(size, alignment);
    if (block) {
-      memcpy(pNew, block, ((struct ctAllocTracker*)block)[-1].originalSize);
+      memcpy(pNew, block, ((ctAllocTracker*)block)[-1].originalSize);
       ctAlignedFree(block);
    }
    return pNew;
@@ -33,7 +32,7 @@ void* ctAlignedRealloc(void* block, size_t size, size_t alignment) {
 
 void ctAlignedFree(void* block) {
    if (!block) { return; }
-   void* pFinal = ((struct ctAllocTracker*)block)[-1].rawMemory;
+   void* pFinal = ((ctAllocTracker*)block)[-1].rawMemory;
    gAllocCount++;
    free(pFinal);
 }
@@ -54,7 +53,7 @@ void ctFree(void* block) {
    return ctAlignedFree(block);
 }
 
-void* ctGroupAlloc(size_t count, struct ctGroupAllocDesc* groups, size_t* pSizeOut) {
+void* ctGroupAlloc(size_t count, ctGroupAllocDesc* groups, size_t* pSizeOut) {
    size_t size = 0;
    for (size_t i = 0; i < count; i++) {
       ctAssert(groups[i].alignment != 0);
@@ -72,9 +71,12 @@ void* ctGroupAlloc(size_t count, struct ctGroupAllocDesc* groups, size_t* pSizeO
    return output;
 }
 
-void ctBufferAssert(void* parentBuffer, size_t parentBufferSize, void* childBuffer, size_t childBufferSize) {
-    const void* parentBufferEnd = (void*)((uint8_t*)parentBuffer + parentBufferSize);
-    const void* childBufferEnd = (void*)((uint8_t*)parentBuffer + parentBufferSize);
-    ctAssert(childBuffer >= parentBuffer && "Buffer Underflow");
-    ctAssert(childBufferEnd <= parentBufferEnd  && "Buffer Overflow");
+void ctBufferAssert(void* parentBuffer,
+                    size_t parentBufferSize,
+                    void* childBuffer,
+                    size_t childBufferSize) {
+   const void* parentBufferEnd = (void*)((uint8_t*)parentBuffer + parentBufferSize);
+   const void* childBufferEnd = (void*)((uint8_t*)parentBuffer + parentBufferSize);
+   ctAssert(childBuffer >= parentBuffer && "Buffer Underflow");
+   ctAssert(childBufferEnd <= parentBufferEnd && "Buffer Overflow");
 }

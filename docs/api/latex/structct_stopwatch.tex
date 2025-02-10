@@ -1,0 +1,34 @@
+\doxysection{ct\+Stopwatch Struct Reference}
+\hypertarget{structct_stopwatch}{}\label{structct_stopwatch}\index{ctStopwatch@{ctStopwatch}}
+
+
+Keeps track of time at a hardware level.  
+
+
+
+
+{\ttfamily \#include $<$Time.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structct_stopwatch_a3bab2f2b0c5e1a229b3dbb9d2c4dab57}\label{structct_stopwatch_a3bab2f2b0c5e1a229b3dbb9d2c4dab57} 
+uint64\+\_\+t {\bfseries last\+Hardware\+Tick}
+\item 
+\Hypertarget{structct_stopwatch_a625b77d9cc1cba9768ce9205cc3ec0b5}\label{structct_stopwatch_a625b77d9cc1cba9768ce9205cc3ec0b5} 
+uint64\+\_\+t {\bfseries current\+Hardware\+Tick}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Keeps track of time at a hardware level. 
+
+This doesn\textquotesingle{}t work off of game ticks but rather the amount of real-\/world time that has passed between "{}laps"{} So the timer is dependent on quirks in hardware and nondeterministic
+
+This is perfect for performance profiling but non-\/ideal for gameplay
+
+If you want to keep track of game time you should accumulate the game tick\textquotesingle{}s/update\textquotesingle{}s delta time instead. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_time_8h}{Time.\+h}}\end{DoxyCompactItemize}

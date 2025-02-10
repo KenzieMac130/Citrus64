@@ -1,0 +1,87 @@
+\doxysection{Random.\+h File Reference}
+\hypertarget{_random_8h}{}\label{_random_8h}\index{Random.h@{Random.h}}
+
+
+Random number generation for games.  
+
+
+{\ttfamily \#include "{}Common.\+h"{}}\newline
+{\ttfamily \#include "{}Math3d.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/utilities/\+Random.\+h.\+gen.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}}
+\begin{DoxyCompactList}\small\item\em Holds a pcg random number generator state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_random_8h_afebc82761e9636b5df839a17ff25e82a}\label{_random_8h_afebc82761e9636b5df839a17ff25e82a} 
+\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} {\bfseries ct\+Random\+Generator\+Init\+Seed} (uint32\+\_\+t seed)
+\begin{DoxyCompactList}\small\item\em Initialize the random number generator with a seed. \end{DoxyCompactList}\item 
+\Hypertarget{_random_8h_afc0ac7644590e2d7cde6bea4edfe5c41}\label{_random_8h_afc0ac7644590e2d7cde6bea4edfe5c41} 
+\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} {\bfseries ct\+Random\+Generator\+Init} ()
+\begin{DoxyCompactList}\small\item\em Initialize the random number generator with a random seed. \end{DoxyCompactList}\item 
+\Hypertarget{_random_8h_acef41da7fac0878d5747d099f071ed78}\label{_random_8h_acef41da7fac0878d5747d099f071ed78} 
+uint32\+\_\+t {\bfseries ct\+Random\+Get\+UInt32} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator)
+\begin{DoxyCompactList}\small\item\em Get a random integer from 0 to UINT32\+\_\+\+MAX. \end{DoxyCompactList}\item 
+\Hypertarget{_random_8h_a8d3e9830299a092b59212e87b4259d31}\label{_random_8h_a8d3e9830299a092b59212e87b4259d31} 
+int32\+\_\+t {\bfseries ct\+Random\+Get\+Int32\+Range} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, int32\+\_\+t min, int32\+\_\+t max)
+\begin{DoxyCompactList}\small\item\em Get a random integer in a range. \end{DoxyCompactList}\item 
+\Hypertarget{_random_8h_aea1efe5b33a5511a2552678bcd00f814}\label{_random_8h_aea1efe5b33a5511a2552678bcd00f814} 
+float {\bfseries ct\+Random\+Get\+Float} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, float min, float max)
+\begin{DoxyCompactList}\small\item\em Get a random float in a range. \end{DoxyCompactList}\item 
+\Hypertarget{_random_8h_add57ba1f8e1e362488eef54597542093}\label{_random_8h_add57ba1f8e1e362488eef54597542093} 
+float {\bfseries ct\+Random\+Get\+Float\+SNorm} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator)
+\begin{DoxyCompactList}\small\item\em Get a random float from a -\/1.\+0f to 1.\+0f. \end{DoxyCompactList}\item 
+\Hypertarget{_random_8h_a2aad18ffc911783c72f802a2b535387b}\label{_random_8h_a2aad18ffc911783c72f802a2b535387b} 
+float {\bfseries ct\+Random\+Get\+Float\+UNorm} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator)
+\begin{DoxyCompactList}\small\item\em Get a random float from a 0.\+0f to 1.\+0f. \end{DoxyCompactList}\item 
+\Hypertarget{_random_8h_a1f3f68290a989aeb3ccae70e7a7dd623}\label{_random_8h_a1f3f68290a989aeb3ccae70e7a7dd623} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Random\+Get\+Vec3\+Range} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} min, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} max)
+\begin{DoxyCompactList}\small\item\em Get a random \doxylink{structct_vec3}{ct\+Vec3} with unique components in their respective range. \end{DoxyCompactList}\item 
+\Hypertarget{_random_8h_a873a4bb844f2b600cf3df2a541e190f6}\label{_random_8h_a873a4bb844f2b600cf3df2a541e190f6} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Random\+Get\+Vec3\+Norm} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator)
+\begin{DoxyCompactList}\small\item\em Get a random \doxylink{structct_vec3}{ct\+Vec3} that has been normalized. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_random_8h_a38e54ebb49bc71af106847fd1db7ee34}{ct\+Random\+Get\+Gaussian}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, float mean, float standard\+Deviation)
+\begin{DoxyCompactList}\small\item\em Get a random value in a gausian (normal) distribution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_random_8h_ab832e037c178ca0f2a055f080d71aa81}{ct\+Random\+Get\+Gaussian2D}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, float out\mbox{[}2\mbox{]}, const float mean\mbox{[}2\mbox{]}, float standard\+Deviation)
+\begin{DoxyCompactList}\small\item\em Get a random xy pair in a gausian (normal) distribution. \end{DoxyCompactList}\item 
+\Hypertarget{_random_8h_a7a576939fd0def7262f2486df9d6eabe}\label{_random_8h_a7a576939fd0def7262f2486df9d6eabe} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Random\+Get\+In\+Sphere} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, float radius)
+\begin{DoxyCompactList}\small\item\em Get a random \doxylink{structct_vec3}{ct\+Vec3} in a guasian distribution inside a 3D sphere. \end{DoxyCompactList}\item 
+\Hypertarget{_random_8h_a49268d2df620627393d5942e08af3cc8}\label{_random_8h_a49268d2df620627393d5942e08af3cc8} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} {\bfseries ct\+Random\+Get\+On\+Sphere} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, float radius)
+\begin{DoxyCompactList}\small\item\em Get a random \doxylink{structct_vec3}{ct\+Vec3} in a guasian distribution on the surface of a 3D sphere. \end{DoxyCompactList}\item 
+\Hypertarget{_random_8h_a5b0b0791fe6cc206e076c508d7f75bf7}\label{_random_8h_a5b0b0791fe6cc206e076c508d7f75bf7} 
+\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}} {\bfseries ct\+Random\+Get\+Color} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, float alpha)
+\begin{DoxyCompactList}\small\item\em Get a random color (not guaranteed to be pleasing) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Random number generation for games. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_random_8h_a38e54ebb49bc71af106847fd1db7ee34}\index{Random.h@{Random.h}!ctRandomGetGaussian@{ctRandomGetGaussian}}
+\index{ctRandomGetGaussian@{ctRandomGetGaussian}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetGaussian()}{ctRandomGetGaussian()}}
+{\footnotesize\ttfamily \label{_random_8h_a38e54ebb49bc71af106847fd1db7ee34} 
+float ct\+Random\+Get\+Gaussian (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{generator}{, }\item[{float}]{mean}{, }\item[{float}]{standard\+Deviation}{}\end{DoxyParamCaption})}
+
+
+
+Get a random value in a gausian (normal) distribution. 
+
+See\+: \href{https://en.wikipedia.org/wiki/Normal_distribution}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Normal\+\_\+distribution}} \Hypertarget{_random_8h_ab832e037c178ca0f2a055f080d71aa81}\index{Random.h@{Random.h}!ctRandomGetGaussian2D@{ctRandomGetGaussian2D}}
+\index{ctRandomGetGaussian2D@{ctRandomGetGaussian2D}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetGaussian2D()}{ctRandomGetGaussian2D()}}
+{\footnotesize\ttfamily \label{_random_8h_ab832e037c178ca0f2a055f080d71aa81} 
+void ct\+Random\+Get\+Gaussian2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{generator}{, }\item[{float}]{out}{\mbox{[}2\mbox{]}, }\item[{const float}]{mean}{\mbox{[}2\mbox{]}, }\item[{float}]{standard\+Deviation}{}\end{DoxyParamCaption})}
+
+
+
+Get a random xy pair in a gausian (normal) distribution. 
+
+This ends up distributing points evenly in a 2D disk where standard\+Deviation is the radius 

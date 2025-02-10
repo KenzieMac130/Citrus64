@@ -1,7 +1,7 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 #pragma once
 
-#include "engine/utilities/Common.h"
+#include "engine/utilities/Utilities.h"
 
 #include "codegen/engine/tests/UnitTester.h.gen.h"
 

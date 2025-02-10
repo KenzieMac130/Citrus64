@@ -1,7 +1,7 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 /*! @file Common.h
 
-Common library includes for Citrus64
+Boilerplate for all engine and game files
 */
 
 #pragma once
@@ -25,7 +25,7 @@ Common library includes for Citrus64
 #include "engine/Config.h"
 
 /*! @brief Return Codes for the engine's runtime errors */
-enum ctResults {
+typedef enum {
    CT_SUCCESS = 0,
    CT_FAILURE_UNKNOWN = -1,
    CT_FAILURE_OUT_OF_MEMORY = -2,
@@ -52,7 +52,7 @@ enum ctResults {
    CT_FAILURE_SKIPPED = -22,
    CT_FAILURE_INCORRECT_VERSION = -23,
    CT_FAILURE_END_OF_STREAM = -24
-};
+} ctResults;
 
 /*Debug*/
 #ifdef NDEBUG
@@ -88,14 +88,14 @@ enum ctResults {
 /*! @brief Bubble up the ctResults error to the owning function */
 #define CT_RETURN_FAIL(_arg)                                                             \
    {                                                                                     \
-      enum ctResults __res = (_arg);                                                     \
+      ctResults __res = (_arg);                                                          \
       if (__res != CT_SUCCESS) { return __res; }                                         \
    }
 
 /*! @brief Same as CT_RETURN_FAIL() but can do cleanup before exiting */
 #define CT_RETURN_FAIL_CLEAN(_arg, _cleanup)                                             \
    {                                                                                     \
-      enum ctResults __res = (_arg);                                                     \
+      ctResults __res = (_arg);                                                          \
       if (__res != CT_SUCCESS) {                                                         \
          _cleanup;                                                                       \
          return __res;                                                                   \
@@ -103,11 +103,11 @@ enum ctResults {
    }
 
 /*! @brief Return a given value upon a ctResults error */
-#define CT_RETURN_ON_FAIL(_arg, _result)                                                   \
+#define CT_RETURN_ON_FAIL(_arg, _result)                                                 \
    if ((_arg) != CT_SUCCESS) { return _result; }
 
 /*! @brief Return a given value upon a truth check failure */
-#define CT_RETURN_ON_UNTRUE(_arg, _result)                                                 \
+#define CT_RETURN_ON_UNTRUE(_arg, _result)                                               \
    if (!(_arg)) { return _result; }
 
 #define CT_RETURN_ON_NULL(_arg, _code) CT_RETURN_ON_UNTRUE(_arg, _code)
@@ -115,17 +115,9 @@ enum ctResults {
 /*C Helpers*/
 
 /*! @brief Check if (f) bit was turned on in (v) bitmask */
-#define ctCFlagCheck(v, f)      ((v & f) == f)
+#define ctCFlagCheck(v, f) ((v & f) == f)
 
 /*! @brief move (v) byte pointer forward to satisfy (a) alignment */
-#define ctAlign(v, a)           ((v + (a - 1)) & -a)
-
-/*Include common c files*/
-#include "SharedLogging.h"
-#include "Memory.h"
-#include "Math.h"
-#include "String.h"
-#include "Math3d.h"
-#include "Hash.h"
+#define ctAlign(v, a) ((v + (a - 1)) & -a)
 
 #include "codegen/engine/utilities/Common.h.gen.h"

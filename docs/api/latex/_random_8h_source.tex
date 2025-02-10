@@ -1,7 +1,41 @@
 \doxysection{Random.\+h}
 \hypertarget{_random_8h_source}{}\label{_random_8h_source}\index{Random.h@{Random.h}}
-
+\mbox{\hyperlink{_random_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ By\ Kenzie\ Wright\ -\/\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_8h}{Common.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_math3d_8h}{Math3d.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}codegen/engine/utilities/Random.h.gen.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ uint64\_t\ state[2];}
+\DoxyCodeLine{00016\ \}\ \mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00019\ \mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}\ \mbox{\hyperlink{_random_8h_afebc82761e9636b5df839a17ff25e82a}{ctRandomGeneratorInitSeed}}(uint32\_t\ seed);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}\ \mbox{\hyperlink{_random_8h_afc0ac7644590e2d7cde6bea4edfe5c41}{ctRandomGeneratorInit}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ uint32\_t\ \mbox{\hyperlink{_random_8h_acef41da7fac0878d5747d099f071ed78}{ctRandomGetUInt32}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ int32\_t\ \mbox{\hyperlink{_random_8h_a8d3e9830299a092b59212e87b4259d31}{ctRandomGetInt32Range}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator,\ int32\_t\ min,\ int32\_t\ max);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_random_8h_aea1efe5b33a5511a2552678bcd00f814}{ctRandomGetFloat}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator,\ \textcolor{keywordtype}{float}\ min,\ \textcolor{keywordtype}{float}\ max);}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_random_8h_add57ba1f8e1e362488eef54597542093}{ctRandomGetFloatSNorm}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_random_8h_a2aad18ffc911783c72f802a2b535387b}{ctRandomGetFloatUNorm}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ \mbox{\hyperlink{_random_8h_a1f3f68290a989aeb3ccae70e7a7dd623}{ctRandomGetVec3Range}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ min,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ max);}
+\DoxyCodeLine{00040\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ \mbox{\hyperlink{_random_8h_a873a4bb844f2b600cf3df2a541e190f6}{ctRandomGetVec3Norm}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_random_8h_a38e54ebb49bc71af106847fd1db7ee34}{ctRandomGetGaussian}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator,\ \textcolor{keywordtype}{float}\ mean,\ \textcolor{keywordtype}{float}\ standardDeviation);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_random_8h_ab832e037c178ca0f2a055f080d71aa81}{ctRandomGetGaussian2D}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator,\ \textcolor{keywordtype}{float}\ out[2],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ mean[2],\ \textcolor{keywordtype}{float}\ standardDeviation);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ \mbox{\hyperlink{_random_8h_a7a576939fd0def7262f2486df9d6eabe}{ctRandomGetInSphere}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator,\ \textcolor{keywordtype}{float}\ radius);}
+\DoxyCodeLine{00057\ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ \mbox{\hyperlink{_random_8h_a49268d2df620627393d5942e08af3cc8}{ctRandomGetOnSphere}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator,\ \textcolor{keywordtype}{float}\ radius);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \mbox{\hyperlink{structct_color_r_g_b_a8}{ctColorRGBA8}}\ \mbox{\hyperlink{_random_8h_a5b0b0791fe6cc206e076c508d7f75bf7}{ctRandomGetColor}}(\mbox{\hyperlink{structct_random_generator}{ctRandomGenerator}}*\ generator,\ \textcolor{keywordtype}{float}\ alpha);}
 
 \end{DoxyCode}

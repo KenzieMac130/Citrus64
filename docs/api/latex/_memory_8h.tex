@@ -6,6 +6,7 @@ Memory allocation and manipulation utilities.
 
 
 {\ttfamily \#include "{}Common.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/utilities/\+Memory.\+h.\+gen.\+h"{}}\newline
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,7 +43,7 @@ void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_memory_8h_a5bdd8f56f3f50a85e98
 \begin{DoxyCompactList}\small\item\em Aligned heap memory reallocation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_memory_8h_a3310611b33a651f79c46ad5761bbb4f0}{ct\+Aligned\+Free}} (void \texorpdfstring{$\ast$}{*}block)
 \begin{DoxyCompactList}\small\item\em Aligned heap memory free. \end{DoxyCompactList}\item 
-void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_memory_8h_a80d0d50b4f5b11bb422c9f45048fbdad}{ct\+Group\+Alloc}} (size\+\_\+t count, struct \mbox{\hyperlink{structct_group_alloc_desc}{ct\+Group\+Alloc\+Desc}} \texorpdfstring{$\ast$}{*}groups, size\+\_\+t \texorpdfstring{$\ast$}{*}size\+Out)
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_memory_8h_a566bb7b8e1e4ef5f52dd020b81392421}{ct\+Group\+Alloc}} (size\+\_\+t count, \mbox{\hyperlink{structct_group_alloc_desc}{ct\+Group\+Alloc\+Desc}} \texorpdfstring{$\ast$}{*}groups, size\+\_\+t \texorpdfstring{$\ast$}{*}size\+Out)
 \begin{DoxyCompactList}\small\item\em Optimized group allocation. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{_memory_8h_a2431d9c5c03d78172fe745fd249130c2}{ct\+Get\+Alive\+Allocations}} ()
 \begin{DoxyCompactList}\small\item\em Get the number of allocations that exist right now. \end{DoxyCompactList}\item 
@@ -197,11 +198,11 @@ int64\+\_\+t ct\+Get\+Alive\+Allocations (\begin{DoxyParamCaption}{}{}\end{DoxyP
 
 Get the number of allocations that exist right now. 
 
-This does not include allocations made by vanilla malloc/free \Hypertarget{_memory_8h_a80d0d50b4f5b11bb422c9f45048fbdad}\index{Memory.h@{Memory.h}!ctGroupAlloc@{ctGroupAlloc}}
+This does not include allocations made by vanilla malloc/free \Hypertarget{_memory_8h_a566bb7b8e1e4ef5f52dd020b81392421}\index{Memory.h@{Memory.h}!ctGroupAlloc@{ctGroupAlloc}}
 \index{ctGroupAlloc@{ctGroupAlloc}!Memory.h@{Memory.h}}
 \doxysubsubsection{\texorpdfstring{ctGroupAlloc()}{ctGroupAlloc()}}
-{\footnotesize\ttfamily \label{_memory_8h_a80d0d50b4f5b11bb422c9f45048fbdad} 
-void \texorpdfstring{$\ast$}{*} ct\+Group\+Alloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{count}{, }\item[{struct \mbox{\hyperlink{structct_group_alloc_desc}{ct\+Group\+Alloc\+Desc}} \texorpdfstring{$\ast$}{*}}]{groups}{, }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{size\+Out}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{_memory_8h_a566bb7b8e1e4ef5f52dd020b81392421} 
+void \texorpdfstring{$\ast$}{*} ct\+Group\+Alloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{count}{, }\item[{\mbox{\hyperlink{structct_group_alloc_desc}{ct\+Group\+Alloc\+Desc}} \texorpdfstring{$\ast$}{*}}]{groups}{, }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{size\+Out}{}\end{DoxyParamCaption})}
 
 
 

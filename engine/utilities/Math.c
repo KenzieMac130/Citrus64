@@ -6,15 +6,15 @@
 bool ctFloatCompare(const float a, const float b, const float threshold) {
    return ctAbsf(a - b) < threshold;
 }
- 
+
 bool ctFloatApproxEqual(const float a, const float b) {
    return ctFloatCompare(a, b, 0.0001f);
 }
 
 bool ctMultiFloatCompare(const uint32_t count,
-                                const float* a,
-                                const float* b,
-                                const float threshold) {
+                         const float* a,
+                         const float* b,
+                         const float threshold) {
    for (uint32_t i = 0; i < count; i++) {
       bool result = ctFloatCompare(a[i], b[i], threshold);
       if (!result) { return false; }
@@ -101,15 +101,15 @@ float ctDeg2Radf(const float a) {
 }
 
 float ctSinf(const float a) {
-    return fm_sinf(a);
+   return fm_sinf(a);
 }
 
 float ctSinApproxf(const float a) {
-    return fm_sinf_approx(a, 5);
+   return fm_sinf_approx(a, 5);
 }
 
 float ctSinAccuratef(const float a) {
-    return sinf(a);
+   return sinf(a);
 }
 
 float ctCosf(const float a) {
@@ -117,11 +117,11 @@ float ctCosf(const float a) {
 }
 
 float ctCosAccuratef(const float a) {
-    return cosf(a);
+   return cosf(a);
 }
 
 void ctSinCosf(const float a, float* sin, float* cos) {
-    return fm_sincosf(a, sin, cos);
+   return fm_sincosf(a, sin, cos);
 }
 
 float ctTanf(const float a) {
@@ -145,7 +145,7 @@ float ctArcTan2f(const float a, const float b) {
 }
 
 float ctArcTan2Accuratef(const float a, const float b) {
-    return atan2f(a, b);
+   return atan2f(a, b);
 }
 
 bool ctIsPrime(const uint32_t x) {

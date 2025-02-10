@@ -9,83 +9,84 @@
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_8h}{Common.h}}"{}}}
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}thirdparty/utf8/utf8.h"{}}}
 \DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Common\ -\/-\/-\/-\/-\/-\/-\/\ */}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00025\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{_string_8h_a96e084722f0cf84cb01f5435d70a28f0}{ctStringByteSize}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00030\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{_string_8h_aa1728b71d93511c84653d2c8c8ae1527}{ctStringGetUnicodeCodepointCount}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_af14727a31cc0a9933cc2928284d59df9}{ctStringEnsureNullTerminated}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize);}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a966ba4f8ed1a8a8cba7241f00a99d007}{ctStringEnsureUnicodeValid}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize);}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Comparison\ -\/-\/-\/-\/-\/-\/-\/\ */}}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_string_8h_aa3c3bc7281e95453e0a4af7b6ac806dd}{ctStringCmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ leftString,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ rightString);}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ ctStringEqual(\_leftString,\ \_rightString)\ \(\backslash\)}}
-\DoxyCodeLine{00046\ \textcolor{preprocessor}{(ctStringCmp(\_leftString,\ \_rightString)\ ==\ 0)}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Case\ -\/-\/-\/-\/-\/-\/-\/\ */}}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a86a5efbd6bc1d9a370c2631171d301b8}{ctStringToUpper}}(\textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a832d515380c547ce21eb77a679b01a73}{ctStringToLower}}(\textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ String\ Creation\ -\/-\/-\/-\/-\/-\/-\/\ */}}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a139663e58537bca1ffc763dc625e66bd}{ctStringClear}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize);}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a0e4ff66943db092c153b02be94df8930}{ctStringCopy}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sourceString);}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a3f176888d1c4e3d30b0ff8ef4001f184}{ctStringFormat}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ ...);}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a994ace4361bf7866236095bb548be0db}{ctStringFormatVArgs}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ va\_list\ vargs);}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Unicode\ 32\ Conversion\ -\/-\/-\/-\/-\/-\/-\/\ */}}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_aeeb8936d8a8b5d44b3f1010195737f86}{ctStringConvertToUtf32}}(int32\_t*\ outputBuffer,\ \textcolor{keywordtype}{size\_t}\ outputBufferSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ inputBuffer,\ \textcolor{keywordtype}{size\_t}\ inputBufferSize);}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a55ef6e92551bf330ef26c75f10b4c04b}{ctStringConvertFromUtf32}}(\textcolor{keywordtype}{char}*\ outputBuffer,\ \textcolor{keywordtype}{size\_t}\ outputBufferSize,\ \textcolor{keyword}{const}\ int32\_t*\ inputBuffer,\ \textcolor{keywordtype}{size\_t}\ inputBufferSize);}
-\DoxyCodeLine{00092\ }
-\DoxyCodeLine{00093\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Codepoint\ -\/-\/-\/-\/-\/-\/-\/\ */}}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ ctCodePointIsDigit(c)\ (c\ >=\ '0'\ \&\&\ c\ <=\ '9')}}
-\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ ctCodePointIsAlpha(c)\ ((c\ >=\ 'A'\ \&\&\ c\ <=\ 'Z')\ ||\ (c\ >=\ 'a'\ \&\&\ c\ <=\ 'z'))}}
-\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ ctCodePointIsAlnum(c)\ (ctIsDigit(c)\ ||\ ctIsAlpha(c))}}
-\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ ctCodePointIsUnicode(c)\ (c\ >\ 127\ ||\ c\ <\ 0)}}
-\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ ctCodePointIsAscii(c)\ (c\ <=\ 127\ \&\&\ c\ >=\ 0)}}
-\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ ctCodePointIsAlphaUnicode(c)\ (ctIsAlpha(c)\ ||\ ctIsUnicode(c))}}
-\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ ctCodePointIsAlnumUnicode(c)\ (ctIsAlnum(c)\ ||\ ctIsUnicode(c))}}
-\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ ctCodePointIsUpper(c)\ utf8isupper(c)}}
-\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ ctCodePointIsLower(c)\ utf8islower(c)}}
-\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ ctCodePointToUpper(c)\ utf8uprcodepoint(c)}}
-\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ ctCodePointToLower(c)\ utf8lwrcodepoint(c)}}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ String\ to\ Type\ Conversion\ -\/-\/-\/-\/-\/-\/-\/\ */}}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00110\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a07ced6aea7d0912a17416d538db8ca3d}{ctStringToBool}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keywordtype}{bool}*\ dest);}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}codegen/engine/utilities/String.h.gen.h"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Common\ -\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{_string_8h_a96e084722f0cf84cb01f5435d70a28f0}{ctStringByteSize}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{_string_8h_aa1728b71d93511c84653d2c8c8ae1527}{ctStringGetUnicodeCodepointCount}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_af14727a31cc0a9933cc2928284d59df9}{ctStringEnsureNullTerminated}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a966ba4f8ed1a8a8cba7241f00a99d007}{ctStringEnsureUnicodeValid}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Comparison\ -\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_string_8h_aa3c3bc7281e95453e0a4af7b6ac806dd}{ctStringCmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ leftString,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ rightString);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ ctStringEqual(\_leftString,\ \_rightString)\ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{(ctStringCmp(\_leftString,\ \_rightString)\ ==\ 0)}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Case\ -\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a86a5efbd6bc1d9a370c2631171d301b8}{ctStringToUpper}}(\textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a832d515380c547ce21eb77a679b01a73}{ctStringToLower}}(\textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ String\ Creation\ -\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a139663e58537bca1ffc763dc625e66bd}{ctStringClear}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a0e4ff66943db092c153b02be94df8930}{ctStringCopy}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sourceString);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a3f176888d1c4e3d30b0ff8ef4001f184}{ctStringFormat}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ ...);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a994ace4361bf7866236095bb548be0db}{ctStringFormatVArgs}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ va\_list\ vargs);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Unicode\ 32\ Conversion\ -\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_aeeb8936d8a8b5d44b3f1010195737f86}{ctStringConvertToUtf32}}(int32\_t*\ outputBuffer,\ \textcolor{keywordtype}{size\_t}\ outputBufferSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ inputBuffer,\ \textcolor{keywordtype}{size\_t}\ inputBufferSize);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a55ef6e92551bf330ef26c75f10b4c04b}{ctStringConvertFromUtf32}}(\textcolor{keywordtype}{char}*\ outputBuffer,\ \textcolor{keywordtype}{size\_t}\ outputBufferSize,\ \textcolor{keyword}{const}\ int32\_t*\ inputBuffer,\ \textcolor{keywordtype}{size\_t}\ inputBufferSize);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Codepoint\ -\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ ctCodePointIsDigit(c)\ (c\ >=\ '0'\ \&\&\ c\ <=\ '9')}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ ctCodePointIsAlpha(c)\ ((c\ >=\ 'A'\ \&\&\ c\ <=\ 'Z')\ ||\ (c\ >=\ 'a'\ \&\&\ c\ <=\ 'z'))}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ ctCodePointIsAlnum(c)\ (ctIsDigit(c)\ ||\ ctIsAlpha(c))}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ ctCodePointIsUnicode(c)\ (c\ >\ 127\ ||\ c\ <\ 0)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ ctCodePointIsAscii(c)\ (c\ <=\ 127\ \&\&\ c\ >=\ 0)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ ctCodePointIsAlphaUnicode(c)\ (ctIsAlpha(c)\ ||\ ctIsUnicode(c))}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ ctCodePointIsAlnumUnicode(c)\ (ctIsAlnum(c)\ ||\ ctIsUnicode(c))}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ ctCodePointIsUpper(c)\ utf8isupper(c)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ ctCodePointIsLower(c)\ utf8islower(c)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ ctCodePointToUpper(c)\ utf8uprcodepoint(c)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ ctCodePointToLower(c)\ utf8lwrcodepoint(c)}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ String\ to\ Type\ Conversion\ -\/-\/-\/-\/-\/-\/-\/\ */}}
 \DoxyCodeLine{00111\ }
-\DoxyCodeLine{00113\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a49c5965631372548bdebf374e70e4fcc}{ctStringToInt8}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ int8\_t*\ dest);}
-\DoxyCodeLine{00115\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a5f4ad00be5da02f22d20036fd5fabb64}{ctStringToUInt8}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ uint8\_t*\ dest);}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00118\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_ab4976ae46c28955644dcf45d2511892b}{ctStringToInt16}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ int16\_t*\ dest);}
-\DoxyCodeLine{00120\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_aa604300af5cf5250d4d674afff16d12b}{ctStringToUInt16}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ uint16\_t*\ dest);}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00123\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_afb4289b7737bfd789b41c873e4fae1e2}{ctStringToInt32}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ int32\_t*\ dest);}
-\DoxyCodeLine{00125\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_aad0c962925da56e6a138f5e6b4f0ba3b}{ctStringToUInt32}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ uint32\_t*\ dest);}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00128\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a633c936ebeb71ab59a33ef3a76210c59}{ctStringToInt64}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ int64\_t*\ dest);}
-\DoxyCodeLine{00130\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a2d3fd36515df24abc27b5cd13cc60fc3}{ctStringToUInt64}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ uint64\_t*\ dest);}
-\DoxyCodeLine{00131\ }
-\DoxyCodeLine{00133\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_ae209ea2d2722c09f3b9add5fae8575ab}{ctStringToFloat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keywordtype}{float}*\ dest);}
-\DoxyCodeLine{00135\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a579df013ab87e51d738487dc1d1c1156}{ctStringToDouble}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keywordtype}{double}*\ dest);}
-\DoxyCodeLine{00137\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a4d4bdac6039ef92ebd0179f6aace8561}{ctStringToLongDouble}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}*\ dest);}
-\DoxyCodeLine{00138\ }
-\DoxyCodeLine{00139\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Hexidecimal\ Conversion\ -\/-\/-\/-\/-\/-\/-\/\ */}}
-\DoxyCodeLine{00140\ }
-\DoxyCodeLine{00142\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a14de5979cfb3546d8260473a1938105f}{ctHexToBytes}}(uint8\_t*\ byteBuffer,\ \textcolor{keywordtype}{size\_t}\ byteBufferSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ hexBuffer,\ \textcolor{keywordtype}{size\_t}\ hexBufferSize);}
-\DoxyCodeLine{00144\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_af29d5c479b07f18a6f9280603edf411b}{ctBytesToHex}}(\textcolor{keywordtype}{char}*\ hexBuffer,\ \textcolor{keywordtype}{size\_t}\ hexBufferSize,\ \textcolor{keyword}{const}\ uint8\_t*\ byteBuffer,\ \textcolor{keywordtype}{size\_t}\ byteBufferSize);}
+\DoxyCodeLine{00113\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a549478880dc350926f906b95361a786c}{ctStringToBool}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keywordtype}{bool}*\ dest);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_afb83c1367fb1b1d3cd092c3aaaefb3ec}{ctStringToInt8}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ int8\_t*\ dest);}
+\DoxyCodeLine{00118\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_aba60f0de90bb8e382c1d5edc7983d9e1}{ctStringToUInt8}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ uint8\_t*\ dest);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00121\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a8e9cfb85460451949c5f485dec2212ec}{ctStringToInt16}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ int16\_t*\ dest);}
+\DoxyCodeLine{00123\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a3693040953f2bfbcff51bed231b61029}{ctStringToUInt16}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ uint16\_t*\ dest);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a615a034668cd4e308b4f3bf33bc6195a}{ctStringToInt32}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ int32\_t*\ dest);}
+\DoxyCodeLine{00128\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a5df846aaee88cb9c3d5bfe360c5d43ca}{ctStringToUInt32}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ uint32\_t*\ dest);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00131\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a32888a3ce855bfae04799ebace12a493}{ctStringToInt64}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ int64\_t*\ dest);}
+\DoxyCodeLine{00133\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a5fe5a50cc9fa74d71881b102809d4f96}{ctStringToUInt64}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ uint64\_t*\ dest);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a866310861b3c27bba922f2bc7c86149e}{ctStringToFloat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keywordtype}{float}*\ dest);}
+\DoxyCodeLine{00138\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a0aa1f97a2f293cd7fd1ca2f3f3bda1df}{ctStringToDouble}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keywordtype}{double}*\ dest);}
+\DoxyCodeLine{00140\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_string_8h_a8d3aabc998cae61240d55e5900788bb4}{ctStringToLongDouble}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufferSize,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}*\ dest);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Hexidecimal\ Conversion\ -\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_a14de5979cfb3546d8260473a1938105f}{ctHexToBytes}}(uint8\_t*\ byteBuffer,\ \textcolor{keywordtype}{size\_t}\ byteBufferSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ hexBuffer,\ \textcolor{keywordtype}{size\_t}\ hexBufferSize);}
+\DoxyCodeLine{00147\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_string_8h_af29d5c479b07f18a6f9280603edf411b}{ctBytesToHex}}(\textcolor{keywordtype}{char}*\ hexBuffer,\ \textcolor{keywordtype}{size\_t}\ hexBufferSize,\ \textcolor{keyword}{const}\ uint8\_t*\ byteBuffer,\ \textcolor{keywordtype}{size\_t}\ byteBufferSize);}
 
 \end{DoxyCode}

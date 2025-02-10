@@ -1,7 +1,22 @@
 \doxysection{Time.\+h}
 \hypertarget{_time_8h_source}{}\label{_time_8h_source}\index{Time.h@{Time.h}}
-
+\mbox{\hyperlink{_time_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ By\ Kenzie\ Wright\ -\/\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_8h}{Common.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}codegen/engine/utilities/Time.h.gen.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00022\ \ \ \ \ uint64\_t\ lastHardwareTick;}
+\DoxyCodeLine{00023\ \ \ \ \ uint64\_t\ currentHardwareTick;}
+\DoxyCodeLine{00024\ \}\ \mbox{\hyperlink{structct_stopwatch}{ctStopwatch}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \mbox{\hyperlink{structct_stopwatch}{ctStopwatch}}\ \mbox{\hyperlink{_time_8h_ab32e103c66a11f4f6eed4788998e4f01}{ctStopwatchInit}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_time_8h_ade011838c7402172f1656c9cda98f96d}{ctStopwatchNextLap}}(\mbox{\hyperlink{structct_stopwatch}{ctStopwatch}}*\ stopwatch);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_time_8h_a11c8f8deb038bcbcfa0258844a18d989}{ctStopwatchGetDeltaTime}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structct_stopwatch}{ctStopwatch}}*\ stopwatch);}
 
 \end{DoxyCode}

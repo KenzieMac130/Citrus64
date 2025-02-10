@@ -7,82 +7,84 @@
 \DoxyCodeLine{00007\ }
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_8h}{Common.h}}"{}}}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ CT\_PI\ \ \ 3.141592653589793238462643383279f}}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00017\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_math_8h_a1d0736fe60c79bbfdff7d6574e1385db}{ctFloatApproxEqual}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b);}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00022\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_math_8h_aed8a9ae6d3d73845d742914d2da8c34b}{ctFloatCompare}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ threshold);}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00028\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_math_8h_a9db0553d4ab54b98bd2a98ca8734be2c}{ctMultiFloatCompare}}(\textcolor{keyword}{const}\ uint32\_t\ count,}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ a,}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ b,}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ threshold);}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00037\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a291d9ee6a32a9ab9b5e3e17a18017318}{ctLerpf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ factor);}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00043\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_aa770bffafd1b77b5dc20c03b9d45ddf5}{ctSmoothStepf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ factor);}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00046\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a1a784e1e91a4c7485d0b3fff07064a46}{ctPowf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ value,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ exponent);}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00049\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_aedae907f9940cac0209a7862f377ab27}{ctLogf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00052\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a109b327ec3619cc4a2e5aca4cf743eeb}{ctSqrtf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00055\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ac2cc39fedb0ed501ce5cad5febc09e9f}{ctInvSqrtf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00058\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ae664c8ee820f95066a4b6ab68b337da9}{ctAbsf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00064\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ab8aff24ff5880c626877c6ee1eb2ee9e}{ctExpf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ power);}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00067\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a487eeb983963f6c53abda40851ab44cc}{ctMaxf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b);}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00070\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_abec0b6e0de9099bce3c306c0b557e5a3}{ctMinf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b);}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00074\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ac18c30447906c849b767be262d1fdf78}{ctClampf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ min,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ max);}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00078\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a1ab9661e963daa363593fcaf08b3e8fd}{ctRemapf}}(}
-\DoxyCodeLine{00079\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ in\_min,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ in\_max,\ \textcolor{keywordtype}{float}\ out\_min,\ \textcolor{keywordtype}{float}\ out\_max);}
-\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}codegen/engine/utilities/Math.h.gen.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ CT\_PI\ \ \ 3.141592653589793238462643383279f}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_math_8h_a1d0736fe60c79bbfdff7d6574e1385db}{ctFloatApproxEqual}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_math_8h_aed8a9ae6d3d73845d742914d2da8c34b}{ctFloatCompare}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ threshold);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_math_8h_a9db0553d4ab54b98bd2a98ca8734be2c}{ctMultiFloatCompare}}(\textcolor{keyword}{const}\ uint32\_t\ count,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ a,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ b,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ threshold);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a291d9ee6a32a9ab9b5e3e17a18017318}{ctLerpf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ factor);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_aa770bffafd1b77b5dc20c03b9d45ddf5}{ctSmoothStepf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ factor);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a1a784e1e91a4c7485d0b3fff07064a46}{ctPowf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ value,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ exponent);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_aedae907f9940cac0209a7862f377ab27}{ctLogf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a109b327ec3619cc4a2e5aca4cf743eeb}{ctSqrtf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ac2cc39fedb0ed501ce5cad5febc09e9f}{ctInvSqrtf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ae664c8ee820f95066a4b6ab68b337da9}{ctAbsf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ab8aff24ff5880c626877c6ee1eb2ee9e}{ctExpf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ power);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a487eeb983963f6c53abda40851ab44cc}{ctMaxf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_abec0b6e0de9099bce3c306c0b557e5a3}{ctMinf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ac18c30447906c849b767be262d1fdf78}{ctClampf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ min,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ max);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a1ab9661e963daa363593fcaf08b3e8fd}{ctRemapf}}(}
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ in\_min,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ in\_max,\ \textcolor{keywordtype}{float}\ out\_min,\ \textcolor{keywordtype}{float}\ out\_max);}
+\DoxyCodeLine{00081\ }
 \DoxyCodeLine{00083\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a166accbb9ff0602e636c6ed586f3b14c}{ctSaturatef}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
 \DoxyCodeLine{00084\ }
 \DoxyCodeLine{00087\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ad47b84f196461802401e0eae121f89c1}{ctFloorf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
 \DoxyCodeLine{00088\ }
-\DoxyCodeLine{00091\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a8557ec930cd307e41f5f9f1da457d0b6}{ctCeilf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00092\ }
-\DoxyCodeLine{00095\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ab79998a8ec794592f5698ada4061f025}{ctRoundf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00099\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a9eb605628ca4acd650af4fe141b57265}{ctFracf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a8557ec930cd307e41f5f9f1da457d0b6}{ctCeilf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ab79998a8ec794592f5698ada4061f025}{ctRoundf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a9eb605628ca4acd650af4fe141b57265}{ctFracf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a4f7a3a3eb8211f4f22c58237bafeca46}{ctRad2Degf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
 \DoxyCodeLine{00100\ }
-\DoxyCodeLine{00102\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a4f7a3a3eb8211f4f22c58237bafeca46}{ctRad2Degf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a5524d56d08915aee0715c66042807357}{ctDeg2Radf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
 \DoxyCodeLine{00103\ }
-\DoxyCodeLine{00105\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a5524d56d08915aee0715c66042807357}{ctDeg2Radf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a207bc857e3c69e138b068c83bac34633}{ctSinf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
 \DoxyCodeLine{00106\ }
-\DoxyCodeLine{00108\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a207bc857e3c69e138b068c83bac34633}{ctSinf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00115\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a6d787c5320c1516788ea237d9b8c58da}{ctSinApproxf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00122\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ac29964c26408110c5e75d128d91718f6}{ctSinAccuratef}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a6d787c5320c1516788ea237d9b8c58da}{ctSinApproxf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_ac29964c26408110c5e75d128d91718f6}{ctSinAccuratef}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_aecda2241b2bb5e458ca8a0bab1c8c867}{ctCosf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
 \DoxyCodeLine{00123\ }
-\DoxyCodeLine{00125\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_aecda2241b2bb5e458ca8a0bab1c8c867}{ctCosf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00132\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a9dcd0e5bed4ae2f0921d12fb660d2c63}{ctCosAccuratef}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00138\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_math_8h_a5acceab3cc472879b3586a716aa15195}{ctSinCosf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}*\ sin,\ \textcolor{keywordtype}{float}*\ cos);}
+\DoxyCodeLine{00129\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a9dcd0e5bed4ae2f0921d12fb660d2c63}{ctCosAccuratef}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00135\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_math_8h_a5acceab3cc472879b3586a716aa15195}{ctSinCosf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}*\ sin,\ \textcolor{keywordtype}{float}*\ cos);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a603175279f921b023acff39435839895}{ctTanf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
 \DoxyCodeLine{00139\ }
-\DoxyCodeLine{00141\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a603175279f921b023acff39435839895}{ctTanf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00141\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_adbc0c0df84938269d1a94623e237b394}{ctArcSinf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
 \DoxyCodeLine{00142\ }
-\DoxyCodeLine{00144\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_adbc0c0df84938269d1a94623e237b394}{ctArcSinf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00144\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a1130a934d2d5dab50b4af9c01df10ece}{ctArcCosf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
 \DoxyCodeLine{00145\ }
-\DoxyCodeLine{00147\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a1130a934d2d5dab50b4af9c01df10ece}{ctArcCosf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
+\DoxyCodeLine{00147\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a735f21af27abad29bfc7811b73142e0c}{ctArcTanf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
 \DoxyCodeLine{00148\ }
-\DoxyCodeLine{00150\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a735f21af27abad29bfc7811b73142e0c}{ctArcTanf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a);}
-\DoxyCodeLine{00151\ }
-\DoxyCodeLine{00156\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a8349ca2f4e532f62be8ee294934724b5}{ctArcTan2f}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b);}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00163\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_aa5129bbf470616cc40d7fb1849c75933}{ctArcTan2Accuratef}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b);}
+\DoxyCodeLine{00153\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_a8349ca2f4e532f62be8ee294934724b5}{ctArcTan2f}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00160\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_math_8h_aa5129bbf470616cc40d7fb1849c75933}{ctArcTan2Accuratef}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00163\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_math_8h_aee04aef1874f19265a656a389e600203}{ctIsPrime}}(\textcolor{keyword}{const}\ uint32\_t\ x);}
 \DoxyCodeLine{00164\ }
-\DoxyCodeLine{00166\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_math_8h_aee04aef1874f19265a656a389e600203}{ctIsPrime}}(\textcolor{keyword}{const}\ uint32\_t\ x);}
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00169\ uint32\_t\ \mbox{\hyperlink{_math_8h_ab680982488d1988831edb4886e65c379}{ctNextPrime}}(uint32\_t\ x);}
+\DoxyCodeLine{00166\ uint32\_t\ \mbox{\hyperlink{_math_8h_ab680982488d1988831edb4886e65c379}{ctNextPrime}}(uint32\_t\ x);}
 
 \end{DoxyCode}

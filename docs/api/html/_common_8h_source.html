@@ -129,7 +129,7 @@ $(function(){initNavTree('_common_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;engine/Config.h&quot;</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">   28</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">   28</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>   CT_SUCCESS = 0,</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>   CT_FAILURE_UNKNOWN = -1,</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>   CT_FAILURE_OUT_OF_MEMORY = -2,</div>
@@ -156,7 +156,7 @@ $(function(){initNavTree('_common_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>   CT_FAILURE_SKIPPED = -22,</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>   CT_FAILURE_INCORRECT_VERSION = -23,</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>   CT_FAILURE_END_OF_STREAM = -24</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>} <a class="code hl_enumeration" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a>;</div>
 </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">/*Debug*/</span></div>
@@ -191,7 +191,7 @@ $(function(){initNavTree('_common_8h_source.html',''); initResizable(true); });
 <div class="foldopen" id="foldopen00089" data-start="" data-end="">
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="_common_8h.html#a6a6a8891407da421984a38b5908fd541">   89</a></span><span class="preprocessor">#define CT_RETURN_FAIL(_arg)                                                             \</span></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">   {                                                                                     \</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">      enum ctResults __res = (_arg);                                                     \</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">      ctResults __res = (_arg);                                                     \</span></div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">      if (__res != CT_SUCCESS) { return __res; }                                         \</span></div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">   }</span></div>
 </div>
@@ -199,7 +199,7 @@ $(function(){initNavTree('_common_8h_source.html',''); initResizable(true); });
 <div class="foldopen" id="foldopen00096" data-start="" data-end="">
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="_common_8h.html#a4a75e59e02ed9ce57e6f90108a505e1a">   96</a></span><span class="preprocessor">#define CT_RETURN_FAIL_CLEAN(_arg, _cleanup)                                             \</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">   {                                                                                     \</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">      enum ctResults __res = (_arg);                                                     \</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">      ctResults __res = (_arg);                                                     \</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">      if (__res != CT_SUCCESS) {                                                         \</span></div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">         _cleanup;                                                                       \</span></div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">         return __res;                                                                   \</span></div>
@@ -225,17 +225,9 @@ $(function(){initNavTree('_common_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="_common_8h.html#a53d9b03d8399b132ce037fed7db52931">  121</a></span><span class="preprocessor">#define ctAlign(v, a)           ((v + (a - 1)) &amp; -a)</span></div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment">/*Include common c files*/</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#include &quot;<a class="code" href="_shared_logging_8h.html">SharedLogging.h</a>&quot;</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#include &quot;<a class="code" href="_memory_8h.html">Memory.h</a>&quot;</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#include &quot;<a class="code" href="_math_8h.html">Math.h</a>&quot;</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#include &quot;<a class="code" href="_string_8h.html">String.h</a>&quot;</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#include &quot;<a class="code" href="_math3d_8h.html">Math3d.h</a>&quot;</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#include &quot;codegen/engine/utilities/Common.h.gen.h&quot;</span></div>
 <div class="ttc" id="a_common_8h_html_a4c2ef51e097a480311ca51322ef203ca"><div class="ttname"><a href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a></div><div class="ttdeci">ctResults</div><div class="ttdoc">Return Codes for the engine&#39;s runtime errors.</div><div class="ttdef"><b>Definition</b> Common.h:28</div></div>
-<div class="ttc" id="a_math3d_8h_html"><div class="ttname"><a href="_math3d_8h.html">Math3d.h</a></div><div class="ttdoc">Math functions for working with 3D space.</div></div>
 <div class="ttc" id="a_math_8h_html"><div class="ttname"><a href="_math_8h.html">Math.h</a></div><div class="ttdoc">Math library for extended floating point and integer math.</div></div>
-<div class="ttc" id="a_memory_8h_html"><div class="ttname"><a href="_memory_8h.html">Memory.h</a></div><div class="ttdoc">Memory allocation and manipulation utilities.</div></div>
-<div class="ttc" id="a_shared_logging_8h_html"><div class="ttname"><a href="_shared_logging_8h.html">SharedLogging.h</a></div><div class="ttdoc">Debug logging.</div></div>
 <div class="ttc" id="a_string_8h_html"><div class="ttname"><a href="_string_8h.html">String.h</a></div><div class="ttdoc">UTF8 aware string library targeted at simple game use cases.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

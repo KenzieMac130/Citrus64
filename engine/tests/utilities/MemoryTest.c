@@ -38,7 +38,7 @@ void ctUnitTestMemory() {
     uint8_t* g1;
     uint8_t* g2;
     uint8_t* g3;
-    struct ctGroupAllocDesc groups[] = {
+    ctGroupAllocDesc groups[] = {
         {
             .alignment = CT_ALIGNMENT_CACHE,
             .size = 32,

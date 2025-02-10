@@ -1,0 +1,31 @@
+\doxysection{Time.\+h File Reference}
+\hypertarget{_time_8h}{}\label{_time_8h}\index{Time.h@{Time.h}}
+
+
+Time related utilities.  
+
+
+{\ttfamily \#include "{}Common.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/utilities/\+Time.\+h.\+gen.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structct_stopwatch}{ct\+Stopwatch}}
+\begin{DoxyCompactList}\small\item\em Keeps track of time at a hardware level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_time_8h_ab32e103c66a11f4f6eed4788998e4f01}\label{_time_8h_ab32e103c66a11f4f6eed4788998e4f01} 
+\mbox{\hyperlink{structct_stopwatch}{ct\+Stopwatch}} {\bfseries ct\+Stopwatch\+Init} ()
+\begin{DoxyCompactList}\small\item\em Initialize the stopwatch and start the clock immediately. \end{DoxyCompactList}\item 
+\Hypertarget{_time_8h_ade011838c7402172f1656c9cda98f96d}\label{_time_8h_ade011838c7402172f1656c9cda98f96d} 
+void {\bfseries ct\+Stopwatch\+Next\+Lap} (\mbox{\hyperlink{structct_stopwatch}{ct\+Stopwatch}} \texorpdfstring{$\ast$}{*}stopwatch)
+\begin{DoxyCompactList}\small\item\em Progress the stopwatch to the next lap (or end the timer) \end{DoxyCompactList}\item 
+\Hypertarget{_time_8h_a11c8f8deb038bcbcfa0258844a18d989}\label{_time_8h_a11c8f8deb038bcbcfa0258844a18d989} 
+float {\bfseries ct\+Stopwatch\+Get\+Delta\+Time} (const \mbox{\hyperlink{structct_stopwatch}{ct\+Stopwatch}} \texorpdfstring{$\ast$}{*}stopwatch)
+\begin{DoxyCompactList}\small\item\em Get the delta time of the last lap in real-\/world time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Time related utilities. 
+

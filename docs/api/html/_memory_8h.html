@@ -114,6 +114,7 @@ $(function(){initNavTree('_memory_8h.html',''); initResizable(true); });
 <p>Memory allocation and manipulation utilities.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_common_8h_source.html">Common.h</a>&quot;</code><br />
+<code>#include &quot;codegen/engine/utilities/Memory.h.gen.h&quot;</code><br />
 </div>
 <p><a href="_memory_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -165,9 +166,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a3310611b33a651f79c46ad5761bbb4f0" id="r_a3310611b33a651f79c46ad5761bbb4f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3310611b33a651f79c46ad5761bbb4f0">ctAlignedFree</a> (void *block)</td></tr>
 <tr class="memdesc:a3310611b33a651f79c46ad5761bbb4f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aligned heap memory free.  <br /></td></tr>
 <tr class="separator:a3310611b33a651f79c46ad5761bbb4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80d0d50b4f5b11bb422c9f45048fbdad" id="r_a80d0d50b4f5b11bb422c9f45048fbdad"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80d0d50b4f5b11bb422c9f45048fbdad">ctGroupAlloc</a> (size_t count, struct <a class="el" href="structct_group_alloc_desc.html">ctGroupAllocDesc</a> *groups, size_t *sizeOut)</td></tr>
-<tr class="memdesc:a80d0d50b4f5b11bb422c9f45048fbdad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimized group allocation.  <br /></td></tr>
-<tr class="separator:a80d0d50b4f5b11bb422c9f45048fbdad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a566bb7b8e1e4ef5f52dd020b81392421" id="r_a566bb7b8e1e4ef5f52dd020b81392421"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a566bb7b8e1e4ef5f52dd020b81392421">ctGroupAlloc</a> (size_t count, <a class="el" href="structct_group_alloc_desc.html">ctGroupAllocDesc</a> *groups, size_t *sizeOut)</td></tr>
+<tr class="memdesc:a566bb7b8e1e4ef5f52dd020b81392421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimized group allocation.  <br /></td></tr>
+<tr class="separator:a566bb7b8e1e4ef5f52dd020b81392421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2431d9c5c03d78172fe745fd249130c2" id="r_a2431d9c5c03d78172fe745fd249130c2"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2431d9c5c03d78172fe745fd249130c2">ctGetAliveAllocations</a> ()</td></tr>
 <tr class="memdesc:a2431d9c5c03d78172fe745fd249130c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of allocations that exist right now.  <br /></td></tr>
 <tr class="separator:a2431d9c5c03d78172fe745fd249130c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,7 +224,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBufferAssert</b> (v
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a2e847a1fb06f47564456bd7c45cdf56b">ctBufferAssertSingle</a>(_parentBuffer, _parentBufferSize, _parentBuffer + _idx)</div>
-<div class="ttc" id="a_memory_8h_html_a2e847a1fb06f47564456bd7c45cdf56b"><div class="ttname"><a href="#a2e847a1fb06f47564456bd7c45cdf56b">ctBufferAssertSingle</a></div><div class="ttdeci">#define ctBufferAssertSingle(_parentBuffer, _parentBufferSize, _ptr)</div><div class="ttdoc">ctBufferAssert() for single objects</div><div class="ttdef"><b>Definition</b> Memory.h:102</div></div>
+<div class="ttc" id="a_memory_8h_html_a2e847a1fb06f47564456bd7c45cdf56b"><div class="ttname"><a href="#a2e847a1fb06f47564456bd7c45cdf56b">ctBufferAssertSingle</a></div><div class="ttdeci">#define ctBufferAssertSingle(_parentBuffer, _parentBufferSize, _ptr)</div><div class="ttdoc">ctBufferAssert() for single objects</div><div class="ttdef"><b>Definition</b> Memory.h:104</div></div>
 </div><!-- fragment -->
 <p><a class="el" href="#aba4dc708ce0fb2f886746448a2fea032" title="Assert memory block against parent bounds.">ctBufferAssert()</a> for a array indexing </p>
 
@@ -427,8 +428,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBufferAssert</b> (v
 
 </div>
 </div>
-<a id="a80d0d50b4f5b11bb422c9f45048fbdad" name="a80d0d50b4f5b11bb422c9f45048fbdad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80d0d50b4f5b11bb422c9f45048fbdad">&#9670;&#160;</a></span>ctGroupAlloc()</h2>
+<a id="a566bb7b8e1e4ef5f52dd020b81392421" name="a566bb7b8e1e4ef5f52dd020b81392421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a566bb7b8e1e4ef5f52dd020b81392421">&#9670;&#160;</a></span>ctGroupAlloc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -441,7 +442,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBufferAssert</b> (v
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">struct <a class="el" href="structct_group_alloc_desc.html">ctGroupAllocDesc</a> *</td>          <td class="paramname"><span class="paramname"><em>groups</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structct_group_alloc_desc.html">ctGroupAllocDesc</a> *</td>          <td class="paramname"><span class="paramname"><em>groups</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

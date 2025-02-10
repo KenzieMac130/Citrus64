@@ -22,7 +22,23 @@ It is recommended to open the root folder (either by right clicking in the file 
 * [gettext](https://marketplace.visualstudio.com/items?itemName=mrorz.language-gettext) (features for translators)
 * [glTF](https://marketplace.visualstudio.com/items?itemName=cesium.gltf-vscode) (for quickly viewing models)
 * [MIPS Support](https://marketplace.visualstudio.com/items?itemName=kdarkhan.mips) (for advanced programmers)
-* [Hex eEditor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor) (for viewing binary files)
+* [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor) (for viewing binary files)
+
+## Code Formatting
+
+This project uses Clang-Format to automatically enforce tedious bits of the project's code style standards.
+
+1. Install the [Clang-Format VSCode Integration](https://marketplace.visualstudio.com/items?itemName=xaver.clang-format)
+2. Install [Clang-Format](https://github.com/xaverh/vscode-clang-format?tab=readme-ov-file#installing-clang-format)
+3. Hit `Shift+Alt+F` to format your documents before saving
+
+### Windows
+
+If you are on windows you might get a "clang-fomat command not availible message. 
+
+1. Open your VSCode Settings by hitting `F1` and typing "Open User Settings"`
+2. Type "clang-format" in the search bar
+3. Enter `C:\\Program Files\\LLVM\\bin\\clang-format.exe` in the clang-format executable field
 
 ## Debugger
 If you are a programmer you might want to setup a debugger so you aren't flying without instruments when testing code.

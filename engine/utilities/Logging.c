@@ -1,6 +1,6 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
-#include "SharedLogging.h"
-#include "codegen/engine/utilities/SharedLogging.c.gen.h"
+#include "Logging.h"
+#include "codegen/engine/utilities/Logging.c.gen.h"
 
 void ctDebugLog(const char* format, ...) {
 #if CT_IS_DEBUG || CT_BUILD_UNIT_TESTS

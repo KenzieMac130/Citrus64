@@ -106,13 +106,35 @@ $(function(){initNavTree('_time_8h_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Time.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<a href="_time_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_common_8h.html">Common.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;codegen/engine/utilities/Time.h.gen.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structct_stopwatch.html">   21</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    uint64_t lastHardwareTick;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    uint64_t currentHardwareTick;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>} <a class="code hl_struct" href="structct_stopwatch.html">ctStopwatch</a>;</div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="_time_8h.html#ab32e103c66a11f4f6eed4788998e4f01">   27</a></span><a class="code hl_struct" href="structct_stopwatch.html">ctStopwatch</a> <a class="code hl_function" href="_time_8h.html#ab32e103c66a11f4f6eed4788998e4f01">ctStopwatchInit</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="_time_8h.html#ade011838c7402172f1656c9cda98f96d">   30</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_time_8h.html#ade011838c7402172f1656c9cda98f96d">ctStopwatchNextLap</a>(<a class="code hl_struct" href="structct_stopwatch.html">ctStopwatch</a>* stopwatch);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="_time_8h.html#a11c8f8deb038bcbcfa0258844a18d989">   33</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_time_8h.html#a11c8f8deb038bcbcfa0258844a18d989">ctStopwatchGetDeltaTime</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structct_stopwatch.html">ctStopwatch</a>* stopwatch);</div>
+<div class="ttc" id="a_common_8h_html"><div class="ttname"><a href="_common_8h.html">Common.h</a></div><div class="ttdoc">Boilerplate for all engine and game files.</div></div>
+<div class="ttc" id="a_time_8h_html_a11c8f8deb038bcbcfa0258844a18d989"><div class="ttname"><a href="_time_8h.html#a11c8f8deb038bcbcfa0258844a18d989">ctStopwatchGetDeltaTime</a></div><div class="ttdeci">float ctStopwatchGetDeltaTime(const ctStopwatch *stopwatch)</div><div class="ttdoc">Get the delta time of the last lap in real-world time.</div></div>
+<div class="ttc" id="a_time_8h_html_ab32e103c66a11f4f6eed4788998e4f01"><div class="ttname"><a href="_time_8h.html#ab32e103c66a11f4f6eed4788998e4f01">ctStopwatchInit</a></div><div class="ttdeci">ctStopwatch ctStopwatchInit()</div><div class="ttdoc">Initialize the stopwatch and start the clock immediately.</div></div>
+<div class="ttc" id="a_time_8h_html_ade011838c7402172f1656c9cda98f96d"><div class="ttname"><a href="_time_8h.html#ade011838c7402172f1656c9cda98f96d">ctStopwatchNextLap</a></div><div class="ttdeci">void ctStopwatchNextLap(ctStopwatch *stopwatch)</div><div class="ttdoc">Progress the stopwatch to the next lap (or end the timer)</div></div>
+<div class="ttc" id="astructct_stopwatch_html"><div class="ttname"><a href="structct_stopwatch.html">ctStopwatch</a></div><div class="ttdoc">Keeps track of time at a hardware level.</div><div class="ttdef"><b>Definition</b> Time.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_996f45160da62e1a3d7f6046fad68f51.html">engine</a></li><li class="navelem"><a class="el" href="dir_03ac465ee08ebdf80f0588025a52c6e1.html">utilities</a></li><li class="navelem"><b>Time.h</b></li>
+    <li class="navelem"><a class="el" href="dir_996f45160da62e1a3d7f6046fad68f51.html">engine</a></li><li class="navelem"><a class="el" href="dir_03ac465ee08ebdf80f0588025a52c6e1.html">utilities</a></li><li class="navelem"><a class="el" href="_time_8h.html">Time.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

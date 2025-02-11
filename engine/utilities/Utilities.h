@@ -12,4 +12,5 @@ Common library includes for Citrus64
 #include "String.h"
 #include "Math3d.h"
 #include "Hash.h"
+#include "HashTable.h"
 #include "Random.h"

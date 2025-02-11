@@ -25,7 +25,8 @@
         "optional": "c",
         "memory": "c",
         "mutex": "c",
-        "new": "c"
+        "new": "c",
+        "vector": "c"
     },
     "C_Cpp.default.compilerPath": "c:\\msys64\\usr\\bin\\gcc.exe"
 }

@@ -51,7 +51,7 @@ Implementation files are where your code lives that gets compiled into machine c
 /* global variable definition */
 int MyGlobalVariable;
 
-int MyFunction(struct MyType variable) {
+int MyFunction(MyType variable) {
     return variable.x + 32;
 }
 ```
@@ -65,14 +65,14 @@ Header files are files which (ideally) only contain struct definitions and funct
 #pragma once /* prevents infinite recursion */
 
 /* structure definitions make most sense inside headers */
-struct MyType {
+typedef struct {
     int x;
-};
+} MyType;
 
 /* extern is used here to only declare a global variable exists */
 extern int MyGlobalVariable;
 
-int MyFunction(struct MyType variable);
+int MyFunction(MyType variable);
 
 /* inline functions are an exception to the only function declarations rule */
 inline int MyInlineFunction(int a) {

@@ -20,6 +20,11 @@ def generate_build_config(args):
         text += "#define CT_BUILD_UNIT_TESTS 1\n"
     else:
         text += "#define CT_BUILD_UNIT_TESTS 0\n"
+
+    if args.wait:
+        text += "#define CT_BUILD_WAIT_FOR_INPUT 1\n"
+    else:
+        text += "#define CT_BUILD_WAIT_FOR_INPUT 0\n"
     
     # Write Build Config
     try:
@@ -72,6 +77,7 @@ def main():
     parser.add_argument('-b', '--build', help="build the project", action='store_true')
     dhelp = parser.add_argument_group("build options", "Pass these to --build/-b to help with debugging")
     dhelp.add_argument('-t', '--test', help="run unit tests", action='store_true')
+    dhelp.add_argument('-w', '--wait', help="wait for user input", action='store_true')
     dhelp.add_argument('-d', '--define', default="", nargs="*", help="list of C defines", type=str)
     dhelp.add_argument('-a', '--asset', default="", help="name of asset to preview", type=str)
     dhelp.add_argument('-l', '--level', default="", help="starter level name", type=str)

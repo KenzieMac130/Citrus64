@@ -1,0 +1,135 @@
+\doxysection{ECSCore.\+h File Reference}
+\hypertarget{_e_c_s_core_8h}{}\label{_e_c_s_core_8h}\index{ECSCore.h@{ECSCore.h}}
+
+
+The foundations of the entity component system.  
+
+
+{\ttfamily \#include "{}engine/utilities/\+Utilities.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/scene/\+ECSCore.\+h.\+gen.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_e_c_s_core_8h_a2201cd12072e97940a55dda4d166666d}{CT\+\_\+\+ENTITY\+\_\+\+IDX}}(\+\_\+\+ENT)
+\item 
+\Hypertarget{_e_c_s_core_8h_a42f448998d8eb5942009f62ca0c1e169}\label{_e_c_s_core_8h_a42f448998d8eb5942009f62ca0c1e169} 
+\#define {\bfseries CT\+\_\+\+ENTITY\+\_\+\+INVALID}~0
+\item 
+\#define \mbox{\hyperlink{_e_c_s_core_8h_aad9b28459db2c486f84732045b163687}{CT\+\_\+\+DECLARE\+\_\+\+ECS\+\_\+\+FLAGS}}(\+\_\+\+NAME)
+\item 
+\#define \mbox{\hyperlink{_e_c_s_core_8h_a6664b78b1136b1753abe064eb43659f5}{CT\+\_\+\+DEFINE\+\_\+\+ECS\+\_\+\+FLAGS}}(\+\_\+\+NAME)
+\item 
+\Hypertarget{_e_c_s_core_8h_a4111d69b8af23c758130a95ceeac1f81}\label{_e_c_s_core_8h_a4111d69b8af23c758130a95ceeac1f81} 
+\#define {\bfseries CT\+\_\+\+ECS\+\_\+\+DESTRUCTOR\+\_\+\+NONE}(\+\_\+\+PTR)
+\item 
+\Hypertarget{_e_c_s_core_8h_aecd2ad2c513ccb6999f6dc730a69a07a}\label{_e_c_s_core_8h_aecd2ad2c513ccb6999f6dc730a69a07a} 
+\#define {\bfseries CT\+\_\+\+COMPONENT\+\_\+\+INVALID}~255
+\item 
+\Hypertarget{_e_c_s_core_8h_a40b61adf815dbb7616ade6f1f35844b3}\label{_e_c_s_core_8h_a40b61adf815dbb7616ade6f1f35844b3} 
+\#define {\bfseries CT\+\_\+\+COMPONENT\+\_\+\+MAX}~254
+\item 
+\#define \mbox{\hyperlink{_e_c_s_core_8h_ad9c990cfd7d21ff2788cb96e719d1ded}{CT\+\_\+\+DECLARE\+\_\+\+COMPONENT}}(\+\_\+\+NAME,  \+\_\+\+TYPE)
+\item 
+\Hypertarget{_e_c_s_core_8h_ae23f89d100f038e25a031118f4daa20c}\label{_e_c_s_core_8h_ae23f89d100f038e25a031118f4daa20c} 
+\#define {\bfseries CT\+\_\+\+DEFINE\+\_\+\+COMPONENT}(\+\_\+\+NAME,  \+\_\+\+TYPE,  \+\_\+\+MAX,  \+\_\+\+DESTRUCTOR)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_e_c_s_core_8h_af82c256b7e0215f64888dd7137f1ba4d}\label{_e_c_s_core_8h_af82c256b7e0215f64888dd7137f1ba4d} 
+typedef uint8\+\_\+t {\bfseries ct\+Entity}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The foundations of the entity component system. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_e_c_s_core_8h_a2201cd12072e97940a55dda4d166666d}\index{ECSCore.h@{ECSCore.h}!CT\_ENTITY\_IDX@{CT\_ENTITY\_IDX}}
+\index{CT\_ENTITY\_IDX@{CT\_ENTITY\_IDX}!ECSCore.h@{ECSCore.h}}
+\doxysubsubsection{\texorpdfstring{CT\_ENTITY\_IDX}{CT\_ENTITY\_IDX}}
+{\footnotesize\ttfamily \label{_e_c_s_core_8h_a2201cd12072e97940a55dda4d166666d} 
+\#define CT\+\_\+\+ENTITY\+\_\+\+IDX(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+ENT}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\_ENT}
+
+\end{DoxyCode}
+\Hypertarget{_e_c_s_core_8h_aad9b28459db2c486f84732045b163687}\index{ECSCore.h@{ECSCore.h}!CT\_DECLARE\_ECS\_FLAGS@{CT\_DECLARE\_ECS\_FLAGS}}
+\index{CT\_DECLARE\_ECS\_FLAGS@{CT\_DECLARE\_ECS\_FLAGS}!ECSCore.h@{ECSCore.h}}
+\doxysubsubsection{\texorpdfstring{CT\_DECLARE\_ECS\_FLAGS}{CT\_DECLARE\_ECS\_FLAGS}}
+{\footnotesize\ttfamily \label{_e_c_s_core_8h_aad9b28459db2c486f84732045b163687} 
+\#define CT\+\_\+\+DECLARE\+\_\+\+ECS\+\_\+\+FLAGS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+NAME}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{void}\ ctECSFlagSet\#\#\_NAME(ctEntity\ entity);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{void}\ ctECSFlagUnset\#\#\_NAME(ctEntity\ entity);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{bool}\ ctECSFlagGet\#\#\_NAME(ctEntity\ entity);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{/*ctECSFlags*\ ctECSFlags\#\#\_NAME();*/}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ uint32\_t\ ctECSItCount\#\#\_NAME();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{bool}\ ctECSItGetState\#\#\_NAME(uint32\_t\ idx);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ ctEntity\ ctECSItGetEntity\#\#\_NAME(uint32\_t\ idx);}
+
+\end{DoxyCode}
+\Hypertarget{_e_c_s_core_8h_a6664b78b1136b1753abe064eb43659f5}\index{ECSCore.h@{ECSCore.h}!CT\_DEFINE\_ECS\_FLAGS@{CT\_DEFINE\_ECS\_FLAGS}}
+\index{CT\_DEFINE\_ECS\_FLAGS@{CT\_DEFINE\_ECS\_FLAGS}!ECSCore.h@{ECSCore.h}}
+\doxysubsubsection{\texorpdfstring{CT\_DEFINE\_ECS\_FLAGS}{CT\_DEFINE\_ECS\_FLAGS}}
+{\footnotesize\ttfamily \label{_e_c_s_core_8h_a6664b78b1136b1753abe064eb43659f5} 
+\#define CT\+\_\+\+DEFINE\+\_\+\+ECS\+\_\+\+FLAGS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+NAME}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ ctECSFlags\ gEntityFlag\#\#\_NAME;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{void}\ ctECSSetFlag\#\#\_NAME(ctEntity\ entity)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ gEntityFlag\#\#\_NAME.bytes[CT\_ENTITY\_IDX(entity)]\ =\ \textcolor{keyword}{true};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{void}\ ctECSUnsetFlag\#\#\_NAME(ctEntity\ entity)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ gEntityFlag\#\#\_NAME.bytes[CT\_ENTITY\_IDX(entity)]\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{bool}\ ctECSGetFlag\#\#\_NAME(ctEntity\ entity)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ gEntityFlag\#\#\_NAME.bytes[CT\_ENTITY\_IDX(entity)];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{/*ctECSFlags*\ ctECSFlags\#\#\_NAME()\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ return\ \&gEntityFlag\#\#\_NAME;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \}*/}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ uint32\_t\ ctECSItCount\#\#\_NAME()\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ 254;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{bool}\ ctECSItGetState\#\#\_NAME(uint32\_t\ idx)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ ctECSGetFlag\#\#\_NAME(idx);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ ctEntity\ ctECSItGetEntity\#\#\_NAME(uint32\_t\ idx)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ idx;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{_e_c_s_core_8h_ad9c990cfd7d21ff2788cb96e719d1ded}\index{ECSCore.h@{ECSCore.h}!CT\_DECLARE\_COMPONENT@{CT\_DECLARE\_COMPONENT}}
+\index{CT\_DECLARE\_COMPONENT@{CT\_DECLARE\_COMPONENT}!ECSCore.h@{ECSCore.h}}
+\doxysubsubsection{\texorpdfstring{CT\_DECLARE\_COMPONENT}{CT\_DECLARE\_COMPONENT}}
+{\footnotesize\ttfamily \label{_e_c_s_core_8h_ad9c990cfd7d21ff2788cb96e719d1ded} 
+\#define CT\+\_\+\+DECLARE\+\_\+\+COMPONENT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+NAME}{, }\item[{}]{\+\_\+\+TYPE}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{void}\ ctECSInitialize\#\#\_NAME();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_TYPE*\ ctECSGet\#\#\_NAME(ctEntity\ entity);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_TYPE*\ ctECSAdd\#\#\_NAME(ctEntity\ entity);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{void}\ ctECSRemove\#\#\_NAME(ctEntity\ entity);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ uint32\_t\ ctECSItCount\#\#\_NAME();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_TYPE*\ ctECSItGetComponent\#\#\_NAME(uint32\_t\ idx);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ ctEntity\ ctECSItGetEntity\#\#\_NAME(uint32\_t\ idx);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{/*ctECSFlagCache*\ ctECSFlagCache\#\#\_NAME();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ void\ ctECSFlagCacheSetHas\#\#\_NAME(ctECSFlagCache*\ cache);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ void\ ctECSFlagCacheAddHas\#\#\_NAME(ctECSFlagCache*\ cache);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ void\ ctECSFlagCacheSubtractHas\#\#\_NAME(ctECSFlagCache*\ cache);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ void\ ctECSFlagCacheAndHas\#\#\_NAME(ctECSFlagCache*\ cache);*/}}
+
+\end{DoxyCode}

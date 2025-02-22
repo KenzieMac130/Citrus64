@@ -191,7 +191,7 @@ $(function(){initNavTree('_common_8h_source.html',''); initResizable(true); });
 <div class="foldopen" id="foldopen00089" data-start="" data-end="">
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="_common_8h.html#a6a6a8891407da421984a38b5908fd541">   89</a></span><span class="preprocessor">#define CT_RETURN_FAIL(_arg)                                                             \</span></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">   {                                                                                     \</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">      ctResults __res = (_arg);                                                     \</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">      ctResults __res = (_arg);                                                          \</span></div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">      if (__res != CT_SUCCESS) { return __res; }                                         \</span></div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">   }</span></div>
 </div>
@@ -199,7 +199,7 @@ $(function(){initNavTree('_common_8h_source.html',''); initResizable(true); });
 <div class="foldopen" id="foldopen00096" data-start="" data-end="">
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="_common_8h.html#a4a75e59e02ed9ce57e6f90108a505e1a">   96</a></span><span class="preprocessor">#define CT_RETURN_FAIL_CLEAN(_arg, _cleanup)                                             \</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">   {                                                                                     \</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">      ctResults __res = (_arg);                                                     \</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">      ctResults __res = (_arg);                                                          \</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">      if (__res != CT_SUCCESS) {                                                         \</span></div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">         _cleanup;                                                                       \</span></div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">         return __res;                                                                   \</span></div>
@@ -208,12 +208,12 @@ $(function(){initNavTree('_common_8h_source.html',''); initResizable(true); });
 </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
 <div class="foldopen" id="foldopen00106" data-start="" data-end="">
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="_common_8h.html#afc2098d19c63eb23a41950e2be55dd3d">  106</a></span><span class="preprocessor">#define CT_RETURN_ON_FAIL(_arg, _result)                                                   \</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="_common_8h.html#afc2098d19c63eb23a41950e2be55dd3d">  106</a></span><span class="preprocessor">#define CT_RETURN_ON_FAIL(_arg, _result)                                                 \</span></div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">   if ((_arg) != CT_SUCCESS) { return _result; }</span></div>
 </div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
 <div class="foldopen" id="foldopen00110" data-start="" data-end="">
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="_common_8h.html#aeb669c9ffe81aa21fb967a45afc6306e">  110</a></span><span class="preprocessor">#define CT_RETURN_ON_UNTRUE(_arg, _result)                                                 \</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="_common_8h.html#aeb669c9ffe81aa21fb967a45afc6306e">  110</a></span><span class="preprocessor">#define CT_RETURN_ON_UNTRUE(_arg, _result)                                               \</span></div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">   if (!(_arg)) { return _result; }</span></div>
 </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
@@ -221,9 +221,9 @@ $(function(){initNavTree('_common_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">/*C Helpers*/</span></div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="_common_8h.html#a08422623bdd4af9a73c3e9d97e21a1b6">  118</a></span><span class="preprocessor">#define ctCFlagCheck(v, f)      ((v &amp; f) == f)</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="_common_8h.html#a08422623bdd4af9a73c3e9d97e21a1b6">  118</a></span><span class="preprocessor">#define ctCFlagCheck(v, f) ((v &amp; f) == f)</span></div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="_common_8h.html#a53d9b03d8399b132ce037fed7db52931">  121</a></span><span class="preprocessor">#define ctAlign(v, a)           ((v + (a - 1)) &amp; -a)</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="_common_8h.html#a53d9b03d8399b132ce037fed7db52931">  121</a></span><span class="preprocessor">#define ctAlign(v, a) ((v + (a - 1)) &amp; -a)</span></div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#include &quot;codegen/engine/utilities/Common.h.gen.h&quot;</span></div>
 <div class="ttc" id="a_common_8h_html_a4c2ef51e097a480311ca51322ef203ca"><div class="ttname"><a href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a></div><div class="ttdeci">ctResults</div><div class="ttdoc">Return Codes for the engine&#39;s runtime errors.</div><div class="ttdef"><b>Definition</b> Common.h:28</div></div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Citrus 64: engine/tests/AllEngineTests.h File Reference</title>
+<title>Citrus 64: AllEngineTests.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -109,7 +109,8 @@ $(function(){initNavTree('_all_engine_tests_8h.html',''); initResizable(true); }
   <div class="headertitle"><div class="title">AllEngineTests.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;codegen/engine/tests/AllEngineTests.h.gen.h&quot;</code><br />
+</div>
 <p><a href="_all_engine_tests_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -125,6 +126,16 @@ Functions</h2></td></tr>
 <tr class="separator:af85048a260f5ea67560f3a906d23748e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab5ca52be7bd3f496c54866fb8f18af8" id="r_aab5ca52be7bd3f496c54866fb8f18af8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab5ca52be7bd3f496c54866fb8f18af8">ctUnitTestMath</a> ()</td></tr>
 <tr class="separator:aab5ca52be7bd3f496c54866fb8f18af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335ccab4fc038f9116b6d7e403f9ad75" id="r_a335ccab4fc038f9116b6d7e403f9ad75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a335ccab4fc038f9116b6d7e403f9ad75">ctUnitTestMath3D</a> ()</td></tr>
+<tr class="separator:a335ccab4fc038f9116b6d7e403f9ad75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c339310f1e059c69b52d85981932ba" id="r_a75c339310f1e059c69b52d85981932ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75c339310f1e059c69b52d85981932ba">ctUnitTestHash</a> ()</td></tr>
+<tr class="separator:a75c339310f1e059c69b52d85981932ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35cb4718d93741c009796fa2408fd051" id="r_a35cb4718d93741c009796fa2408fd051"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35cb4718d93741c009796fa2408fd051">ctUnitTestHashTable</a> ()</td></tr>
+<tr class="separator:a35cb4718d93741c009796fa2408fd051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0535ac7fd286675758a3e2559ad3f91f" id="r_a0535ac7fd286675758a3e2559ad3f91f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0535ac7fd286675758a3e2559ad3f91f">ctUnitTestRandom</a> ()</td></tr>
+<tr class="separator:a0535ac7fd286675758a3e2559ad3f91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fab5f1638f8743a2c9ce571ff0b04cd" id="r_a0fab5f1638f8743a2c9ce571ff0b04cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fab5f1638f8743a2c9ce571ff0b04cd">ctUnitTestECS</a> ()</td></tr>
+<tr class="separator:a0fab5f1638f8743a2c9ce571ff0b04cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a1c815796ba6de0b0faf03b8affbd3e5b" name="a1c815796ba6de0b0faf03b8affbd3e5b"></a>
@@ -140,39 +151,24 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    {<span class="stringliteral">&quot;Memory&quot;</span>, <a class="code hl_function" href="#a33e41a051b60edc08b87b3241ada9e42">ctUnitTestMemory</a>, <span class="keyword">false</span>},\</div>
 <div class="line">    {<span class="stringliteral">&quot;String&quot;</span>, <a class="code hl_function" href="#af85048a260f5ea67560f3a906d23748e">ctUnitTestString</a>, <span class="keyword">false</span>},\</div>
-<div class="line">    {<span class="stringliteral">&quot;Math&quot;</span>, <a class="code hl_function" href="#aab5ca52be7bd3f496c54866fb8f18af8">ctUnitTestMath</a>, <span class="keyword">false</span>}</div>
-<div class="ttc" id="a_all_engine_tests_8h_html_a33e41a051b60edc08b87b3241ada9e42"><div class="ttname"><a href="#a33e41a051b60edc08b87b3241ada9e42">ctUnitTestMemory</a></div><div class="ttdeci">void ctUnitTestMemory()</div><div class="ttdef"><b>Definition</b> MemoryTest.c:7</div></div>
-<div class="ttc" id="a_all_engine_tests_8h_html_aab5ca52be7bd3f496c54866fb8f18af8"><div class="ttname"><a href="#aab5ca52be7bd3f496c54866fb8f18af8">ctUnitTestMath</a></div><div class="ttdeci">void ctUnitTestMath()</div><div class="ttdef"><b>Definition</b> MathTest.c:3</div></div>
-<div class="ttc" id="a_all_engine_tests_8h_html_af85048a260f5ea67560f3a906d23748e"><div class="ttname"><a href="#af85048a260f5ea67560f3a906d23748e">ctUnitTestString</a></div><div class="ttdeci">void ctUnitTestString()</div><div class="ttdef"><b>Definition</b> StringTest.c:6</div></div>
+<div class="line">    {<span class="stringliteral">&quot;Math&quot;</span>, <a class="code hl_function" href="#aab5ca52be7bd3f496c54866fb8f18af8">ctUnitTestMath</a>, <span class="keyword">false</span>},\</div>
+<div class="line">    {<span class="stringliteral">&quot;Math3D&quot;</span>, <a class="code hl_function" href="#a335ccab4fc038f9116b6d7e403f9ad75">ctUnitTestMath3D</a>, <span class="keyword">false</span>},\</div>
+<div class="line">    {<span class="stringliteral">&quot;Hash&quot;</span>, <a class="code hl_function" href="#a75c339310f1e059c69b52d85981932ba">ctUnitTestHash</a>, <span class="keyword">false</span>},\</div>
+<div class="line">    {<span class="stringliteral">&quot;HashTable&quot;</span>, <a class="code hl_function" href="#a35cb4718d93741c009796fa2408fd051">ctUnitTestHashTable</a>, <span class="keyword">false</span>},\</div>
+<div class="line">    {<span class="stringliteral">&quot;Random&quot;</span>, <a class="code hl_function" href="#a0535ac7fd286675758a3e2559ad3f91f">ctUnitTestRandom</a>, <span class="keyword">false</span>},\</div>
+<div class="line">    {<span class="stringliteral">&quot;ECS&quot;</span>, <a class="code hl_function" href="#a0fab5f1638f8743a2c9ce571ff0b04cd">ctUnitTestECS</a>, <span class="keyword">false</span>}</div>
+<div class="ttc" id="a_all_engine_tests_8h_html_a0535ac7fd286675758a3e2559ad3f91f"><div class="ttname"><a href="#a0535ac7fd286675758a3e2559ad3f91f">ctUnitTestRandom</a></div><div class="ttdeci">void ctUnitTestRandom()</div><div class="ttdef"><b>Definition</b> RandomTest.c:8</div></div>
+<div class="ttc" id="a_all_engine_tests_8h_html_a0fab5f1638f8743a2c9ce571ff0b04cd"><div class="ttname"><a href="#a0fab5f1638f8743a2c9ce571ff0b04cd">ctUnitTestECS</a></div><div class="ttdeci">void ctUnitTestECS()</div><div class="ttdef"><b>Definition</b> ECSTest.c:54</div></div>
+<div class="ttc" id="a_all_engine_tests_8h_html_a335ccab4fc038f9116b6d7e403f9ad75"><div class="ttname"><a href="#a335ccab4fc038f9116b6d7e403f9ad75">ctUnitTestMath3D</a></div><div class="ttdeci">void ctUnitTestMath3D()</div><div class="ttdef"><b>Definition</b> Math3dTest.c:8</div></div>
+<div class="ttc" id="a_all_engine_tests_8h_html_a33e41a051b60edc08b87b3241ada9e42"><div class="ttname"><a href="#a33e41a051b60edc08b87b3241ada9e42">ctUnitTestMemory</a></div><div class="ttdeci">void ctUnitTestMemory()</div><div class="ttdef"><b>Definition</b> MemoryTest.c:8</div></div>
+<div class="ttc" id="a_all_engine_tests_8h_html_a35cb4718d93741c009796fa2408fd051"><div class="ttname"><a href="#a35cb4718d93741c009796fa2408fd051">ctUnitTestHashTable</a></div><div class="ttdeci">void ctUnitTestHashTable()</div><div class="ttdef"><b>Definition</b> HashTableTest.c:10</div></div>
+<div class="ttc" id="a_all_engine_tests_8h_html_a75c339310f1e059c69b52d85981932ba"><div class="ttname"><a href="#a75c339310f1e059c69b52d85981932ba">ctUnitTestHash</a></div><div class="ttdeci">void ctUnitTestHash()</div><div class="ttdef"><b>Definition</b> HashTest.c:8</div></div>
+<div class="ttc" id="a_all_engine_tests_8h_html_aab5ca52be7bd3f496c54866fb8f18af8"><div class="ttname"><a href="#aab5ca52be7bd3f496c54866fb8f18af8">ctUnitTestMath</a></div><div class="ttdeci">void ctUnitTestMath()</div><div class="ttdef"><b>Definition</b> MathTest.c:5</div></div>
+<div class="ttc" id="a_all_engine_tests_8h_html_af85048a260f5ea67560f3a906d23748e"><div class="ttname"><a href="#af85048a260f5ea67560f3a906d23748e">ctUnitTestString</a></div><div class="ttdeci">void ctUnitTestString()</div><div class="ttdef"><b>Definition</b> StringTest.c:8</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aab5ca52be7bd3f496c54866fb8f18af8" name="aab5ca52be7bd3f496c54866fb8f18af8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab5ca52be7bd3f496c54866fb8f18af8">&#9670;&#160;</a></span>ctUnitTestMath()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ctUnitTestMath </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a33e41a051b60edc08b87b3241ada9e42" name="a33e41a051b60edc08b87b3241ada9e42"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33e41a051b60edc08b87b3241ada9e42">&#9670;&#160;</a></span>ctUnitTestMemory()</h2>
 
@@ -209,6 +205,156 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">void ctUnitTestString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab5ca52be7bd3f496c54866fb8f18af8" name="aab5ca52be7bd3f496c54866fb8f18af8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab5ca52be7bd3f496c54866fb8f18af8">&#9670;&#160;</a></span>ctUnitTestMath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctUnitTestMath </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a335ccab4fc038f9116b6d7e403f9ad75" name="a335ccab4fc038f9116b6d7e403f9ad75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335ccab4fc038f9116b6d7e403f9ad75">&#9670;&#160;</a></span>ctUnitTestMath3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctUnitTestMath3D </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a75c339310f1e059c69b52d85981932ba" name="a75c339310f1e059c69b52d85981932ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75c339310f1e059c69b52d85981932ba">&#9670;&#160;</a></span>ctUnitTestHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctUnitTestHash </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35cb4718d93741c009796fa2408fd051" name="a35cb4718d93741c009796fa2408fd051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35cb4718d93741c009796fa2408fd051">&#9670;&#160;</a></span>ctUnitTestHashTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctUnitTestHashTable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0535ac7fd286675758a3e2559ad3f91f" name="a0535ac7fd286675758a3e2559ad3f91f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0535ac7fd286675758a3e2559ad3f91f">&#9670;&#160;</a></span>ctUnitTestRandom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctUnitTestRandom </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0fab5f1638f8743a2c9ce571ff0b04cd" name="a0fab5f1638f8743a2c9ce571ff0b04cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fab5f1638f8743a2c9ce571ff0b04cd">&#9670;&#160;</a></span>ctUnitTestECS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctUnitTestECS </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>

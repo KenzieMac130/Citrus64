@@ -1,0 +1,202 @@
+\doxysection{Random.\+c File Reference}
+\hypertarget{_random_8c}{}\label{_random_8c}\index{Random.c@{Random.c}}
+{\ttfamily \#include "{}Random.\+h"{}}\newline
+{\ttfamily \#include "{}Math.\+h"{}}\newline
+{\ttfamily \#include "{}thirdparty/mattias/rnd.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/utilities/\+Random.\+c.\+gen.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_random_8c_a622654b712ed6853eec8f1c3eb17c742}{RND\+\_\+\+IMPLEMENTATION}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \mbox{\hyperlink{_random_8c_afebc82761e9636b5df839a17ff25e82a}{ct\+Random\+Generator\+Init\+Seed}} (uint32\+\_\+t seed)
+\begin{DoxyCompactList}\small\item\em Initialize the random number generator with a seed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \mbox{\hyperlink{_random_8c_afc0ac7644590e2d7cde6bea4edfe5c41}{ct\+Random\+Generator\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the random number generator with a random seed. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_random_8c_acef41da7fac0878d5747d099f071ed78}{ct\+Random\+Get\+UInt32}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator)
+\begin{DoxyCompactList}\small\item\em Get a random integer from 0 to UINT32\+\_\+\+MAX. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_random_8c_a8d3e9830299a092b59212e87b4259d31}{ct\+Random\+Get\+Int32\+Range}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, int32\+\_\+t min, int32\+\_\+t max)
+\begin{DoxyCompactList}\small\item\em Get a random integer in a range. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_random_8c_a2aad18ffc911783c72f802a2b535387b}{ct\+Random\+Get\+Float\+UNorm}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator)
+\begin{DoxyCompactList}\small\item\em Get a random float from a 0.\+0f to 1.\+0f. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_random_8c_add57ba1f8e1e362488eef54597542093}{ct\+Random\+Get\+Float\+SNorm}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator)
+\begin{DoxyCompactList}\small\item\em Get a random float from a -\/1.\+0f to 1.\+0f. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_random_8c_aea1efe5b33a5511a2552678bcd00f814}{ct\+Random\+Get\+Float}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, float min, float max)
+\begin{DoxyCompactList}\small\item\em Get a random float in a range. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \mbox{\hyperlink{_random_8c_a942a305d853b5c043678100bf4ab2dcd}{ct\+Random\+Get\+Vec3\+Range}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}gen, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} min, const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} max)
+\begin{DoxyCompactList}\small\item\em Get a random \doxylink{structct_vec3}{ct\+Vec3} with unique components in their respective range. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \mbox{\hyperlink{_random_8c_ad60b5d94f8edfb8dbefdb43e8a6bf5fa}{ct\+Random\+Get\+Vec3\+Norm}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}gen)
+\begin{DoxyCompactList}\small\item\em Get a random \doxylink{structct_vec3}{ct\+Vec3} that has been normalized. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_random_8c_ab0f6afc4f18f51087ee8778ce4b7bac7}{ct\+Random\+Get\+Gaussian}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}gen, float mean, float standard\+Deviation)
+\begin{DoxyCompactList}\small\item\em Get a random value in a gausian (normal) distribution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_random_8c_a38fe77ac045368817be61f8f6136c756}{ct\+Random\+Get\+Gaussian2D}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}gen, float out\mbox{[}2\mbox{]}, const float mean\mbox{[}2\mbox{]}, float standard\+Deviation)
+\begin{DoxyCompactList}\small\item\em Get a random xy pair in a gausian (normal) distribution. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \mbox{\hyperlink{_random_8c_a9c59b35eb434c2d60175a2c90a848443}{ct\+Random\+Get\+In\+Sphere}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}gen, float radius)
+\begin{DoxyCompactList}\small\item\em Get a random \doxylink{structct_vec3}{ct\+Vec3} in a guasian distribution inside a 3D sphere. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} \mbox{\hyperlink{_random_8c_a49268d2df620627393d5942e08af3cc8}{ct\+Random\+Get\+On\+Sphere}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, float radius)
+\begin{DoxyCompactList}\small\item\em Get a random \doxylink{structct_vec3}{ct\+Vec3} in a guasian distribution on the surface of a 3D sphere. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}} \mbox{\hyperlink{_random_8c_a5b0b0791fe6cc206e076c508d7f75bf7}{ct\+Random\+Get\+Color}} (\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}generator, float alpha)
+\begin{DoxyCompactList}\small\item\em Get a random color (not guaranteed to be pleasing) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_random_8c_ac10818c226e46e8b09cee44a3060ecfe}{\+\_\+ct\+Random\+Hardware\+Init}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_random_8c_a622654b712ed6853eec8f1c3eb17c742}\index{Random.c@{Random.c}!RND\_IMPLEMENTATION@{RND\_IMPLEMENTATION}}
+\index{RND\_IMPLEMENTATION@{RND\_IMPLEMENTATION}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{RND\_IMPLEMENTATION}{RND\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \label{_random_8c_a622654b712ed6853eec8f1c3eb17c742} 
+\#define RND\+\_\+\+IMPLEMENTATION}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_random_8c_afebc82761e9636b5df839a17ff25e82a}\index{Random.c@{Random.c}!ctRandomGeneratorInitSeed@{ctRandomGeneratorInitSeed}}
+\index{ctRandomGeneratorInitSeed@{ctRandomGeneratorInitSeed}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGeneratorInitSeed()}{ctRandomGeneratorInitSeed()}}
+{\footnotesize\ttfamily \label{_random_8c_afebc82761e9636b5df839a17ff25e82a} 
+\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} ct\+Random\+Generator\+Init\+Seed (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the random number generator with a seed. 
+
+\Hypertarget{_random_8c_afc0ac7644590e2d7cde6bea4edfe5c41}\index{Random.c@{Random.c}!ctRandomGeneratorInit@{ctRandomGeneratorInit}}
+\index{ctRandomGeneratorInit@{ctRandomGeneratorInit}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGeneratorInit()}{ctRandomGeneratorInit()}}
+{\footnotesize\ttfamily \label{_random_8c_afc0ac7644590e2d7cde6bea4edfe5c41} 
+\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} ct\+Random\+Generator\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the random number generator with a random seed. 
+
+\Hypertarget{_random_8c_acef41da7fac0878d5747d099f071ed78}\index{Random.c@{Random.c}!ctRandomGetUInt32@{ctRandomGetUInt32}}
+\index{ctRandomGetUInt32@{ctRandomGetUInt32}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetUInt32()}{ctRandomGetUInt32()}}
+{\footnotesize\ttfamily \label{_random_8c_acef41da7fac0878d5747d099f071ed78} 
+uint32\+\_\+t ct\+Random\+Get\+UInt32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{generator}{}\end{DoxyParamCaption})}
+
+
+
+Get a random integer from 0 to UINT32\+\_\+\+MAX. 
+
+\Hypertarget{_random_8c_a8d3e9830299a092b59212e87b4259d31}\index{Random.c@{Random.c}!ctRandomGetInt32Range@{ctRandomGetInt32Range}}
+\index{ctRandomGetInt32Range@{ctRandomGetInt32Range}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetInt32Range()}{ctRandomGetInt32Range()}}
+{\footnotesize\ttfamily \label{_random_8c_a8d3e9830299a092b59212e87b4259d31} 
+int32\+\_\+t ct\+Random\+Get\+Int32\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{generator}{, }\item[{int32\+\_\+t}]{min}{, }\item[{int32\+\_\+t}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Get a random integer in a range. 
+
+\Hypertarget{_random_8c_a2aad18ffc911783c72f802a2b535387b}\index{Random.c@{Random.c}!ctRandomGetFloatUNorm@{ctRandomGetFloatUNorm}}
+\index{ctRandomGetFloatUNorm@{ctRandomGetFloatUNorm}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetFloatUNorm()}{ctRandomGetFloatUNorm()}}
+{\footnotesize\ttfamily \label{_random_8c_a2aad18ffc911783c72f802a2b535387b} 
+float ct\+Random\+Get\+Float\+UNorm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{generator}{}\end{DoxyParamCaption})}
+
+
+
+Get a random float from a 0.\+0f to 1.\+0f. 
+
+\Hypertarget{_random_8c_add57ba1f8e1e362488eef54597542093}\index{Random.c@{Random.c}!ctRandomGetFloatSNorm@{ctRandomGetFloatSNorm}}
+\index{ctRandomGetFloatSNorm@{ctRandomGetFloatSNorm}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetFloatSNorm()}{ctRandomGetFloatSNorm()}}
+{\footnotesize\ttfamily \label{_random_8c_add57ba1f8e1e362488eef54597542093} 
+float ct\+Random\+Get\+Float\+SNorm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{generator}{}\end{DoxyParamCaption})}
+
+
+
+Get a random float from a -\/1.\+0f to 1.\+0f. 
+
+\Hypertarget{_random_8c_aea1efe5b33a5511a2552678bcd00f814}\index{Random.c@{Random.c}!ctRandomGetFloat@{ctRandomGetFloat}}
+\index{ctRandomGetFloat@{ctRandomGetFloat}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetFloat()}{ctRandomGetFloat()}}
+{\footnotesize\ttfamily \label{_random_8c_aea1efe5b33a5511a2552678bcd00f814} 
+float ct\+Random\+Get\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{generator}{, }\item[{float}]{min}{, }\item[{float}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Get a random float in a range. 
+
+\Hypertarget{_random_8c_a942a305d853b5c043678100bf4ab2dcd}\index{Random.c@{Random.c}!ctRandomGetVec3Range@{ctRandomGetVec3Range}}
+\index{ctRandomGetVec3Range@{ctRandomGetVec3Range}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetVec3Range()}{ctRandomGetVec3Range()}}
+{\footnotesize\ttfamily \label{_random_8c_a942a305d853b5c043678100bf4ab2dcd} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} ct\+Random\+Get\+Vec3\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{gen}{, }\item[{const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}}}]{min}{, }\item[{const \mbox{\hyperlink{structct_vec3}{ct\+Vec3}}}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Get a random \doxylink{structct_vec3}{ct\+Vec3} with unique components in their respective range. 
+
+\Hypertarget{_random_8c_ad60b5d94f8edfb8dbefdb43e8a6bf5fa}\index{Random.c@{Random.c}!ctRandomGetVec3Norm@{ctRandomGetVec3Norm}}
+\index{ctRandomGetVec3Norm@{ctRandomGetVec3Norm}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetVec3Norm()}{ctRandomGetVec3Norm()}}
+{\footnotesize\ttfamily \label{_random_8c_ad60b5d94f8edfb8dbefdb43e8a6bf5fa} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} ct\+Random\+Get\+Vec3\+Norm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{gen}{}\end{DoxyParamCaption})}
+
+
+
+Get a random \doxylink{structct_vec3}{ct\+Vec3} that has been normalized. 
+
+\Hypertarget{_random_8c_ab0f6afc4f18f51087ee8778ce4b7bac7}\index{Random.c@{Random.c}!ctRandomGetGaussian@{ctRandomGetGaussian}}
+\index{ctRandomGetGaussian@{ctRandomGetGaussian}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetGaussian()}{ctRandomGetGaussian()}}
+{\footnotesize\ttfamily \label{_random_8c_ab0f6afc4f18f51087ee8778ce4b7bac7} 
+float ct\+Random\+Get\+Gaussian (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{generator}{, }\item[{float}]{mean}{, }\item[{float}]{standard\+Deviation}{}\end{DoxyParamCaption})}
+
+
+
+Get a random value in a gausian (normal) distribution. 
+
+See\+: \href{https://en.wikipedia.org/wiki/Normal_distribution}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Normal\+\_\+distribution}} \Hypertarget{_random_8c_a38fe77ac045368817be61f8f6136c756}\index{Random.c@{Random.c}!ctRandomGetGaussian2D@{ctRandomGetGaussian2D}}
+\index{ctRandomGetGaussian2D@{ctRandomGetGaussian2D}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetGaussian2D()}{ctRandomGetGaussian2D()}}
+{\footnotesize\ttfamily \label{_random_8c_a38fe77ac045368817be61f8f6136c756} 
+void ct\+Random\+Get\+Gaussian2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{generator}{, }\item[{float}]{out}{\mbox{[}2\mbox{]}, }\item[{const float}]{mean}{\mbox{[}2\mbox{]}, }\item[{float}]{standard\+Deviation}{}\end{DoxyParamCaption})}
+
+
+
+Get a random xy pair in a gausian (normal) distribution. 
+
+This ends up distributing points evenly in a 2D disk where standard\+Deviation is the radius \Hypertarget{_random_8c_a9c59b35eb434c2d60175a2c90a848443}\index{Random.c@{Random.c}!ctRandomGetInSphere@{ctRandomGetInSphere}}
+\index{ctRandomGetInSphere@{ctRandomGetInSphere}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetInSphere()}{ctRandomGetInSphere()}}
+{\footnotesize\ttfamily \label{_random_8c_a9c59b35eb434c2d60175a2c90a848443} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} ct\+Random\+Get\+In\+Sphere (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{gen}{, }\item[{float}]{radius}{}\end{DoxyParamCaption})}
+
+
+
+Get a random \doxylink{structct_vec3}{ct\+Vec3} in a guasian distribution inside a 3D sphere. 
+
+\Hypertarget{_random_8c_a49268d2df620627393d5942e08af3cc8}\index{Random.c@{Random.c}!ctRandomGetOnSphere@{ctRandomGetOnSphere}}
+\index{ctRandomGetOnSphere@{ctRandomGetOnSphere}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetOnSphere()}{ctRandomGetOnSphere()}}
+{\footnotesize\ttfamily \label{_random_8c_a49268d2df620627393d5942e08af3cc8} 
+\mbox{\hyperlink{structct_vec3}{ct\+Vec3}} ct\+Random\+Get\+On\+Sphere (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{generator}{, }\item[{float}]{radius}{}\end{DoxyParamCaption})}
+
+
+
+Get a random \doxylink{structct_vec3}{ct\+Vec3} in a guasian distribution on the surface of a 3D sphere. 
+
+\Hypertarget{_random_8c_a5b0b0791fe6cc206e076c508d7f75bf7}\index{Random.c@{Random.c}!ctRandomGetColor@{ctRandomGetColor}}
+\index{ctRandomGetColor@{ctRandomGetColor}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{ctRandomGetColor()}{ctRandomGetColor()}}
+{\footnotesize\ttfamily \label{_random_8c_a5b0b0791fe6cc206e076c508d7f75bf7} 
+\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}} ct\+Random\+Get\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_random_generator}{ct\+Random\+Generator}} \texorpdfstring{$\ast$}{*}}]{generator}{, }\item[{float}]{alpha}{}\end{DoxyParamCaption})}
+
+
+
+Get a random color (not guaranteed to be pleasing) 
+
+\Hypertarget{_random_8c_ac10818c226e46e8b09cee44a3060ecfe}\index{Random.c@{Random.c}!\_ctRandomHardwareInit@{\_ctRandomHardwareInit}}
+\index{\_ctRandomHardwareInit@{\_ctRandomHardwareInit}!Random.c@{Random.c}}
+\doxysubsubsection{\texorpdfstring{\_ctRandomHardwareInit()}{\_ctRandomHardwareInit()}}
+{\footnotesize\ttfamily \label{_random_8c_ac10818c226e46e8b09cee44a3060ecfe} 
+void \+\_\+ct\+Random\+Hardware\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+

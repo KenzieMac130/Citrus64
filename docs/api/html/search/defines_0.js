@@ -18,7 +18,8 @@ var searchData=
   ['ctcflagcheck_15',['ctCFlagCheck',['../_common_8h.html#a08422623bdd4af9a73c3e9d97e21a1b6',1,'Common.h']]],
   ['cterrorcheck_16',['ctErrorCheck',['../_common_8h.html#a21546bfc8a1507d2cf2c3d6c7d294706',1,'Common.h']]],
   ['ctfatalerror_17',['ctFatalError',['../_common_8h.html#a42a39e382b87221e68e91b8b55d35eaa',1,'Common.h']]],
-  ['ctstackalloc_18',['ctStackAlloc',['../_memory_8h.html#aed0c1bb01a1b54f49b57459be20e235f',1,'Memory.h']]],
-  ['ctstaticassert_19',['ctStaticAssert',['../_common_8h.html#a4ae02fd19fdee3ba52c2ae14da7e6f80',1,'Common.h']]],
-  ['ctstringequal_20',['ctStringEqual',['../_string_8h.html#a5259930ea5d068eacc5c5ae0ff76fd55',1,'String.h']]]
+  ['ctgettext_18',['ctGetText',['../_translation_8h.html#adf36373db7e0a3923ea1da2dfe09f2a8',1,'Translation.h']]],
+  ['ctstackalloc_19',['ctStackAlloc',['../_memory_8h.html#aed0c1bb01a1b54f49b57459be20e235f',1,'Memory.h']]],
+  ['ctstaticassert_20',['ctStaticAssert',['../_common_8h.html#a4ae02fd19fdee3ba52c2ae14da7e6f80',1,'Common.h']]],
+  ['ctstringequal_21',['ctStringEqual',['../_string_8h.html#a5259930ea5d068eacc5c5ae0ff76fd55',1,'String.h']]]
 ];

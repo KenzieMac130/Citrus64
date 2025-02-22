@@ -200,14 +200,35 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBufferAssert</b> (v
 
 </div>
 </div>
-<a id="ad60b3833fffd79e87a0f7f24557b3b17" name="ad60b3833fffd79e87a0f7f24557b3b17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad60b3833fffd79e87a0f7f24557b3b17">&#9670;&#160;</a></span>ctBufferAssertIndex</h2>
+<a id="aed0c1bb01a1b54f49b57459be20e235f" name="aed0c1bb01a1b54f49b57459be20e235f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed0c1bb01a1b54f49b57459be20e235f">&#9670;&#160;</a></span>ctStackAlloc</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ctBufferAssertIndex</td>
+          <td class="memname">#define ctStackAlloc</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_SIZE</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">alloca(_SIZE)</div>
+</div><!-- fragment -->
+<p>Allocate memory on the stack. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Only use for small allocations whose size cannot be known at compile time </dd></dl>
+
+</div>
+</div>
+<a id="a2e847a1fb06f47564456bd7c45cdf56b" name="a2e847a1fb06f47564456bd7c45cdf56b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e847a1fb06f47564456bd7c45cdf56b">&#9670;&#160;</a></span>ctBufferAssertSingle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ctBufferAssertSingle</td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_parentBuffer</em></span>, </td>
         </tr>
@@ -219,14 +240,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBufferAssert</b> (v
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_idx</em></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_ptr</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a2e847a1fb06f47564456bd7c45cdf56b">ctBufferAssertSingle</a>(_parentBuffer, _parentBufferSize, _parentBuffer + _idx)</div>
-<div class="ttc" id="a_memory_8h_html_a2e847a1fb06f47564456bd7c45cdf56b"><div class="ttname"><a href="#a2e847a1fb06f47564456bd7c45cdf56b">ctBufferAssertSingle</a></div><div class="ttdeci">#define ctBufferAssertSingle(_parentBuffer, _parentBufferSize, _ptr)</div><div class="ttdoc">ctBufferAssert() for single objects</div><div class="ttdef"><b>Definition</b> Memory.h:104</div></div>
+<b>Value:</b><div class="fragment"><div class="line">   ctBufferAssert(_parentBuffer, _parentBufferSize, _ptr, <span class="keyword">sizeof</span>(_ptr))</div>
 </div><!-- fragment -->
-<p><a class="el" href="#aba4dc708ce0fb2f886746448a2fea032" title="Assert memory block against parent bounds.">ctBufferAssert()</a> for a array indexing </p>
+<p><a class="el" href="#aba4dc708ce0fb2f886746448a2fea032" title="Assert memory block against parent bounds.">ctBufferAssert()</a> for single objects </p>
 
 </div>
 </div>
@@ -258,20 +278,20 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBufferAssert</b> (v
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">ctBufferAssert(_parentBuffer, _parentBufferSize, _ptrMin, (<span class="keywordtype">size_t</span>)(_ptrMax - _ptrMin))</div>
+<b>Value:</b><div class="fragment"><div class="line">   ctBufferAssert(_parentBuffer, _parentBufferSize, _ptrMin, (<span class="keywordtype">size_t</span>)(_ptrMax - _ptrMin))</div>
 </div><!-- fragment -->
 <p><a class="el" href="#aba4dc708ce0fb2f886746448a2fea032" title="Assert memory block against parent bounds.">ctBufferAssert()</a> for a begin-end pointer pair </p>
 
 </div>
 </div>
-<a id="a2e847a1fb06f47564456bd7c45cdf56b" name="a2e847a1fb06f47564456bd7c45cdf56b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e847a1fb06f47564456bd7c45cdf56b">&#9670;&#160;</a></span>ctBufferAssertSingle</h2>
+<a id="ad60b3833fffd79e87a0f7f24557b3b17" name="ad60b3833fffd79e87a0f7f24557b3b17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad60b3833fffd79e87a0f7f24557b3b17">&#9670;&#160;</a></span>ctBufferAssertIndex</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ctBufferAssertSingle</td>
+          <td class="memname">#define ctBufferAssertIndex</td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_parentBuffer</em></span>, </td>
         </tr>
@@ -283,46 +303,70 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBufferAssert</b> (v
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_ptr</em></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_idx</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">ctBufferAssert(_parentBuffer, _parentBufferSize, _ptr, <span class="keyword">sizeof</span>(_ptr))</div>
+<b>Value:</b><div class="fragment"><div class="line">   <a class="code hl_define" href="#a2e847a1fb06f47564456bd7c45cdf56b">ctBufferAssertSingle</a>(_parentBuffer, _parentBufferSize, _parentBuffer + _idx)</div>
+<div class="ttc" id="a_memory_8h_html_a2e847a1fb06f47564456bd7c45cdf56b"><div class="ttname"><a href="#a2e847a1fb06f47564456bd7c45cdf56b">ctBufferAssertSingle</a></div><div class="ttdeci">#define ctBufferAssertSingle(_parentBuffer, _parentBufferSize, _ptr)</div><div class="ttdoc">ctBufferAssert() for single objects</div><div class="ttdef"><b>Definition</b> Memory.h:107</div></div>
 </div><!-- fragment -->
-<p><a class="el" href="#aba4dc708ce0fb2f886746448a2fea032" title="Assert memory block against parent bounds.">ctBufferAssert()</a> for single objects </p>
-
-</div>
-</div>
-<a id="aed0c1bb01a1b54f49b57459be20e235f" name="aed0c1bb01a1b54f49b57459be20e235f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed0c1bb01a1b54f49b57459be20e235f">&#9670;&#160;</a></span>ctStackAlloc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctStackAlloc</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_SIZE</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">alloca(_SIZE)</div>
-</div><!-- fragment -->
-<p>Allocate memory on the stack. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Only use for small allocations whose size cannot be known at compile time </dd></dl>
+<p><a class="el" href="#aba4dc708ce0fb2f886746448a2fea032" title="Assert memory block against parent bounds.">ctBufferAssert()</a> for a array indexing </p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3310611b33a651f79c46ad5761bbb4f0" name="a3310611b33a651f79c46ad5761bbb4f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3310611b33a651f79c46ad5761bbb4f0">&#9670;&#160;</a></span>ctAlignedFree()</h2>
+<a id="afa61f346bbf242f466c02d94ef731401" name="afa61f346bbf242f466c02d94ef731401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa61f346bbf242f466c02d94ef731401">&#9670;&#160;</a></span>ctMalloc()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ctAlignedFree </td>
+          <td class="memname">void * ctMalloc </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Heap memory allocation. </p>
+<p>Similar to C's malloc() but guaranteed to sit on CT_ALIGNMENT_CACHE </p><dl class="section warning"><dt>Warning</dt><dd>Only free with <a class="el" href="#af168969d4fb51528c740250fdfc5b7e4" title="Heap memory free.">ctFree()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a4f0016afd607a57a1600f788c51873fd" name="a4f0016afd607a57a1600f788c51873fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f0016afd607a57a1600f788c51873fd">&#9670;&#160;</a></span>ctRealloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * ctRealloc </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>old</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Heap memory reallocation. </p>
+<p>Similar to C's realloc() but guaranteed to sit on CT_ALIGNMENT_CACHE </p><dl class="section warning"><dt>Warning</dt><dd>Only free with <a class="el" href="#af168969d4fb51528c740250fdfc5b7e4" title="Heap memory free.">ctFree()</a> </dd></dl>
+
+</div>
+</div>
+<a id="af168969d4fb51528c740250fdfc5b7e4" name="af168969d4fb51528c740250fdfc5b7e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af168969d4fb51528c740250fdfc5b7e4">&#9670;&#160;</a></span>ctFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctFree </td>
           <td>(</td>
           <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>block</em></span></td><td>)</td>
           <td></td>
@@ -330,8 +374,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBufferAssert</b> (v
       </table>
 </div><div class="memdoc">
 
-<p>Aligned heap memory free. </p>
-<p>Basically just <a class="el" href="#af168969d4fb51528c740250fdfc5b7e4" title="Heap memory free.">ctFree()</a>. Its here for API symetry. </p>
+<p>Heap memory free. </p>
+<p>Similar to C's free() but for use with ctAlloc functions </p><dl class="section warning"><dt>Warning</dt><dd>Only use on blocks allocated with ctAlloc variants </dd></dl>
 
 </div>
 </div>
@@ -388,14 +432,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBufferAssert</b> (v
 
 </div>
 </div>
-<a id="af168969d4fb51528c740250fdfc5b7e4" name="af168969d4fb51528c740250fdfc5b7e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af168969d4fb51528c740250fdfc5b7e4">&#9670;&#160;</a></span>ctFree()</h2>
+<a id="a3310611b33a651f79c46ad5761bbb4f0" name="a3310611b33a651f79c46ad5761bbb4f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3310611b33a651f79c46ad5761bbb4f0">&#9670;&#160;</a></span>ctAlignedFree()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ctFree </td>
+          <td class="memname">void ctAlignedFree </td>
           <td>(</td>
           <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>block</em></span></td><td>)</td>
           <td></td>
@@ -403,28 +447,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBufferAssert</b> (v
       </table>
 </div><div class="memdoc">
 
-<p>Heap memory free. </p>
-<p>Similar to C's free() but for use with ctAlloc functions </p><dl class="section warning"><dt>Warning</dt><dd>Only use on blocks allocated with ctAlloc variants </dd></dl>
-
-</div>
-</div>
-<a id="a2431d9c5c03d78172fe745fd249130c2" name="a2431d9c5c03d78172fe745fd249130c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2431d9c5c03d78172fe745fd249130c2">&#9670;&#160;</a></span>ctGetAliveAllocations()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int64_t ctGetAliveAllocations </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the number of allocations that exist right now. </p>
-<p>This does not include allocations made by vanilla malloc/free </p>
+<p>Aligned heap memory free. </p>
+<p>Basically just <a class="el" href="#af168969d4fb51528c740250fdfc5b7e4" title="Heap memory free.">ctFree()</a>. Its here for API symetry. </p>
 
 </div>
 </div>
@@ -467,47 +491,23 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBufferAssert</b> (v
 
 </div>
 </div>
-<a id="afa61f346bbf242f466c02d94ef731401" name="afa61f346bbf242f466c02d94ef731401"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa61f346bbf242f466c02d94ef731401">&#9670;&#160;</a></span>ctMalloc()</h2>
+<a id="a2431d9c5c03d78172fe745fd249130c2" name="a2431d9c5c03d78172fe745fd249130c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2431d9c5c03d78172fe745fd249130c2">&#9670;&#160;</a></span>ctGetAliveAllocations()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * ctMalloc </td>
+          <td class="memname">int64_t ctGetAliveAllocations </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Heap memory allocation. </p>
-<p>Similar to C's malloc() but guaranteed to sit on CT_ALIGNMENT_CACHE </p><dl class="section warning"><dt>Warning</dt><dd>Only free with <a class="el" href="#af168969d4fb51528c740250fdfc5b7e4" title="Heap memory free.">ctFree()</a> </dd></dl>
-
-</div>
-</div>
-<a id="a4f0016afd607a57a1600f788c51873fd" name="a4f0016afd607a57a1600f788c51873fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f0016afd607a57a1600f788c51873fd">&#9670;&#160;</a></span>ctRealloc()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * ctRealloc </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>old</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Heap memory reallocation. </p>
-<p>Similar to C's realloc() but guaranteed to sit on CT_ALIGNMENT_CACHE </p><dl class="section warning"><dt>Warning</dt><dd>Only free with <a class="el" href="#af168969d4fb51528c740250fdfc5b7e4" title="Heap memory free.">ctFree()</a> </dd></dl>
+<p>Get the number of allocations that exist right now. </p>
+<p>This does not include allocations made by vanilla malloc/free </p>
 
 </div>
 </div>

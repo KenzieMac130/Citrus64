@@ -1,0 +1,442 @@
+\doxysection{Math.\+c File Reference}
+\hypertarget{_math_8c}{}\label{_math_8c}\index{Math.c@{Math.c}}
+{\ttfamily \#include "{}Math.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/utilities/\+Math.\+c.\+gen.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_math_8c_aed8a9ae6d3d73845d742914d2da8c34b}{ct\+Float\+Compare}} (const float a, const float b, const float threshold)
+\begin{DoxyCompactList}\small\item\em Float Compare Compares two floats for equality within a given threshold. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_math_8c_a1d0736fe60c79bbfdff7d6574e1385db}{ct\+Float\+Approx\+Equal}} (const float a, const float b)
+\begin{DoxyCompactList}\small\item\em Float equality check. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_math_8c_a9db0553d4ab54b98bd2a98ca8734be2c}{ct\+Multi\+Float\+Compare}} (const uint32\+\_\+t count, const float \texorpdfstring{$\ast$}{*}a, const float \texorpdfstring{$\ast$}{*}b, const float threshold)
+\begin{DoxyCompactList}\small\item\em Compare multiple floats. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_abf4f192237e33d6c6f2d4c406abf2c00}{ct\+Lerpf}} (const float a, const float b, const float t)
+\begin{DoxyCompactList}\small\item\em Linear interpolation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_ad1740c6723d142fb7b891085bf64aa37}{ct\+Smooth\+Stepf}} (const float a, const float b, const float t)
+\begin{DoxyCompactList}\small\item\em Smoothstep interpolation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a364bcd56394921da37def8a887c5551e}{ct\+Powf}} (const float a, const float b)
+\begin{DoxyCompactList}\small\item\em Raises a value to an exponent. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_aedae907f9940cac0209a7862f377ab27}{ct\+Logf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Natural Logarithm. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a109b327ec3619cc4a2e5aca4cf743eeb}{ct\+Sqrtf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Square Root. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_ac2cc39fedb0ed501ce5cad5febc09e9f}{ct\+Inv\+Sqrtf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Inverse Square Root. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_ae664c8ee820f95066a4b6ab68b337da9}{ct\+Absf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Absolute value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_ab8aff24ff5880c626877c6ee1eb2ee9e}{ct\+Expf}} (const float power)
+\begin{DoxyCompactList}\small\item\em Eulers number for a given power. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a487eeb983963f6c53abda40851ab44cc}{ct\+Maxf}} (const float a, const float b)
+\begin{DoxyCompactList}\small\item\em Take the maximum value between two numbers. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_abec0b6e0de9099bce3c306c0b557e5a3}{ct\+Minf}} (const float a, const float b)
+\begin{DoxyCompactList}\small\item\em Take the minimum value between two numbers. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_ac18c30447906c849b767be262d1fdf78}{ct\+Clampf}} (const float a, const float min, const float max)
+\begin{DoxyCompactList}\small\item\em Clamp number between a minimum and maximum range. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a1ab9661e963daa363593fcaf08b3e8fd}{ct\+Remapf}} (const float v, const float in\+\_\+min, const float in\+\_\+max, float out\+\_\+min, float out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Remap a number from a minimum and maximum range to a new minimum and maximum range. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a166accbb9ff0602e636c6ed586f3b14c}{ct\+Saturatef}} (const float a)
+\begin{DoxyCompactList}\small\item\em Saturate clamps a value to a 0-\/1 range. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_ad47b84f196461802401e0eae121f89c1}{ct\+Floorf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Round down a number to the last integer. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a8557ec930cd307e41f5f9f1da457d0b6}{ct\+Ceilf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Round up a number to the next integer. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_ab79998a8ec794592f5698ada4061f025}{ct\+Roundf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Round a number to the nearest integer. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a9eb605628ca4acd650af4fe141b57265}{ct\+Fracf}} (const float a)
+\begin{DoxyCompactList}\small\item\em The remainder of a number after truncation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a4f7a3a3eb8211f4f22c58237bafeca46}{ct\+Rad2\+Degf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Radians to Degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a5524d56d08915aee0715c66042807357}{ct\+Deg2\+Radf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Degrees to Radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a207bc857e3c69e138b068c83bac34633}{ct\+Sinf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Sine. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a6d787c5320c1516788ea237d9b8c58da}{ct\+Sin\+Approxf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Approximate Sine Wave. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_ac29964c26408110c5e75d128d91718f6}{ct\+Sin\+Accuratef}} (const float a)
+\begin{DoxyCompactList}\small\item\em Accurate Sine. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_aecda2241b2bb5e458ca8a0bab1c8c867}{ct\+Cosf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Cosine. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a9dcd0e5bed4ae2f0921d12fb660d2c63}{ct\+Cos\+Accuratef}} (const float a)
+\begin{DoxyCompactList}\small\item\em Accurate Cosine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_math_8c_a5acceab3cc472879b3586a716aa15195}{ct\+Sin\+Cosf}} (const float a, float \texorpdfstring{$\ast$}{*}sin, float \texorpdfstring{$\ast$}{*}cos)
+\begin{DoxyCompactList}\small\item\em Sign and cosine at once. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a603175279f921b023acff39435839895}{ct\+Tanf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Tangent. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_adbc0c0df84938269d1a94623e237b394}{ct\+Arc\+Sinf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Arcsine. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a1130a934d2d5dab50b4af9c01df10ece}{ct\+Arc\+Cosf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Arccosine. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a735f21af27abad29bfc7811b73142e0c}{ct\+Arc\+Tanf}} (const float a)
+\begin{DoxyCompactList}\small\item\em Arctangent. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_a8349ca2f4e532f62be8ee294934724b5}{ct\+Arc\+Tan2f}} (const float a, const float b)
+\begin{DoxyCompactList}\small\item\em Arc\+Tan2 (atan2) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_math_8c_aa5129bbf470616cc40d7fb1849c75933}{ct\+Arc\+Tan2\+Accuratef}} (const float a, const float b)
+\begin{DoxyCompactList}\small\item\em Accurate Arctan2 (atan2) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_math_8c_aee04aef1874f19265a656a389e600203}{ct\+Is\+Prime}} (const uint32\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Check if input is prime number. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_math_8c_ab680982488d1988831edb4886e65c379}{ct\+Next\+Prime}} (uint32\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Find the next prime number after the input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_math_8c_aed8a9ae6d3d73845d742914d2da8c34b}\index{Math.c@{Math.c}!ctFloatCompare@{ctFloatCompare}}
+\index{ctFloatCompare@{ctFloatCompare}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctFloatCompare()}{ctFloatCompare()}}
+{\footnotesize\ttfamily \label{_math_8c_aed8a9ae6d3d73845d742914d2da8c34b} 
+bool ct\+Float\+Compare (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{, }\item[{const float}]{threshold}{}\end{DoxyParamCaption})}
+
+
+
+Float Compare Compares two floats for equality within a given threshold. 
+
+\Hypertarget{_math_8c_a1d0736fe60c79bbfdff7d6574e1385db}\index{Math.c@{Math.c}!ctFloatApproxEqual@{ctFloatApproxEqual}}
+\index{ctFloatApproxEqual@{ctFloatApproxEqual}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctFloatApproxEqual()}{ctFloatApproxEqual()}}
+{\footnotesize\ttfamily \label{_math_8c_a1d0736fe60c79bbfdff7d6574e1385db} 
+bool ct\+Float\+Approx\+Equal (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Float equality check. 
+
+Compares two floats for equality within 0.\+0001f difference \Hypertarget{_math_8c_a9db0553d4ab54b98bd2a98ca8734be2c}\index{Math.c@{Math.c}!ctMultiFloatCompare@{ctMultiFloatCompare}}
+\index{ctMultiFloatCompare@{ctMultiFloatCompare}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctMultiFloatCompare()}{ctMultiFloatCompare()}}
+{\footnotesize\ttfamily \label{_math_8c_a9db0553d4ab54b98bd2a98ca8734be2c} 
+bool ct\+Multi\+Float\+Compare (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t}]{count}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{b}{, }\item[{const float}]{threshold}{}\end{DoxyParamCaption})}
+
+
+
+Compare multiple floats. 
+
+Similar to \doxylink{_math_8h_aed8a9ae6d3d73845d742914d2da8c34b}{ct\+Float\+Compare()} but for multiple floats two a packed arrays \Hypertarget{_math_8c_abf4f192237e33d6c6f2d4c406abf2c00}\index{Math.c@{Math.c}!ctLerpf@{ctLerpf}}
+\index{ctLerpf@{ctLerpf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctLerpf()}{ctLerpf()}}
+{\footnotesize\ttfamily \label{_math_8c_abf4f192237e33d6c6f2d4c406abf2c00} 
+float ct\+Lerpf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{, }\item[{const float}]{factor}{}\end{DoxyParamCaption})}
+
+
+
+Linear interpolation. 
+
+Mixes two numbers together based on a given factor \Hypertarget{_math_8c_ad1740c6723d142fb7b891085bf64aa37}\index{Math.c@{Math.c}!ctSmoothStepf@{ctSmoothStepf}}
+\index{ctSmoothStepf@{ctSmoothStepf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctSmoothStepf()}{ctSmoothStepf()}}
+{\footnotesize\ttfamily \label{_math_8c_ad1740c6723d142fb7b891085bf64aa37} 
+float ct\+Smooth\+Stepf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{, }\item[{const float}]{factor}{}\end{DoxyParamCaption})}
+
+
+
+Smoothstep interpolation. 
+
+See \href{https://en.wikipedia.org/wiki/Smoothstep}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Smoothstep}} \Hypertarget{_math_8c_a364bcd56394921da37def8a887c5551e}\index{Math.c@{Math.c}!ctPowf@{ctPowf}}
+\index{ctPowf@{ctPowf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctPowf()}{ctPowf()}}
+{\footnotesize\ttfamily \label{_math_8c_a364bcd56394921da37def8a887c5551e} 
+float ct\+Powf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Raises a value to an exponent. 
+
+\Hypertarget{_math_8c_aedae907f9940cac0209a7862f377ab27}\index{Math.c@{Math.c}!ctLogf@{ctLogf}}
+\index{ctLogf@{ctLogf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctLogf()}{ctLogf()}}
+{\footnotesize\ttfamily \label{_math_8c_aedae907f9940cac0209a7862f377ab27} 
+float ct\+Logf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Natural Logarithm. 
+
+\Hypertarget{_math_8c_a109b327ec3619cc4a2e5aca4cf743eeb}\index{Math.c@{Math.c}!ctSqrtf@{ctSqrtf}}
+\index{ctSqrtf@{ctSqrtf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctSqrtf()}{ctSqrtf()}}
+{\footnotesize\ttfamily \label{_math_8c_a109b327ec3619cc4a2e5aca4cf743eeb} 
+float ct\+Sqrtf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Square Root. 
+
+\Hypertarget{_math_8c_ac2cc39fedb0ed501ce5cad5febc09e9f}\index{Math.c@{Math.c}!ctInvSqrtf@{ctInvSqrtf}}
+\index{ctInvSqrtf@{ctInvSqrtf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctInvSqrtf()}{ctInvSqrtf()}}
+{\footnotesize\ttfamily \label{_math_8c_ac2cc39fedb0ed501ce5cad5febc09e9f} 
+float ct\+Inv\+Sqrtf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Inverse Square Root. 
+
+\Hypertarget{_math_8c_ae664c8ee820f95066a4b6ab68b337da9}\index{Math.c@{Math.c}!ctAbsf@{ctAbsf}}
+\index{ctAbsf@{ctAbsf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctAbsf()}{ctAbsf()}}
+{\footnotesize\ttfamily \label{_math_8c_ae664c8ee820f95066a4b6ab68b337da9} 
+float ct\+Absf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Absolute value. 
+
+\Hypertarget{_math_8c_ab8aff24ff5880c626877c6ee1eb2ee9e}\index{Math.c@{Math.c}!ctExpf@{ctExpf}}
+\index{ctExpf@{ctExpf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctExpf()}{ctExpf()}}
+{\footnotesize\ttfamily \label{_math_8c_ab8aff24ff5880c626877c6ee1eb2ee9e} 
+float ct\+Expf (\begin{DoxyParamCaption}\item[{const float}]{power}{}\end{DoxyParamCaption})}
+
+
+
+Eulers number for a given power. 
+
+See \href{https://en.wikipedia.org/wiki/E_(mathematical_constant)}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+E\+\_\+(mathematical\+\_\+constant)}} \Hypertarget{_math_8c_a487eeb983963f6c53abda40851ab44cc}\index{Math.c@{Math.c}!ctMaxf@{ctMaxf}}
+\index{ctMaxf@{ctMaxf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctMaxf()}{ctMaxf()}}
+{\footnotesize\ttfamily \label{_math_8c_a487eeb983963f6c53abda40851ab44cc} 
+float ct\+Maxf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Take the maximum value between two numbers. 
+
+\Hypertarget{_math_8c_abec0b6e0de9099bce3c306c0b557e5a3}\index{Math.c@{Math.c}!ctMinf@{ctMinf}}
+\index{ctMinf@{ctMinf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctMinf()}{ctMinf()}}
+{\footnotesize\ttfamily \label{_math_8c_abec0b6e0de9099bce3c306c0b557e5a3} 
+float ct\+Minf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Take the minimum value between two numbers. 
+
+\Hypertarget{_math_8c_ac18c30447906c849b767be262d1fdf78}\index{Math.c@{Math.c}!ctClampf@{ctClampf}}
+\index{ctClampf@{ctClampf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctClampf()}{ctClampf()}}
+{\footnotesize\ttfamily \label{_math_8c_ac18c30447906c849b767be262d1fdf78} 
+float ct\+Clampf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{min}{, }\item[{const float}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Clamp number between a minimum and maximum range. 
+
+\Hypertarget{_math_8c_a1ab9661e963daa363593fcaf08b3e8fd}\index{Math.c@{Math.c}!ctRemapf@{ctRemapf}}
+\index{ctRemapf@{ctRemapf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctRemapf()}{ctRemapf()}}
+{\footnotesize\ttfamily \label{_math_8c_a1ab9661e963daa363593fcaf08b3e8fd} 
+float ct\+Remapf (\begin{DoxyParamCaption}\item[{const float}]{v}{, }\item[{const float}]{in\+\_\+min}{, }\item[{const float}]{in\+\_\+max}{, }\item[{float}]{out\+\_\+min}{, }\item[{float}]{out\+\_\+max}{}\end{DoxyParamCaption})}
+
+
+
+Remap a number from a minimum and maximum range to a new minimum and maximum range. 
+
+\Hypertarget{_math_8c_a166accbb9ff0602e636c6ed586f3b14c}\index{Math.c@{Math.c}!ctSaturatef@{ctSaturatef}}
+\index{ctSaturatef@{ctSaturatef}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctSaturatef()}{ctSaturatef()}}
+{\footnotesize\ttfamily \label{_math_8c_a166accbb9ff0602e636c6ed586f3b14c} 
+float ct\+Saturatef (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Saturate clamps a value to a 0-\/1 range. 
+
+\Hypertarget{_math_8c_ad47b84f196461802401e0eae121f89c1}\index{Math.c@{Math.c}!ctFloorf@{ctFloorf}}
+\index{ctFloorf@{ctFloorf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctFloorf()}{ctFloorf()}}
+{\footnotesize\ttfamily \label{_math_8c_ad47b84f196461802401e0eae121f89c1} 
+float ct\+Floorf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Round down a number to the last integer. 
+
+\Hypertarget{_math_8c_a8557ec930cd307e41f5f9f1da457d0b6}\index{Math.c@{Math.c}!ctCeilf@{ctCeilf}}
+\index{ctCeilf@{ctCeilf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctCeilf()}{ctCeilf()}}
+{\footnotesize\ttfamily \label{_math_8c_a8557ec930cd307e41f5f9f1da457d0b6} 
+float ct\+Ceilf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Round up a number to the next integer. 
+
+\Hypertarget{_math_8c_ab79998a8ec794592f5698ada4061f025}\index{Math.c@{Math.c}!ctRoundf@{ctRoundf}}
+\index{ctRoundf@{ctRoundf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctRoundf()}{ctRoundf()}}
+{\footnotesize\ttfamily \label{_math_8c_ab79998a8ec794592f5698ada4061f025} 
+float ct\+Roundf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Round a number to the nearest integer. 
+
+\Hypertarget{_math_8c_a9eb605628ca4acd650af4fe141b57265}\index{Math.c@{Math.c}!ctFracf@{ctFracf}}
+\index{ctFracf@{ctFracf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctFracf()}{ctFracf()}}
+{\footnotesize\ttfamily \label{_math_8c_a9eb605628ca4acd650af4fe141b57265} 
+float ct\+Fracf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+The remainder of a number after truncation. 
+
+\Hypertarget{_math_8c_a4f7a3a3eb8211f4f22c58237bafeca46}\index{Math.c@{Math.c}!ctRad2Degf@{ctRad2Degf}}
+\index{ctRad2Degf@{ctRad2Degf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctRad2Degf()}{ctRad2Degf()}}
+{\footnotesize\ttfamily \label{_math_8c_a4f7a3a3eb8211f4f22c58237bafeca46} 
+float ct\+Rad2\+Degf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Radians to Degrees. 
+
+\Hypertarget{_math_8c_a5524d56d08915aee0715c66042807357}\index{Math.c@{Math.c}!ctDeg2Radf@{ctDeg2Radf}}
+\index{ctDeg2Radf@{ctDeg2Radf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctDeg2Radf()}{ctDeg2Radf()}}
+{\footnotesize\ttfamily \label{_math_8c_a5524d56d08915aee0715c66042807357} 
+float ct\+Deg2\+Radf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Degrees to Radians. 
+
+\Hypertarget{_math_8c_a207bc857e3c69e138b068c83bac34633}\index{Math.c@{Math.c}!ctSinf@{ctSinf}}
+\index{ctSinf@{ctSinf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctSinf()}{ctSinf()}}
+{\footnotesize\ttfamily \label{_math_8c_a207bc857e3c69e138b068c83bac34633} 
+float ct\+Sinf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Sine. 
+
+\Hypertarget{_math_8c_a6d787c5320c1516788ea237d9b8c58da}\index{Math.c@{Math.c}!ctSinApproxf@{ctSinApproxf}}
+\index{ctSinApproxf@{ctSinApproxf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctSinApproxf()}{ctSinApproxf()}}
+{\footnotesize\ttfamily \label{_math_8c_a6d787c5320c1516788ea237d9b8c58da} 
+float ct\+Sin\+Approxf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Approximate Sine Wave. 
+
+Do not use for anything requiring precision Useful for pulsing animation effects \Hypertarget{_math_8c_ac29964c26408110c5e75d128d91718f6}\index{Math.c@{Math.c}!ctSinAccuratef@{ctSinAccuratef}}
+\index{ctSinAccuratef@{ctSinAccuratef}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctSinAccuratef()}{ctSinAccuratef()}}
+{\footnotesize\ttfamily \label{_math_8c_ac29964c26408110c5e75d128d91718f6} 
+float ct\+Sin\+Accuratef (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Accurate Sine. 
+
+A more accurate version of \doxylink{_math_8h_a207bc857e3c69e138b068c83bac34633}{ct\+Sinf()} Use if you hit an edge case requiring a higher accuracy \Hypertarget{_math_8c_aecda2241b2bb5e458ca8a0bab1c8c867}\index{Math.c@{Math.c}!ctCosf@{ctCosf}}
+\index{ctCosf@{ctCosf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctCosf()}{ctCosf()}}
+{\footnotesize\ttfamily \label{_math_8c_aecda2241b2bb5e458ca8a0bab1c8c867} 
+float ct\+Cosf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Cosine. 
+
+\Hypertarget{_math_8c_a9dcd0e5bed4ae2f0921d12fb660d2c63}\index{Math.c@{Math.c}!ctCosAccuratef@{ctCosAccuratef}}
+\index{ctCosAccuratef@{ctCosAccuratef}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctCosAccuratef()}{ctCosAccuratef()}}
+{\footnotesize\ttfamily \label{_math_8c_a9dcd0e5bed4ae2f0921d12fb660d2c63} 
+float ct\+Cos\+Accuratef (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Accurate Cosine. 
+
+A more accurate version of \doxylink{_math_8h_aecda2241b2bb5e458ca8a0bab1c8c867}{ct\+Cosf()} Use if you hit an edge case requiring a higher accuracy \Hypertarget{_math_8c_a5acceab3cc472879b3586a716aa15195}\index{Math.c@{Math.c}!ctSinCosf@{ctSinCosf}}
+\index{ctSinCosf@{ctSinCosf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctSinCosf()}{ctSinCosf()}}
+{\footnotesize\ttfamily \label{_math_8c_a5acceab3cc472879b3586a716aa15195} 
+void ct\+Sin\+Cosf (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{sin}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{cos}{}\end{DoxyParamCaption})}
+
+
+
+Sign and cosine at once. 
+
+If you need to calculate both you can optimize by using this function \Hypertarget{_math_8c_a603175279f921b023acff39435839895}\index{Math.c@{Math.c}!ctTanf@{ctTanf}}
+\index{ctTanf@{ctTanf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctTanf()}{ctTanf()}}
+{\footnotesize\ttfamily \label{_math_8c_a603175279f921b023acff39435839895} 
+float ct\+Tanf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Tangent. 
+
+\Hypertarget{_math_8c_adbc0c0df84938269d1a94623e237b394}\index{Math.c@{Math.c}!ctArcSinf@{ctArcSinf}}
+\index{ctArcSinf@{ctArcSinf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctArcSinf()}{ctArcSinf()}}
+{\footnotesize\ttfamily \label{_math_8c_adbc0c0df84938269d1a94623e237b394} 
+float ct\+Arc\+Sinf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Arcsine. 
+
+\Hypertarget{_math_8c_a1130a934d2d5dab50b4af9c01df10ece}\index{Math.c@{Math.c}!ctArcCosf@{ctArcCosf}}
+\index{ctArcCosf@{ctArcCosf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctArcCosf()}{ctArcCosf()}}
+{\footnotesize\ttfamily \label{_math_8c_a1130a934d2d5dab50b4af9c01df10ece} 
+float ct\+Arc\+Cosf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Arccosine. 
+
+\Hypertarget{_math_8c_a735f21af27abad29bfc7811b73142e0c}\index{Math.c@{Math.c}!ctArcTanf@{ctArcTanf}}
+\index{ctArcTanf@{ctArcTanf}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctArcTanf()}{ctArcTanf()}}
+{\footnotesize\ttfamily \label{_math_8c_a735f21af27abad29bfc7811b73142e0c} 
+float ct\+Arc\+Tanf (\begin{DoxyParamCaption}\item[{const float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Arctangent. 
+
+\Hypertarget{_math_8c_a8349ca2f4e532f62be8ee294934724b5}\index{Math.c@{Math.c}!ctArcTan2f@{ctArcTan2f}}
+\index{ctArcTan2f@{ctArcTan2f}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctArcTan2f()}{ctArcTan2f()}}
+{\footnotesize\ttfamily \label{_math_8c_a8349ca2f4e532f62be8ee294934724b5} 
+float ct\+Arc\+Tan2f (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Arc\+Tan2 (atan2) 
+
+See \href{https://en.wikipedia.org/wiki/Atan2}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Atan2}} \Hypertarget{_math_8c_aa5129bbf470616cc40d7fb1849c75933}\index{Math.c@{Math.c}!ctArcTan2Accuratef@{ctArcTan2Accuratef}}
+\index{ctArcTan2Accuratef@{ctArcTan2Accuratef}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctArcTan2Accuratef()}{ctArcTan2Accuratef()}}
+{\footnotesize\ttfamily \label{_math_8c_aa5129bbf470616cc40d7fb1849c75933} 
+float ct\+Arc\+Tan2\+Accuratef (\begin{DoxyParamCaption}\item[{const float}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Accurate Arctan2 (atan2) 
+
+A more accurate version of \doxylink{_math_8h_a8349ca2f4e532f62be8ee294934724b5}{ct\+Arc\+Tan2f()} Use if you hit an edge case requiring a higher accuracy \Hypertarget{_math_8c_aee04aef1874f19265a656a389e600203}\index{Math.c@{Math.c}!ctIsPrime@{ctIsPrime}}
+\index{ctIsPrime@{ctIsPrime}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctIsPrime()}{ctIsPrime()}}
+{\footnotesize\ttfamily \label{_math_8c_aee04aef1874f19265a656a389e600203} 
+bool ct\+Is\+Prime (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Check if input is prime number. 
+
+\Hypertarget{_math_8c_ab680982488d1988831edb4886e65c379}\index{Math.c@{Math.c}!ctNextPrime@{ctNextPrime}}
+\index{ctNextPrime@{ctNextPrime}!Math.c@{Math.c}}
+\doxysubsubsection{\texorpdfstring{ctNextPrime()}{ctNextPrime()}}
+{\footnotesize\ttfamily \label{_math_8c_ab680982488d1988831edb4886e65c379} 
+uint32\+\_\+t ct\+Next\+Prime (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Find the next prime number after the input. 
+

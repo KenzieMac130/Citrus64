@@ -14,3 +14,5 @@ Common library includes for Citrus64
 #include "Hash.h"
 #include "HashTable.h"
 #include "Random.h"
+
+#include "codegen/engine/utilities/Utilities.h.gen.h"

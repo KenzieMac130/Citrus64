@@ -19,31 +19,13 @@ Math functions for working with 3D space
 #define CT_BACK         0.0f,  0.0f, -1.0f    
 #define CT_RIGHT       -1.0f,  0.0f,  0.0f   
 #define CT_LEFT         1.0f,  0.0f,  0.0f
+#define CT_VEC3_UP      (ctVec3){CT_UP}
+#define CT_VEC3_DOWN    (ctVec3){CT_DOWN}
+#define CT_VEC3_FORWARD (ctVec3){CT_FORWARD}
+#define CT_VEC3_BACK    (ctVec3){CT_BACK}
+#define CT_VEC3_RIGHT   (ctVec3){CT_RIGHT}
+#define CT_VEC3_LEFT    (ctVec3){CT_LEFT}
 // clang-format on
-#define CT_VEC3_UP                                                                       \
-   (ctVec3) {                                                                            \
-      CT_UP                                                                              \
-   }
-#define CT_VEC3_DOWN                                                                     \
-   (ctVec3) {                                                                            \
-      CT_DOWN                                                                            \
-   }
-#define CT_VEC3_FORWARD                                                                  \
-   (ctVec3) {                                                                            \
-      CT_FORWARD                                                                         \
-   }
-#define CT_VEC3_BACK                                                                     \
-   (ctVec3) {                                                                            \
-      CT_BACK                                                                            \
-   }
-#define CT_VEC3_RIGHT                                                                    \
-   (ctVec3) {                                                                            \
-      CT_RIGHT                                                                           \
-   }
-#define CT_VEC3_LEFT                                                                     \
-   (ctVec3) {                                                                            \
-      CT_LEFT                                                                            \
-   }
 
 /*! @brief 3D Vector */
 typedef struct {

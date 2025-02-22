@@ -220,6 +220,87 @@ Enumerations</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Boilerplate for all engine and game files. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a78cc814ce040c5aad462746110b04959" name="a78cc814ce040c5aad462746110b04959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78cc814ce040c5aad462746110b04959">&#9670;&#160;</a></span>ctAssert</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ctAssert</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">assert(e)</div>
+</div><!-- fragment -->
+<p>Runtime Fatal Error Throwing. </p>
+
+</div>
+</div>
+<a id="a4ae02fd19fdee3ba52c2ae14da7e6f80" name="a4ae02fd19fdee3ba52c2ae14da7e6f80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ae02fd19fdee3ba52c2ae14da7e6f80">&#9670;&#160;</a></span>ctStaticAssert</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ctStaticAssert</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">static_assert</span>(e)</div>
+</div><!-- fragment -->
+<p>Offline Compile-time Error Throwing. </p>
+
+</div>
+</div>
+<a id="a21546bfc8a1507d2cf2c3d6c7d294706" name="a21546bfc8a1507d2cf2c3d6c7d294706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21546bfc8a1507d2cf2c3d6c7d294706">&#9670;&#160;</a></span>ctErrorCheck</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ctErrorCheck</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(_msg != CT_SUCCESS)</div>
+</div><!-- fragment -->
+<p>Checks if a <a class="el" href="#a4c2ef51e097a480311ca51322ef203ca" title="Return Codes for the engine&#39;s runtime errors.">ctResults</a> was unsucessful. </p>
+
+</div>
+</div>
+<a id="a42a39e382b87221e68e91b8b55d35eaa" name="a42a39e382b87221e68e91b8b55d35eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42a39e382b87221e68e91b8b55d35eaa">&#9670;&#160;</a></span>ctFatalError</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ctFatalError</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_MESSAGE</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a78cc814ce040c5aad462746110b04959">ctAssert</a>(0 &amp;&amp; _MESSAGE)</div>
+<div class="ttc" id="a_common_8h_html_a78cc814ce040c5aad462746110b04959"><div class="ttname"><a href="#a78cc814ce040c5aad462746110b04959">ctAssert</a></div><div class="ttdeci">#define ctAssert(e)</div><div class="ttdoc">Runtime Fatal Error Throwing.</div><div class="ttdef"><b>Definition</b> Common.h:65</div></div>
+</div><!-- fragment -->
+<p>Raise a fatal error while the game is running. </p>
+
+</div>
+</div>
 <a id="a34197314c1aa083ac062754d33e44442" name="a34197314c1aa083ac062754d33e44442"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a34197314c1aa083ac062754d33e44442">&#9670;&#160;</a></span>CT_PANIC_FAIL</h2>
 
@@ -288,7 +369,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">   {                                                                                     \</div>
-<div class="line">      <a class="code hl_enumeration" href="#a4c2ef51e097a480311ca51322ef203ca">ctResults</a> __res = (_arg);                                                     \</div>
+<div class="line">      <a class="code hl_enumeration" href="#a4c2ef51e097a480311ca51322ef203ca">ctResults</a> __res = (_arg);                                                          \</div>
 <div class="line">      if (__res != CT_SUCCESS) { <span class="keywordflow">return</span> __res; }                                         \</div>
 <div class="line">   }</div>
 <div class="ttc" id="a_common_8h_html_a4c2ef51e097a480311ca51322ef203ca"><div class="ttname"><a href="#a4c2ef51e097a480311ca51322ef203ca">ctResults</a></div><div class="ttdeci">ctResults</div><div class="ttdoc">Return Codes for the engine&#39;s runtime errors.</div><div class="ttdef"><b>Definition</b> Common.h:28</div></div>
@@ -316,7 +397,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">   {                                                                                     \</div>
-<div class="line">      <a class="code hl_enumeration" href="#a4c2ef51e097a480311ca51322ef203ca">ctResults</a> __res = (_arg);                                                     \</div>
+<div class="line">      <a class="code hl_enumeration" href="#a4c2ef51e097a480311ca51322ef203ca">ctResults</a> __res = (_arg);                                                          \</div>
 <div class="line">      if (__res != CT_SUCCESS) {                                                         \</div>
 <div class="line">         _cleanup;                                                                       \</div>
 <div class="line">         <span class="keywordflow">return</span> __res;                                                                   \</div>
@@ -351,29 +432,6 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="a9b38c5c01037cce6d747393f2557e15b" name="a9b38c5c01037cce6d747393f2557e15b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b38c5c01037cce6d747393f2557e15b">&#9670;&#160;</a></span>CT_RETURN_ON_NULL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CT_RETURN_ON_NULL</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_arg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_code</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#aeb669c9ffe81aa21fb967a45afc6306e">CT_RETURN_ON_UNTRUE</a>(_arg, _code)</div>
-<div class="ttc" id="a_common_8h_html_aeb669c9ffe81aa21fb967a45afc6306e"><div class="ttname"><a href="#aeb669c9ffe81aa21fb967a45afc6306e">CT_RETURN_ON_UNTRUE</a></div><div class="ttdeci">#define CT_RETURN_ON_UNTRUE(_arg, _result)</div><div class="ttdoc">Return a given value upon a truth check failure.</div><div class="ttdef"><b>Definition</b> Common.h:110</div></div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="aeb669c9ffe81aa21fb967a45afc6306e" name="aeb669c9ffe81aa21fb967a45afc6306e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb669c9ffe81aa21fb967a45afc6306e">&#9670;&#160;</a></span>CT_RETURN_ON_UNTRUE</h2>
 
@@ -398,48 +456,27 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="a53d9b03d8399b132ce037fed7db52931" name="a53d9b03d8399b132ce037fed7db52931"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53d9b03d8399b132ce037fed7db52931">&#9670;&#160;</a></span>ctAlign</h2>
+<a id="a9b38c5c01037cce6d747393f2557e15b" name="a9b38c5c01037cce6d747393f2557e15b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b38c5c01037cce6d747393f2557e15b">&#9670;&#160;</a></span>CT_RETURN_ON_NULL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ctAlign</td>
+          <td class="memname">#define CT_RETURN_ON_NULL</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_arg</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_code</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((v + (a - 1)) &amp; -a)</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#aeb669c9ffe81aa21fb967a45afc6306e">CT_RETURN_ON_UNTRUE</a>(_arg, _code)</div>
+<div class="ttc" id="a_common_8h_html_aeb669c9ffe81aa21fb967a45afc6306e"><div class="ttname"><a href="#aeb669c9ffe81aa21fb967a45afc6306e">CT_RETURN_ON_UNTRUE</a></div><div class="ttdeci">#define CT_RETURN_ON_UNTRUE(_arg, _result)</div><div class="ttdoc">Return a given value upon a truth check failure.</div><div class="ttdef"><b>Definition</b> Common.h:110</div></div>
 </div><!-- fragment -->
-<p>move (v) byte pointer forward to satisfy (a) alignment </p>
-
-</div>
-</div>
-<a id="a78cc814ce040c5aad462746110b04959" name="a78cc814ce040c5aad462746110b04959"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78cc814ce040c5aad462746110b04959">&#9670;&#160;</a></span>ctAssert</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctAssert</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">assert(e)</div>
-</div><!-- fragment -->
-<p>Runtime Fatal Error Throwing. </p>
-
 </div>
 </div>
 <a id="a08422623bdd4af9a73c3e9d97e21a1b6" name="a08422623bdd4af9a73c3e9d97e21a1b6"></a>
@@ -466,64 +503,27 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="a21546bfc8a1507d2cf2c3d6c7d294706" name="a21546bfc8a1507d2cf2c3d6c7d294706"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21546bfc8a1507d2cf2c3d6c7d294706">&#9670;&#160;</a></span>ctErrorCheck</h2>
+<a id="a53d9b03d8399b132ce037fed7db52931" name="a53d9b03d8399b132ce037fed7db52931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53d9b03d8399b132ce037fed7db52931">&#9670;&#160;</a></span>ctAlign</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ctErrorCheck</td>
+          <td class="memname">#define ctAlign</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_msg</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(_msg != CT_SUCCESS)</div>
-</div><!-- fragment -->
-<p>Checks if a <a class="el" href="#a4c2ef51e097a480311ca51322ef203ca" title="Return Codes for the engine&#39;s runtime errors.">ctResults</a> was unsucessful. </p>
-
-</div>
-</div>
-<a id="a42a39e382b87221e68e91b8b55d35eaa" name="a42a39e382b87221e68e91b8b55d35eaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42a39e382b87221e68e91b8b55d35eaa">&#9670;&#160;</a></span>ctFatalError</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">#define ctFatalError</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_MESSAGE</em></span></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a78cc814ce040c5aad462746110b04959">ctAssert</a>(0 &amp;&amp; _MESSAGE)</div>
-<div class="ttc" id="a_common_8h_html_a78cc814ce040c5aad462746110b04959"><div class="ttname"><a href="#a78cc814ce040c5aad462746110b04959">ctAssert</a></div><div class="ttdeci">#define ctAssert(e)</div><div class="ttdoc">Runtime Fatal Error Throwing.</div><div class="ttdef"><b>Definition</b> Common.h:65</div></div>
+<b>Value:</b><div class="fragment"><div class="line">((v + (a - 1)) &amp; -a)</div>
 </div><!-- fragment -->
-<p>Raise a fatal error while the game is running. </p>
-
-</div>
-</div>
-<a id="a4ae02fd19fdee3ba52c2ae14da7e6f80" name="a4ae02fd19fdee3ba52c2ae14da7e6f80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ae02fd19fdee3ba52c2ae14da7e6f80">&#9670;&#160;</a></span>ctStaticAssert</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctStaticAssert</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">static_assert</span>(e)</div>
-</div><!-- fragment -->
-<p>Offline Compile-time Error Throwing. </p>
+<p>move (v) byte pointer forward to satisfy (a) alignment </p>
 
 </div>
 </div>

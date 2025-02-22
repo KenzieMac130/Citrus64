@@ -30,7 +30,7 @@
 \DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_memory_8h_a3310611b33a651f79c46ad5761bbb4f0}{ctAlignedFree}}(\textcolor{keywordtype}{void}*\ block);}
 \DoxyCodeLine{00062\ }
 \DoxyCodeLine{00064\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00066\ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structct_group_alloc_desc_a3afda29223eeda35afd21a6c5e121ba2}{alignment}};\ }
+\DoxyCodeLine{00066\ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structct_group_alloc_desc_a3afda29223eeda35afd21a6c5e121ba2}{alignment}};}
 \DoxyCodeLine{00068\ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structct_group_alloc_desc_a854352f53b148adc24983a58a1866d66}{size}};}
 \DoxyCodeLine{00070\ \ \ \ \textcolor{keywordtype}{void}**\ \mbox{\hyperlink{structct_group_alloc_desc_aebcb88de50cd562ac1427f773563a3f3}{output}};}
 \DoxyCodeLine{00071\ \}\ \mbox{\hyperlink{structct_group_alloc_desc}{ctGroupAllocDesc}};}
@@ -43,15 +43,18 @@
 \DoxyCodeLine{00097\ }
 \DoxyCodeLine{00098\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/\ Buffer\ Over/Underflow\ Checking\ -\/-\/-\/-\/-\/-\/-\/\ */}}
 \DoxyCodeLine{00099\ }
-\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_memory_8h_aba4dc708ce0fb2f886746448a2fea032}{ctBufferAssert}}(\textcolor{keywordtype}{void}*\ parentBuffer,\ \textcolor{keywordtype}{size\_t}\ parentBufferSize,\ \textcolor{keywordtype}{void}*\ childBuffer,\ \textcolor{keywordtype}{size\_t}\ childBufferSize);}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ ctBufferAssertSingle(\_parentBuffer,\ \_parentBufferSize,\ \_ptr)\ \(\backslash\)}}
-\DoxyCodeLine{00105\ \textcolor{preprocessor}{ctBufferAssert(\_parentBuffer,\ \_parentBufferSize,\ \_ptr,\ sizeof(\_ptr))}}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ ctBufferAssertRange(\_parentBuffer,\ \_parentBufferSize,\ \_ptrMin,\ \_ptrMax)\ \(\backslash\)}}
-\DoxyCodeLine{00109\ \textcolor{preprocessor}{ctBufferAssert(\_parentBuffer,\ \_parentBufferSize,\ \_ptrMin,\ (size\_t)(\_ptrMax\ -\/\ \_ptrMin))}}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ ctBufferAssertIndex(\_parentBuffer,\ \_parentBufferSize,\ \_idx)\ \(\backslash\)}}
-\DoxyCodeLine{00113\ \textcolor{preprocessor}{ctBufferAssertSingle(\_parentBuffer,\ \_parentBufferSize,\ \_parentBuffer\ +\ \_idx)}}
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_memory_8h_aba4dc708ce0fb2f886746448a2fea032}{ctBufferAssert}}(\textcolor{keywordtype}{void}*\ parentBuffer,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ parentBufferSize,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ childBuffer,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ childBufferSize);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ ctBufferAssertSingle(\_parentBuffer,\ \_parentBufferSize,\ \_ptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ \ ctBufferAssert(\_parentBuffer,\ \_parentBufferSize,\ \_ptr,\ sizeof(\_ptr))}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ ctBufferAssertRange(\_parentBuffer,\ \_parentBufferSize,\ \_ptrMin,\ \_ptrMax)\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \ ctBufferAssert(\_parentBuffer,\ \_parentBufferSize,\ \_ptrMin,\ (size\_t)(\_ptrMax\ -\/\ \_ptrMin))}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ ctBufferAssertIndex(\_parentBuffer,\ \_parentBufferSize,\ \_idx)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\ \ \ ctBufferAssertSingle(\_parentBuffer,\ \_parentBufferSize,\ \_parentBuffer\ +\ \_idx)}}
 
 \end{DoxyCode}

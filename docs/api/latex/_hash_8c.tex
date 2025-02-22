@@ -1,0 +1,57 @@
+\doxysection{Hash.\+c File Reference}
+\hypertarget{_hash_8c}{}\label{_hash_8c}\index{Hash.c@{Hash.c}}
+{\ttfamily \#include "{}Hash.\+h"{}}\newline
+{\ttfamily \#include "{}thirdparty/xx\+Hash/xxhash.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/utilities/\+Hash.\+c.\+gen.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_hash_8c_a546f2633ae1036f49bdc5582971d7f1e}{XXH\+\_\+\+STATIC\+\_\+\+LINKING\+\_\+\+ONLY}}
+\item 
+\#define \mbox{\hyperlink{_hash_8c_aa40be3a031b9a5bd9afc800b0959a0c9}{XXH\+\_\+\+IMPLEMENTATION}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_hash_8c_aef2f64060062ea4431351328c788852e}{ct\+XXHash32\+Bytes}} (const void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Hash the buffer using the XXHash algorithm. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_hash_8c_abdbc925d0941a1f7fe4ef7527fa0ec65}{ct\+XXHash32\+String}} (const char \texorpdfstring{$\ast$}{*}string)
+\begin{DoxyCompactList}\small\item\em Hash the string (excluding null-\/terminator) using the XXHash algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_hash_8c_a546f2633ae1036f49bdc5582971d7f1e}\index{Hash.c@{Hash.c}!XXH\_STATIC\_LINKING\_ONLY@{XXH\_STATIC\_LINKING\_ONLY}}
+\index{XXH\_STATIC\_LINKING\_ONLY@{XXH\_STATIC\_LINKING\_ONLY}!Hash.c@{Hash.c}}
+\doxysubsubsection{\texorpdfstring{XXH\_STATIC\_LINKING\_ONLY}{XXH\_STATIC\_LINKING\_ONLY}}
+{\footnotesize\ttfamily \label{_hash_8c_a546f2633ae1036f49bdc5582971d7f1e} 
+\#define XXH\+\_\+\+STATIC\+\_\+\+LINKING\+\_\+\+ONLY}
+
+\Hypertarget{_hash_8c_aa40be3a031b9a5bd9afc800b0959a0c9}\index{Hash.c@{Hash.c}!XXH\_IMPLEMENTATION@{XXH\_IMPLEMENTATION}}
+\index{XXH\_IMPLEMENTATION@{XXH\_IMPLEMENTATION}!Hash.c@{Hash.c}}
+\doxysubsubsection{\texorpdfstring{XXH\_IMPLEMENTATION}{XXH\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \label{_hash_8c_aa40be3a031b9a5bd9afc800b0959a0c9} 
+\#define XXH\+\_\+\+IMPLEMENTATION}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_hash_8c_aef2f64060062ea4431351328c788852e}\index{Hash.c@{Hash.c}!ctXXHash32Bytes@{ctXXHash32Bytes}}
+\index{ctXXHash32Bytes@{ctXXHash32Bytes}!Hash.c@{Hash.c}}
+\doxysubsubsection{\texorpdfstring{ctXXHash32Bytes()}{ctXXHash32Bytes()}}
+{\footnotesize\ttfamily \label{_hash_8c_aef2f64060062ea4431351328c788852e} 
+uint32\+\_\+t ct\+XXHash32\+Bytes (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Hash the buffer using the XXHash algorithm. 
+
+\Hypertarget{_hash_8c_abdbc925d0941a1f7fe4ef7527fa0ec65}\index{Hash.c@{Hash.c}!ctXXHash32String@{ctXXHash32String}}
+\index{ctXXHash32String@{ctXXHash32String}!Hash.c@{Hash.c}}
+\doxysubsubsection{\texorpdfstring{ctXXHash32String()}{ctXXHash32String()}}
+{\footnotesize\ttfamily \label{_hash_8c_abdbc925d0941a1f7fe4ef7527fa0ec65} 
+uint32\+\_\+t ct\+XXHash32\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{string}{}\end{DoxyParamCaption})}
+
+
+
+Hash the string (excluding null-\/terminator) using the XXHash algorithm. 
+

@@ -1,0 +1,149 @@
+\doxysection{Hash\+Table.\+h File Reference}
+\hypertarget{_hash_table_8h}{}\label{_hash_table_8h}\index{HashTable.h@{HashTable.h}}
+
+
+Hash table for building (almost) O(1) data structures like dictionaries and sets.  
+
+
+{\ttfamily \#include "{}Common.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/utilities/\+Hash\+Table.\+h.\+gen.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structct_hash_table_key}{ct\+Hash\+Table\+Key}}
+\begin{DoxyCompactList}\small\item\em Key entry for \doxylink{structct_hash_table}{ct\+Hash\+Table}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}}
+\begin{DoxyCompactList}\small\item\em Contains the state for hash table functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \mbox{\hyperlink{_hash_table_8h_a9bf5fa8b8bae1ac798505bfff2c15d15}{ct\+Hash\+Table\+Init}} (uint32\+\_\+t capacity, \mbox{\hyperlink{structct_hash_table_key}{ct\+Hash\+Table\+Key}} \texorpdfstring{$\ast$}{*}key\+Buffer)
+\begin{DoxyCompactList}\small\item\em Initialize a hash table and its key buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} \mbox{\hyperlink{_hash_table_8h_a0d1b4e891e3940173e4beb943a28c0df}{ct\+Hash\+Table\+Insert}} (\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}table, uint32\+\_\+t key, uint32\+\_\+t \texorpdfstring{$\ast$}{*}out\+Idx)
+\begin{DoxyCompactList}\small\item\em Insert a key into the table and track its index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} \mbox{\hyperlink{_hash_table_8h_aa112b0bdac690c40064b76755da327af}{ct\+Hash\+Table\+Remove}} (\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}table, uint32\+\_\+t key, uint32\+\_\+t \texorpdfstring{$\ast$}{*}out\+Idx)
+\begin{DoxyCompactList}\small\item\em Remove a key from the table and "{}free up"{} its index. \end{DoxyCompactList}\item 
+\Hypertarget{_hash_table_8h_a1be293e71e6f63429322ece7a983c111}\label{_hash_table_8h_a1be293e71e6f63429322ece7a983c111} 
+bool {\bfseries ct\+Hash\+Table\+Exists} (\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}table, uint32\+\_\+t key)
+\begin{DoxyCompactList}\small\item\em Check if a key exists in the hash table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} \mbox{\hyperlink{_hash_table_8h_a489309f514eedcfb77e1b9d36cc9c922}{ct\+Hash\+Table\+Find\+Idx}} (\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}table, uint32\+\_\+t key, uint32\+\_\+t \texorpdfstring{$\ast$}{*}out\+Idx)
+\begin{DoxyCompactList}\small\item\em Find the index of a key. \end{DoxyCompactList}\item 
+\Hypertarget{_hash_table_8h_a537473964f6edff3e3ae1768242847a3}\label{_hash_table_8h_a537473964f6edff3e3ae1768242847a3} 
+void {\bfseries ct\+Hash\+Table\+Clear} (\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Clear the hash table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hash table for building (almost) O(1) data structures like dictionaries and sets. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_hash_table_8h_a9bf5fa8b8bae1ac798505bfff2c15d15}\index{HashTable.h@{HashTable.h}!ctHashTableInit@{ctHashTableInit}}
+\index{ctHashTableInit@{ctHashTableInit}!HashTable.h@{HashTable.h}}
+\doxysubsubsection{\texorpdfstring{ctHashTableInit()}{ctHashTableInit()}}
+{\footnotesize\ttfamily \label{_hash_table_8h_a9bf5fa8b8bae1ac798505bfff2c15d15} 
+\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} ct\+Hash\+Table\+Init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{capacity}{, }\item[{\mbox{\hyperlink{structct_hash_table_key}{ct\+Hash\+Table\+Key}} \texorpdfstring{$\ast$}{*}}]{key\+Buffer}{}\end{DoxyParamCaption})}
+
+
+
+Initialize a hash table and its key buffer. 
+
+\begin{DoxyWarning}{Warning}
+capacity must be a prime number 
+
+the memory lifetime of key\+Buffer must be the same as the table 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & amount of \doxylink{structct_hash_table_key}{ct\+Hash\+Table\+Key} in key\+Buffer \\
+\hline
+{\em key\+Buffer} & buffer of \doxylink{structct_hash_table_key}{ct\+Hash\+Table\+Key} the size of capacity\\
+\hline
+\end{DoxyParams}
+Example of a Set 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ creation}}
+\DoxyCodeLine{\mbox{\hyperlink{structct_hash_table_key}{ctHashTableKey}}\ keys[257];}
+\DoxyCodeLine{\mbox{\hyperlink{structct_hash_table}{ctHashTable}}\ table;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{table\ =\ ctHashTableInit(257,\ \&keys);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ insertion}}
+\DoxyCodeLine{\mbox{\hyperlink{_common_8h_a6a6a8891407da421984a38b5908fd541}{CT\_RETURN\_FAIL}}(ctHashTableInsert(\&table,\ ctXXHash32String(\textcolor{stringliteral}{"{}Foo"{}}),\ NULL));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ getting}}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ exists\ =\ ctHashTableExists(\&table,\ ctXXHash32String(\textcolor{stringliteral}{"{}Foo"{}}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ deletion}}
+\DoxyCodeLine{\mbox{\hyperlink{_common_8h_a6a6a8891407da421984a38b5908fd541}{CT\_RETURN\_FAIL}}(ctHashTableRemove(\&table,\ ctXXHash32String(\textcolor{stringliteral}{"{}Foo"{}}),\ NULL));}
+
+\end{DoxyCode}
+
+
+Example of a Dictionary 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ creation}}
+\DoxyCodeLine{\mbox{\hyperlink{structct_hash_table_key}{ctHashTableKey}}\ keys[31];}
+\DoxyCodeLine{MyObjectStruct\ values[31];}
+\DoxyCodeLine{\mbox{\hyperlink{structct_hash_table}{ctHashTable}}\ table;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{table\ =\ ctHashTableInit(31,\ \&keys);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ insertion}}
+\DoxyCodeLine{uint32\_t\ idx;}
+\DoxyCodeLine{\mbox{\hyperlink{_common_8h_a6a6a8891407da421984a38b5908fd541}{CT\_RETURN\_FAIL}}(ctHashTableInsert(\&table,\ MakeKey(\textcolor{stringliteral}{"{}Foo"{}},\ 64),\ \&idx));}
+\DoxyCodeLine{values[idx].name\ =\ \textcolor{stringliteral}{"{}Foo"{}};}
+\DoxyCodeLine{values[idx].value\ =\ 64;}
+\DoxyCodeLine{values[idx].data\ =\ MakeData(128);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ getting}}
+\DoxyCodeLine{\mbox{\hyperlink{_common_8h_a6a6a8891407da421984a38b5908fd541}{CT\_RETURN\_FAIL}}(ctHashTableFindIdx(\&table,\ MakeKey(\textcolor{stringliteral}{"{}Foo"{}},\ 64),\ \&idx));}
+\DoxyCodeLine{UseData(value[idx].data);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ deletion}}
+\DoxyCodeLine{\mbox{\hyperlink{_common_8h_a6a6a8891407da421984a38b5908fd541}{CT\_RETURN\_FAIL}}(ctHashTableRemove(\&table,\ MakeKey(\textcolor{stringliteral}{"{}Foo"{}},\ 64),\ \&idx));}
+\DoxyCodeLine{FreeData(values[idx].data);}
+
+\end{DoxyCode}
+ \Hypertarget{_hash_table_8h_a0d1b4e891e3940173e4beb943a28c0df}\index{HashTable.h@{HashTable.h}!ctHashTableInsert@{ctHashTableInsert}}
+\index{ctHashTableInsert@{ctHashTableInsert}!HashTable.h@{HashTable.h}}
+\doxysubsubsection{\texorpdfstring{ctHashTableInsert()}{ctHashTableInsert()}}
+{\footnotesize\ttfamily \label{_hash_table_8h_a0d1b4e891e3940173e4beb943a28c0df} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} ct\+Hash\+Table\+Insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{uint32\+\_\+t}]{key}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{out\+Idx}{}\end{DoxyParamCaption})}
+
+
+
+Insert a key into the table and track its index. 
+
+\begin{DoxyWarning}{Warning}
+A key MUST NOT equal UINT32\+\_\+\+MAX 
+\end{DoxyWarning}
+\Hypertarget{_hash_table_8h_aa112b0bdac690c40064b76755da327af}\index{HashTable.h@{HashTable.h}!ctHashTableRemove@{ctHashTableRemove}}
+\index{ctHashTableRemove@{ctHashTableRemove}!HashTable.h@{HashTable.h}}
+\doxysubsubsection{\texorpdfstring{ctHashTableRemove()}{ctHashTableRemove()}}
+{\footnotesize\ttfamily \label{_hash_table_8h_aa112b0bdac690c40064b76755da327af} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} ct\+Hash\+Table\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{uint32\+\_\+t}]{key}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{out\+Idx}{}\end{DoxyParamCaption})}
+
+
+
+Remove a key from the table and "{}free up"{} its index. 
+
+\begin{DoxyWarning}{Warning}
+A key MUST NOT equal UINT32\+\_\+\+MAX 
+\end{DoxyWarning}
+\Hypertarget{_hash_table_8h_a489309f514eedcfb77e1b9d36cc9c922}\index{HashTable.h@{HashTable.h}!ctHashTableFindIdx@{ctHashTableFindIdx}}
+\index{ctHashTableFindIdx@{ctHashTableFindIdx}!HashTable.h@{HashTable.h}}
+\doxysubsubsection{\texorpdfstring{ctHashTableFindIdx()}{ctHashTableFindIdx()}}
+{\footnotesize\ttfamily \label{_hash_table_8h_a489309f514eedcfb77e1b9d36cc9c922} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} ct\+Hash\+Table\+Find\+Idx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{uint32\+\_\+t}]{key}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{out\+Idx}{}\end{DoxyParamCaption})}
+
+
+
+Find the index of a key. 
+
+Can be used to index into a secondary list. By default a lone hash table is just a set but by using a secondary table or even another list of hash tables you can create much more complex data structures
+
+\begin{DoxyWarning}{Warning}
+A key MUST NOT equal UINT32\+\_\+\+MAX 
+\end{DoxyWarning}

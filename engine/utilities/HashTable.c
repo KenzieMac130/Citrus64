@@ -1,9 +1,9 @@
-/* */
+/* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 #include "HashTable.h"
 
 #include "Math.h"
 
-#include "codegen/engine/utilities/HashTable.h.gen.h"
+#include "codegen/engine/utilities/HashTable.c.gen.h"
 
 ctHashTable ctHashTableInit(uint32_t capacity, ctHashTableKey* keyBuffer) {
    ctAssert("Capacity must be prime" && ctIsPrime(capacity));
@@ -16,7 +16,7 @@ ctHashTable ctHashTableInit(uint32_t capacity, ctHashTableKey* keyBuffer) {
    return result;
 }
 
-uint32_t ctHashTableFindIdx(ctHashTable* table, uint32_t key) {
+uint32_t _ctHashTableFindIdx(ctHashTable* table, uint32_t key) {
    ctAssert(table);
    ctAssert(key != UINT32_MAX);
    uint32_t idx = key % (uint32_t)table->capacity;
@@ -25,6 +25,12 @@ uint32_t ctHashTableFindIdx(ctHashTable* table, uint32_t key) {
       if (idx == UINT16_MAX) { return UINT32_MAX; }
    }
    return idx;
+}
+
+ctResults ctHashTableFindIdx(ctHashTable* table, uint32_t key, uint32_t* outIdx) {
+   *outIdx = _ctHashTableFindIdx(table, key);
+   if (*outIdx == UINT32_MAX) { return CT_FAILURE_NOT_FOUND; }
+   return CT_SUCCESS;
 }
 
 ctResults ctHashTableInsert(ctHashTable* table, uint32_t key, uint32_t* outIdx) {
@@ -68,7 +74,7 @@ ctResults ctHashTableInsert(ctHashTable* table, uint32_t key, uint32_t* outIdx) 
 ctResults ctHashTableRemove(ctHashTable* table, uint32_t key, uint32_t* outIdx) {
    ctAssert(table);
    ctAssert(key != UINT32_MAX);
-   uint32_t idx = ctHashTableFindIdx(table, key);
+   uint32_t idx = _ctHashTableFindIdx(table, key);
    if (idx == UINT32_MAX) { return CT_FAILURE_NOT_FOUND; }
    if (table->keys[idx].next != UINT16_MAX) { /* bridge last to next */
       table->keys[table->keys[idx].next].last = table->keys[idx].last;
@@ -86,7 +92,7 @@ ctResults ctHashTableRemove(ctHashTable* table, uint32_t key, uint32_t* outIdx) 
 bool ctHashTableExists(ctHashTable* table, uint32_t key) {
    ctAssert(table);
    ctAssert(key != UINT32_MAX);
-   return (ctHashTableFindIdx(table, key) != UINT32_MAX);
+   return (_ctHashTableFindIdx(table, key) != UINT32_MAX);
 }
 
 void ctHashTableClear(ctHashTable* table) {

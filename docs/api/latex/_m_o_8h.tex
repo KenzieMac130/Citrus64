@@ -1,0 +1,37 @@
+\doxysection{MO.\+h File Reference}
+\hypertarget{_m_o_8h}{}\label{_m_o_8h}\index{MO.h@{MO.h}}
+
+
+Translation file format \href{https://www.gnu.org/software/gettext/manual/html_node/MO-Files.html}{\texttt{ https\+://www.\+gnu.\+org/software/gettext/manual/html\+\_\+node/\+MO-\/\+Files.\+html}}.  
+
+
+{\ttfamily \#include "{}engine/utilities/\+Utilities.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_m_o_8h_ab871a505247b0c8ef00360034f7f5a19}\label{_m_o_8h_ab871a505247b0c8ef00360034f7f5a19} 
+\#define {\bfseries CT\+\_\+\+MO\+\_\+\+MAGIC}~0x950412de
+\item 
+\Hypertarget{_m_o_8h_a0be98bdc2b263b4f43a2efbda5c0b9fd}\label{_m_o_8h_a0be98bdc2b263b4f43a2efbda5c0b9fd} 
+\#define {\bfseries CT\+\_\+\+MO\+\_\+\+CUR\+\_\+\+VER}~0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_m_o_8h_aca77c9f28385683dedecc95ff660acef}\label{_m_o_8h_aca77c9f28385683dedecc95ff660acef} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+MOReader\+Alloc\+From\+File} (ct\+MOReader \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}reader\+Out, FILE \texorpdfstring{$\ast$}{*}fp, int file\+Size)
+\item 
+\Hypertarget{_m_o_8h_a07c02fa4b51f8b9713ecaebc24090653}\label{_m_o_8h_a07c02fa4b51f8b9713ecaebc24090653} 
+void {\bfseries ct\+MOReader\+Free} (ct\+MOReader \texorpdfstring{$\ast$}{*}reader)
+\item 
+\Hypertarget{_m_o_8h_a97715486ba6f997d0516371cbdf2d1e4}\label{_m_o_8h_a97715486ba6f997d0516371cbdf2d1e4} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries ct\+MOFind\+Translation} (ct\+MOReader \texorpdfstring{$\ast$}{*}reader, const char \texorpdfstring{$\ast$}{*}original)
+\item 
+\Hypertarget{_m_o_8h_a137e49ddcd67feb526c27caf696d83e8}\label{_m_o_8h_a137e49ddcd67feb526c27caf696d83e8} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries ct\+MOFind\+Translation\+Hashed} (ct\+MOReader \texorpdfstring{$\ast$}{*}reader, uint32\+\_\+t hash, const char \texorpdfstring{$\ast$}{*}original)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Translation file format \href{https://www.gnu.org/software/gettext/manual/html_node/MO-Files.html}{\texttt{ https\+://www.\+gnu.\+org/software/gettext/manual/html\+\_\+node/\+MO-\/\+Files.\+html}}. 
+

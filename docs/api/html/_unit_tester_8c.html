@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Citrus 64: engine/tests/UnitTester.c File Reference</title>
+<title>Citrus 64: UnitTester.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -111,11 +111,10 @@ $(function(){initNavTree('_unit_tester_8c.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_unit_tester_8h_source.html">UnitTester.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_all_engine_tests_8h_source.html">AllEngineTests.h</a>&quot;</code><br />
+<code>#include &quot;codegen/engine/tests/UnitTester.c.gen.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1dc6743d2dfcc176e64f04da89f6f7c3" id="r_a1dc6743d2dfcc176e64f04da89f6f7c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dc6743d2dfcc176e64f04da89f6f7c3">tester</a> ()</td></tr>
-<tr class="separator:a1dc6743d2dfcc176e64f04da89f6f7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbfd6e9a4201d415335828f8f1435cb2" id="r_acbfd6e9a4201d415335828f8f1435cb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbfd6e9a4201d415335828f8f1435cb2">ctUnitTestRun</a> (const struct <a class="el" href="structct_unit_test.html">ctUnitTest</a> *unitTest)</td></tr>
 <tr class="separator:acbfd6e9a4201d415335828f8f1435cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57c0dab549219aac1ab56ec3483e9b39" id="r_a57c0dab549219aac1ab56ec3483e9b39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57c0dab549219aac1ab56ec3483e9b39">ctUnitTestRunArray</a> (const struct <a class="el" href="structct_unit_test.html">ctUnitTest</a> *unitTests)</td></tr>
@@ -129,23 +128,6 @@ Variables</h2></td></tr>
 <tr class="separator:a5a0f02be36e94ccd654b8a586b7a5b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab9780ccc62defc183e338986bd0e5fe8" name="ab9780ccc62defc183e338986bd0e5fe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9780ccc62defc183e338986bd0e5fe8">&#9670;&#160;</a></span>_ctUnitTestsMain()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int _ctUnitTestsMain </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="acbfd6e9a4201d415335828f8f1435cb2" name="acbfd6e9a4201d415335828f8f1435cb2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acbfd6e9a4201d415335828f8f1435cb2">&#9670;&#160;</a></span>ctUnitTestRun()</h2>
 
@@ -180,14 +162,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a1dc6743d2dfcc176e64f04da89f6f7c3" name="a1dc6743d2dfcc176e64f04da89f6f7c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dc6743d2dfcc176e64f04da89f6f7c3">&#9670;&#160;</a></span>tester()</h2>
+<a id="ab9780ccc62defc183e338986bd0e5fe8" name="ab9780ccc62defc183e338986bd0e5fe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9780ccc62defc183e338986bd0e5fe8">&#9670;&#160;</a></span>_ctUnitTestsMain()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void tester </td>
+          <td class="memname">int _ctUnitTestsMain </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -213,7 +195,7 @@ Variables</h2></td></tr>
 <div class="line">    <a class="code hl_define" href="_all_engine_tests_8h.html#a1c815796ba6de0b0faf03b8affbd3e5b">CT_ALL_TESTS</a>,</div>
 <div class="line">    {NULL, NULL, <span class="keyword">false</span>}</div>
 <div class="line">}</div>
-<div class="ttc" id="a_all_engine_tests_8h_html_a1c815796ba6de0b0faf03b8affbd3e5b"><div class="ttname"><a href="_all_engine_tests_8h.html#a1c815796ba6de0b0faf03b8affbd3e5b">CT_ALL_TESTS</a></div><div class="ttdeci">#define CT_ALL_TESTS</div><div class="ttdef"><b>Definition</b> AllEngineTests.h:9</div></div>
+<div class="ttc" id="a_all_engine_tests_8h_html_a1c815796ba6de0b0faf03b8affbd3e5b"><div class="ttname"><a href="_all_engine_tests_8h.html#a1c815796ba6de0b0faf03b8affbd3e5b">CT_ALL_TESTS</a></div><div class="ttdeci">#define CT_ALL_TESTS</div><div class="ttdef"><b>Definition</b> AllEngineTests.h:17</div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -20,9 +20,25 @@ def needs_generate(src_path: Path, dst_path: Path):
     return False
 
 
+def check_for_gen_include(text: str, src_path: Path, dst_path: Path):
+    root = dst_path.parent
+    # Note: we could technically end up with a false warn where the user creates a build folder
+    while root.stem != "build":
+        root = root.parent
+    dst_path = dst_path.relative_to(root).as_posix()
+    includer = f'#include "{str(dst_path)}"'
+    idx = text.find(includer)
+    if idx == -1:
+        print(f"Warning! ({includer}) not found in {str(src_path)}")
+    else:
+        if text.find("#include", idx + len(includer)) != -1:
+            print(f"Warning! ({includer}) was not the last include in {str(src_path)}")
+
+
 def generate_file(src_path: Path, dst_path: Path):
     out_text = "#pragma once\n"
     in_text = src_path.read_text(encoding='utf-8')
+    check_for_gen_include(in_text, src_path, dst_path)
     if "Hash.h" not in str(src_path):  # avoid including macro definition
         out_text += Hasher.generate_hashes(in_text)
     dst_path.write_text(out_text)

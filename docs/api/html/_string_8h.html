@@ -113,7 +113,6 @@ $(function(){initNavTree('_string_8h.html',''); initResizable(true); });
 <p>UTF8 aware string library targeted at simple game use cases.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_common_8h_source.html">Common.h</a>&quot;</code><br />
-<code>#include &quot;thirdparty/utf8/utf8.h&quot;</code><br />
 <code>#include &quot;codegen/engine/utilities/String.h.gen.h&quot;</code><br />
 </div>
 <p><a href="_string_8h_source.html">Go to the source code of this file.</a></p>
@@ -123,28 +122,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a5259930ea5d068eacc5c5ae0ff76fd55" id="r_a5259930ea5d068eacc5c5ae0ff76fd55"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5259930ea5d068eacc5c5ae0ff76fd55">ctStringEqual</a>(_leftString,  _rightString)</td></tr>
 <tr class="memdesc:a5259930ea5d068eacc5c5ae0ff76fd55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two string's contents are the same.  <br /></td></tr>
 <tr class="separator:a5259930ea5d068eacc5c5ae0ff76fd55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af314d9b27eef40ad7a1138fbe73efdf1" id="r_af314d9b27eef40ad7a1138fbe73efdf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af314d9b27eef40ad7a1138fbe73efdf1">ctCodePointIsDigit</a>(c)</td></tr>
-<tr class="separator:af314d9b27eef40ad7a1138fbe73efdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af030b4b58807416e2163fe1f83574c4a" id="r_af030b4b58807416e2163fe1f83574c4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af030b4b58807416e2163fe1f83574c4a">ctCodePointIsAlpha</a>(c)</td></tr>
-<tr class="separator:af030b4b58807416e2163fe1f83574c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e4ddd37eb0cd372d132f6833cc2b874" id="r_a5e4ddd37eb0cd372d132f6833cc2b874"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e4ddd37eb0cd372d132f6833cc2b874">ctCodePointIsAlnum</a>(c)</td></tr>
-<tr class="separator:a5e4ddd37eb0cd372d132f6833cc2b874"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac64731fb8055a12d096d132e65eeee49" id="r_ac64731fb8055a12d096d132e65eeee49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac64731fb8055a12d096d132e65eeee49">ctCodePointIsUnicode</a>(c)</td></tr>
-<tr class="separator:ac64731fb8055a12d096d132e65eeee49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16d8772cf57376ad2ba3cde32af5d328" id="r_a16d8772cf57376ad2ba3cde32af5d328"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16d8772cf57376ad2ba3cde32af5d328">ctCodePointIsAscii</a>(c)</td></tr>
-<tr class="separator:a16d8772cf57376ad2ba3cde32af5d328"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3f39c754d6cca517f0a23dbc65cc7b0" id="r_ab3f39c754d6cca517f0a23dbc65cc7b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3f39c754d6cca517f0a23dbc65cc7b0">ctCodePointIsAlphaUnicode</a>(c)</td></tr>
-<tr class="separator:ab3f39c754d6cca517f0a23dbc65cc7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81bd4b15132a4da80744bfe9b58d07ce" id="r_a81bd4b15132a4da80744bfe9b58d07ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81bd4b15132a4da80744bfe9b58d07ce">ctCodePointIsAlnumUnicode</a>(c)</td></tr>
-<tr class="separator:a81bd4b15132a4da80744bfe9b58d07ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3290547942e2f388b2ada0bbaebb271" id="r_ae3290547942e2f388b2ada0bbaebb271"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3290547942e2f388b2ada0bbaebb271">ctCodePointIsUpper</a>(c)</td></tr>
-<tr class="separator:ae3290547942e2f388b2ada0bbaebb271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd50effefbdb048601b2d1dfe6449ba0" id="r_abd50effefbdb048601b2d1dfe6449ba0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd50effefbdb048601b2d1dfe6449ba0">ctCodePointIsLower</a>(c)</td></tr>
-<tr class="separator:abd50effefbdb048601b2d1dfe6449ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27d05dfc148908be8c355dc1852ae91c" id="r_a27d05dfc148908be8c355dc1852ae91c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27d05dfc148908be8c355dc1852ae91c">ctCodePointToUpper</a>(c)</td></tr>
-<tr class="separator:a27d05dfc148908be8c355dc1852ae91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea4cbfe03d9cadf517be1f11224db095" id="r_aea4cbfe03d9cadf517be1f11224db095"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea4cbfe03d9cadf517be1f11224db095">ctCodePointToLower</a>(c)</td></tr>
-<tr class="separator:aea4cbfe03d9cadf517be1f11224db095"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -195,6 +172,39 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctStringFormatVArgs</
 <tr class="memitem:a55ef6e92551bf330ef26c75f10b4c04b" id="r_a55ef6e92551bf330ef26c75f10b4c04b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55ef6e92551bf330ef26c75f10b4c04b">ctStringConvertFromUtf32</a> (char *outputBuffer, size_t outputBufferSize, const int32_t *inputBuffer, size_t inputBufferSize)</td></tr>
 <tr class="memdesc:a55ef6e92551bf330ef26c75f10b4c04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTF32 to UTF8 for finishing codepoint manipulation.  <br /></td></tr>
 <tr class="separator:a55ef6e92551bf330ef26c75f10b4c04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a230596a0a588f4f28ea25f1c4e98fcfa" id="r_a230596a0a588f4f28ea25f1c4e98fcfa"><td class="memItemLeft" align="right" valign="top"><a id="a230596a0a588f4f28ea25f1c4e98fcfa" name="a230596a0a588f4f28ea25f1c4e98fcfa"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctCodePointIsDigit</b> (int32_t c)</td></tr>
+<tr class="separator:a230596a0a588f4f28ea25f1c4e98fcfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e570a1e6ed639262189e1dd5a33d7de" id="r_a8e570a1e6ed639262189e1dd5a33d7de"><td class="memItemLeft" align="right" valign="top"><a id="a8e570a1e6ed639262189e1dd5a33d7de" name="a8e570a1e6ed639262189e1dd5a33d7de"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctCodePointIsAlpha</b> (int32_t c)</td></tr>
+<tr class="separator:a8e570a1e6ed639262189e1dd5a33d7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc3c6c0b4cc993d060e5d18f562c37a" id="r_adfc3c6c0b4cc993d060e5d18f562c37a"><td class="memItemLeft" align="right" valign="top"><a id="adfc3c6c0b4cc993d060e5d18f562c37a" name="adfc3c6c0b4cc993d060e5d18f562c37a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctCodePointIsAlnum</b> (int32_t c)</td></tr>
+<tr class="separator:adfc3c6c0b4cc993d060e5d18f562c37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5711a8124a6bf9c6eb8e32ef1873ee3" id="r_ac5711a8124a6bf9c6eb8e32ef1873ee3"><td class="memItemLeft" align="right" valign="top"><a id="ac5711a8124a6bf9c6eb8e32ef1873ee3" name="ac5711a8124a6bf9c6eb8e32ef1873ee3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctCodePointIsUnicode</b> (int32_t c)</td></tr>
+<tr class="separator:ac5711a8124a6bf9c6eb8e32ef1873ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade142341e8aa5fa92aa4b20dd2906272" id="r_ade142341e8aa5fa92aa4b20dd2906272"><td class="memItemLeft" align="right" valign="top"><a id="ade142341e8aa5fa92aa4b20dd2906272" name="ade142341e8aa5fa92aa4b20dd2906272"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctCodePointIsAscii</b> (int32_t c)</td></tr>
+<tr class="separator:ade142341e8aa5fa92aa4b20dd2906272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14c0a9dbe7d90946ff213339f26b6283" id="r_a14c0a9dbe7d90946ff213339f26b6283"><td class="memItemLeft" align="right" valign="top"><a id="a14c0a9dbe7d90946ff213339f26b6283" name="a14c0a9dbe7d90946ff213339f26b6283"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctCodePointIsAlphaUnicode</b> (int32_t c)</td></tr>
+<tr class="separator:a14c0a9dbe7d90946ff213339f26b6283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93e3c106cf19c91d8c8ecfd20adc6195" id="r_a93e3c106cf19c91d8c8ecfd20adc6195"><td class="memItemLeft" align="right" valign="top"><a id="a93e3c106cf19c91d8c8ecfd20adc6195" name="a93e3c106cf19c91d8c8ecfd20adc6195"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctCodePointIsAlnumUnicode</b> (int32_t c)</td></tr>
+<tr class="separator:a93e3c106cf19c91d8c8ecfd20adc6195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c03cd7c9110c59ea0bb1ec1ed0f5c17" id="r_a3c03cd7c9110c59ea0bb1ec1ed0f5c17"><td class="memItemLeft" align="right" valign="top"><a id="a3c03cd7c9110c59ea0bb1ec1ed0f5c17" name="a3c03cd7c9110c59ea0bb1ec1ed0f5c17"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctCodePointIsUpper</b> (int32_t c)</td></tr>
+<tr class="separator:a3c03cd7c9110c59ea0bb1ec1ed0f5c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5bae2362857016b58deefb8598752da" id="r_ae5bae2362857016b58deefb8598752da"><td class="memItemLeft" align="right" valign="top"><a id="ae5bae2362857016b58deefb8598752da" name="ae5bae2362857016b58deefb8598752da"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctCodePointIsLower</b> (int32_t c)</td></tr>
+<tr class="separator:ae5bae2362857016b58deefb8598752da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a559fb74241b08ebd5c7171afb1a81231" id="r_a559fb74241b08ebd5c7171afb1a81231"><td class="memItemLeft" align="right" valign="top"><a id="a559fb74241b08ebd5c7171afb1a81231" name="a559fb74241b08ebd5c7171afb1a81231"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctCodePointToUpper</b> (int32_t c)</td></tr>
+<tr class="separator:a559fb74241b08ebd5c7171afb1a81231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eb0b97d44fc35130562fe6014177d4b" id="r_a8eb0b97d44fc35130562fe6014177d4b"><td class="memItemLeft" align="right" valign="top"><a id="a8eb0b97d44fc35130562fe6014177d4b" name="a8eb0b97d44fc35130562fe6014177d4b"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ctCodePointToLower</b> (int32_t c)</td></tr>
+<tr class="separator:a8eb0b97d44fc35130562fe6014177d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a549478880dc350926f906b95361a786c" id="r_a549478880dc350926f906b95361a786c"><td class="memItemLeft" align="right" valign="top"><a id="a549478880dc350926f906b95361a786c" name="a549478880dc350926f906b95361a786c"></a>
 <a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctStringToBool</b> (const char *buffer, size_t bufferSize, bool *dest)</td></tr>
 <tr class="memdesc:a549478880dc350926f906b95361a786c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dest to a bool value if a conversion is possible. <br /></td></tr>
@@ -256,204 +266,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBytesToHex</b> (cha
 <div class="textblock"><p>UTF8 aware string library targeted at simple game use cases. </p>
 <p>This library differs from other string libraries in the fact that it treats strings not as arrays of characters but rather command buffers which hold text rendering intent. Strings share cultures with everyone and many progammers overlook this with ascii centric bias. By treating bytes as characters you can mangle and break strings with text from other languages. This library discourages byte manual manipulation as and provides simple ways of manipulating strings designed for common game usage. For safer string manipulation see UTF32 functions. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a5e4ddd37eb0cd372d132f6833cc2b874" name="a5e4ddd37eb0cd372d132f6833cc2b874"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e4ddd37eb0cd372d132f6833cc2b874">&#9670;&#160;</a></span>ctCodePointIsAlnum</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctCodePointIsAlnum</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(ctIsDigit(c) || ctIsAlpha(c))</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a81bd4b15132a4da80744bfe9b58d07ce" name="a81bd4b15132a4da80744bfe9b58d07ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81bd4b15132a4da80744bfe9b58d07ce">&#9670;&#160;</a></span>ctCodePointIsAlnumUnicode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctCodePointIsAlnumUnicode</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(ctIsAlnum(c) || ctIsUnicode(c))</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="af030b4b58807416e2163fe1f83574c4a" name="af030b4b58807416e2163fe1f83574c4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af030b4b58807416e2163fe1f83574c4a">&#9670;&#160;</a></span>ctCodePointIsAlpha</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctCodePointIsAlpha</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((c &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;Z&#39;</span>) || (c &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;z&#39;</span>))</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ab3f39c754d6cca517f0a23dbc65cc7b0" name="ab3f39c754d6cca517f0a23dbc65cc7b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3f39c754d6cca517f0a23dbc65cc7b0">&#9670;&#160;</a></span>ctCodePointIsAlphaUnicode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctCodePointIsAlphaUnicode</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(ctIsAlpha(c) || ctIsUnicode(c))</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a16d8772cf57376ad2ba3cde32af5d328" name="a16d8772cf57376ad2ba3cde32af5d328"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16d8772cf57376ad2ba3cde32af5d328">&#9670;&#160;</a></span>ctCodePointIsAscii</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctCodePointIsAscii</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(c &lt;= 127 &amp;&amp; c &gt;= 0)</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="af314d9b27eef40ad7a1138fbe73efdf1" name="af314d9b27eef40ad7a1138fbe73efdf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af314d9b27eef40ad7a1138fbe73efdf1">&#9670;&#160;</a></span>ctCodePointIsDigit</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctCodePointIsDigit</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(c &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="abd50effefbdb048601b2d1dfe6449ba0" name="abd50effefbdb048601b2d1dfe6449ba0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd50effefbdb048601b2d1dfe6449ba0">&#9670;&#160;</a></span>ctCodePointIsLower</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctCodePointIsLower</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">utf8islower(c)</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ac64731fb8055a12d096d132e65eeee49" name="ac64731fb8055a12d096d132e65eeee49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac64731fb8055a12d096d132e65eeee49">&#9670;&#160;</a></span>ctCodePointIsUnicode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctCodePointIsUnicode</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(c &gt; 127 || c &lt; 0)</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ae3290547942e2f388b2ada0bbaebb271" name="ae3290547942e2f388b2ada0bbaebb271"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3290547942e2f388b2ada0bbaebb271">&#9670;&#160;</a></span>ctCodePointIsUpper</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctCodePointIsUpper</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">utf8isupper(c)</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aea4cbfe03d9cadf517be1f11224db095" name="aea4cbfe03d9cadf517be1f11224db095"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea4cbfe03d9cadf517be1f11224db095">&#9670;&#160;</a></span>ctCodePointToLower</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctCodePointToLower</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">utf8lwrcodepoint(c)</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a27d05dfc148908be8c355dc1852ae91c" name="a27d05dfc148908be8c355dc1852ae91c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27d05dfc148908be8c355dc1852ae91c">&#9670;&#160;</a></span>ctCodePointToUpper</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ctCodePointToUpper</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">utf8uprcodepoint(c)</div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="a5259930ea5d068eacc5c5ae0ff76fd55" name="a5259930ea5d068eacc5c5ae0ff76fd55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5259930ea5d068eacc5c5ae0ff76fd55">&#9670;&#160;</a></span>ctStringEqual</h2>
 
@@ -472,7 +284,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBytesToHex</b> (cha
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(ctStringCmp(_leftString, _rightString) == 0)</div>
+<b>Value:</b><div class="fragment"><div class="line">   (ctStringCmp(_leftString, _rightString) == 0)</div>
 </div><!-- fragment -->
 <p>Check if two string's contents are the same. </p>
 
@@ -499,37 +311,57 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBytesToHex</b> (cha
 
 </div>
 </div>
-<a id="a55ef6e92551bf330ef26c75f10b4c04b" name="a55ef6e92551bf330ef26c75f10b4c04b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55ef6e92551bf330ef26c75f10b4c04b">&#9670;&#160;</a></span>ctStringConvertFromUtf32()</h2>
+<a id="aa1728b71d93511c84653d2c8c8ae1527" name="aa1728b71d93511c84653d2c8c8ae1527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1728b71d93511c84653d2c8c8ae1527">&#9670;&#160;</a></span>ctStringGetUnicodeCodepointCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ctStringConvertFromUtf32 </td>
+          <td class="memname">size_t ctStringGetUnicodeCodepointCount </td>
           <td>(</td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>outputBuffer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>string</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>outputBufferSize</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int32_t *</td>          <td class="paramname"><span class="paramname"><em>inputBuffer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>inputBufferSize</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>UTF32 to UTF8 for finishing codepoint manipulation. </p>
-<p>Return trip from <a class="el" href="#aeeb8936d8a8b5d44b3f1010195737f86" title="UTF8 to UTF32 for beginning codepoint manipulation.">ctStringConvertToUtf32()</a> </p>
+<p>Get the amount of codepoints in a null terminated string (including null terminator) </p>
+<dl class="section warning"><dt>Warning</dt><dd>Codepoints are still not "characters" but text rendering commands </dd></dl>
+
+</div>
+</div>
+<a id="a3f176888d1c4e3d30b0ff8ef4001f184" name="a3f176888d1c4e3d30b0ff8ef4001f184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f176888d1c4e3d30b0ff8ef4001f184">&#9670;&#160;</a></span>ctStringFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctStringFormat </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>bufferSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill a string buffer with text following the printf() format. </p>
+<p>See <a href="https://en.wikipedia.org/wiki/Printf#Format_specifier">https://en.wikipedia.org/wiki/Printf#Format_specifier</a> </p>
 
 </div>
 </div>
@@ -574,57 +406,37 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctBytesToHex</b> (cha
 
 </div>
 </div>
-<a id="a3f176888d1c4e3d30b0ff8ef4001f184" name="a3f176888d1c4e3d30b0ff8ef4001f184"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f176888d1c4e3d30b0ff8ef4001f184">&#9670;&#160;</a></span>ctStringFormat()</h2>
+<a id="a55ef6e92551bf330ef26c75f10b4c04b" name="a55ef6e92551bf330ef26c75f10b4c04b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55ef6e92551bf330ef26c75f10b4c04b">&#9670;&#160;</a></span>ctStringConvertFromUtf32()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ctStringFormat </td>
+          <td class="memname">void ctStringConvertFromUtf32 </td>
           <td>(</td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>outputBuffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>bufferSize</em></span>, </td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>outputBufferSize</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+          <td class="paramtype">const int32_t *</td>          <td class="paramname"><span class="paramname"><em>inputBuffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>inputBufferSize</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fill a string buffer with text following the printf() format. </p>
-<p>See <a href="https://en.wikipedia.org/wiki/Printf#Format_specifier">https://en.wikipedia.org/wiki/Printf#Format_specifier</a> </p>
-
-</div>
-</div>
-<a id="aa1728b71d93511c84653d2c8c8ae1527" name="aa1728b71d93511c84653d2c8c8ae1527"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1728b71d93511c84653d2c8c8ae1527">&#9670;&#160;</a></span>ctStringGetUnicodeCodepointCount()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t ctStringGetUnicodeCodepointCount </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>string</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the amount of codepoints in a null terminated string (including null terminator) </p>
-<dl class="section warning"><dt>Warning</dt><dd>Codepoints are still not "characters" but text rendering commands </dd></dl>
+<p>UTF32 to UTF8 for finishing codepoint manipulation. </p>
+<p>Return trip from <a class="el" href="#aeeb8936d8a8b5d44b3f1010195737f86" title="UTF8 to UTF32 for beginning codepoint manipulation.">ctStringConvertToUtf32()</a> </p>
 
 </div>
 </div>

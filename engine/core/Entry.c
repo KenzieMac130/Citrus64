@@ -21,7 +21,7 @@ void WaitForInput() {
 }
 
 int main(void) {
-   //kernel_init();
+   kernel_init();
    _ctRandomHardwareInit();
    debug_init_usblog();
    debug_init_isviewer();

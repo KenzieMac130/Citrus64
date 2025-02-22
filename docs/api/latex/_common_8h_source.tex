@@ -80,32 +80,32 @@
 \DoxyCodeLine{00087\ }
 \DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ CT\_RETURN\_FAIL(\_arg)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \ \ \ \ ctResults\ \_\_res\ =\ (\_arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \ \ \ \ ctResults\ \_\_res\ =\ (\_arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \ \ \ \ if\ (\_\_res\ !=\ CT\_SUCCESS)\ \{\ return\ \_\_res;\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \}}}
 \DoxyCodeLine{00094\ }
 \DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ CT\_RETURN\_FAIL\_CLEAN(\_arg,\ \_cleanup)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \ \ \ \ ctResults\ \_\_res\ =\ (\_arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \ \ \ \ ctResults\ \_\_res\ =\ (\_arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ \ \ if\ (\_\_res\ !=\ CT\_SUCCESS)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \_cleanup;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ return\ \_\_res;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00102\ \textcolor{preprocessor}{\ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ \}}}
 \DoxyCodeLine{00104\ }
-\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ CT\_RETURN\_ON\_FAIL(\_arg,\ \_result)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ CT\_RETURN\_ON\_FAIL(\_arg,\ \_result)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00107\ \textcolor{preprocessor}{\ \ \ if\ ((\_arg)\ !=\ CT\_SUCCESS)\ \{\ return\ \_result;\ \}}}
 \DoxyCodeLine{00108\ }
-\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ CT\_RETURN\_ON\_UNTRUE(\_arg,\ \_result)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ CT\_RETURN\_ON\_UNTRUE(\_arg,\ \_result)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{00111\ \textcolor{preprocessor}{\ \ \ if\ (!(\_arg))\ \{\ return\ \_result;\ \}}}
 \DoxyCodeLine{00112\ }
 \DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ CT\_RETURN\_ON\_NULL(\_arg,\ \_code)\ CT\_RETURN\_ON\_UNTRUE(\_arg,\ \_code)}}
 \DoxyCodeLine{00114\ }
 \DoxyCodeLine{00115\ \textcolor{comment}{/*C\ Helpers*/}}
 \DoxyCodeLine{00116\ }
-\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ ctCFlagCheck(v,\ f)\ \ \ \ \ \ ((v\ \&\ f)\ ==\ f)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ ctCFlagCheck(v,\ f)\ ((v\ \&\ f)\ ==\ f)}}
 \DoxyCodeLine{00119\ }
-\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ ctAlign(v,\ a)\ \ \ \ \ \ \ \ \ \ \ ((v\ +\ (a\ -\/\ 1))\ \&\ -\/a)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ ctAlign(v,\ a)\ ((v\ +\ (a\ -\/\ 1))\ \&\ -\/a)}}
 \DoxyCodeLine{00122\ }
 \DoxyCodeLine{00123\ \textcolor{preprocessor}{\#include\ "{}codegen/engine/utilities/Common.h.gen.h"{}}}
 

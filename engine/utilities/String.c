@@ -1,5 +1,8 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 #include "String.h"
+
+#include "thirdparty/utf8/utf8.h"
+
 #include "codegen/engine/utilities/String.c.gen.h"
 
 size_t ctStringByteSize(const char* string) {
@@ -30,6 +33,52 @@ int ctStringCmp(const char* leftString, const char* rightString) {
    ctAssert(leftString);
    ctAssert(rightString);
    return utf8cmp(leftString, rightString);
+}
+
+/* --------------------------------- Codepoint --------------------------------- */
+
+bool ctCodePointIsDigit(int32_t c) {
+   return (c >= '0' && c <= '9');
+}
+
+bool ctCodePointIsAlpha(int32_t c) {
+   return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+}
+
+bool ctCodePointIsAlnum(int32_t c) {
+   return (ctCodePointIsDigit(c) || ctCodePointIsAlpha(c));
+}
+
+bool ctCodePointIsUnicode(int32_t c) {
+   return (c > 127 || c < 0);
+}
+
+bool ctCodePointIsAscii(int32_t c) {
+   return (c <= 127 && c >= 0);
+}
+
+bool ctCodePointIsAlphaUnicode(int32_t c) {
+   return (ctCodePointIsAlpha(c) || ctCodePointIsUnicode(c));
+}
+
+bool ctCodePointIsAlnumUnicode(int32_t c) {
+   return (ctCodePointIsAlnum(c) || ctCodePointIsUnicode(c));
+}
+
+bool ctCodePointIsUpper(int32_t c) {
+   return utf8isupper(c);
+}
+
+bool ctCodePointIsLower(int32_t c) {
+   return utf8islower(c);
+}
+
+int32_t ctCodePointToUpper(int32_t c) {
+   return utf8uprcodepoint(c);
+}
+
+int32_t ctCodePointToLower(int32_t c) {
+   return utf8lwrcodepoint(c);
 }
 
 /* --------------------------------- Case --------------------------------- */

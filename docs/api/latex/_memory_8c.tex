@@ -1,6 +1,7 @@
-\doxysection{engine/utilities/\+Memory.c File Reference}
-\hypertarget{_memory_8c}{}\label{_memory_8c}\index{engine/utilities/Memory.c@{engine/utilities/Memory.c}}
+\doxysection{Memory.\+c File Reference}
+\hypertarget{_memory_8c}{}\label{_memory_8c}\index{Memory.c@{Memory.c}}
 {\ttfamily \#include "{}Memory.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/utilities/\+Memory.\+c.\+gen.\+h"{}}\newline
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -10,23 +11,23 @@ struct \mbox{\hyperlink{structct_alloc_tracker}{ct\+Alloc\+Tracker}}
 \begin{DoxyCompactItemize}
 \item 
 void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_memory_8c_a262cb4cdaa7a3026c3e8a8463047e1a0}{ct\+Aligned\+Malloc}} (size\+\_\+t size, size\+\_\+t alignment)
-\item 
+\begin{DoxyCompactList}\small\item\em Aligned heap memory allocation. \end{DoxyCompactList}\item 
 void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_memory_8c_a5bdd8f56f3f50a85e98c20977e256d0e}{ct\+Aligned\+Realloc}} (void \texorpdfstring{$\ast$}{*}block, size\+\_\+t size, size\+\_\+t alignment)
-\item 
+\begin{DoxyCompactList}\small\item\em Aligned heap memory reallocation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_memory_8c_a3310611b33a651f79c46ad5761bbb4f0}{ct\+Aligned\+Free}} (void \texorpdfstring{$\ast$}{*}block)
-\item 
+\begin{DoxyCompactList}\small\item\em Aligned heap memory free. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{_memory_8c_a2431d9c5c03d78172fe745fd249130c2}{ct\+Get\+Alive\+Allocations}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the number of allocations that exist right now. \end{DoxyCompactList}\item 
 void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_memory_8c_afa61f346bbf242f466c02d94ef731401}{ct\+Malloc}} (size\+\_\+t size)
-\item 
+\begin{DoxyCompactList}\small\item\em Heap memory allocation. \end{DoxyCompactList}\item 
 void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_memory_8c_a4f0016afd607a57a1600f788c51873fd}{ct\+Realloc}} (void \texorpdfstring{$\ast$}{*}old, size\+\_\+t size)
-\item 
+\begin{DoxyCompactList}\small\item\em Heap memory reallocation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_memory_8c_af168969d4fb51528c740250fdfc5b7e4}{ct\+Free}} (void \texorpdfstring{$\ast$}{*}block)
-\item 
-void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_memory_8c_a2afb96b4409268e5c82bb7cdf75eec5d}{ct\+Group\+Alloc}} (size\+\_\+t count, struct \mbox{\hyperlink{structct_group_alloc_desc}{ct\+Group\+Alloc\+Desc}} \texorpdfstring{$\ast$}{*}groups, size\+\_\+t \texorpdfstring{$\ast$}{*}p\+Size\+Out)
-\item 
+\begin{DoxyCompactList}\small\item\em Heap memory free. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_memory_8c_a803beb2c840090e73ae0aae219d8494d}{ct\+Group\+Alloc}} (size\+\_\+t count, \mbox{\hyperlink{structct_group_alloc_desc}{ct\+Group\+Alloc\+Desc}} \texorpdfstring{$\ast$}{*}groups, size\+\_\+t \texorpdfstring{$\ast$}{*}p\+Size\+Out)
+\begin{DoxyCompactList}\small\item\em Optimized group allocation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_memory_8c_aba4dc708ce0fb2f886746448a2fea032}{ct\+Buffer\+Assert}} (void \texorpdfstring{$\ast$}{*}parent\+Buffer, size\+\_\+t parent\+Buffer\+Size, void \texorpdfstring{$\ast$}{*}child\+Buffer, size\+\_\+t child\+Buffer\+Size)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Assert memory block against parent bounds. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,59 +36,127 @@ int64\+\_\+t \mbox{\hyperlink{_memory_8c_a73c9e3a0da4d86025d0c129fb5250f58}{g\+A
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{_memory_8c_a3310611b33a651f79c46ad5761bbb4f0}\index{Memory.c@{Memory.c}!ctAlignedFree@{ctAlignedFree}}
-\index{ctAlignedFree@{ctAlignedFree}!Memory.c@{Memory.c}}
-\doxysubsubsection{\texorpdfstring{ctAlignedFree()}{ctAlignedFree()}}
-{\footnotesize\ttfamily \label{_memory_8c_a3310611b33a651f79c46ad5761bbb4f0} 
-void ct\+Aligned\+Free (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{block}{}\end{DoxyParamCaption})}
-
 \Hypertarget{_memory_8c_a262cb4cdaa7a3026c3e8a8463047e1a0}\index{Memory.c@{Memory.c}!ctAlignedMalloc@{ctAlignedMalloc}}
 \index{ctAlignedMalloc@{ctAlignedMalloc}!Memory.c@{Memory.c}}
 \doxysubsubsection{\texorpdfstring{ctAlignedMalloc()}{ctAlignedMalloc()}}
 {\footnotesize\ttfamily \label{_memory_8c_a262cb4cdaa7a3026c3e8a8463047e1a0} 
 void \texorpdfstring{$\ast$}{*} ct\+Aligned\+Malloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size}{, }\item[{size\+\_\+t}]{alignment}{}\end{DoxyParamCaption})}
 
+
+
+Aligned heap memory allocation. 
+
+Similar to C\textquotesingle{}s malloc() but guaranteed to be aligned \begin{DoxyWarning}{Warning}
+Only free with \doxylink{_memory_8h_af168969d4fb51528c740250fdfc5b7e4}{ct\+Free()} 
+\end{DoxyWarning}
 \Hypertarget{_memory_8c_a5bdd8f56f3f50a85e98c20977e256d0e}\index{Memory.c@{Memory.c}!ctAlignedRealloc@{ctAlignedRealloc}}
 \index{ctAlignedRealloc@{ctAlignedRealloc}!Memory.c@{Memory.c}}
 \doxysubsubsection{\texorpdfstring{ctAlignedRealloc()}{ctAlignedRealloc()}}
 {\footnotesize\ttfamily \label{_memory_8c_a5bdd8f56f3f50a85e98c20977e256d0e} 
 void \texorpdfstring{$\ast$}{*} ct\+Aligned\+Realloc (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{block}{, }\item[{size\+\_\+t}]{size}{, }\item[{size\+\_\+t}]{alignment}{}\end{DoxyParamCaption})}
 
-\Hypertarget{_memory_8c_aba4dc708ce0fb2f886746448a2fea032}\index{Memory.c@{Memory.c}!ctBufferAssert@{ctBufferAssert}}
-\index{ctBufferAssert@{ctBufferAssert}!Memory.c@{Memory.c}}
-\doxysubsubsection{\texorpdfstring{ctBufferAssert()}{ctBufferAssert()}}
-{\footnotesize\ttfamily \label{_memory_8c_aba4dc708ce0fb2f886746448a2fea032} 
-void ct\+Buffer\+Assert (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{parent\+Buffer}{, }\item[{size\+\_\+t}]{parent\+Buffer\+Size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{child\+Buffer}{, }\item[{size\+\_\+t}]{child\+Buffer\+Size}{}\end{DoxyParamCaption})}
 
+
+Aligned heap memory reallocation. 
+
+Similar to C\textquotesingle{}s malloc() but guaranteed to be aligned \begin{DoxyWarning}{Warning}
+Only free with \doxylink{_memory_8h_af168969d4fb51528c740250fdfc5b7e4}{ct\+Free()} 
+\end{DoxyWarning}
+\Hypertarget{_memory_8c_a3310611b33a651f79c46ad5761bbb4f0}\index{Memory.c@{Memory.c}!ctAlignedFree@{ctAlignedFree}}
+\index{ctAlignedFree@{ctAlignedFree}!Memory.c@{Memory.c}}
+\doxysubsubsection{\texorpdfstring{ctAlignedFree()}{ctAlignedFree()}}
+{\footnotesize\ttfamily \label{_memory_8c_a3310611b33a651f79c46ad5761bbb4f0} 
+void ct\+Aligned\+Free (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{block}{}\end{DoxyParamCaption})}
+
+
+
+Aligned heap memory free. 
+
+Basically just \doxylink{_memory_8h_af168969d4fb51528c740250fdfc5b7e4}{ct\+Free()}. Its here for API symetry. \Hypertarget{_memory_8c_a2431d9c5c03d78172fe745fd249130c2}\index{Memory.c@{Memory.c}!ctGetAliveAllocations@{ctGetAliveAllocations}}
+\index{ctGetAliveAllocations@{ctGetAliveAllocations}!Memory.c@{Memory.c}}
+\doxysubsubsection{\texorpdfstring{ctGetAliveAllocations()}{ctGetAliveAllocations()}}
+{\footnotesize\ttfamily \label{_memory_8c_a2431d9c5c03d78172fe745fd249130c2} 
+int64\+\_\+t ct\+Get\+Alive\+Allocations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the number of allocations that exist right now. 
+
+This does not include allocations made by vanilla malloc/free \Hypertarget{_memory_8c_afa61f346bbf242f466c02d94ef731401}\index{Memory.c@{Memory.c}!ctMalloc@{ctMalloc}}
+\index{ctMalloc@{ctMalloc}!Memory.c@{Memory.c}}
+\doxysubsubsection{\texorpdfstring{ctMalloc()}{ctMalloc()}}
+{\footnotesize\ttfamily \label{_memory_8c_afa61f346bbf242f466c02d94ef731401} 
+void \texorpdfstring{$\ast$}{*} ct\+Malloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Heap memory allocation. 
+
+Similar to C\textquotesingle{}s malloc() but guaranteed to sit on CT\+\_\+\+ALIGNMENT\+\_\+\+CACHE \begin{DoxyWarning}{Warning}
+Only free with \doxylink{_memory_8h_af168969d4fb51528c740250fdfc5b7e4}{ct\+Free()} 
+\end{DoxyWarning}
+\Hypertarget{_memory_8c_a4f0016afd607a57a1600f788c51873fd}\index{Memory.c@{Memory.c}!ctRealloc@{ctRealloc}}
+\index{ctRealloc@{ctRealloc}!Memory.c@{Memory.c}}
+\doxysubsubsection{\texorpdfstring{ctRealloc()}{ctRealloc()}}
+{\footnotesize\ttfamily \label{_memory_8c_a4f0016afd607a57a1600f788c51873fd} 
+void \texorpdfstring{$\ast$}{*} ct\+Realloc (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{old}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Heap memory reallocation. 
+
+Similar to C\textquotesingle{}s realloc() but guaranteed to sit on CT\+\_\+\+ALIGNMENT\+\_\+\+CACHE \begin{DoxyWarning}{Warning}
+Only free with \doxylink{_memory_8h_af168969d4fb51528c740250fdfc5b7e4}{ct\+Free()} 
+\end{DoxyWarning}
 \Hypertarget{_memory_8c_af168969d4fb51528c740250fdfc5b7e4}\index{Memory.c@{Memory.c}!ctFree@{ctFree}}
 \index{ctFree@{ctFree}!Memory.c@{Memory.c}}
 \doxysubsubsection{\texorpdfstring{ctFree()}{ctFree()}}
 {\footnotesize\ttfamily \label{_memory_8c_af168969d4fb51528c740250fdfc5b7e4} 
 void ct\+Free (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{block}{}\end{DoxyParamCaption})}
 
-\Hypertarget{_memory_8c_a2431d9c5c03d78172fe745fd249130c2}\index{Memory.c@{Memory.c}!ctGetAliveAllocations@{ctGetAliveAllocations}}
-\index{ctGetAliveAllocations@{ctGetAliveAllocations}!Memory.c@{Memory.c}}
-\doxysubsubsection{\texorpdfstring{ctGetAliveAllocations()}{ctGetAliveAllocations()}}
-{\footnotesize\ttfamily \label{_memory_8c_a2431d9c5c03d78172fe745fd249130c2} 
-int64\+\_\+t ct\+Get\+Alive\+Allocations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{_memory_8c_a2afb96b4409268e5c82bb7cdf75eec5d}\index{Memory.c@{Memory.c}!ctGroupAlloc@{ctGroupAlloc}}
+
+Heap memory free. 
+
+Similar to C\textquotesingle{}s free() but for use with ct\+Alloc functions \begin{DoxyWarning}{Warning}
+Only use on blocks allocated with ct\+Alloc variants 
+\end{DoxyWarning}
+\Hypertarget{_memory_8c_a803beb2c840090e73ae0aae219d8494d}\index{Memory.c@{Memory.c}!ctGroupAlloc@{ctGroupAlloc}}
 \index{ctGroupAlloc@{ctGroupAlloc}!Memory.c@{Memory.c}}
 \doxysubsubsection{\texorpdfstring{ctGroupAlloc()}{ctGroupAlloc()}}
-{\footnotesize\ttfamily \label{_memory_8c_a2afb96b4409268e5c82bb7cdf75eec5d} 
-void \texorpdfstring{$\ast$}{*} ct\+Group\+Alloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{count}{, }\item[{struct \mbox{\hyperlink{structct_group_alloc_desc}{ct\+Group\+Alloc\+Desc}} \texorpdfstring{$\ast$}{*}}]{groups}{, }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Size\+Out}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{_memory_8c_a803beb2c840090e73ae0aae219d8494d} 
+void \texorpdfstring{$\ast$}{*} ct\+Group\+Alloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{count}{, }\item[{\mbox{\hyperlink{structct_group_alloc_desc}{ct\+Group\+Alloc\+Desc}} \texorpdfstring{$\ast$}{*}}]{groups}{, }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{size\+Out}{}\end{DoxyParamCaption})}
 
-\Hypertarget{_memory_8c_afa61f346bbf242f466c02d94ef731401}\index{Memory.c@{Memory.c}!ctMalloc@{ctMalloc}}
-\index{ctMalloc@{ctMalloc}!Memory.c@{Memory.c}}
-\doxysubsubsection{\texorpdfstring{ctMalloc()}{ctMalloc()}}
-{\footnotesize\ttfamily \label{_memory_8c_afa61f346bbf242f466c02d94ef731401} 
-void \texorpdfstring{$\ast$}{*} ct\+Malloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
 
-\Hypertarget{_memory_8c_a4f0016afd607a57a1600f788c51873fd}\index{Memory.c@{Memory.c}!ctRealloc@{ctRealloc}}
-\index{ctRealloc@{ctRealloc}!Memory.c@{Memory.c}}
-\doxysubsubsection{\texorpdfstring{ctRealloc()}{ctRealloc()}}
-{\footnotesize\ttfamily \label{_memory_8c_a4f0016afd607a57a1600f788c51873fd} 
-void \texorpdfstring{$\ast$}{*} ct\+Realloc (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{old}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+Optimized group allocation. 
+
+Instead of allocating blocks of data which will share similar lifetime seperately you can use this function to allocate a single block of data which can be shared by multiple members of a data structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & number of groups to pass \\
+\hline
+{\em groups} & list of groups and their allocation descriptions \\
+\hline
+{\em size\+Out} & (optional) returns the size of the resulting allocation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the shared block of data 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Only call \doxylink{_memory_8h_af168969d4fb51528c740250fdfc5b7e4}{ct\+Free()} on the shared block 
+\end{DoxyWarning}
+\Hypertarget{_memory_8c_aba4dc708ce0fb2f886746448a2fea032}\index{Memory.c@{Memory.c}!ctBufferAssert@{ctBufferAssert}}
+\index{ctBufferAssert@{ctBufferAssert}!Memory.c@{Memory.c}}
+\doxysubsubsection{\texorpdfstring{ctBufferAssert()}{ctBufferAssert()}}
+{\footnotesize\ttfamily \label{_memory_8c_aba4dc708ce0fb2f886746448a2fea032} 
+void ct\+Buffer\+Assert (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{parent\+Buffer}{, }\item[{size\+\_\+t}]{parent\+Buffer\+Size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{child\+Buffer}{, }\item[{size\+\_\+t}]{child\+Buffer\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Assert memory block against parent bounds. 
 
 
 

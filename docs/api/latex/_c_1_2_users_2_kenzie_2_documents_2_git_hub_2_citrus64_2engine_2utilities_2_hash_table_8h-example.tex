@@ -1,0 +1,39 @@
+\doxysection{C\+:/\+Users/\+Kenzie/\+Documents/\+Git\+Hub/\+Citrus64/engine/utilities/\+Hash\+Table.\+h}
+\hypertarget{_c_1_2_users_2_kenzie_2_documents_2_git_hub_2_citrus64_2engine_2utilities_2_hash_table_8h-example}{}\label{_c_1_2_users_2_kenzie_2_documents_2_git_hub_2_citrus64_2engine_2utilities_2_hash_table_8h-example}uint32\+\_\+t max;
+
+uint32\+\_\+t max;
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{comment}{/*\ By\ Kenzie\ Wright\ -\/\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_8h}{Common.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}codegen/engine/utilities/HashTable.h.gen.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\ \ \ uint32\_t\ hash;}
+\DoxyCodeLine{\ \ \ uint16\_t\ next;}
+\DoxyCodeLine{\ \ \ uint16\_t\ last;}
+\DoxyCodeLine{\}\ \mbox{\hyperlink{structct_hash_table_key}{ctHashTableKey}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\ \ \ \mbox{\hyperlink{structct_hash_table_key}{ctHashTableKey}}*\ keys;}
+\DoxyCodeLine{\ \ \ uint16\_t\ capacity;}
+\DoxyCodeLine{\}\ \mbox{\hyperlink{structct_hash_table}{ctHashTable}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{structct_hash_table}{ctHashTable}}\ ctHashTableInit(uint32\_t\ capacity,\ \mbox{\hyperlink{structct_hash_table_key}{ctHashTableKey}}*\ keyBuffer);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ ctHashTableInsert(\mbox{\hyperlink{structct_hash_table}{ctHashTable}}*\ table,\ uint32\_t\ key,\ uint32\_t*\ outIdx);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ ctHashTableRemove(\mbox{\hyperlink{structct_hash_table}{ctHashTable}}*\ table,\ uint32\_t\ key,\ uint32\_t*\ outIdx);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ ctHashTableExists(\mbox{\hyperlink{structct_hash_table}{ctHashTable}}*\ table,\ uint32\_t\ key);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ ctHashTableFindIdx(\mbox{\hyperlink{structct_hash_table}{ctHashTable}}*\ table,\ uint32\_t\ key,\ uint32\_t*\ outIdx);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ ctHashTableClear(\mbox{\hyperlink{structct_hash_table}{ctHashTable}}*\ table);}
+
+\end{DoxyCodeInclude}
+ 

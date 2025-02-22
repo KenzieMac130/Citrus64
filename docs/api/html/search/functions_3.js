@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tester_0',['tester',['../_unit_tester_8c.html#a1dc6743d2dfcc176e64f04da89f6f7c3',1,'UnitTester.c']]]
+  ['waitforinput_0',['WaitForInput',['../_entry_8c.html#a19fb1b1666cf32aeb3f4723b9cc773ab',1,'Entry.c']]]
 ];

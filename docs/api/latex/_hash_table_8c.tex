@@ -1,0 +1,59 @@
+\doxysection{Hash\+Table.\+c File Reference}
+\hypertarget{_hash_table_8c}{}\label{_hash_table_8c}\index{HashTable.c@{HashTable.c}}
+{\ttfamily \#include "{}Hash\+Table.\+h"{}}\newline
+{\ttfamily \#include "{}Math.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/utilities/\+Hash\+Table.\+h.\+gen.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \mbox{\hyperlink{_hash_table_8c_a9bf5fa8b8bae1ac798505bfff2c15d15}{ct\+Hash\+Table\+Init}} (uint32\+\_\+t capacity, \mbox{\hyperlink{structct_hash_table_key}{ct\+Hash\+Table\+Key}} \texorpdfstring{$\ast$}{*}key\+Buffer)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_hash_table_8c_ad574ea49b53fad559c62d1f6326f495d}{ct\+Hash\+Table\+Find\+Idx}} (\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}table, uint32\+\_\+t key)
+\item 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} \mbox{\hyperlink{_hash_table_8c_a0d1b4e891e3940173e4beb943a28c0df}{ct\+Hash\+Table\+Insert}} (\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}table, uint32\+\_\+t key, uint32\+\_\+t \texorpdfstring{$\ast$}{*}out\+Idx)
+\item 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} \mbox{\hyperlink{_hash_table_8c_aa112b0bdac690c40064b76755da327af}{ct\+Hash\+Table\+Remove}} (\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}table, uint32\+\_\+t key, uint32\+\_\+t \texorpdfstring{$\ast$}{*}out\+Idx)
+\item 
+bool \mbox{\hyperlink{_hash_table_8c_a1be293e71e6f63429322ece7a983c111}{ct\+Hash\+Table\+Exists}} (\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}table, uint32\+\_\+t key)
+\item 
+void \mbox{\hyperlink{_hash_table_8c_a537473964f6edff3e3ae1768242847a3}{ct\+Hash\+Table\+Clear}} (\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}table)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_hash_table_8c_a9bf5fa8b8bae1ac798505bfff2c15d15}\index{HashTable.c@{HashTable.c}!ctHashTableInit@{ctHashTableInit}}
+\index{ctHashTableInit@{ctHashTableInit}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{ctHashTableInit()}{ctHashTableInit()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_a9bf5fa8b8bae1ac798505bfff2c15d15} 
+\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} ct\+Hash\+Table\+Init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{capacity}{, }\item[{\mbox{\hyperlink{structct_hash_table_key}{ct\+Hash\+Table\+Key}} \texorpdfstring{$\ast$}{*}}]{key\+Buffer}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hash_table_8c_ad574ea49b53fad559c62d1f6326f495d}\index{HashTable.c@{HashTable.c}!ctHashTableFindIdx@{ctHashTableFindIdx}}
+\index{ctHashTableFindIdx@{ctHashTableFindIdx}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{ctHashTableFindIdx()}{ctHashTableFindIdx()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_ad574ea49b53fad559c62d1f6326f495d} 
+uint32\+\_\+t ct\+Hash\+Table\+Find\+Idx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{uint32\+\_\+t}]{key}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hash_table_8c_a0d1b4e891e3940173e4beb943a28c0df}\index{HashTable.c@{HashTable.c}!ctHashTableInsert@{ctHashTableInsert}}
+\index{ctHashTableInsert@{ctHashTableInsert}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{ctHashTableInsert()}{ctHashTableInsert()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_a0d1b4e891e3940173e4beb943a28c0df} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} ct\+Hash\+Table\+Insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{uint32\+\_\+t}]{key}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{out\+Idx}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hash_table_8c_aa112b0bdac690c40064b76755da327af}\index{HashTable.c@{HashTable.c}!ctHashTableRemove@{ctHashTableRemove}}
+\index{ctHashTableRemove@{ctHashTableRemove}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{ctHashTableRemove()}{ctHashTableRemove()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_aa112b0bdac690c40064b76755da327af} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} ct\+Hash\+Table\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{uint32\+\_\+t}]{key}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{out\+Idx}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hash_table_8c_a1be293e71e6f63429322ece7a983c111}\index{HashTable.c@{HashTable.c}!ctHashTableExists@{ctHashTableExists}}
+\index{ctHashTableExists@{ctHashTableExists}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{ctHashTableExists()}{ctHashTableExists()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_a1be293e71e6f63429322ece7a983c111} 
+bool ct\+Hash\+Table\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{uint32\+\_\+t}]{key}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hash_table_8c_a537473964f6edff3e3ae1768242847a3}\index{HashTable.c@{HashTable.c}!ctHashTableClear@{ctHashTableClear}}
+\index{ctHashTableClear@{ctHashTableClear}!HashTable.c@{HashTable.c}}
+\doxysubsubsection{\texorpdfstring{ctHashTableClear()}{ctHashTableClear()}}
+{\footnotesize\ttfamily \label{_hash_table_8c_a537473964f6edff3e3ae1768242847a3} 
+void ct\+Hash\+Table\+Clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_hash_table}{ct\+Hash\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{}\end{DoxyParamCaption})}
+

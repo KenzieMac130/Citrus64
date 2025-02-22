@@ -1,0 +1,43 @@
+\doxysection{Resource.\+h}
+\hypertarget{_resource_8h_source}{}\label{_resource_8h_source}\index{Resource.h@{Resource.h}}
+\mbox{\hyperlink{_resource_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ By\ Kenzie\ Wright\ -\/\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_utilities_8h}{engine/utilities/Utilities.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}codegen/engine/resource/Resource.h.gen.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a9750b6f23952ce9ac786131749a275cc}{CT\_RESOURCE\_RAW}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a7411f6c6193b8e71d22a608e8c6d08c7}{CT\_RESOURCE\_MODULE}},\ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a827755af8a76d7d99b1d3cd4b1df2f39}{CT\_RESOURCE\_SCRIPT}},\ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460}{CT\_RESOURCE\_TRANSLATION}},\ }
+\DoxyCodeLine{00019\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a33a29c71f6ae654d1aca927112aa0e8e}{CT\_RESOURCE\_SPRITE}},\ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38}{CT\_RESOURCE\_MODEL}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \}\ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ctResourceType}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ CT\_RESOURCE\_HANDLE\_INVALID\ UINT16\_MAX}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ uint16\_t\ ctResourceHandle;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00027\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ctResourceType}}\ type;}
+\DoxyCodeLine{00028\ \ \ \ \textcolor{keywordtype}{int}\ size;}
+\DoxyCodeLine{00029\ \ \ \ \textcolor{keywordtype}{void}*\ data;}
+\DoxyCodeLine{00030\ \ \ \ \textcolor{keywordtype}{void}*\ object;}
+\DoxyCodeLine{00031\ \}\ ctResource;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ ctResource*\ ctResourceHandleGet(ctResourceHandle\ handle);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ ctResourceManagerStartup();}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ ctResourceManagerShutdown();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}}
+\DoxyCodeLine{00039\ ctResourceGetOrLoad(ctResourceHandle*\ out,\ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ctResourceType}}\ type,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ path);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ ctResourceRelease(ctResourceHandle\ resource);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ ctResourceManagerGarbageCollect();}
+
+\end{DoxyCode}

@@ -1,0 +1,47 @@
+\doxysection{MO.\+h}
+\hypertarget{_m_o_8h_source}{}\label{_m_o_8h_source}\index{MO.h@{MO.h}}
+\mbox{\hyperlink{_m_o_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ By\ Kenzie\ Wright\ -\/\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_utilities_8h}{engine/utilities/Utilities.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ CT\_MO\_MAGIC\ \ \ 0x950412de}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ CT\_MO\_CUR\_VER\ 0}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00014\ \ \ \ int32\_t\ magic;}
+\DoxyCodeLine{00015\ \ \ \ int32\_t\ version;}
+\DoxyCodeLine{00016\ \ \ \ int32\_t\ numStrings;}
+\DoxyCodeLine{00017\ \ \ \ int32\_t\ originalOffset;}
+\DoxyCodeLine{00018\ \ \ \ int32\_t\ translatedOffset;}
+\DoxyCodeLine{00019\ \ \ \ int32\_t\ \_unused0;\ \textcolor{comment}{/*\ GNU\ baked\ hash\ table\ size\ */}}
+\DoxyCodeLine{00020\ \ \ \ int32\_t\ \_unused1;\ \textcolor{comment}{/*\ GNU\ baked\ hash\ table\ offset\ */}}
+\DoxyCodeLine{00021\ \}\ ctMOHeader;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00024\ \ \ \ int32\_t\ length;}
+\DoxyCodeLine{00025\ \ \ \ int32\_t\ offset;}
+\DoxyCodeLine{00026\ \}\ ctMOStringEntry;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00029\ \ \ \ ctMOHeader*\ header;}
+\DoxyCodeLine{00030\ \ \ \ ctMOStringEntry*\ originalStringTable;}
+\DoxyCodeLine{00031\ \ \ \ ctMOStringEntry*\ translatedStringTable;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \mbox{\hyperlink{structct_hash_table}{ctHashTable}}\ hashTable;}
+\DoxyCodeLine{00034\ \ \ \ \mbox{\hyperlink{structct_hash_table_key}{ctHashTableKey}}*\ hashKeys;}
+\DoxyCodeLine{00035\ \ \ \ uint32\_t*\ hashValueOffsets;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ uint8\_t*\ blob;}
+\DoxyCodeLine{00038\ \ \ \ \textcolor{keywordtype}{size\_t}\ blobSize;}
+\DoxyCodeLine{00039\ \}\ ctMOReader;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ ctMOReaderAllocFromFile(ctMOReader**\ readerOut,\ FILE*\ fp,\ \textcolor{keywordtype}{int}\ fileSize);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ ctMOReaderFree(ctMOReader*\ reader);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ctMOFindTranslation(ctMOReader*\ reader,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ original);}
+\DoxyCodeLine{00045\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*}
+\DoxyCodeLine{00046\ ctMOFindTranslationHashed(ctMOReader*\ reader,\ uint32\_t\ hash,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ original);}
+
+\end{DoxyCode}

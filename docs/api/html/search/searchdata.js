@@ -1,12 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "achlmorstu",
+  0: "_abcehlmorstuw",
   1: "c",
-  2: "chlmrstu",
-  3: "c",
+  2: "bcehlmrstuw",
+  3: "_c",
   4: "aos",
   5: "c",
-  6: "c"
+  6: "c",
+  7: "c"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "enums",
-  6: "defines"
+  6: "enumvalues",
+  7: "defines"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables",
   5: "Enumerations",
-  6: "Macros"
+  6: "Enumerator",
+  7: "Macros"
 };
 

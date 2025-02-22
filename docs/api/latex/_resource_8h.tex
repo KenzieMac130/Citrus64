@@ -1,0 +1,99 @@
+\doxysection{Resource.\+h File Reference}
+\hypertarget{_resource_8h}{}\label{_resource_8h}\index{Resource.h@{Resource.h}}
+
+
+Resource management system.  
+
+
+{\ttfamily \#include "{}engine/utilities/\+Utilities.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/resource/\+Resource.\+h.\+gen.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_resource_8h_a0e496ea27d00620dd23bff93f1be7c1d}\label{_resource_8h_a0e496ea27d00620dd23bff93f1be7c1d} 
+\#define {\bfseries CT\+\_\+\+RESOURCE\+\_\+\+HANDLE\+\_\+\+INVALID}~UINT16\+\_\+\+MAX
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_resource_8h_a5412651c2d390b0126b10126093b7aa5}\label{_resource_8h_a5412651c2d390b0126b10126093b7aa5} 
+typedef uint16\+\_\+t {\bfseries ct\+Resource\+Handle}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ct\+Resource\+Type}} \{ \newline
+\mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a9750b6f23952ce9ac786131749a275cc}{CT\+\_\+\+RESOURCE\+\_\+\+RAW}}
+, \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a7411f6c6193b8e71d22a608e8c6d08c7}{CT\+\_\+\+RESOURCE\+\_\+\+MODULE}}
+, \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a827755af8a76d7d99b1d3cd4b1df2f39}{CT\+\_\+\+RESOURCE\+\_\+\+SCRIPT}}
+, \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460}{CT\+\_\+\+RESOURCE\+\_\+\+TRANSLATION}}
+, \newline
+\mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a33a29c71f6ae654d1aca927112aa0e8e}{CT\+\_\+\+RESOURCE\+\_\+\+SPRITE}}
+, \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38}{CT\+\_\+\+RESOURCE\+\_\+\+MODEL}}
+ \}
+\begin{DoxyCompactList}\small\item\em Resource types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_resource_8h_ab35b7b9d6901c7c1ed1c72b900ba3834}\label{_resource_8h_ab35b7b9d6901c7c1ed1c72b900ba3834} 
+ct\+Resource \texorpdfstring{$\ast$}{*} {\bfseries ct\+Resource\+Handle\+Get} (ct\+Resource\+Handle handle)
+\item 
+\Hypertarget{_resource_8h_a0f04d9efbf067913ac64c01d947f21cc}\label{_resource_8h_a0f04d9efbf067913ac64c01d947f21cc} 
+void {\bfseries ct\+Resource\+Manager\+Startup} ()
+\item 
+\Hypertarget{_resource_8h_a932d0910f3412b17462717f5571e298c}\label{_resource_8h_a932d0910f3412b17462717f5571e298c} 
+void {\bfseries ct\+Resource\+Manager\+Shutdown} ()
+\item 
+\Hypertarget{_resource_8h_a40ac87074c3dc1f6d77d259a1d78bc7f}\label{_resource_8h_a40ac87074c3dc1f6d77d259a1d78bc7f} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+Resource\+Get\+Or\+Load} (ct\+Resource\+Handle \texorpdfstring{$\ast$}{*}out, \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ct\+Resource\+Type}} type, const char \texorpdfstring{$\ast$}{*}path)
+\item 
+\Hypertarget{_resource_8h_a3ef0cb52b02907de29a8af2aa36174c1}\label{_resource_8h_a3ef0cb52b02907de29a8af2aa36174c1} 
+void {\bfseries ct\+Resource\+Release} (ct\+Resource\+Handle resource)
+\item 
+\Hypertarget{_resource_8h_a612983af47713e766a379c6a7b6e140c}\label{_resource_8h_a612983af47713e766a379c6a7b6e140c} 
+void {\bfseries ct\+Resource\+Manager\+Garbage\+Collect} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Resource management system. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_resource_8h_a33b389e767453c27e99a9b131ff0c041}\index{Resource.h@{Resource.h}!ctResourceType@{ctResourceType}}
+\index{ctResourceType@{ctResourceType}!Resource.h@{Resource.h}}
+\doxysubsubsection{\texorpdfstring{ctResourceType}{ctResourceType}}
+{\footnotesize\ttfamily \label{_resource_8h_a33b389e767453c27e99a9b131ff0c041} 
+enum \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ct\+Resource\+Type}}}
+
+
+
+Resource types. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_RESOURCE\_RAW@{CT\_RESOURCE\_RAW}!Resource.h@{Resource.h}}\index{Resource.h@{Resource.h}!CT\_RESOURCE\_RAW@{CT\_RESOURCE\_RAW}}}\Hypertarget{_resource_8h_a33b389e767453c27e99a9b131ff0c041a9750b6f23952ce9ac786131749a275cc}\label{_resource_8h_a33b389e767453c27e99a9b131ff0c041a9750b6f23952ce9ac786131749a275cc} 
+CT\+\_\+\+RESOURCE\+\_\+\+RAW&Raw managed data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_RESOURCE\_MODULE@{CT\_RESOURCE\_MODULE}!Resource.h@{Resource.h}}\index{Resource.h@{Resource.h}!CT\_RESOURCE\_MODULE@{CT\_RESOURCE\_MODULE}}}\Hypertarget{_resource_8h_a33b389e767453c27e99a9b131ff0c041a7411f6c6193b8e71d22a608e8c6d08c7}\label{_resource_8h_a33b389e767453c27e99a9b131ff0c041a7411f6c6193b8e71d22a608e8c6d08c7} 
+CT\+\_\+\+RESOURCE\+\_\+\+MODULE&Game code. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_RESOURCE\_SCRIPT@{CT\_RESOURCE\_SCRIPT}!Resource.h@{Resource.h}}\index{Resource.h@{Resource.h}!CT\_RESOURCE\_SCRIPT@{CT\_RESOURCE\_SCRIPT}}}\Hypertarget{_resource_8h_a33b389e767453c27e99a9b131ff0c041a827755af8a76d7d99b1d3cd4b1df2f39}\label{_resource_8h_a33b389e767453c27e99a9b131ff0c041a827755af8a76d7d99b1d3cd4b1df2f39} 
+CT\+\_\+\+RESOURCE\+\_\+\+SCRIPT&Lightweight module effects, scene, audio, music. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_RESOURCE\_TRANSLATION@{CT\_RESOURCE\_TRANSLATION}!Resource.h@{Resource.h}}\index{Resource.h@{Resource.h}!CT\_RESOURCE\_TRANSLATION@{CT\_RESOURCE\_TRANSLATION}}}\Hypertarget{_resource_8h_a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460}\label{_resource_8h_a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460} 
+CT\+\_\+\+RESOURCE\+\_\+\+TRANSLATION&MO file. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_RESOURCE\_SPRITE@{CT\_RESOURCE\_SPRITE}!Resource.h@{Resource.h}}\index{Resource.h@{Resource.h}!CT\_RESOURCE\_SPRITE@{CT\_RESOURCE\_SPRITE}}}\Hypertarget{_resource_8h_a33b389e767453c27e99a9b131ff0c041a33a29c71f6ae654d1aca927112aa0e8e}\label{_resource_8h_a33b389e767453c27e99a9b131ff0c041a33a29c71f6ae654d1aca927112aa0e8e} 
+CT\+\_\+\+RESOURCE\+\_\+\+SPRITE&Libdragon sprite. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_RESOURCE\_MODEL@{CT\_RESOURCE\_MODEL}!Resource.h@{Resource.h}}\index{Resource.h@{Resource.h}!CT\_RESOURCE\_MODEL@{CT\_RESOURCE\_MODEL}}}\Hypertarget{_resource_8h_a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38}\label{_resource_8h_a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38} 
+CT\+\_\+\+RESOURCE\+\_\+\+MODEL&Tiny3D model. \\
+\hline
+
+\end{DoxyEnumFields}

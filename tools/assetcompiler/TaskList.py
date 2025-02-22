@@ -4,6 +4,7 @@ from . import AudioAsset
 from . import MusicSequenceAsset
 from . import ModelAsset
 from . import FontAsset
+from . import TranslationAsset
 
 task_types = [
     RawAsset.RawAssetTask,
@@ -12,5 +13,6 @@ task_types = [
     MusicSequenceAsset.YMAssetTask,
     MusicSequenceAsset.XMAssetTask,
     ModelAsset.ModelAssetTask,
-    FontAsset.FontAssetTask
+    FontAsset.FontAssetTask,
+    TranslationAsset.TranslationAssetTask
 ]

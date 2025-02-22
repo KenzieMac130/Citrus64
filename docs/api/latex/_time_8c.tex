@@ -1,0 +1,45 @@
+\doxysection{Time.\+c File Reference}
+\hypertarget{_time_8c}{}\label{_time_8c}\index{Time.c@{Time.c}}
+{\ttfamily \#include "{}Time.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structct_stopwatch}{ct\+Stopwatch}} \mbox{\hyperlink{_time_8c_ab32e103c66a11f4f6eed4788998e4f01}{ct\+Stopwatch\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the stopwatch and start the clock immediately. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_time_8c_ade011838c7402172f1656c9cda98f96d}{ct\+Stopwatch\+Next\+Lap}} (\mbox{\hyperlink{structct_stopwatch}{ct\+Stopwatch}} \texorpdfstring{$\ast$}{*}stopwatch)
+\begin{DoxyCompactList}\small\item\em Progress the stopwatch to the next lap (or end the timer) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_time_8c_a11c8f8deb038bcbcfa0258844a18d989}{ct\+Stopwatch\+Get\+Delta\+Time}} (const \mbox{\hyperlink{structct_stopwatch}{ct\+Stopwatch}} \texorpdfstring{$\ast$}{*}stopwatch)
+\begin{DoxyCompactList}\small\item\em Get the delta time of the last lap in real-\/world time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_time_8c_ab32e103c66a11f4f6eed4788998e4f01}\index{Time.c@{Time.c}!ctStopwatchInit@{ctStopwatchInit}}
+\index{ctStopwatchInit@{ctStopwatchInit}!Time.c@{Time.c}}
+\doxysubsubsection{\texorpdfstring{ctStopwatchInit()}{ctStopwatchInit()}}
+{\footnotesize\ttfamily \label{_time_8c_ab32e103c66a11f4f6eed4788998e4f01} 
+\mbox{\hyperlink{structct_stopwatch}{ct\+Stopwatch}} ct\+Stopwatch\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the stopwatch and start the clock immediately. 
+
+\Hypertarget{_time_8c_ade011838c7402172f1656c9cda98f96d}\index{Time.c@{Time.c}!ctStopwatchNextLap@{ctStopwatchNextLap}}
+\index{ctStopwatchNextLap@{ctStopwatchNextLap}!Time.c@{Time.c}}
+\doxysubsubsection{\texorpdfstring{ctStopwatchNextLap()}{ctStopwatchNextLap()}}
+{\footnotesize\ttfamily \label{_time_8c_ade011838c7402172f1656c9cda98f96d} 
+void ct\+Stopwatch\+Next\+Lap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_stopwatch}{ct\+Stopwatch}} \texorpdfstring{$\ast$}{*}}]{stopwatch}{}\end{DoxyParamCaption})}
+
+
+
+Progress the stopwatch to the next lap (or end the timer) 
+
+\Hypertarget{_time_8c_a11c8f8deb038bcbcfa0258844a18d989}\index{Time.c@{Time.c}!ctStopwatchGetDeltaTime@{ctStopwatchGetDeltaTime}}
+\index{ctStopwatchGetDeltaTime@{ctStopwatchGetDeltaTime}!Time.c@{Time.c}}
+\doxysubsubsection{\texorpdfstring{ctStopwatchGetDeltaTime()}{ctStopwatchGetDeltaTime()}}
+{\footnotesize\ttfamily \label{_time_8c_a11c8f8deb038bcbcfa0258844a18d989} 
+float ct\+Stopwatch\+Get\+Delta\+Time (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structct_stopwatch}{ct\+Stopwatch}} \texorpdfstring{$\ast$}{*}}]{stopwatch}{}\end{DoxyParamCaption})}
+
+
+
+Get the delta time of the last lap in real-\/world time. 
+

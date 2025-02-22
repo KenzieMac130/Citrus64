@@ -10,6 +10,7 @@ extern void ctUnitTestMath3D();
 extern void ctUnitTestHash();
 extern void ctUnitTestHashTable();
 extern void ctUnitTestRandom();
+extern void ctUnitTestECS();
 
 /* see ctUnitTest (name, function, requires engine) */
 // clang-format off
@@ -20,5 +21,6 @@ extern void ctUnitTestRandom();
     {"Math3D", ctUnitTestMath3D, false},\
     {"Hash", ctUnitTestHash, false},\
     {"HashTable", ctUnitTestHashTable, false},\
-    {"Random", ctUnitTestRandom, false}
+    {"Random", ctUnitTestRandom, false},\
+    {"ECS", ctUnitTestECS, false}
 // clang-format on

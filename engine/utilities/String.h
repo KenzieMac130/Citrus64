@@ -14,7 +14,6 @@ manipulation see UTF32 functions.
 */
 
 #include "Common.h"
-#include "thirdparty/utf8/utf8.h"
 
 #include "codegen/engine/utilities/String.h.gen.h"
 
@@ -107,17 +106,17 @@ void ctStringConvertFromUtf32(char* outputBuffer,
 
 /* ------- Codepoint ------- */
 
-#define ctCodePointIsDigit(c)        (c >= '0' && c <= '9')
-#define ctCodePointIsAlpha(c)        ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-#define ctCodePointIsAlnum(c)        (ctIsDigit(c) || ctIsAlpha(c))
-#define ctCodePointIsUnicode(c)      (c > 127 || c < 0)
-#define ctCodePointIsAscii(c)        (c <= 127 && c >= 0)
-#define ctCodePointIsAlphaUnicode(c) (ctIsAlpha(c) || ctIsUnicode(c))
-#define ctCodePointIsAlnumUnicode(c) (ctIsAlnum(c) || ctIsUnicode(c))
-#define ctCodePointIsUpper(c)        utf8isupper(c)
-#define ctCodePointIsLower(c)        utf8islower(c)
-#define ctCodePointToUpper(c)        utf8uprcodepoint(c)
-#define ctCodePointToLower(c)        utf8lwrcodepoint(c)
+bool ctCodePointIsDigit(int32_t c);
+bool ctCodePointIsAlpha(int32_t c);
+bool ctCodePointIsAlnum(int32_t c);
+bool ctCodePointIsUnicode(int32_t c);
+bool ctCodePointIsAscii(int32_t c);
+bool ctCodePointIsAlphaUnicode(int32_t c);
+bool ctCodePointIsAlnumUnicode(int32_t c);
+bool ctCodePointIsUpper(int32_t c);
+bool ctCodePointIsLower(int32_t c);
+int32_t ctCodePointToUpper(int32_t c);
+int32_t ctCodePointToLower(int32_t c);
 
 /* ------- String to Type Conversion ------- */
 

@@ -30,6 +30,24 @@ ${ROM_NAME}.z64: N64_ROM_TITLE=${ROM_TITLE}
 CFLAGS += -I$(SOURCE_DIR)
 CFLAGS += -I$(BUILD_DIR)
 
+# Asset Code Modules ("Scripts")
+ASSET_CODE_DIR = ${BUILD_DIR}/assetcode
+ASSET_CODE_MODULE_BUILD_DIR = ${BUILD_DIR}/data
+ASSET_CODE_SOURCE = \
+	$(wildcard $(ASSET_CODE_DIR)/*.c) \
+	$(wildcard $(ASSET_CODE_DIR)/**/*.c) \
+	$(wildcard $(ASSET_CODE_DIR)/**/**/*.c) \
+	$(wildcard $(ASSET_CODE_DIR)/**/**/**/*.c) \
+	$(wildcard $(ASSET_CODE_DIR)/**/**/**/**/*.c) \
+	$(wildcard $(ASSET_CODE_DIR)/**/**/**/**/**/*.c) \
+	$(wildcard $(ASSET_CODE_DIR)/**/**/**/**/**/**/*.c) \
+	$(wildcard $(ASSET_CODE_DIR)/**/**/**/**/**/**/**/*.c)
+define ASSET_MODULE_template
+ASSET_MODULE_LIST += $(subst assetcode,data, $(basename $(1))).dso
+$(subst assetcode,data, $(basename $(1))).dso: $(1:%.c=%.o)
+endef
+$(foreach asset_module, $(ASSET_CODE_SOURCE), $(eval $(call ASSET_MODULE_template,$(asset_module))))
+
 # Game Modules
 GAME_MODULE_DIR = game/modules
 GAME_MODULE_BUILD_DIR = ${BUILD_DIR}/data
@@ -50,7 +68,8 @@ endef
 
 $(foreach game_module, $(GAME_MODULE_LIST), $(eval $(call GAME_MODULE_template,$(game_module))))
 
-DSO_LIST = $(addprefix $(GAME_MODULE_BUILD_DIR)/, $(addsuffix .dso, $(GAME_MODULE_LIST)))
+DSO_LIST = $(ASSET_MODULE_LIST)
+DSO_LIST += $(addprefix $(GAME_MODULE_BUILD_DIR)/, $(addsuffix .dso, $(GAME_MODULE_LIST)))
 MAIN_ELF_EXTERNS := $(BUILD_DIR)/$(ROM_NAME).externs
 $(MAIN_ELF_EXTERNS): $(DSO_LIST)
 

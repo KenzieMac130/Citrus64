@@ -1,0 +1,95 @@
+\doxysection{Translation.\+h File Reference}
+\hypertarget{_translation_8h}{}\label{_translation_8h}\index{Translation.h@{Translation.h}}
+
+
+Translate text into other languages.  
+
+
+{\ttfamily \#include "{}engine/utilities/\+Utilities.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_translation_8h_adf36373db7e0a3923ea1da2dfe09f2a8}{ct\+Get\+Text}}(\+\_\+identifier)
+\begin{DoxyCompactList}\small\item\em Get the translated text for the user\textquotesingle{}s language. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_translation_8h_a586b4603955365a2d616cb6a5fdd900d}\label{_translation_8h_a586b4603955365a2d616cb6a5fdd900d} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+ct\+Get\+Text} (uint32\+\_\+t hash, const char \texorpdfstring{$\ast$}{*}native\+Text)
+\begin{DoxyCompactList}\small\item\em see \doxylink{_translation_8h_adf36373db7e0a3923ea1da2dfe09f2a8}{ct\+Get\+Text()} for the user API \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} \mbox{\hyperlink{_translation_8h_a0d9e257fdffbbd6439be797970d522fc}{ct\+Translation\+Set\+Bank}} (uint32\+\_\+t bank\+Index, const char \texorpdfstring{$\ast$}{*}base\+Path)
+\begin{DoxyCompactList}\small\item\em Set the base path of the translations to be loaded next frame. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} \mbox{\hyperlink{_translation_8h_a82fcd214595e2b64c198df18f11fe1ae}{ct\+Translation\+Set\+Language}} (const char \texorpdfstring{$\ast$}{*}iso\+Code)
+\begin{DoxyCompactList}\small\item\em Set the target language to be loaded next game update. \end{DoxyCompactList}\item 
+\Hypertarget{_translation_8h_a8b8b8d3340e6dc1f7fab9a3875a34c6f}\label{_translation_8h_a8b8b8d3340e6dc1f7fab9a3875a34c6f} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries ct\+Translation\+Get\+Language} ()
+\begin{DoxyCompactList}\small\item\em Get the actively loaded language. \end{DoxyCompactList}\item 
+\Hypertarget{_translation_8h_a14047b71a28c5d9fe044d77eb4fd80c5}\label{_translation_8h_a14047b71a28c5d9fe044d77eb4fd80c5} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+Translation\+Startup} ()
+\item 
+\Hypertarget{_translation_8h_abb2228ef2cbc6de6a4c6b14bb949cdbe}\label{_translation_8h_abb2228ef2cbc6de6a4c6b14bb949cdbe} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+Translation\+Update} ()
+\item 
+\Hypertarget{_translation_8h_a67b93429e43c26daa705e15120365c71}\label{_translation_8h_a67b93429e43c26daa705e15120365c71} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+Translation\+Shutdown} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Translate text into other languages. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_translation_8h_adf36373db7e0a3923ea1da2dfe09f2a8}\index{Translation.h@{Translation.h}!ctGetText@{ctGetText}}
+\index{ctGetText@{ctGetText}!Translation.h@{Translation.h}}
+\doxysubsubsection{\texorpdfstring{ctGetText}{ctGetText}}
+{\footnotesize\ttfamily \label{_translation_8h_adf36373db7e0a3923ea1da2dfe09f2a8} 
+\#define ct\+Get\+Text(\begin{DoxyParamCaption}\item[{}]{\+\_\+identifier}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\_\_CT\_COMPILED\_TRANSLATION\_LOOKUP\_\#\#\_tag}
+
+\end{DoxyCode}
+
+
+Get the translated text for the user\textquotesingle{}s language. 
+
+\begin{DoxyWarning}{Warning}
+results may be invalid eventually, use immediately or make a copy 
+\end{DoxyWarning}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_translation_8h_a0d9e257fdffbbd6439be797970d522fc}\index{Translation.h@{Translation.h}!ctTranslationSetBank@{ctTranslationSetBank}}
+\index{ctTranslationSetBank@{ctTranslationSetBank}!Translation.h@{Translation.h}}
+\doxysubsubsection{\texorpdfstring{ctTranslationSetBank()}{ctTranslationSetBank()}}
+{\footnotesize\ttfamily \label{_translation_8h_a0d9e257fdffbbd6439be797970d522fc} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} ct\+Translation\+Set\+Bank (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{bank\+Index}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{base\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Set the base path of the translations to be loaded next frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Path} & is expected to contain mo files for each language \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_translation_8h_a82fcd214595e2b64c198df18f11fe1ae}\index{Translation.h@{Translation.h}!ctTranslationSetLanguage@{ctTranslationSetLanguage}}
+\index{ctTranslationSetLanguage@{ctTranslationSetLanguage}!Translation.h@{Translation.h}}
+\doxysubsubsection{\texorpdfstring{ctTranslationSetLanguage()}{ctTranslationSetLanguage()}}
+{\footnotesize\ttfamily \label{_translation_8h_a82fcd214595e2b64c198df18f11fe1ae} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} ct\+Translation\+Set\+Language (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{iso\+Code}{}\end{DoxyParamCaption})}
+
+
+
+Set the target language to be loaded next game update. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iso\+Code} & Format as follows\+: "{}(\+ISO 639-\/1)-\/(\+ISO 3166 A2)"{} (ex\+: "{}en-\/us"{})\\
+\hline
+\end{DoxyParams}
+The translation system will attempt to load the region specific mo file in the target language first, if this fails it will just look for the language. Full RFC 4646 is not supported. 

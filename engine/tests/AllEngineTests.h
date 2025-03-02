@@ -11,6 +11,8 @@ extern void ctUnitTestHash();
 extern void ctUnitTestHashTable();
 extern void ctUnitTestRandom();
 extern void ctUnitTestECS();
+extern void ctUnitTestResource();
+extern void ctUnitTestTranslation();
 
 /* see ctUnitTest (name, function, requires engine) */
 // clang-format off
@@ -22,5 +24,7 @@ extern void ctUnitTestECS();
     {"Hash", ctUnitTestHash, false},\
     {"HashTable", ctUnitTestHashTable, false},\
     {"Random", ctUnitTestRandom, false},\
-    {"ECS", ctUnitTestECS, false}
+    {"ECS", ctUnitTestECS, false},\
+    {"Resource", ctUnitTestResource, false},\
+    {"Translation", ctUnitTestTranslation, false}
 // clang-format on

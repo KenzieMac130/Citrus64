@@ -7,5 +7,7 @@ var searchData=
   ['ctquat_4',['ctQuat',['../structct_quat.html',1,'']]],
   ['ctrandomgenerator_5',['ctRandomGenerator',['../structct_random_generator.html',1,'']]],
   ['ctstopwatch_6',['ctStopwatch',['../structct_stopwatch.html',1,'']]],
-  ['ctvec3_7',['ctVec3',['../structct_vec3.html',1,'']]]
+  ['ctuicontext_7',['ctUIContext',['../structct_u_i_context.html',1,'']]],
+  ['ctuilayout_8',['ctUILayout',['../structct_u_i_layout.html',1,'']]],
+  ['ctvec3_9',['ctVec3',['../structct_vec3.html',1,'']]]
 ];

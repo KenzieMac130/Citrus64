@@ -27,7 +27,8 @@
         "mutex": "c",
         "new": "c",
         "vector": "c",
-        "*.tcc": "c"
+        "*.tcc": "c",
+        "cstdio": "c"
     },
     "C_Cpp.default.compilerPath": "c:\\msys64\\usr\\bin\\gcc.exe"
 }

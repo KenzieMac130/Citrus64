@@ -115,6 +115,7 @@ void ctStringFormatVArgs(char* buffer,
    ctAssert(buffer);
    ctAssert(bufferSize > 0);
    vsnprintf(buffer, bufferSize, format, vargs);
+   buffer[bufferSize - 1] = '\0';
 }
 
 void ctStringFormat(char* buffer, size_t bufferSize, const char* format, ...) {

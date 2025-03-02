@@ -16,20 +16,31 @@ ctHashTable ctHashTableInit(uint32_t capacity, ctHashTableKey* keyBuffer) {
    return result;
 }
 
+#define USE_JUMPS 1
 uint32_t _ctHashTableFindIdx(ctHashTable* table, uint32_t key) {
    ctAssert(table);
    ctAssert(key != UINT32_MAX);
    uint32_t idx = key % (uint32_t)table->capacity;
+#if USE_JUMPS
    while (table->keys[idx].hash != key) {
       idx = (uint32_t)table->keys[idx].next;
       if (idx == UINT16_MAX) { return UINT32_MAX; }
    }
+#else
+   if (table->keys[idx].hash != key) {
+      for (uint32_t i = 0; i < table->capacity; i++) {
+         if (table->keys[i].hash == key) { return i; }
+      }
+      return UINT32_MAX;
+   }
+#endif
    return idx;
 }
 
 ctResults ctHashTableFindIdx(ctHashTable* table, uint32_t key, uint32_t* outIdx) {
    *outIdx = _ctHashTableFindIdx(table, key);
    if (*outIdx == UINT32_MAX) { return CT_FAILURE_NOT_FOUND; }
+   ctAssert(table->keys[*outIdx].hash == key);
    return CT_SUCCESS;
 }
 

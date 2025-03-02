@@ -140,6 +140,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460">CT_RESOURCE_TRANSLATION</a>
 , <br />
 &#160;&#160;<a class="el" href="#a33b389e767453c27e99a9b131ff0c041a33a29c71f6ae654d1aca927112aa0e8e">CT_RESOURCE_SPRITE</a>
+, <a class="el" href="#a33b389e767453c27e99a9b131ff0c041afab3abe304339f2a51ab0746933b8feb">CT_RESOURCE_FONT</a>
 , <a class="el" href="#a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38">CT_RESOURCE_MODEL</a>
 <br />
  }</td></tr>
@@ -148,9 +149,6 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab35b7b9d6901c7c1ed1c72b900ba3834" id="r_ab35b7b9d6901c7c1ed1c72b900ba3834"><td class="memItemLeft" align="right" valign="top"><a id="ab35b7b9d6901c7c1ed1c72b900ba3834" name="ab35b7b9d6901c7c1ed1c72b900ba3834"></a>
-ctResource *&#160;</td><td class="memItemRight" valign="bottom"><b>ctResourceHandleGet</b> (ctResourceHandle handle)</td></tr>
-<tr class="separator:ab35b7b9d6901c7c1ed1c72b900ba3834"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f04d9efbf067913ac64c01d947f21cc" id="r_a0f04d9efbf067913ac64c01d947f21cc"><td class="memItemLeft" align="right" valign="top"><a id="a0f04d9efbf067913ac64c01d947f21cc" name="a0f04d9efbf067913ac64c01d947f21cc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ctResourceManagerStartup</b> ()</td></tr>
 <tr class="separator:a0f04d9efbf067913ac64c01d947f21cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,6 +157,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctResourceManagerShut
 <tr class="separator:a932d0910f3412b17462717f5571e298c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40ac87074c3dc1f6d77d259a1d78bc7f" id="r_a40ac87074c3dc1f6d77d259a1d78bc7f"><td class="memItemLeft" align="right" valign="top"><a id="a40ac87074c3dc1f6d77d259a1d78bc7f" name="a40ac87074c3dc1f6d77d259a1d78bc7f"></a>
 <a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctResourceGetOrLoad</b> (ctResourceHandle *out, <a class="el" href="#a33b389e767453c27e99a9b131ff0c041">ctResourceType</a> type, const char *path)</td></tr>
+<tr class="memdesc:a40ac87074c3dc1f6d77d259a1d78bc7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a handle to a loaded resource. <br /></td></tr>
 <tr class="separator:a40ac87074c3dc1f6d77d259a1d78bc7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ef0cb52b02907de29a8af2aa36174c1" id="r_a3ef0cb52b02907de29a8af2aa36174c1"><td class="memItemLeft" align="right" valign="top"><a id="a3ef0cb52b02907de29a8af2aa36174c1" name="a3ef0cb52b02907de29a8af2aa36174c1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ctResourceRelease</b> (ctResourceHandle resource)</td></tr>
@@ -166,6 +165,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctResourceRelease</b>
 <tr class="memitem:a612983af47713e766a379c6a7b6e140c" id="r_a612983af47713e766a379c6a7b6e140c"><td class="memItemLeft" align="right" valign="top"><a id="a612983af47713e766a379c6a7b6e140c" name="a612983af47713e766a379c6a7b6e140c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ctResourceManagerGarbageCollect</b> ()</td></tr>
 <tr class="separator:a612983af47713e766a379c6a7b6e140c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aade5f8c888d193e7b3a7c12f1a66fd91" id="r_aade5f8c888d193e7b3a7c12f1a66fd91"><td class="memItemLeft" align="right" valign="top"><a id="aade5f8c888d193e7b3a7c12f1a66fd91" name="aade5f8c888d193e7b3a7c12f1a66fd91"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ctPathExists</b> (const char *path)</td></tr>
+<tr class="separator:aade5f8c888d193e7b3a7c12f1a66fd91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d13c005995e8b57f427e73ee238a5d5" id="r_a3d13c005995e8b57f427e73ee238a5d5"><td class="memItemLeft" align="right" valign="top"><a id="a3d13c005995e8b57f427e73ee238a5d5" name="a3d13c005995e8b57f427e73ee238a5d5"></a>
+<a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctResourceGetSymbol</b> (ctResourceHandle handle, const char *symbol, void **out)</td></tr>
+<tr class="memdesc:a3d13c005995e8b57f427e73ee238a5d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a symbol from a resource if possible. <br /></td></tr>
+<tr class="separator:a3d13c005995e8b57f427e73ee238a5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1960ecdc8487e76420f88d349bcd5d59" id="r_a1960ecdc8487e76420f88d349bcd5d59"><td class="memItemLeft" align="right" valign="top"><a id="a1960ecdc8487e76420f88d349bcd5d59" name="a1960ecdc8487e76420f88d349bcd5d59"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>ctResourceGetFont</b> (ctResourceHandle handle)</td></tr>
+<tr class="separator:a1960ecdc8487e76420f88d349bcd5d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fc2b491248aba0020e17ea8ee650474" id="r_a3fc2b491248aba0020e17ea8ee650474"><td class="memItemLeft" align="right" valign="top"><a id="a3fc2b491248aba0020e17ea8ee650474" name="a3fc2b491248aba0020e17ea8ee650474"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>ctResourceGetTextHashed</b> (ctResourceHandle handle, uint32_t hash)</td></tr>
+<tr class="separator:a3fc2b491248aba0020e17ea8ee650474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Resource management system. </p>
@@ -190,9 +202,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ctResourceManagerGarb
 </td></tr>
 <tr><td class="fieldname"><a id="a33b389e767453c27e99a9b131ff0c041a827755af8a76d7d99b1d3cd4b1df2f39" name="a33b389e767453c27e99a9b131ff0c041a827755af8a76d7d99b1d3cd4b1df2f39"></a>CT_RESOURCE_SCRIPT&#160;</td><td class="fielddoc"><p>Lightweight module effects, scene, audio, music. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460" name="a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460"></a>CT_RESOURCE_TRANSLATION&#160;</td><td class="fielddoc"><p>MO file. </p>
+<tr><td class="fieldname"><a id="a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460" name="a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460"></a>CT_RESOURCE_TRANSLATION&#160;</td><td class="fielddoc"><p>MO file (don't use directly, see <a class="el" href="_translation_8h.html" title="Translate text into other languages.">Translation.h</a>) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a33b389e767453c27e99a9b131ff0c041a33a29c71f6ae654d1aca927112aa0e8e" name="a33b389e767453c27e99a9b131ff0c041a33a29c71f6ae654d1aca927112aa0e8e"></a>CT_RESOURCE_SPRITE&#160;</td><td class="fielddoc"><p>Libdragon sprite. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a33b389e767453c27e99a9b131ff0c041afab3abe304339f2a51ab0746933b8feb" name="a33b389e767453c27e99a9b131ff0c041afab3abe304339f2a51ab0746933b8feb"></a>CT_RESOURCE_FONT&#160;</td><td class="fielddoc"><p>Libdragon font. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38" name="a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38"></a>CT_RESOURCE_MODEL&#160;</td><td class="fielddoc"><p>Tiny3D model. </p>
 </td></tr>

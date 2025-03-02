@@ -7,7 +7,7 @@ def main():
     if not command_expect_start(['libdragon', 'version']):
         if ask_install("libdragon docker"):
             print(execute_command(['npm', 'install', '-g', 'libdragon']))
-            print(execute_command(['libdragon', 'install']), dir="./libs/libdragon")
+            print(execute_command(['libdragon', 'install'], dir="./libs/libdragon"))
     if not Path('./libs/tiny3d/build/t3d.o').exists():
         if ask_install("t3d"):
             print(execute_command(['libdragon', 'make'], dir="./libs/tiny3d"))

@@ -1,0 +1,287 @@
+\doxysection{UI.\+h File Reference}
+\hypertarget{_u_i_8h}{}\label{_u_i_8h}\index{UI.h@{UI.h}}
+
+
+UI Drawing Library.  
+
+
+{\ttfamily \#include "{}engine/utilities/\+Utilities.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/renderer/\+UI.\+h.\+gen.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}}
+\begin{DoxyCompactList}\small\item\em Contains the state of the UI function. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structct_u_i_layout}{ct\+UILayout}}
+\begin{DoxyCompactList}\small\item\em Describes how to layout the user interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_u_i_8h_a686829f0b0250ad5ecf1342bdc80bc1e}\label{_u_i_8h_a686829f0b0250ad5ecf1342bdc80bc1e} 
+\#define {\bfseries CT\+\_\+\+UI\+\_\+\+VIEWPORT\+\_\+\+COMPOSITE}~UINT8\+\_\+\+MAX
+\begin{DoxyCompactList}\small\item\em The index ct\+UIGet\+Viewport\+Index will return if we are rendering on-\/top of all viewports (outside of split-\/screen) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_u_i_8h_ab433e92ab233f1f328d08adf6e6c1481}{ct\+UIAlignment}} \{ \newline
+{\bfseries CT\+\_\+\+UI\+\_\+\+ALIGN\+\_\+\+CENTER}
+, {\bfseries CT\+\_\+\+UI\+\_\+\+ALIGN\+\_\+\+TOP}
+, {\bfseries CT\+\_\+\+UI\+\_\+\+ALIGN\+\_\+\+BOTTOM}
+, {\bfseries CT\+\_\+\+UI\+\_\+\+ALIGN\+\_\+\+LEFT}
+, \newline
+{\bfseries CT\+\_\+\+UI\+\_\+\+ALIGN\+\_\+\+RIGHT}
+, {\bfseries CT\+\_\+\+UI\+\_\+\+ALIGN\+\_\+\+TOP\+\_\+\+LEFT}
+, {\bfseries CT\+\_\+\+UI\+\_\+\+ALIGN\+\_\+\+TOP\+\_\+\+RIGHT}
+, {\bfseries CT\+\_\+\+UI\+\_\+\+ALIGN\+\_\+\+BOTTOM\+\_\+\+LEFT}
+, \newline
+{\bfseries CT\+\_\+\+UI\+\_\+\+ALIGN\+\_\+\+BOTTOM\+\_\+\+RIGHT}
+ \}
+\begin{DoxyCompactList}\small\item\em Describes a rectangle. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1}{ct\+UIBlend\+Mode}} \{ \mbox{\hyperlink{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1aee45c05f31c2752da1e0818e8b825aba}{CT\+\_\+\+UI\+\_\+\+BLEND\+\_\+\+NORMAL}}
+, \mbox{\hyperlink{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1a9cd86448f1bfed00c297814f1905ec71}{CT\+\_\+\+UI\+\_\+\+BLEND\+\_\+\+FLAT}}
+, \mbox{\hyperlink{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1aa83ccdc919ca84d2c9bf759833be6f5e}{CT\+\_\+\+UI\+\_\+\+BLEND\+\_\+\+SDF\+\_\+\+METER}}
+ \}
+\begin{DoxyCompactList}\small\item\em Possible blending modes to use for drawin UI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_u_i_8h_a92e95803d128984ea6b4a24913ffb562}{ct\+UISet\+Sprite}} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, sprite\+\_\+t \texorpdfstring{$\ast$}{*}sprite)
+\begin{DoxyCompactList}\small\item\em Set the sprite to use for rendering rects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_i_8h_a192753bc908924ba629c25b1efdc7d42}{ct\+UISet\+Sprite\+Multi}} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, sprite\+\_\+t \texorpdfstring{$\ast$}{*}sprite1, sprite\+\_\+t \texorpdfstring{$\ast$}{*}sprite2)
+\begin{DoxyCompactList}\small\item\em Set the sprites to use for rendering multi-\/textured blend modes. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_a46c41f7e741e2a6ee19660ca5bac6c5f}\label{_u_i_8h_a46c41f7e741e2a6ee19660ca5bac6c5f} 
+void {\bfseries ct\+UISet\+Blend\+Mode} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1}{ct\+UIBlend\+Mode}} mode)
+\begin{DoxyCompactList}\small\item\em Set the blend mode to use for rendering rects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_i_8h_a1934484b35c8382bc4b22a379543d544}{ct\+UISet\+Color}} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}} color)
+\begin{DoxyCompactList}\small\item\em Set the color to tint the upcoming rect. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_ad5f25b6dd84f1d23a57e2e3195bac18b}\label{_u_i_8h_ad5f25b6dd84f1d23a57e2e3195bac18b} 
+void {\bfseries ct\+UIDraw\+Rect} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, const ct\+Rect rect, const ct\+Rect \texorpdfstring{$\ast$}{*}uv)
+\begin{DoxyCompactList}\small\item\em Draw a rectangle containing a small sprite(s) that fits in TMEM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_i_8h_a584bd7bd87fe7b6037bf28893091ad7e}{ct\+UIDraw\+Large\+Sprite}} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, sprite\+\_\+t \texorpdfstring{$\ast$}{*}sprite, const ct\+Rect rect)
+\begin{DoxyCompactList}\small\item\em Draw a whole sprite consisting of multiple tiles to the output. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_ae7c9db8b54fcd9f7d877a02a3f850b37}\label{_u_i_8h_ae7c9db8b54fcd9f7d877a02a3f850b37} 
+void {\bfseries ct\+UISet\+Font} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, uint8\+\_\+t font\+Index)
+\begin{DoxyCompactList}\small\item\em Set the default font for rendering text. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_a4785a61c537f7cb113023cb6c4cc184e}\label{_u_i_8h_a4785a61c537f7cb113023cb6c4cc184e} 
+void {\bfseries ct\+UISet\+Text\+Style} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, uint8\+\_\+t style\+Index)
+\begin{DoxyCompactList}\small\item\em Set the default syle for rendering text. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_a611c1eecc9ae788072ff7a6e2972891e}\label{_u_i_8h_a611c1eecc9ae788072ff7a6e2972891e} 
+void {\bfseries ct\+UISet\+Text\+Alignment} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_u_i_8h_ab433e92ab233f1f328d08adf6e6c1481}{ct\+UIAlignment}} alignment)
+\begin{DoxyCompactList}\small\item\em Set the text alignment. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_a1907abcd09c27d23dc8ae40e19618b6a}\label{_u_i_8h_a1907abcd09c27d23dc8ae40e19618b6a} 
+void {\bfseries ct\+UISet\+Text\+Wrap} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, bool wrap)
+\begin{DoxyCompactList}\small\item\em Set the wraping mode of text. \end{DoxyCompactList}\item 
+ct\+Vec2 \mbox{\hyperlink{_u_i_8h_a55bd4fe61102d619b0e926b1317e3f73}{ct\+UIDraw\+Text}} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, const ct\+Vec2 position, const char \texorpdfstring{$\ast$}{*}format,...)
+\begin{DoxyCompactList}\small\item\em Draw text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_i_8h_a77fae66eb7f7efd95bb7b4b15bccc3f3}{ct\+UIDraw\+Text\+Box}} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, const ct\+Rect rect, const char \texorpdfstring{$\ast$}{*}format,...)
+\begin{DoxyCompactList}\small\item\em Draw a text box. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structct_u_i_layout}{ct\+UILayout}} \mbox{\hyperlink{_u_i_8h_abaddd80da65914a3edd1b6865a0fbe2a}{ct\+UILayout\+Vertical}} (const ct\+Rect rect, float spacing)
+\begin{DoxyCompactList}\small\item\em Do a layout vertically. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structct_u_i_layout}{ct\+UILayout}} \mbox{\hyperlink{_u_i_8h_a6f339af057054e8fcc76e68483973baf}{ct\+UILayout\+Horizontal}} (const ct\+Rect rect, float spacing)
+\begin{DoxyCompactList}\small\item\em Do a layout sideways. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structct_u_i_layout}{ct\+UILayout}} \mbox{\hyperlink{_u_i_8h_a607c504a44158b10e0d414e1c2eca2c6}{ct\+UILayout\+Grid}} (const ct\+Rect rect, uint16\+\_\+t columns, float spacingX, float spacingY)
+\begin{DoxyCompactList}\small\item\em Do a layout in a row/column manner. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_a42be5612177abdd51f4beb46db5afae7}\label{_u_i_8h_a42be5612177abdd51f4beb46db5afae7} 
+void {\bfseries ct\+UILayout\+Next\+Rect} (\mbox{\hyperlink{structct_u_i_layout}{ct\+UILayout}} \texorpdfstring{$\ast$}{*}layout, const ct\+Rect rect)
+\begin{DoxyCompactList}\small\item\em Progress in the layout based on a rect region. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_a9573c0bd4964e5a6dd337fc3a6d4ac02}\label{_u_i_8h_a9573c0bd4964e5a6dd337fc3a6d4ac02} 
+void {\bfseries ct\+UILayout\+Next\+Text} (\mbox{\hyperlink{structct_u_i_layout}{ct\+UILayout}} \texorpdfstring{$\ast$}{*}layout, const ct\+Vec2 result)
+\begin{DoxyCompactList}\small\item\em Progress in the layout based on a ct\+UIDraw\+Text result. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_ad708793be215cdcbe37ed6467459808d}\label{_u_i_8h_ad708793be215cdcbe37ed6467459808d} 
+void {\bfseries ct\+UILayout\+Next} (\mbox{\hyperlink{structct_u_i_layout}{ct\+UILayout}} \texorpdfstring{$\ast$}{*}layout)
+\begin{DoxyCompactList}\small\item\em Progress in the layout (assumes spacing is absolute) \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_a2b3cc0a1032be00fbf6796b45b2ebb56}\label{_u_i_8h_a2b3cc0a1032be00fbf6796b45b2ebb56} 
+uint8\+\_\+t {\bfseries ct\+UIGet\+Viewport\+Index} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx)
+\begin{DoxyCompactList}\small\item\em Get the viewport index of the context. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_a3046f8915d5a461140ca1bc94599e76d}\label{_u_i_8h_a3046f8915d5a461140ca1bc94599e76d} 
+ct\+Rect {\bfseries ct\+UIGet\+Viewport\+Rect} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, bool safe\+Area)
+\item 
+\Hypertarget{_u_i_8h_ae8c113a8c0eb8c8178d000abdeacfcef}\label{_u_i_8h_ae8c113a8c0eb8c8178d000abdeacfcef} 
+ct\+Rect {\bfseries ct\+UIGet\+Child\+Rect} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, const ct\+Rect parent, const ct\+Rect child, \mbox{\hyperlink{_u_i_8h_ab433e92ab233f1f328d08adf6e6c1481}{ct\+UIAlignment}} alignment)
+\begin{DoxyCompactList}\small\item\em Get a rect. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_acff8f9189cfe61ee6c3136a0c3f4d2db}\label{_u_i_8h_acff8f9189cfe61ee6c3136a0c3f4d2db} 
+ct\+Rect {\bfseries ct\+UIGet\+Rect3D} (\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{structct_vec3}{ct\+Vec3}} position, ct\+Vec2 dimensions, \mbox{\hyperlink{_u_i_8h_ab433e92ab233f1f328d08adf6e6c1481}{ct\+UIAlignment}} alignment, bool \texorpdfstring{$\ast$}{*}visible)
+\begin{DoxyCompactList}\small\item\em Get a rect in 2D space for the active viewport. \end{DoxyCompactList}\item 
+\Hypertarget{_u_i_8h_a1dc6743d2dfcc176e64f04da89f6f7c3}\label{_u_i_8h_a1dc6743d2dfcc176e64f04da89f6f7c3} 
+void {\bfseries tester} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+UI Drawing Library. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_u_i_8h_ab433e92ab233f1f328d08adf6e6c1481}\index{UI.h@{UI.h}!ctUIAlignment@{ctUIAlignment}}
+\index{ctUIAlignment@{ctUIAlignment}!UI.h@{UI.h}}
+\doxysubsubsection{\texorpdfstring{ctUIAlignment}{ctUIAlignment}}
+{\footnotesize\ttfamily \label{_u_i_8h_ab433e92ab233f1f328d08adf6e6c1481} 
+enum \mbox{\hyperlink{_u_i_8h_ab433e92ab233f1f328d08adf6e6c1481}{ct\+UIAlignment}}}
+
+
+
+Describes a rectangle. 
+
+Alignment possibilities for the user interface \Hypertarget{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1}\index{UI.h@{UI.h}!ctUIBlendMode@{ctUIBlendMode}}
+\index{ctUIBlendMode@{ctUIBlendMode}!UI.h@{UI.h}}
+\doxysubsubsection{\texorpdfstring{ctUIBlendMode}{ctUIBlendMode}}
+{\footnotesize\ttfamily \label{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1} 
+enum \mbox{\hyperlink{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1}{ct\+UIBlend\+Mode}}}
+
+
+
+Possible blending modes to use for drawin UI. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_UI\_BLEND\_NORMAL@{CT\_UI\_BLEND\_NORMAL}!UI.h@{UI.h}}\index{UI.h@{UI.h}!CT\_UI\_BLEND\_NORMAL@{CT\_UI\_BLEND\_NORMAL}}}\Hypertarget{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1aee45c05f31c2752da1e0818e8b825aba}\label{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1aee45c05f31c2752da1e0818e8b825aba} 
+CT\+\_\+\+UI\+\_\+\+BLEND\+\_\+\+NORMAL&Basic alpha blended single texturing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_UI\_BLEND\_FLAT@{CT\_UI\_BLEND\_FLAT}!UI.h@{UI.h}}\index{UI.h@{UI.h}!CT\_UI\_BLEND\_FLAT@{CT\_UI\_BLEND\_FLAT}}}\Hypertarget{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1a9cd86448f1bfed00c297814f1905ec71}\label{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1a9cd86448f1bfed00c297814f1905ec71} 
+CT\+\_\+\+UI\+\_\+\+BLEND\+\_\+\+FLAT&Flat colored alpha blended rectangles. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_UI\_BLEND\_SDF\_METER@{CT\_UI\_BLEND\_SDF\_METER}!UI.h@{UI.h}}\index{UI.h@{UI.h}!CT\_UI\_BLEND\_SDF\_METER@{CT\_UI\_BLEND\_SDF\_METER}}}\Hypertarget{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1aa83ccdc919ca84d2c9bf759833be6f5e}\label{_u_i_8h_a1622af06f1bf1c9e62b57f18eae3b6f1aa83ccdc919ca84d2c9bf759833be6f5e} 
+CT\+\_\+\+UI\+\_\+\+BLEND\+\_\+\+SDF\+\_\+\+METER&(todo) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_u_i_8h_a92e95803d128984ea6b4a24913ffb562}\index{UI.h@{UI.h}!ctUISetSprite@{ctUISetSprite}}
+\index{ctUISetSprite@{ctUISetSprite}!UI.h@{UI.h}}
+\doxysubsubsection{\texorpdfstring{ctUISetSprite()}{ctUISetSprite()}}
+{\footnotesize\ttfamily \label{_u_i_8h_a92e95803d128984ea6b4a24913ffb562} 
+void ct\+UISet\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}}]{ctx}{, }\item[{sprite\+\_\+t \texorpdfstring{$\ast$}{*}}]{sprite}{}\end{DoxyParamCaption})}
+
+
+
+Set the sprite to use for rendering rects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em region} & sets the UV region of the texture \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_u_i_8h_a192753bc908924ba629c25b1efdc7d42}\index{UI.h@{UI.h}!ctUISetSpriteMulti@{ctUISetSpriteMulti}}
+\index{ctUISetSpriteMulti@{ctUISetSpriteMulti}!UI.h@{UI.h}}
+\doxysubsubsection{\texorpdfstring{ctUISetSpriteMulti()}{ctUISetSpriteMulti()}}
+{\footnotesize\ttfamily \label{_u_i_8h_a192753bc908924ba629c25b1efdc7d42} 
+void ct\+UISet\+Sprite\+Multi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}}]{ctx}{, }\item[{sprite\+\_\+t \texorpdfstring{$\ast$}{*}}]{sprite1}{, }\item[{sprite\+\_\+t \texorpdfstring{$\ast$}{*}}]{sprite2}{}\end{DoxyParamCaption})}
+
+
+
+Set the sprites to use for rendering multi-\/textured blend modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite1} & uploaded into TILE0 \\
+\hline
+{\em sprite2} & uploaded into TILE1 (should have same size of sprite1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+each sprite must take up at most 1/2 of TMEM so half the usual budget 
+\end{DoxyWarning}
+\Hypertarget{_u_i_8h_a1934484b35c8382bc4b22a379543d544}\index{UI.h@{UI.h}!ctUISetColor@{ctUISetColor}}
+\index{ctUISetColor@{ctUISetColor}!UI.h@{UI.h}}
+\doxysubsubsection{\texorpdfstring{ctUISetColor()}{ctUISetColor()}}
+{\footnotesize\ttfamily \label{_u_i_8h_a1934484b35c8382bc4b22a379543d544} 
+void ct\+UISet\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}}]{ctx}{, }\item[{\mbox{\hyperlink{structct_color_r_g_b_a8}{ct\+Color\+RGBA8}}}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Set the color to tint the upcoming rect. 
+
+\begin{DoxyNote}{Note}
+call after ct\+UISet\+Blend\+Mode to ensure correct settings 
+\end{DoxyNote}
+\Hypertarget{_u_i_8h_a584bd7bd87fe7b6037bf28893091ad7e}\index{UI.h@{UI.h}!ctUIDrawLargeSprite@{ctUIDrawLargeSprite}}
+\index{ctUIDrawLargeSprite@{ctUIDrawLargeSprite}!UI.h@{UI.h}}
+\doxysubsubsection{\texorpdfstring{ctUIDrawLargeSprite()}{ctUIDrawLargeSprite()}}
+{\footnotesize\ttfamily \label{_u_i_8h_a584bd7bd87fe7b6037bf28893091ad7e} 
+void ct\+UIDraw\+Large\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}}]{ctx}{, }\item[{sprite\+\_\+t \texorpdfstring{$\ast$}{*}}]{sprite}{, }\item[{const ct\+Rect}]{rect}{}\end{DoxyParamCaption})}
+
+
+
+Draw a whole sprite consisting of multiple tiles to the output. 
+
+This does not support blend modes and is an expensive operation avoid for small icons and use for only large elements like logos, or backgrounds. Use multiple calls to ct\+UIDraw\+Rect with mirroring/stretching if feasible \Hypertarget{_u_i_8h_a55bd4fe61102d619b0e926b1317e3f73}\index{UI.h@{UI.h}!ctUIDrawText@{ctUIDrawText}}
+\index{ctUIDrawText@{ctUIDrawText}!UI.h@{UI.h}}
+\doxysubsubsection{\texorpdfstring{ctUIDrawText()}{ctUIDrawText()}}
+{\footnotesize\ttfamily \label{_u_i_8h_a55bd4fe61102d619b0e926b1317e3f73} 
+ct\+Vec2 ct\+UIDraw\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}}]{ctx}{, }\item[{const ct\+Vec2}]{position}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{format}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+
+
+Draw text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & follows printf spec but uses rdpq\+\_\+text specific formatting features. You can set fonts with \$xx and styles with \texorpdfstring{$^\wedge$}{\string^}xx where "{}xx"{} is the hexidecimal of the font or style index. To use stray \$ or \texorpdfstring{$^\wedge$}{\string^} use \$\$ and \texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^} respectively (see rdpq\+\_\+text\+\_\+printn) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+position of the bottom right corner of the text 
+\end{DoxyReturn}
+\Hypertarget{_u_i_8h_a77fae66eb7f7efd95bb7b4b15bccc3f3}\index{UI.h@{UI.h}!ctUIDrawTextBox@{ctUIDrawTextBox}}
+\index{ctUIDrawTextBox@{ctUIDrawTextBox}!UI.h@{UI.h}}
+\doxysubsubsection{\texorpdfstring{ctUIDrawTextBox()}{ctUIDrawTextBox()}}
+{\footnotesize\ttfamily \label{_u_i_8h_a77fae66eb7f7efd95bb7b4b15bccc3f3} 
+void ct\+UIDraw\+Text\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structct_u_i_context}{ct\+UIContext}} \texorpdfstring{$\ast$}{*}}]{ctx}{, }\item[{const ct\+Rect}]{rect}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{format}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+
+
+Draw a text box. 
+
+Similar to ct\+UIDraw\+Text but supports drawing to a region Avoid using if you can just use ct\+UIDraw\+Text as this is much more expensive and meant for multi-\/line dialogue boxes \Hypertarget{_u_i_8h_abaddd80da65914a3edd1b6865a0fbe2a}\index{UI.h@{UI.h}!ctUILayoutVertical@{ctUILayoutVertical}}
+\index{ctUILayoutVertical@{ctUILayoutVertical}!UI.h@{UI.h}}
+\doxysubsubsection{\texorpdfstring{ctUILayoutVertical()}{ctUILayoutVertical()}}
+{\footnotesize\ttfamily \label{_u_i_8h_abaddd80da65914a3edd1b6865a0fbe2a} 
+\mbox{\hyperlink{structct_u_i_layout}{ct\+UILayout}} ct\+UILayout\+Vertical (\begin{DoxyParamCaption}\item[{const ct\+Rect}]{rect}{, }\item[{float}]{spacing}{}\end{DoxyParamCaption})}
+
+
+
+Do a layout vertically. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spacing} & amount of spacing between elements (0\+: use next dimensions) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_u_i_8h_a6f339af057054e8fcc76e68483973baf}\index{UI.h@{UI.h}!ctUILayoutHorizontal@{ctUILayoutHorizontal}}
+\index{ctUILayoutHorizontal@{ctUILayoutHorizontal}!UI.h@{UI.h}}
+\doxysubsubsection{\texorpdfstring{ctUILayoutHorizontal()}{ctUILayoutHorizontal()}}
+{\footnotesize\ttfamily \label{_u_i_8h_a6f339af057054e8fcc76e68483973baf} 
+\mbox{\hyperlink{structct_u_i_layout}{ct\+UILayout}} ct\+UILayout\+Horizontal (\begin{DoxyParamCaption}\item[{const ct\+Rect}]{rect}{, }\item[{float}]{spacing}{}\end{DoxyParamCaption})}
+
+
+
+Do a layout sideways. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spacing} & amount of spacing between elements (0\+: use next dimensions) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_u_i_8h_a607c504a44158b10e0d414e1c2eca2c6}\index{UI.h@{UI.h}!ctUILayoutGrid@{ctUILayoutGrid}}
+\index{ctUILayoutGrid@{ctUILayoutGrid}!UI.h@{UI.h}}
+\doxysubsubsection{\texorpdfstring{ctUILayoutGrid()}{ctUILayoutGrid()}}
+{\footnotesize\ttfamily \label{_u_i_8h_a607c504a44158b10e0d414e1c2eca2c6} 
+\mbox{\hyperlink{structct_u_i_layout}{ct\+UILayout}} ct\+UILayout\+Grid (\begin{DoxyParamCaption}\item[{const ct\+Rect}]{rect}{, }\item[{uint16\+\_\+t}]{columns}{, }\item[{float}]{spacingX}{, }\item[{float}]{spacingY}{}\end{DoxyParamCaption})}
+
+
+
+Do a layout in a row/column manner. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em columns} & amount of columns per rowm \\
+\hline
+{\em spacingX} & amount of X spacing between elements (0\+: use next dimensions) \\
+\hline
+{\em spacingY} & amount of Y spacing between elements (0\+: use next dimensions) \\
+\hline
+\end{DoxyParams}

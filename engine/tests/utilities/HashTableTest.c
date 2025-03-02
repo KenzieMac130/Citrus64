@@ -6,6 +6,7 @@
 #include "codegen/engine/tests/utilities/HashTableTest.c.gen.h"
 
 #define KEY_COUNT 29
+#define KEY_RM    4
 
 void ctUnitTestHashTable() {
    ctHashTableKey keys[KEY_COUNT];
@@ -20,19 +21,21 @@ void ctUnitTestHashTable() {
       values[idx] = i;
    }
 
-   ctUnitTestAssert(ctHashTableRemove(&table, 20, &idx) == CT_SUCCESS);
-   ctUnitTestAssert(values[idx] == 20); /* expected at this slot */
+   ctUnitTestAssert(ctHashTableRemove(&table, KEY_RM, &idx) == CT_SUCCESS);
+   ctUnitTestAssert(values[idx] == KEY_RM); /* expected at this slot */
    ctUnitTestAssert(ctHashTableInsert(&table, 67009, &idx) == CT_SUCCESS);
-   ctUnitTestAssert(values[idx] == 20); /* expected at this slot */
+   ctUnitTestAssert(values[idx] == KEY_RM); /* expected at this slot */
    values[idx] = 67009;
    ctUnitTestAssert(ctHashTableExists(&table, 67009));
-   // ctUnitTestAssert(values[ctHashTableFindIdx(&table, 67009)] == 67009);
+   ctHashTableFindIdx(&table, 67009, &idx);
+   ctUnitTestAssert(values[idx] == 67009);
    for (int i = 0; i < 3; i++) {
       ctHashTableRemove(&table, KEY_COUNT - 1 - i, NULL);
    }
    ctHashTableFindIdx(&table, 67009, &idx);
    values[idx] = 3020000;
-   // ctUnitTestAssert(values[ctHashTableFindIdx(&table, 67009)] == 3020000);
+   ctHashTableFindIdx(&table, 67009, &idx);
+   ctUnitTestAssert(values[idx] == 3020000);
 
    for (int i = 11; i < 17; i++) {
       ctHashTableRemove(&table, i, NULL);
@@ -43,7 +46,8 @@ void ctUnitTestHashTable() {
    ctUnitTestAssert(ctHashTableExists(&table, 47844847));
    ctHashTableFindIdx(&table, 47844847, &idx);
    values[idx] = 478448455;
-   // ctUnitTestAssert(values[ctHashTableFindIdx(&table, 47844847)] == 478448455);
+   ctHashTableFindIdx(&table, 47844847, &idx);
+   ctUnitTestAssert(values[idx] == 478448455);
 
    for (uint32_t i = 0; i < KEY_COUNT; i++) {
       // ctDebugLog("H:%u V:%u L:%hu N:%hu", keys[i].hash, values[i], keys[i].last,

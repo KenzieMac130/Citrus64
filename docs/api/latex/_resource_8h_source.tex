@@ -16,28 +16,26 @@
 \DoxyCodeLine{00017\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a827755af8a76d7d99b1d3cd4b1df2f39}{CT\_RESOURCE\_SCRIPT}},\ \ \ \ \ \ }
 \DoxyCodeLine{00018\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460}{CT\_RESOURCE\_TRANSLATION}},\ }
 \DoxyCodeLine{00019\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a33a29c71f6ae654d1aca927112aa0e8e}{CT\_RESOURCE\_SPRITE}},\ \ \ \ \ \ }
-\DoxyCodeLine{00020\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38}{CT\_RESOURCE\_MODEL}},\ \ \ \ \ \ \ }
-\DoxyCodeLine{00021\ \}\ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ctResourceType}};}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ CT\_RESOURCE\_HANDLE\_INVALID\ UINT16\_MAX}}
-\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ uint16\_t\ ctResourceHandle;}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00027\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ctResourceType}}\ type;}
-\DoxyCodeLine{00028\ \ \ \ \textcolor{keywordtype}{int}\ size;}
-\DoxyCodeLine{00029\ \ \ \ \textcolor{keywordtype}{void}*\ data;}
-\DoxyCodeLine{00030\ \ \ \ \textcolor{keywordtype}{void}*\ object;}
-\DoxyCodeLine{00031\ \}\ ctResource;}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ ctResource*\ ctResourceHandleGet(ctResourceHandle\ handle);}
+\DoxyCodeLine{00020\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041afab3abe304339f2a51ab0746933b8feb}{CT\_RESOURCE\_FONT}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38}{CT\_RESOURCE\_MODEL}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \}\ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ctResourceType}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ CT\_RESOURCE\_HANDLE\_INVALID\ UINT16\_MAX}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ uint16\_t\ ctResourceHandle;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ ctResourceManagerStartup();}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ ctResourceManagerShutdown();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}}
+\DoxyCodeLine{00032\ \mbox{\hyperlink{_resource_8h_a40ac87074c3dc1f6d77d259a1d78bc7f}{ctResourceGetOrLoad}}(ctResourceHandle*\ out,\ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ctResourceType}}\ type,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ path);}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ ctResourceRelease(ctResourceHandle\ resource);}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ ctResourceManagerStartup();}
-\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ ctResourceManagerShutdown();}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}}
-\DoxyCodeLine{00039\ ctResourceGetOrLoad(ctResourceHandle*\ out,\ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ctResourceType}}\ type,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ path);}
-\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ ctResourceRelease(ctResourceHandle\ resource);}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ ctResourceManagerGarbageCollect();}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ ctResourceManagerGarbageCollect();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{bool}\ ctPathExists(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ path);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_resource_8h_a3d13c005995e8b57f427e73ee238a5d5}{ctResourceGetSymbol}}(ctResourceHandle\ handle,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ symbol,\ \textcolor{keywordtype}{void}**\ out);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{int}\ ctResourceGetFont(ctResourceHandle\ handle);}
+\DoxyCodeLine{00041\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ctResourceGetTextHashed(ctResourceHandle\ handle,\ uint32\_t\ hash);}
 
 \end{DoxyCode}

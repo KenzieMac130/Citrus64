@@ -30,7 +30,7 @@ var _common_8h =
       [ "CT_FAILURE_COULD_NOT_SHRINK", "_common_8h.html#a4c2ef51e097a480311ca51322ef203caa6b77fa34cb725c898dc3d3a240236104", null ],
       [ "CT_FAILURE_CORRUPTED_CONTENTS", "_common_8h.html#a4c2ef51e097a480311ca51322ef203caabe9df977a886f5a8993bf65c5180a154", null ],
       [ "CT_FAILURE_DEPENDENCY_NOT_MET", "_common_8h.html#a4c2ef51e097a480311ca51322ef203caaf5615b065b970c629ad5b272c5a73039", null ],
-      [ "CT_FAILURE_MODULE_NOT_INITIALIZED", "_common_8h.html#a4c2ef51e097a480311ca51322ef203caa0f617bd6cb43a90bec0c6d83958ae096", null ],
+      [ "CT_FAILURE_NOT_INITIALIZED", "_common_8h.html#a4c2ef51e097a480311ca51322ef203caaed86a7b72c10148881321d3abb4a8147", null ],
       [ "CT_FAILURE_NOT_FOUND", "_common_8h.html#a4c2ef51e097a480311ca51322ef203caa3b8564473690be91147cf88debf1aaed", null ],
       [ "CT_FAILURE_SYNTAX_ERROR", "_common_8h.html#a4c2ef51e097a480311ca51322ef203caabbfc5910da68c0c813447fd1dc44bf51", null ],
       [ "CT_FAILURE_RUNTIME_ERROR", "_common_8h.html#a4c2ef51e097a480311ca51322ef203caa110c6cc5ccb4f8e656b7ad4420e7dfba", null ],

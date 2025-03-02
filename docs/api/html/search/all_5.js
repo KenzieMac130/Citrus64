@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['hash_2eh_0',['Hash.h',['../_hash_8h.html',1,'']]],
-  ['hashtable_2eh_1',['HashTable.h',['../_hash_table_8h.html',1,'']]]
+  ['logging_2eh_0',['Logging.h',['../_logging_8h.html',1,'']]]
 ];

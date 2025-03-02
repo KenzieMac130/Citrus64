@@ -1,11 +1,22 @@
 \doxysection{Resource\+Internal.\+h}
 \hypertarget{_resource_internal_8h_source}{}\label{_resource_internal_8h_source}\index{ResourceInternal.h@{ResourceInternal.h}}
-\mbox{\hyperlink{_resource_internal_8h}{Go to the documentation of this file.}}
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{/*\ By\ Kenzie\ Wright\ -\/\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_resource_8h}{Resource.h}}"{}}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}codegen/engine/resource/ResourceInternal.h.gen.h"{}}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_resource_8h}{Resource.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00010\ \ \ \ \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ctResourceType}}\ type;}
+\DoxyCodeLine{00011\ \ \ \ \textcolor{keywordtype}{int}\ size;}
+\DoxyCodeLine{00012\ \ \ \ \textcolor{keywordtype}{void}*\ data;}
+\DoxyCodeLine{00013\ \ \ \ \textcolor{keywordtype}{void}*\ object;}
+\DoxyCodeLine{00014\ \}\ ctResource;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ ctResource*\ ctResourceHandleGet(ctResourceHandle\ handle);}
 
 \end{DoxyCode}

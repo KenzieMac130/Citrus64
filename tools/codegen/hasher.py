@@ -18,10 +18,10 @@ def generate_hashes(contents: str) -> str:
         while contents[str_end - 1] == '\\':
             str_end = contents.find('"', str_end) + 1
 
+        next_found = contents.find("CT_XXH32_STRING(", next_found)
+        
         str_contents = bytes(
             contents[str_begin:str_end], encoding="utf-8").decode("unicode-escape")
         value = xxhash.xxh32(str_contents, 0).hexdigest()
-        result += f"#ifndef __CT_COMPILED_HASH_{identifier}\n#define __CT_COMPILED_HASH_{identifier} 0x{value}\n#endif\n"
-
-        next_found = contents.find("CT_XXH32_STRING(", next_found)
+        result += f"#define {identifier} 0x{value}\n"
     return result

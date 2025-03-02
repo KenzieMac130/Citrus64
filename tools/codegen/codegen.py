@@ -4,6 +4,7 @@ from pathlib import Path
 import os.path
 
 from . import Hasher
+from . import Translation
 
 
 def get_dst_path(src_path: Path, input_path: Path, output_path: Path):
@@ -41,6 +42,8 @@ def generate_file(src_path: Path, dst_path: Path):
     check_for_gen_include(in_text, src_path, dst_path)
     if "Hash.h" not in str(src_path):  # avoid including macro definition
         out_text += Hasher.generate_hashes(in_text)
+    if "Translation.h" not in str(src_path):  # avoid including macro definition
+        out_text += Translation.generate_translation(in_text)
     dst_path.write_text(out_text)
 
 

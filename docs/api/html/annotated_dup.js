@@ -7,5 +7,7 @@ var annotated_dup =
     [ "ctQuat", "structct_quat.html", null ],
     [ "ctRandomGenerator", "structct_random_generator.html", null ],
     [ "ctStopwatch", "structct_stopwatch.html", null ],
+    [ "ctUIContext", "structct_u_i_context.html", null ],
+    [ "ctUILayout", "structct_u_i_layout.html", "structct_u_i_layout" ],
     [ "ctVec3", "structct_vec3.html", null ]
 ];

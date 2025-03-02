@@ -68,7 +68,10 @@ def build(args):
     Codegen.generate_code_recursive(Path("game").resolve(), Path("build/codegen/game").resolve())
     generate_build_config(args)
     subprocess.run([sys.executable, 'waf'], cwd=Path("assets").resolve(), shell=True)
-    subprocess.run(['libdragon', 'make'], shell=True)
+    build_args = []
+    if args.config == "debug":
+        build_args.append("D=1")
+    subprocess.run(['libdragon', 'make'] + build_args, shell=True)
 
 def main():
     parser = argparse.ArgumentParser()
@@ -76,17 +79,18 @@ def main():
     parser.add_argument('--clean', help="delete the build directory", action='store_true')
     parser.add_argument('-b', '--build', help="build the project", action='store_true')
     dhelp = parser.add_argument_group("build options", "Pass these to --build/-b to help with debugging")
+    dhelp.add_argument('-c', '--config', help="(debug/release)", default="debug", type=str)
     dhelp.add_argument('-t', '--test', help="run unit tests", action='store_true')
     dhelp.add_argument('-w', '--wait', help="wait for user input", action='store_true')
     dhelp.add_argument('-d', '--define', default="", nargs="*", help="list of C defines", type=str)
     dhelp.add_argument('-a', '--asset', default="", help="name of asset to preview", type=str)
     dhelp.add_argument('-l', '--level', default="", help="starter level name", type=str)
-    dhelp.add_argument('-c', '--checkpoint', default=None, help="starter checkpoint name", type=int)
-    dhelp.add_argument('-p', '--position', nargs=3, default=None, help="starter position (meters XYZ)", type=float)
-    dhelp.add_argument('-r', '--rotation', nargs=3, default=None, help="starter rotation (degrees euler XYZ)", type=float)
+    dhelp.add_argument('--checkpoint', default=None, help="starter checkpoint name", type=int)
+    dhelp.add_argument('--position', nargs=3, default=None, help="starter position (meters XYZ)", type=float)
+    dhelp.add_argument('--rotation', nargs=3, default=None, help="starter rotation (degrees euler XYZ)", type=float)
     dhelp.add_argument('--gfx', default=None, help="(0:ultra performance, 1:performance, 2:quality, 3:ultra quality)", type=int)
     dhelp.add_argument('--spkr', default=None, help="(0:mono, 1:stereo, 2:heaphones, 3:surround)", type=int)
-    dhelp.add_argument('-m', '--mute', help="mute game", action='store_true')
+    dhelp.add_argument('--mute', help="mute game", action='store_true')
     args = parser.parse_args()
     if args.clean:
         clean()

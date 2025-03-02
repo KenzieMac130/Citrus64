@@ -8,82 +8,84 @@
 \DoxyCodeLine{00008\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_resource_8h}{engine/resource/Resource.h}}"{}}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00012\ \ \ \ \mbox{\hyperlink{structct_quat}{ctQuat}}\ rotation;}
-\DoxyCodeLine{00013\ \ \ \ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ scale;}
-\DoxyCodeLine{00014\ \}\ ctComponentRotationScale;}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00017\ \ \ \ ctEntity\ parent;}
-\DoxyCodeLine{00018\ \ \ \ ctEntity\ firstChild;}
-\DoxyCodeLine{00019\ \ \ \ ctEntity\ nextSibling;}
-\DoxyCodeLine{00020\ \}\ ctComponentRelationship;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00023\ \ \ \ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ positionCache;}
-\DoxyCodeLine{00024\ \ \ \ uint32\_t\ data;}
-\DoxyCodeLine{00025\ \}\ ctComponentHitShape;}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00028\ \ \ \ ctResourceHandle\ model;}
-\DoxyCodeLine{00029\ \ \ \ uint32\_t\ flags;}
-\DoxyCodeLine{00030\ \}\ ctComponentModel;}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00033\ \ \ \ \textcolor{keywordtype}{void}*\ skeleton;}
-\DoxyCodeLine{00034\ \}\ ctComponentSkeleton;}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00037\ \ \ \ \textcolor{keywordtype}{void}*\ animationSimple;}
-\DoxyCodeLine{00038\ \}\ ctComponentAnimation;}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00041\ \ \ \ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ position;}
-\DoxyCodeLine{00042\ \ \ \ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ normal;}
-\DoxyCodeLine{00043\ \}\ ctComponentGroundPlane;}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00046\ \ \ \ ctResourceHandle*\ script;}
-\DoxyCodeLine{00047\ \ \ \ \textcolor{keywordtype}{float}\ timer;}
-\DoxyCodeLine{00048\ \ \ \ \mbox{\hyperlink{structct_color_r_g_b_a8}{ctColorRGBA8}}\ color;}
-\DoxyCodeLine{00049\ \}\ ctComponentEffect;}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00052\ \ \ \ \textcolor{keywordtype}{void}*\ displayList;}
-\DoxyCodeLine{00053\ \ \ \ uint32\_t\ flags;}
-\DoxyCodeLine{00054\ \}\ ctComponentRenderer;}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ CT\_DECLARE\_ECS\_FLAGS(PositionDirty);}
-\DoxyCodeLine{00057\ CT\_DECLARE\_COMPONENT(Position,\ \mbox{\hyperlink{structct_vec3}{ctVec3}});}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ CT\_DECLARE\_ECS\_FLAGS(RotationScaleDirty);}
-\DoxyCodeLine{00060\ CT\_DECLARE\_COMPONENT(RotationScale,\ ctComponentRotationScale);}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ CT\_DECLARE\_ECS\_FLAGS(RenderInterpolate);}
-\DoxyCodeLine{00063\ CT\_DECLARE\_COMPONENT(LastPosition,\ \mbox{\hyperlink{structct_vec3}{ctVec3}});}
-\DoxyCodeLine{00064\ CT\_DECLARE\_COMPONENT(LastRotationScale,\ ctComponentRotationScale);}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ CT\_DECLARE\_COMPONENT(HitShape,\ ctComponentHitShape);}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}codegen/engine/scene/BuiltinComponents.h.gen.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00014\ \ \ \ \mbox{\hyperlink{structct_quat}{ctQuat}}\ rotation;}
+\DoxyCodeLine{00015\ \ \ \ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ scale;}
+\DoxyCodeLine{00016\ \}\ ctComponentRotationScale;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00019\ \ \ \ ctEntity\ parent;}
+\DoxyCodeLine{00020\ \ \ \ ctEntity\ firstChild;}
+\DoxyCodeLine{00021\ \ \ \ ctEntity\ nextSibling;}
+\DoxyCodeLine{00022\ \}\ ctComponentRelationship;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ positionCache;}
+\DoxyCodeLine{00026\ \ \ \ uint32\_t\ data;}
+\DoxyCodeLine{00027\ \}\ ctComponentHitShape;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00030\ \ \ \ ctResourceHandle\ model;}
+\DoxyCodeLine{00031\ \ \ \ uint32\_t\ flags;}
+\DoxyCodeLine{00032\ \}\ ctComponentModel;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00035\ \ \ \ \textcolor{keywordtype}{void}*\ skeleton;}
+\DoxyCodeLine{00036\ \}\ ctComponentSkeleton;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00039\ \ \ \ \textcolor{keywordtype}{void}*\ animationSimple;}
+\DoxyCodeLine{00040\ \}\ ctComponentAnimation;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00043\ \ \ \ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ position;}
+\DoxyCodeLine{00044\ \ \ \ \mbox{\hyperlink{structct_vec3}{ctVec3}}\ normal;}
+\DoxyCodeLine{00045\ \}\ ctComponentGroundPlane;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00048\ \ \ \ ctResourceHandle*\ script;}
+\DoxyCodeLine{00049\ \ \ \ \textcolor{keywordtype}{float}\ timer;}
+\DoxyCodeLine{00050\ \ \ \ \mbox{\hyperlink{structct_color_r_g_b_a8}{ctColorRGBA8}}\ color;}
+\DoxyCodeLine{00051\ \}\ ctComponentEffect;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00054\ \ \ \ \textcolor{keywordtype}{void}*\ displayList;}
+\DoxyCodeLine{00055\ \ \ \ uint32\_t\ flags;}
+\DoxyCodeLine{00056\ \}\ ctComponentRenderer;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ CT\_DECLARE\_ECS\_FLAGS(PositionDirty);}
+\DoxyCodeLine{00059\ CT\_DECLARE\_COMPONENT(Position,\ \mbox{\hyperlink{structct_vec3}{ctVec3}});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ CT\_DECLARE\_ECS\_FLAGS(RotationScaleDirty);}
+\DoxyCodeLine{00062\ CT\_DECLARE\_COMPONENT(RotationScale,\ ctComponentRotationScale);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ CT\_DECLARE\_ECS\_FLAGS(RenderInterpolate);}
+\DoxyCodeLine{00065\ CT\_DECLARE\_COMPONENT(LastPosition,\ \mbox{\hyperlink{structct_vec3}{ctVec3}});}
+\DoxyCodeLine{00066\ CT\_DECLARE\_COMPONENT(LastRotationScale,\ ctComponentRotationScale);}
 \DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ CT\_DECLARE\_COMPONENT(RenderMatrix,\ \textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{00068\ CT\_DECLARE\_COMPONENT(HitShape,\ ctComponentHitShape);}
 \DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ CT\_DECLARE\_COMPONENT(Renderer,\ ctComponentRenderer);}
+\DoxyCodeLine{00070\ CT\_DECLARE\_COMPONENT(RenderMatrix,\ \textcolor{keywordtype}{void}*);}
 \DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ CT\_DECLARE\_ECS\_FLAGS(ModelUpdate);}
-\DoxyCodeLine{00073\ CT\_DECLARE\_COMPONENT(Model,\ ctComponentModel);}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ CT\_DECLARE\_ECS\_FLAGS(GroundPlaneUpdate);}
-\DoxyCodeLine{00076\ CT\_DECLARE\_COMPONENT(GroundPlane,\ ctComponentGroundPlane);}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ CT\_DECLARE\_COMPONENT(Effect,\ ctComponentEffect);}
+\DoxyCodeLine{00072\ CT\_DECLARE\_COMPONENT(Renderer,\ ctComponentRenderer);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ CT\_DECLARE\_ECS\_FLAGS(ModelUpdate);}
+\DoxyCodeLine{00075\ CT\_DECLARE\_COMPONENT(Model,\ ctComponentModel);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ CT\_DECLARE\_ECS\_FLAGS(GroundPlaneUpdate);}
+\DoxyCodeLine{00078\ CT\_DECLARE\_COMPONENT(GroundPlane,\ ctComponentGroundPlane);}
 \DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ CT\_DECLARE\_ECS\_FLAGS(LoadManaged);}
-\DoxyCodeLine{00081\ CT\_DECLARE\_COMPONENT(LoadPriority,\ int8\_t);}
-\DoxyCodeLine{00082\ CT\_DECLARE\_COMPONENT(Relationship,\ ctComponentRelationship);}
-\DoxyCodeLine{00083\ CT\_DECLARE\_COMPONENT(SpawnerIndex,\ uint16\_t);}
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00085\ CT\_DECLARE\_COMPONENT(AudioHandle,\ uint16\_t);}
-\DoxyCodeLine{00086\ CT\_DECLARE\_COMPONENT(MeshCollisionHandle,\ uint16\_t);}
-\DoxyCodeLine{00087\ CT\_DECLARE\_COMPONENT(ZoneHandle,\ uint16\_t);}
+\DoxyCodeLine{00080\ CT\_DECLARE\_COMPONENT(Effect,\ ctComponentEffect);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ CT\_DECLARE\_ECS\_FLAGS(LoadManaged);}
+\DoxyCodeLine{00083\ CT\_DECLARE\_COMPONENT(LoadPriority,\ int8\_t);}
+\DoxyCodeLine{00084\ CT\_DECLARE\_COMPONENT(Relationship,\ ctComponentRelationship);}
+\DoxyCodeLine{00085\ CT\_DECLARE\_COMPONENT(SpawnerIndex,\ uint16\_t);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ CT\_DECLARE\_COMPONENT(AudioHandle,\ uint16\_t);}
+\DoxyCodeLine{00088\ CT\_DECLARE\_COMPONENT(MeshCollisionHandle,\ uint16\_t);}
+\DoxyCodeLine{00089\ CT\_DECLARE\_COMPONENT(ZoneHandle,\ uint16\_t);}
 
 \end{DoxyCode}

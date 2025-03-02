@@ -6,32 +6,34 @@ Translate text into other languages.
 
 
 {\ttfamily \#include "{}engine/utilities/\+Utilities.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/core/\+Translation.\+h.\+gen.\+h"{}}\newline
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{_translation_8h_adf36373db7e0a3923ea1da2dfe09f2a8}{ct\+Get\+Text}}(\+\_\+identifier)
-\begin{DoxyCompactList}\small\item\em Get the translated text for the user\textquotesingle{}s language. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\#define \mbox{\hyperlink{_translation_8h_a5566529df9ab92330c2be6231a90872b}{CT\+\_\+\+TEXT}}(\+\_\+msgid)
+\begin{DoxyCompactList}\small\item\em Quickly get translated text using a message id. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{_translation_8h_a586b4603955365a2d616cb6a5fdd900d}\label{_translation_8h_a586b4603955365a2d616cb6a5fdd900d} 
-const char \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+ct\+Get\+Text} (uint32\+\_\+t hash, const char \texorpdfstring{$\ast$}{*}native\+Text)
-\begin{DoxyCompactList}\small\item\em see \doxylink{_translation_8h_adf36373db7e0a3923ea1da2dfe09f2a8}{ct\+Get\+Text()} for the user API \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} \mbox{\hyperlink{_translation_8h_a0d9e257fdffbbd6439be797970d522fc}{ct\+Translation\+Set\+Bank}} (uint32\+\_\+t bank\+Index, const char \texorpdfstring{$\ast$}{*}base\+Path)
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_translation_8h_a81a1cab3fb977af66a0a5c66bc457ba1}{ct\+Get\+Text}} (const char \texorpdfstring{$\ast$}{*}identifier)
+\begin{DoxyCompactList}\small\item\em Get the translated text for the user\textquotesingle{}s language. \end{DoxyCompactList}\item 
+\Hypertarget{_translation_8h_a4f81a7dbe750a3fbdc01de98d52cc289}\label{_translation_8h_a4f81a7dbe750a3fbdc01de98d52cc289} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries ct\+Get\+Text\+Hashed} (uint32\+\_\+t hash)
+\begin{DoxyCompactList}\small\item\em Similar to \doxylink{_translation_8h_a81a1cab3fb977af66a0a5c66bc457ba1}{ct\+Get\+Text()} but faster using results of CT\+\_\+\+XXH32\+\_\+\+STRING. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_translation_8h_a108b95295be3ec082b3a86ef876d8cc7}{ct\+Translation\+Set\+Bank}} (uint32\+\_\+t bank\+Index, const char \texorpdfstring{$\ast$}{*}base\+Path)
 \begin{DoxyCompactList}\small\item\em Set the base path of the translations to be loaded next frame. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} \mbox{\hyperlink{_translation_8h_a82fcd214595e2b64c198df18f11fe1ae}{ct\+Translation\+Set\+Language}} (const char \texorpdfstring{$\ast$}{*}iso\+Code)
+void \mbox{\hyperlink{_translation_8h_a6821aca51909c9ac385fcc990fa53faf}{ct\+Translation\+Set\+Language}} (const char \texorpdfstring{$\ast$}{*}iso\+Code)
 \begin{DoxyCompactList}\small\item\em Set the target language to be loaded next game update. \end{DoxyCompactList}\item 
 \Hypertarget{_translation_8h_a8b8b8d3340e6dc1f7fab9a3875a34c6f}\label{_translation_8h_a8b8b8d3340e6dc1f7fab9a3875a34c6f} 
 const char \texorpdfstring{$\ast$}{*} {\bfseries ct\+Translation\+Get\+Language} ()
 \begin{DoxyCompactList}\small\item\em Get the actively loaded language. \end{DoxyCompactList}\item 
-\Hypertarget{_translation_8h_a14047b71a28c5d9fe044d77eb4fd80c5}\label{_translation_8h_a14047b71a28c5d9fe044d77eb4fd80c5} 
-\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+Translation\+Startup} ()
+void \mbox{\hyperlink{_translation_8h_a75b1c5add7694b3a947f5eaadd6af738}{ct\+Translation\+Update}} ()
+\begin{DoxyCompactList}\small\item\em Update the translation system. \end{DoxyCompactList}\item 
+\Hypertarget{_translation_8h_a1d44be7870716bc5cb5c02d35724d167}\label{_translation_8h_a1d44be7870716bc5cb5c02d35724d167} 
+void {\bfseries ct\+Translation\+Startup} ()
 \item 
-\Hypertarget{_translation_8h_abb2228ef2cbc6de6a4c6b14bb949cdbe}\label{_translation_8h_abb2228ef2cbc6de6a4c6b14bb949cdbe} 
-\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+Translation\+Update} ()
-\item 
-\Hypertarget{_translation_8h_a67b93429e43c26daa705e15120365c71}\label{_translation_8h_a67b93429e43c26daa705e15120365c71} 
-\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+Translation\+Shutdown} ()
+\Hypertarget{_translation_8h_a35a5954683d3d83d726c4f496584961a}\label{_translation_8h_a35a5954683d3d83d726c4f496584961a} 
+void {\bfseries ct\+Translation\+Shutdown} ()
 \end{DoxyCompactItemize}
 
 
@@ -41,17 +43,35 @@ Translate text into other languages.
 
 
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{_translation_8h_adf36373db7e0a3923ea1da2dfe09f2a8}\index{Translation.h@{Translation.h}!ctGetText@{ctGetText}}
-\index{ctGetText@{ctGetText}!Translation.h@{Translation.h}}
-\doxysubsubsection{\texorpdfstring{ctGetText}{ctGetText}}
-{\footnotesize\ttfamily \label{_translation_8h_adf36373db7e0a3923ea1da2dfe09f2a8} 
-\#define ct\+Get\+Text(\begin{DoxyParamCaption}\item[{}]{\+\_\+identifier}{}\end{DoxyParamCaption})}
+\Hypertarget{_translation_8h_a5566529df9ab92330c2be6231a90872b}\index{Translation.h@{Translation.h}!CT\_TEXT@{CT\_TEXT}}
+\index{CT\_TEXT@{CT\_TEXT}!Translation.h@{Translation.h}}
+\doxysubsubsection{\texorpdfstring{CT\_TEXT}{CT\_TEXT}}
+{\footnotesize\ttfamily \label{_translation_8h_a5566529df9ab92330c2be6231a90872b} 
+\#define CT\+\_\+\+TEXT(\begin{DoxyParamCaption}\item[{}]{\+\_\+msgid}{}\end{DoxyParamCaption})}
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\_\_CT\_COMPILED\_TRANSLATION\_LOOKUP\_\#\#\_tag}
+\DoxyCodeLine{\_\_CT\_MSGID\_GET\_TEXT\_\#\#\_msgid}
 
 \end{DoxyCode}
+
+
+Quickly get translated text using a message id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+msgid} & the id of the message using alnum and \+\_\+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_translation_8h_a81a1cab3fb977af66a0a5c66bc457ba1}\index{Translation.h@{Translation.h}!ctGetText@{ctGetText}}
+\index{ctGetText@{ctGetText}!Translation.h@{Translation.h}}
+\doxysubsubsection{\texorpdfstring{ctGetText()}{ctGetText()}}
+{\footnotesize\ttfamily \label{_translation_8h_a81a1cab3fb977af66a0a5c66bc457ba1} 
+const char \texorpdfstring{$\ast$}{*} ct\+Get\+Text (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{identifier}{}\end{DoxyParamCaption})}
+
 
 
 Get the translated text for the user\textquotesingle{}s language. 
@@ -59,14 +79,11 @@ Get the translated text for the user\textquotesingle{}s language.
 \begin{DoxyWarning}{Warning}
 results may be invalid eventually, use immediately or make a copy 
 \end{DoxyWarning}
-
-
-\doxysubsection{Function Documentation}
-\Hypertarget{_translation_8h_a0d9e257fdffbbd6439be797970d522fc}\index{Translation.h@{Translation.h}!ctTranslationSetBank@{ctTranslationSetBank}}
+\Hypertarget{_translation_8h_a108b95295be3ec082b3a86ef876d8cc7}\index{Translation.h@{Translation.h}!ctTranslationSetBank@{ctTranslationSetBank}}
 \index{ctTranslationSetBank@{ctTranslationSetBank}!Translation.h@{Translation.h}}
 \doxysubsubsection{\texorpdfstring{ctTranslationSetBank()}{ctTranslationSetBank()}}
-{\footnotesize\ttfamily \label{_translation_8h_a0d9e257fdffbbd6439be797970d522fc} 
-\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} ct\+Translation\+Set\+Bank (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{bank\+Index}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{base\+Path}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{_translation_8h_a108b95295be3ec082b3a86ef876d8cc7} 
+void ct\+Translation\+Set\+Bank (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{bank\+Index}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{base\+Path}{}\end{DoxyParamCaption})}
 
 
 
@@ -77,11 +94,11 @@ Set the base path of the translations to be loaded next frame.
 {\em base\+Path} & is expected to contain mo files for each language \\
 \hline
 \end{DoxyParams}
-\Hypertarget{_translation_8h_a82fcd214595e2b64c198df18f11fe1ae}\index{Translation.h@{Translation.h}!ctTranslationSetLanguage@{ctTranslationSetLanguage}}
+\Hypertarget{_translation_8h_a6821aca51909c9ac385fcc990fa53faf}\index{Translation.h@{Translation.h}!ctTranslationSetLanguage@{ctTranslationSetLanguage}}
 \index{ctTranslationSetLanguage@{ctTranslationSetLanguage}!Translation.h@{Translation.h}}
 \doxysubsubsection{\texorpdfstring{ctTranslationSetLanguage()}{ctTranslationSetLanguage()}}
-{\footnotesize\ttfamily \label{_translation_8h_a82fcd214595e2b64c198df18f11fe1ae} 
-\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} ct\+Translation\+Set\+Language (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{iso\+Code}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{_translation_8h_a6821aca51909c9ac385fcc990fa53faf} 
+void ct\+Translation\+Set\+Language (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{iso\+Code}{}\end{DoxyParamCaption})}
 
 
 
@@ -89,7 +106,19 @@ Set the target language to be loaded next game update.
 
 
 \begin{DoxyParams}{Parameters}
-{\em iso\+Code} & Format as follows\+: "{}(\+ISO 639-\/1)-\/(\+ISO 3166 A2)"{} (ex\+: "{}en-\/us"{})\\
+{\em iso\+Code} & lower case "{}(\+ISO 639-\/1)-\/(\+ISO 3166 A2)"{} (ex\+: "{}en-\/us"{})\\
 \hline
 \end{DoxyParams}
-The translation system will attempt to load the region specific mo file in the target language first, if this fails it will just look for the language. Full RFC 4646 is not supported. 
+The translation system will attempt to load the region specific mo file in the target language first, if this fails it will just look for the language. Full RFC 4646 is not supported. \Hypertarget{_translation_8h_a75b1c5add7694b3a947f5eaadd6af738}\index{Translation.h@{Translation.h}!ctTranslationUpdate@{ctTranslationUpdate}}
+\index{ctTranslationUpdate@{ctTranslationUpdate}!Translation.h@{Translation.h}}
+\doxysubsubsection{\texorpdfstring{ctTranslationUpdate()}{ctTranslationUpdate()}}
+{\footnotesize\ttfamily \label{_translation_8h_a75b1c5add7694b3a947f5eaadd6af738} 
+void ct\+Translation\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Update the translation system. 
+
+\begin{DoxyWarning}{Warning}
+Any pointers to strings will be instantly invalid 
+\end{DoxyWarning}

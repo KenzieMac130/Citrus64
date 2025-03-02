@@ -6,6 +6,7 @@ Translation file format \href{https://www.gnu.org/software/gettext/manual/html_n
 
 
 {\ttfamily \#include "{}engine/utilities/\+Utilities.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/formats/mo/\+MO.\+h.\+gen.\+h"{}}\newline
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,18 +19,18 @@ Translation file format \href{https://www.gnu.org/software/gettext/manual/html_n
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{_m_o_8h_aca77c9f28385683dedecc95ff660acef}\label{_m_o_8h_aca77c9f28385683dedecc95ff660acef} 
-\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+MOReader\+Alloc\+From\+File} (ct\+MOReader \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}reader\+Out, FILE \texorpdfstring{$\ast$}{*}fp, int file\+Size)
-\item 
+\Hypertarget{_m_o_8h_ac01359e1f96672494e623eab223f51aa}\label{_m_o_8h_ac01359e1f96672494e623eab223f51aa} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+MOReader\+Create} (ct\+MOReader \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}reader\+Out, void \texorpdfstring{$\ast$}{*}file\+Data, int file\+Size)
+\begin{DoxyCompactList}\small\item\em Create a MO file reader from a file of known size. \end{DoxyCompactList}\item 
 \Hypertarget{_m_o_8h_a07c02fa4b51f8b9713ecaebc24090653}\label{_m_o_8h_a07c02fa4b51f8b9713ecaebc24090653} 
 void {\bfseries ct\+MOReader\+Free} (ct\+MOReader \texorpdfstring{$\ast$}{*}reader)
-\item 
+\begin{DoxyCompactList}\small\item\em Free the MO file. \end{DoxyCompactList}\item 
 \Hypertarget{_m_o_8h_a97715486ba6f997d0516371cbdf2d1e4}\label{_m_o_8h_a97715486ba6f997d0516371cbdf2d1e4} 
 const char \texorpdfstring{$\ast$}{*} {\bfseries ct\+MOFind\+Translation} (ct\+MOReader \texorpdfstring{$\ast$}{*}reader, const char \texorpdfstring{$\ast$}{*}original)
-\item 
-\Hypertarget{_m_o_8h_a137e49ddcd67feb526c27caf696d83e8}\label{_m_o_8h_a137e49ddcd67feb526c27caf696d83e8} 
-const char \texorpdfstring{$\ast$}{*} {\bfseries ct\+MOFind\+Translation\+Hashed} (ct\+MOReader \texorpdfstring{$\ast$}{*}reader, uint32\+\_\+t hash, const char \texorpdfstring{$\ast$}{*}original)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Find a translation that matches a string. \end{DoxyCompactList}\item 
+\Hypertarget{_m_o_8h_a462f9e1b23befe6ad2a236464b106e4e}\label{_m_o_8h_a462f9e1b23befe6ad2a236464b106e4e} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries ct\+MOFind\+Translation\+Hashed} (ct\+MOReader \texorpdfstring{$\ast$}{*}reader, uint32\+\_\+t hash)
+\begin{DoxyCompactList}\small\item\em Find a translation that matches a string hashed with xxhash32. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

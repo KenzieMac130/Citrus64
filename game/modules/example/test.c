@@ -1,4 +1,5 @@
 #include "engine/utilities/Utilities.h"
+#include "engine/core/Translation.h"
 
 #include "codegen/game/modules/example/test.c.gen.h"
 

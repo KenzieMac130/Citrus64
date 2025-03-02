@@ -34,8 +34,8 @@ void ctUnitTestECS() {
       ctECSSetFlagC(i);
    }
 
-   for (uint32_t i = 0; i < ctECSItCountA(); i++){
-      if(ctECSItGetStateA(i)){
+   for (uint32_t i = 0; i < ctECSItCountA(); i++) {
+      if (ctECSItGetStateA(i)) {
          ctEntity e = ctECSItGetEntityA(i);
          ctECSGetUTest(e)->z += 32;
       }
@@ -48,7 +48,9 @@ void ctUnitTestECS() {
    for (uint32_t i = 0; i < ctECSItCountUTest(); i++) {
       ctVec3* v = ctECSItGetComponentUTest(i);
       ctEntity e = ctECSItGetEntityUTest(i);
-      ctDebugLog("E: %u XYZ: %f %f %f", (uint32_t)e, v->x, v->y, v->z);
+      ctAssert(v);
+      ctAssert(e != CT_ENTITY_INVALID);
+      // ctDebugLog("E: %u XYZ: %f %f %f", (uint32_t)e, v->x, v->y, v->z);
    }
 }
 

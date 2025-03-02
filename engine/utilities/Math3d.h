@@ -9,6 +9,16 @@ Math functions for working with 3D space
 
 #include "codegen/engine/utilities/Math3d.h.gen.h"
 
+typedef struct {
+   float x;
+   float y;
+} ctVec2;
+
+typedef struct {
+   ctVec2 pos;
+   ctVec2 scale;
+} ctRect;
+
 /* ------- Vector3 -------*/
 
 /* Hard-coded coordinate spaces (based on glTF) */

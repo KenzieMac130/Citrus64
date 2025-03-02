@@ -4,6 +4,7 @@ import polib
 import struct
 from .EndianSwapper import *
 
+
 class TranslationAssetTask(TaskBase):
     name = "translation"
     out_extension = ".mo"
@@ -25,18 +26,18 @@ class TranslationAssetTask(TaskBase):
         swap32(data, 24)
 
         # hash table is ignored
-        
-        for i in range(0, origOffset + (strCount * 8), 8):
+        for i in range(origOffset, origOffset + (strCount * 8), 8):
             swap32(data, i)
             swap32(data, i + 4)
-        
-        for i in range(origOffset, transOffset + (strCount * 8), 8):
+#
+        for i in range(transOffset, transOffset + (strCount * 8), 8):
             swap32(data, i)
             swap32(data, i + 4)
-
+#
         return data
 
     def run(self):
         po_file = polib.pofile(self.inputs[0].read())
         po_file.save_as_mofile(self.outputs[0].abspath())
-        self.outputs[0].write(self.endianswap(bytearray(self.outputs[0].read("rb"))), "wb")
+        self.outputs[0].write(self.endianswap(
+            bytearray(self.outputs[0].read("rb"))), "wb")

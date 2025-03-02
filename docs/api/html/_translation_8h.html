@@ -113,74 +113,103 @@ $(function(){initNavTree('_translation_8h.html',''); initResizable(true); });
 <p>Translate text into other languages.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_utilities_8h_source.html">engine/utilities/Utilities.h</a>&quot;</code><br />
+<code>#include &quot;codegen/engine/core/Translation.h.gen.h&quot;</code><br />
 </div>
 <p><a href="_translation_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:adf36373db7e0a3923ea1da2dfe09f2a8" id="r_adf36373db7e0a3923ea1da2dfe09f2a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf36373db7e0a3923ea1da2dfe09f2a8">ctGetText</a>(_identifier)</td></tr>
-<tr class="memdesc:adf36373db7e0a3923ea1da2dfe09f2a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the translated text for the user's language.  <br /></td></tr>
-<tr class="separator:adf36373db7e0a3923ea1da2dfe09f2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5566529df9ab92330c2be6231a90872b" id="r_a5566529df9ab92330c2be6231a90872b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5566529df9ab92330c2be6231a90872b">CT_TEXT</a>(_msgid)</td></tr>
+<tr class="memdesc:a5566529df9ab92330c2be6231a90872b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quickly get translated text using a message id.  <br /></td></tr>
+<tr class="separator:a5566529df9ab92330c2be6231a90872b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a586b4603955365a2d616cb6a5fdd900d" id="r_a586b4603955365a2d616cb6a5fdd900d"><td class="memItemLeft" align="right" valign="top"><a id="a586b4603955365a2d616cb6a5fdd900d" name="a586b4603955365a2d616cb6a5fdd900d"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>_ctGetText</b> (uint32_t hash, const char *nativeText)</td></tr>
-<tr class="memdesc:a586b4603955365a2d616cb6a5fdd900d"><td class="mdescLeft">&#160;</td><td class="mdescRight">see <a class="el" href="#adf36373db7e0a3923ea1da2dfe09f2a8" title="Get the translated text for the user&#39;s language.">ctGetText()</a> for the user API <br /></td></tr>
-<tr class="separator:a586b4603955365a2d616cb6a5fdd900d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d9e257fdffbbd6439be797970d522fc" id="r_a0d9e257fdffbbd6439be797970d522fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d9e257fdffbbd6439be797970d522fc">ctTranslationSetBank</a> (uint32_t bankIndex, const char *basePath)</td></tr>
-<tr class="memdesc:a0d9e257fdffbbd6439be797970d522fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the base path of the translations to be loaded next frame.  <br /></td></tr>
-<tr class="separator:a0d9e257fdffbbd6439be797970d522fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82fcd214595e2b64c198df18f11fe1ae" id="r_a82fcd214595e2b64c198df18f11fe1ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82fcd214595e2b64c198df18f11fe1ae">ctTranslationSetLanguage</a> (const char *isoCode)</td></tr>
-<tr class="memdesc:a82fcd214595e2b64c198df18f11fe1ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the target language to be loaded next game update.  <br /></td></tr>
-<tr class="separator:a82fcd214595e2b64c198df18f11fe1ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81a1cab3fb977af66a0a5c66bc457ba1" id="r_a81a1cab3fb977af66a0a5c66bc457ba1"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81a1cab3fb977af66a0a5c66bc457ba1">ctGetText</a> (const char *identifier)</td></tr>
+<tr class="memdesc:a81a1cab3fb977af66a0a5c66bc457ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the translated text for the user's language.  <br /></td></tr>
+<tr class="separator:a81a1cab3fb977af66a0a5c66bc457ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f81a7dbe750a3fbdc01de98d52cc289" id="r_a4f81a7dbe750a3fbdc01de98d52cc289"><td class="memItemLeft" align="right" valign="top"><a id="a4f81a7dbe750a3fbdc01de98d52cc289" name="a4f81a7dbe750a3fbdc01de98d52cc289"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>ctGetTextHashed</b> (uint32_t hash)</td></tr>
+<tr class="memdesc:a4f81a7dbe750a3fbdc01de98d52cc289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="#a81a1cab3fb977af66a0a5c66bc457ba1" title="Get the translated text for the user&#39;s language.">ctGetText()</a> but faster using results of CT_XXH32_STRING. <br /></td></tr>
+<tr class="separator:a4f81a7dbe750a3fbdc01de98d52cc289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a108b95295be3ec082b3a86ef876d8cc7" id="r_a108b95295be3ec082b3a86ef876d8cc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a108b95295be3ec082b3a86ef876d8cc7">ctTranslationSetBank</a> (uint32_t bankIndex, const char *basePath)</td></tr>
+<tr class="memdesc:a108b95295be3ec082b3a86ef876d8cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the base path of the translations to be loaded next frame.  <br /></td></tr>
+<tr class="separator:a108b95295be3ec082b3a86ef876d8cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6821aca51909c9ac385fcc990fa53faf" id="r_a6821aca51909c9ac385fcc990fa53faf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6821aca51909c9ac385fcc990fa53faf">ctTranslationSetLanguage</a> (const char *isoCode)</td></tr>
+<tr class="memdesc:a6821aca51909c9ac385fcc990fa53faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the target language to be loaded next game update.  <br /></td></tr>
+<tr class="separator:a6821aca51909c9ac385fcc990fa53faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b8b8d3340e6dc1f7fab9a3875a34c6f" id="r_a8b8b8d3340e6dc1f7fab9a3875a34c6f"><td class="memItemLeft" align="right" valign="top"><a id="a8b8b8d3340e6dc1f7fab9a3875a34c6f" name="a8b8b8d3340e6dc1f7fab9a3875a34c6f"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>ctTranslationGetLanguage</b> ()</td></tr>
 <tr class="memdesc:a8b8b8d3340e6dc1f7fab9a3875a34c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the actively loaded language. <br /></td></tr>
 <tr class="separator:a8b8b8d3340e6dc1f7fab9a3875a34c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14047b71a28c5d9fe044d77eb4fd80c5" id="r_a14047b71a28c5d9fe044d77eb4fd80c5"><td class="memItemLeft" align="right" valign="top"><a id="a14047b71a28c5d9fe044d77eb4fd80c5" name="a14047b71a28c5d9fe044d77eb4fd80c5"></a>
-<a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctTranslationStartup</b> ()</td></tr>
-<tr class="separator:a14047b71a28c5d9fe044d77eb4fd80c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb2228ef2cbc6de6a4c6b14bb949cdbe" id="r_abb2228ef2cbc6de6a4c6b14bb949cdbe"><td class="memItemLeft" align="right" valign="top"><a id="abb2228ef2cbc6de6a4c6b14bb949cdbe" name="abb2228ef2cbc6de6a4c6b14bb949cdbe"></a>
-<a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctTranslationUpdate</b> ()</td></tr>
-<tr class="separator:abb2228ef2cbc6de6a4c6b14bb949cdbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67b93429e43c26daa705e15120365c71" id="r_a67b93429e43c26daa705e15120365c71"><td class="memItemLeft" align="right" valign="top"><a id="a67b93429e43c26daa705e15120365c71" name="a67b93429e43c26daa705e15120365c71"></a>
-<a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctTranslationShutdown</b> ()</td></tr>
-<tr class="separator:a67b93429e43c26daa705e15120365c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b1c5add7694b3a947f5eaadd6af738" id="r_a75b1c5add7694b3a947f5eaadd6af738"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75b1c5add7694b3a947f5eaadd6af738">ctTranslationUpdate</a> ()</td></tr>
+<tr class="memdesc:a75b1c5add7694b3a947f5eaadd6af738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the translation system.  <br /></td></tr>
+<tr class="separator:a75b1c5add7694b3a947f5eaadd6af738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d44be7870716bc5cb5c02d35724d167" id="r_a1d44be7870716bc5cb5c02d35724d167"><td class="memItemLeft" align="right" valign="top"><a id="a1d44be7870716bc5cb5c02d35724d167" name="a1d44be7870716bc5cb5c02d35724d167"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctTranslationStartup</b> ()</td></tr>
+<tr class="separator:a1d44be7870716bc5cb5c02d35724d167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35a5954683d3d83d726c4f496584961a" id="r_a35a5954683d3d83d726c4f496584961a"><td class="memItemLeft" align="right" valign="top"><a id="a35a5954683d3d83d726c4f496584961a" name="a35a5954683d3d83d726c4f496584961a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ctTranslationShutdown</b> ()</td></tr>
+<tr class="separator:a35a5954683d3d83d726c4f496584961a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Translate text into other languages. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="adf36373db7e0a3923ea1da2dfe09f2a8" name="adf36373db7e0a3923ea1da2dfe09f2a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf36373db7e0a3923ea1da2dfe09f2a8">&#9670;&#160;</a></span>ctGetText</h2>
+<a id="a5566529df9ab92330c2be6231a90872b" name="a5566529df9ab92330c2be6231a90872b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5566529df9ab92330c2be6231a90872b">&#9670;&#160;</a></span>CT_TEXT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ctGetText</td>
+          <td class="memname">#define CT_TEXT</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_identifier</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_msgid</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">__CT_COMPILED_TRANSLATION_LOOKUP_##_tag</div>
+<b>Value:</b><div class="fragment"><div class="line">__CT_MSGID_GET_TEXT_##_msgid</div>
 </div><!-- fragment -->
+<p>Quickly get translated text using a message id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_msgid</td><td>the id of the message using alnum and _ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a81a1cab3fb977af66a0a5c66bc457ba1" name="a81a1cab3fb977af66a0a5c66bc457ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81a1cab3fb977af66a0a5c66bc457ba1">&#9670;&#160;</a></span>ctGetText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ctGetText </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>identifier</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>Get the translated text for the user's language. </p>
 <dl class="section warning"><dt>Warning</dt><dd>results may be invalid eventually, use immediately or make a copy </dd></dl>
 
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a0d9e257fdffbbd6439be797970d522fc" name="a0d9e257fdffbbd6439be797970d522fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d9e257fdffbbd6439be797970d522fc">&#9670;&#160;</a></span>ctTranslationSetBank()</h2>
+<a id="a108b95295be3ec082b3a86ef876d8cc7" name="a108b95295be3ec082b3a86ef876d8cc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a108b95295be3ec082b3a86ef876d8cc7">&#9670;&#160;</a></span>ctTranslationSetBank()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a> ctTranslationSetBank </td>
+          <td class="memname">void ctTranslationSetBank </td>
           <td>(</td>
           <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>bankIndex</em></span>, </td>
         </tr>
@@ -202,14 +231,14 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>ctTranslation
 
 </div>
 </div>
-<a id="a82fcd214595e2b64c198df18f11fe1ae" name="a82fcd214595e2b64c198df18f11fe1ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82fcd214595e2b64c198df18f11fe1ae">&#9670;&#160;</a></span>ctTranslationSetLanguage()</h2>
+<a id="a6821aca51909c9ac385fcc990fa53faf" name="a6821aca51909c9ac385fcc990fa53faf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6821aca51909c9ac385fcc990fa53faf">&#9670;&#160;</a></span>ctTranslationSetLanguage()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a> ctTranslationSetLanguage </td>
+          <td class="memname">void ctTranslationSetLanguage </td>
           <td>(</td>
           <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>isoCode</em></span></td><td>)</td>
           <td></td>
@@ -220,11 +249,31 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>ctTranslation
 <p>Set the target language to be loaded next game update. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">isoCode</td><td>Format as follows: "(ISO 639-1)-(ISO 3166 A2)" (ex: "en-us")</td></tr>
+    <tr><td class="paramname">isoCode</td><td>lower case "(ISO 639-1)-(ISO 3166 A2)" (ex: "en-us")</td></tr>
   </table>
   </dd>
 </dl>
 <p>The translation system will attempt to load the region specific mo file in the target language first, if this fails it will just look for the language. Full RFC 4646 is not supported. </p>
+
+</div>
+</div>
+<a id="a75b1c5add7694b3a947f5eaadd6af738" name="a75b1c5add7694b3a947f5eaadd6af738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75b1c5add7694b3a947f5eaadd6af738">&#9670;&#160;</a></span>ctTranslationUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctTranslationUpdate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the translation system. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Any pointers to strings will be instantly invalid </dd></dl>
 
 </div>
 </div>

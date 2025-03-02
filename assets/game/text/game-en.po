@@ -1,2 +1,2 @@
-msgid "my-string"
-msgstr "my translated text"
+msgid "MY_TEXT"
+msgstr "Exampe text here!!!"

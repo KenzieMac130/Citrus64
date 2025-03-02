@@ -1,0 +1,79 @@
+\doxysection{Settings.\+h File Reference}
+\hypertarget{_settings_8h}{}\label{_settings_8h}\index{Settings.h@{Settings.h}}
+
+
+Settings.  
+
+
+{\ttfamily \#include "{}engine/utilities/\+Utilities.\+h"{}}\newline
+{\ttfamily \#include "{}codegen/engine/core/\+Settings.\+h.\+gen.\+h"{}}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074fa}{ct\+Settings\+Color\+Vision}} \{ \newline
+\mbox{\hyperlink{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faacc662fb1c1b192e2ff5eee6629650b22}{CT\+\_\+\+VISION\+\_\+\+REGULAR}}
+, \mbox{\hyperlink{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faaa409784383e32698e7fb396edce60d15}{CT\+\_\+\+VISION\+\_\+\+RED\+\_\+\+GREEN}}
+, \mbox{\hyperlink{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faaa97c434e1dd64395b4a7afdba933f717}{CT\+\_\+\+VISION\+\_\+\+BLUE\+\_\+\+YELLOW}}
+, \mbox{\hyperlink{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faa3b5ece2985537b3f73fe7003c77cbaa6}{CT\+\_\+\+VISION\+\_\+\+MONOCHROME}}
+, \newline
+{\bfseries CT\+\_\+\+VISION\+\_\+\+COUNT}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of color blindness. \end{DoxyCompactList}\item 
+\Hypertarget{_settings_8h_a1901f14d97b0106c1e4027ef52a3f158}\label{_settings_8h_a1901f14d97b0106c1e4027ef52a3f158} 
+enum {\bfseries ct\+Settings\+UIScale} \{ \newline
+{\bfseries CT\+\_\+\+UI\+\_\+\+SCALE\+\_\+\+SMALLER}
+, {\bfseries CT\+\_\+\+UI\+\_\+\+SCALE\+\_\+\+NORMAL}
+, {\bfseries CT\+\_\+\+UI\+\_\+\+SCALE\+\_\+\+LARGE}
+, {\bfseries CT\+\_\+\+UI\+\_\+\+SCALE\+\_\+\+VERY\+\_\+\+LARGE}
+, \newline
+{\bfseries CT\+\_\+\+UI\+\_\+\+SCALE\+\_\+\+COUNT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_settings_8h_a62fbc5eadf456c89fb3c67fa786b1dc1}\label{_settings_8h_a62fbc5eadf456c89fb3c67fa786b1dc1} 
+\mbox{\hyperlink{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074fa}{ct\+Settings\+Color\+Vision}} {\bfseries ct\+Settings\+Get\+Color\+Vision} ()
+\begin{DoxyCompactList}\small\item\em Get if the user has a color impediment. \end{DoxyCompactList}\item 
+\Hypertarget{_settings_8h_ae5c508a45e8239a43660005c44ffcd57}\label{_settings_8h_ae5c508a45e8239a43660005c44ffcd57} 
+ct\+Settings\+UIScale {\bfseries ct\+Settings\+Get\+UIScale} ()
+\begin{DoxyCompactList}\small\item\em Desired scale to be applied to the UI. \end{DoxyCompactList}\item 
+\Hypertarget{_settings_8h_a2a99110b18d88e8a88eef4198814d9cd}\label{_settings_8h_a2a99110b18d88e8a88eef4198814d9cd} 
+bool {\bfseries ct\+Settings\+Is\+High\+Contrast} ()
+\begin{DoxyCompactList}\small\item\em Priotitize readability over visuals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Settings. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074fa}\index{Settings.h@{Settings.h}!ctSettingsColorVision@{ctSettingsColorVision}}
+\index{ctSettingsColorVision@{ctSettingsColorVision}!Settings.h@{Settings.h}}
+\doxysubsubsection{\texorpdfstring{ctSettingsColorVision}{ctSettingsColorVision}}
+{\footnotesize\ttfamily \label{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074fa} 
+enum \mbox{\hyperlink{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074fa}{ct\+Settings\+Color\+Vision}}}
+
+
+
+Types of color blindness. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_VISION\_REGULAR@{CT\_VISION\_REGULAR}!Settings.h@{Settings.h}}\index{Settings.h@{Settings.h}!CT\_VISION\_REGULAR@{CT\_VISION\_REGULAR}}}\Hypertarget{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faacc662fb1c1b192e2ff5eee6629650b22}\label{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faacc662fb1c1b192e2ff5eee6629650b22} 
+CT\+\_\+\+VISION\+\_\+\+REGULAR&Unaffected vision. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_VISION\_RED\_GREEN@{CT\_VISION\_RED\_GREEN}!Settings.h@{Settings.h}}\index{Settings.h@{Settings.h}!CT\_VISION\_RED\_GREEN@{CT\_VISION\_RED\_GREEN}}}\Hypertarget{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faaa409784383e32698e7fb396edce60d15}\label{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faaa409784383e32698e7fb396edce60d15} 
+CT\+\_\+\+VISION\+\_\+\+RED\+\_\+\+GREEN&Deuteranopia and Protanopia. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_VISION\_BLUE\_YELLOW@{CT\_VISION\_BLUE\_YELLOW}!Settings.h@{Settings.h}}\index{Settings.h@{Settings.h}!CT\_VISION\_BLUE\_YELLOW@{CT\_VISION\_BLUE\_YELLOW}}}\Hypertarget{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faaa97c434e1dd64395b4a7afdba933f717}\label{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faaa97c434e1dd64395b4a7afdba933f717} 
+CT\+\_\+\+VISION\+\_\+\+BLUE\+\_\+\+YELLOW&Tritanopia. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_VISION\_MONOCHROME@{CT\_VISION\_MONOCHROME}!Settings.h@{Settings.h}}\index{Settings.h@{Settings.h}!CT\_VISION\_MONOCHROME@{CT\_VISION\_MONOCHROME}}}\Hypertarget{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faa3b5ece2985537b3f73fe7003c77cbaa6}\label{_settings_8h_aff0b0fe3d7d55794ad2deef13c1074faa3b5ece2985537b3f73fe7003c77cbaa6} 
+CT\+\_\+\+VISION\+\_\+\+MONOCHROME&Achromatopsia. \\
+\hline
+
+\end{DoxyEnumFields}

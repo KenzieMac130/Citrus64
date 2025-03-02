@@ -4,35 +4,33 @@
 
 #include "codegen/engine/formats/mo/MO.c.gen.h"
 
-ctResults ctMOReaderAllocFromFile(ctMOReader** readerOut, FILE* fp, int fileSize) {
+ctResults ctMOReaderCreate(ctMOReader** readerOut, void* fileData, int fileSize) {
    ctAssert(readerOut);
-   ctAssert(fp);
+   ctAssert(fileData);
 
    /* parse header */
    ctMOHeader tmpHeader;
    if (fileSize < sizeof(ctMOHeader)) { return CT_FAILURE_CORRUPTED_CONTENTS; }
-   fread(&tmpHeader, sizeof(ctMOHeader), 1, fp);
-   rewind(fp);
+   memcpy(&tmpHeader, fileData, sizeof(ctMOHeader));
    if (tmpHeader.magic != CT_MO_MAGIC) { return CT_FAILURE_CORRUPTED_CONTENTS; }
    if (tmpHeader.version != CT_MO_CUR_VER) { return CT_FAILURE_UNKNOWN_FORMAT; }
 
    /* allocate reader */
    ctMOReader tmpMoReader;
-   void* readerPtr;
+   ctMOReader* readerPtr;
    void* discard;
-   uint32_t hashTableCapacity = ctNextPrime(tmpHeader.numStrings);
+   uint32_t hashTableCapacity = ctNextPrime(tmpHeader.numStrings + 1);
    ctGroupAllocDesc groupAlloc[] = {
      {1, sizeof(ctMOReader), &discard},
-     {1, fileSize, (void**)&tmpMoReader.blob},
      {1, sizeof(ctHashTableKey) * hashTableCapacity, (void**)&tmpMoReader.hashKeys},
      {1, sizeof(uint32_t) * hashTableCapacity, (void**)&tmpMoReader.hashValueOffsets},
    };
-   readerPtr = ctGroupAlloc(4, groupAlloc, NULL);
-   ctAssert(readerPtr == discard);
+   readerPtr = (ctMOReader*)ctGroupAlloc(3, groupAlloc, NULL);
+   ctAssert((void*)readerPtr == discard);
 
    /* load blob */
    tmpMoReader.blobSize = fileSize;
-   fread(tmpMoReader.blob, fileSize, 1, fp);
+   tmpMoReader.blob = (uint8_t*)fileData;
    tmpMoReader.header = (ctMOHeader*)(&tmpMoReader.blob[0]);
    tmpMoReader.originalStringTable =
      (ctMOStringEntry*)(&tmpMoReader.blob[tmpHeader.originalOffset]);
@@ -41,18 +39,21 @@ ctResults ctMOReaderAllocFromFile(ctMOReader** readerOut, FILE* fp, int fileSize
 
    /* construct hash table (we could do this at compile time in the future) */
    tmpMoReader.hashTable = ctHashTableInit(hashTableCapacity, tmpMoReader.hashKeys);
+   memset(tmpMoReader.hashValueOffsets, 0, sizeof(uint32_t) * hashTableCapacity);
    for (int32_t i = 0; i < tmpHeader.numStrings; i++) {
-      const uint32_t offset = tmpMoReader.originalStringTable[i].offset;
-      const uint32_t hash = ctXXHash32String((const char*)(&tmpMoReader.blob[offset]));
+      const uint32_t originalOffset = tmpMoReader.originalStringTable[i].offset;
+      const uint32_t newOffset = tmpMoReader.translatedStringTable[i].offset;
+      const char* originalString = (const char*)(&tmpMoReader.blob[originalOffset]);
+      const uint32_t hash = ctXXHash32String(originalString);
       uint32_t idx;
       CT_RETURN_FAIL_CLEAN(ctHashTableInsert(&tmpMoReader.hashTable, hash, &idx),
                            ctFree(readerPtr));
-      tmpMoReader.hashValueOffsets[idx] = offset;
+      tmpMoReader.hashValueOffsets[idx] = newOffset;
    }
 
    /* return reader */
+   *readerPtr = tmpMoReader;
    *readerOut = readerPtr;
-   **readerOut = tmpMoReader;
    return CT_SUCCESS;
 }
 
@@ -60,18 +61,15 @@ void ctMOReaderFree(ctMOReader* reader) {
    ctFree(reader);
 }
 
-const char*
-ctMOFindTranslationHashed(ctMOReader* reader, uint32_t hash, const char* original) {
-   const ctMOStringEntry* translatedStringTable = reader->translatedStringTable;
+const char* ctMOFindTranslationHashed(ctMOReader* reader, uint32_t hash) {
    uint32_t idx;
-   if (ctErrorCheck(ctHashTableFindIdx(&reader->hashTable, hash, &idx))) {
-      return NULL;
-   }
-   return (const char*)&reader->blob[translatedStringTable[idx].offset];
+   ctAssert(reader);
+   if (ctErrorCheck(ctHashTableFindIdx(&reader->hashTable, hash, &idx))) { return NULL; }
+   return (const char*)&reader->blob[reader->hashValueOffsets[idx]];
 }
 
 const char* ctMOFindTranslation(ctMOReader* reader, const char* original) {
    ctAssert(reader);
    uint32_t hash = ctXXHash32String(original);
-   return ctMOFindTranslationHashed(reader, hash, original);
+   return ctMOFindTranslationHashed(reader, hash);
 }

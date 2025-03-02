@@ -7,7 +7,7 @@ ROM_TITLE="Citrus Game"
 SOURCE_DIR=.
 BUILD_DIR=build
 include $(N64_INST)/include/n64.mk
-include $(N64_INST)/include/t3d.mk
+include libs/tiny3d/t3d.mk
 
 # Uncomment this to check for memory usage errors 
 # this will use address sanitizer to look for possible bugs
@@ -17,8 +17,15 @@ include $(N64_INST)/include/t3d.mk
 # fsanizer runtime cannot actually exist in a N64 rom
 #CFLAGS:=-fsanitize=address
 
-# Debug Symbols (COMMENT FOR FINAL RELEASE)
-OPTFLAGS += -Os -ggdb
+# Debug Symbols
+ifeq ($(D),1)
+#OPTFLAGS += -Os -ggdb
+CFLAGS+=-g3
+CXXFLAGS+=-g3
+ASFLAGS+=-g
+RSPASFLAGS+=-g
+LDFLAGS+=-g
+endif
 
 all: ${ROM_NAME}.z64
 .PHONY: all

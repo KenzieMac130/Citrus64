@@ -113,6 +113,7 @@ $(function(){initNavTree('_m_o_8h.html',''); initResizable(true); });
 <p>Translation file format <a href="https://www.gnu.org/software/gettext/manual/html_node/MO-Files.html">https://www.gnu.org/software/gettext/manual/html_node/MO-Files.html</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_utilities_8h_source.html">engine/utilities/Utilities.h</a>&quot;</code><br />
+<code>#include &quot;codegen/engine/formats/mo/MO.h.gen.h&quot;</code><br />
 </div>
 <p><a href="_m_o_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -127,18 +128,22 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aca77c9f28385683dedecc95ff660acef" id="r_aca77c9f28385683dedecc95ff660acef"><td class="memItemLeft" align="right" valign="top"><a id="aca77c9f28385683dedecc95ff660acef" name="aca77c9f28385683dedecc95ff660acef"></a>
-<a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctMOReaderAllocFromFile</b> (ctMOReader **readerOut, FILE *fp, int fileSize)</td></tr>
-<tr class="separator:aca77c9f28385683dedecc95ff660acef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac01359e1f96672494e623eab223f51aa" id="r_ac01359e1f96672494e623eab223f51aa"><td class="memItemLeft" align="right" valign="top"><a id="ac01359e1f96672494e623eab223f51aa" name="ac01359e1f96672494e623eab223f51aa"></a>
+<a class="el" href="_common_8h.html#a4c2ef51e097a480311ca51322ef203ca">ctResults</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ctMOReaderCreate</b> (ctMOReader **readerOut, void *fileData, int fileSize)</td></tr>
+<tr class="memdesc:ac01359e1f96672494e623eab223f51aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a MO file reader from a file of known size. <br /></td></tr>
+<tr class="separator:ac01359e1f96672494e623eab223f51aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07c02fa4b51f8b9713ecaebc24090653" id="r_a07c02fa4b51f8b9713ecaebc24090653"><td class="memItemLeft" align="right" valign="top"><a id="a07c02fa4b51f8b9713ecaebc24090653" name="a07c02fa4b51f8b9713ecaebc24090653"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ctMOReaderFree</b> (ctMOReader *reader)</td></tr>
+<tr class="memdesc:a07c02fa4b51f8b9713ecaebc24090653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the MO file. <br /></td></tr>
 <tr class="separator:a07c02fa4b51f8b9713ecaebc24090653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97715486ba6f997d0516371cbdf2d1e4" id="r_a97715486ba6f997d0516371cbdf2d1e4"><td class="memItemLeft" align="right" valign="top"><a id="a97715486ba6f997d0516371cbdf2d1e4" name="a97715486ba6f997d0516371cbdf2d1e4"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>ctMOFindTranslation</b> (ctMOReader *reader, const char *original)</td></tr>
+<tr class="memdesc:a97715486ba6f997d0516371cbdf2d1e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a translation that matches a string. <br /></td></tr>
 <tr class="separator:a97715486ba6f997d0516371cbdf2d1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a137e49ddcd67feb526c27caf696d83e8" id="r_a137e49ddcd67feb526c27caf696d83e8"><td class="memItemLeft" align="right" valign="top"><a id="a137e49ddcd67feb526c27caf696d83e8" name="a137e49ddcd67feb526c27caf696d83e8"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>ctMOFindTranslationHashed</b> (ctMOReader *reader, uint32_t hash, const char *original)</td></tr>
-<tr class="separator:a137e49ddcd67feb526c27caf696d83e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a462f9e1b23befe6ad2a236464b106e4e" id="r_a462f9e1b23befe6ad2a236464b106e4e"><td class="memItemLeft" align="right" valign="top"><a id="a462f9e1b23befe6ad2a236464b106e4e" name="a462f9e1b23befe6ad2a236464b106e4e"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>ctMOFindTranslationHashed</b> (ctMOReader *reader, uint32_t hash)</td></tr>
+<tr class="memdesc:a462f9e1b23befe6ad2a236464b106e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a translation that matches a string hashed with xxhash32. <br /></td></tr>
+<tr class="separator:a462f9e1b23befe6ad2a236464b106e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Translation file format <a href="https://www.gnu.org/software/gettext/manual/html_node/MO-Files.html">https://www.gnu.org/software/gettext/manual/html_node/MO-Files.html</a>. </p>

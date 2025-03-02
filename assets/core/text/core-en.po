@@ -1,0 +1,2 @@
+msgid "__TEST__"
+msgstr "VALID"

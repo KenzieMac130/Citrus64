@@ -29,14 +29,12 @@ enum \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ct\+Resour
 , \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460}{CT\+\_\+\+RESOURCE\+\_\+\+TRANSLATION}}
 , \newline
 \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a33a29c71f6ae654d1aca927112aa0e8e}{CT\+\_\+\+RESOURCE\+\_\+\+SPRITE}}
+, \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041afab3abe304339f2a51ab0746933b8feb}{CT\+\_\+\+RESOURCE\+\_\+\+FONT}}
 , \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38}{CT\+\_\+\+RESOURCE\+\_\+\+MODEL}}
  \}
 \begin{DoxyCompactList}\small\item\em Resource types. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
-\item 
-\Hypertarget{_resource_8h_ab35b7b9d6901c7c1ed1c72b900ba3834}\label{_resource_8h_ab35b7b9d6901c7c1ed1c72b900ba3834} 
-ct\+Resource \texorpdfstring{$\ast$}{*} {\bfseries ct\+Resource\+Handle\+Get} (ct\+Resource\+Handle handle)
 \item 
 \Hypertarget{_resource_8h_a0f04d9efbf067913ac64c01d947f21cc}\label{_resource_8h_a0f04d9efbf067913ac64c01d947f21cc} 
 void {\bfseries ct\+Resource\+Manager\+Startup} ()
@@ -46,12 +44,24 @@ void {\bfseries ct\+Resource\+Manager\+Shutdown} ()
 \item 
 \Hypertarget{_resource_8h_a40ac87074c3dc1f6d77d259a1d78bc7f}\label{_resource_8h_a40ac87074c3dc1f6d77d259a1d78bc7f} 
 \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+Resource\+Get\+Or\+Load} (ct\+Resource\+Handle \texorpdfstring{$\ast$}{*}out, \mbox{\hyperlink{_resource_8h_a33b389e767453c27e99a9b131ff0c041}{ct\+Resource\+Type}} type, const char \texorpdfstring{$\ast$}{*}path)
-\item 
+\begin{DoxyCompactList}\small\item\em Return a handle to a loaded resource. \end{DoxyCompactList}\item 
 \Hypertarget{_resource_8h_a3ef0cb52b02907de29a8af2aa36174c1}\label{_resource_8h_a3ef0cb52b02907de29a8af2aa36174c1} 
 void {\bfseries ct\+Resource\+Release} (ct\+Resource\+Handle resource)
 \item 
 \Hypertarget{_resource_8h_a612983af47713e766a379c6a7b6e140c}\label{_resource_8h_a612983af47713e766a379c6a7b6e140c} 
 void {\bfseries ct\+Resource\+Manager\+Garbage\+Collect} ()
+\item 
+\Hypertarget{_resource_8h_aade5f8c888d193e7b3a7c12f1a66fd91}\label{_resource_8h_aade5f8c888d193e7b3a7c12f1a66fd91} 
+bool {\bfseries ct\+Path\+Exists} (const char \texorpdfstring{$\ast$}{*}path)
+\item 
+\Hypertarget{_resource_8h_a3d13c005995e8b57f427e73ee238a5d5}\label{_resource_8h_a3d13c005995e8b57f427e73ee238a5d5} 
+\mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ct\+Results}} {\bfseries ct\+Resource\+Get\+Symbol} (ct\+Resource\+Handle handle, const char \texorpdfstring{$\ast$}{*}symbol, void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}out)
+\begin{DoxyCompactList}\small\item\em Get a symbol from a resource if possible. \end{DoxyCompactList}\item 
+\Hypertarget{_resource_8h_a1960ecdc8487e76420f88d349bcd5d59}\label{_resource_8h_a1960ecdc8487e76420f88d349bcd5d59} 
+int {\bfseries ct\+Resource\+Get\+Font} (ct\+Resource\+Handle handle)
+\item 
+\Hypertarget{_resource_8h_a3fc2b491248aba0020e17ea8ee650474}\label{_resource_8h_a3fc2b491248aba0020e17ea8ee650474} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries ct\+Resource\+Get\+Text\+Hashed} (ct\+Resource\+Handle handle, uint32\+\_\+t hash)
 \end{DoxyCompactItemize}
 
 
@@ -85,11 +95,15 @@ CT\+\_\+\+RESOURCE\+\_\+\+SCRIPT&Lightweight module effects, scene, audio, music
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_RESOURCE\_TRANSLATION@{CT\_RESOURCE\_TRANSLATION}!Resource.h@{Resource.h}}\index{Resource.h@{Resource.h}!CT\_RESOURCE\_TRANSLATION@{CT\_RESOURCE\_TRANSLATION}}}\Hypertarget{_resource_8h_a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460}\label{_resource_8h_a33b389e767453c27e99a9b131ff0c041afe8ea6ef6e164877402cc43c194eb460} 
-CT\+\_\+\+RESOURCE\+\_\+\+TRANSLATION&MO file. \\
+CT\+\_\+\+RESOURCE\+\_\+\+TRANSLATION&MO file (don\textquotesingle{}t use directly, see \doxylink{_translation_8h}{Translation.\+h}) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_RESOURCE\_SPRITE@{CT\_RESOURCE\_SPRITE}!Resource.h@{Resource.h}}\index{Resource.h@{Resource.h}!CT\_RESOURCE\_SPRITE@{CT\_RESOURCE\_SPRITE}}}\Hypertarget{_resource_8h_a33b389e767453c27e99a9b131ff0c041a33a29c71f6ae654d1aca927112aa0e8e}\label{_resource_8h_a33b389e767453c27e99a9b131ff0c041a33a29c71f6ae654d1aca927112aa0e8e} 
 CT\+\_\+\+RESOURCE\+\_\+\+SPRITE&Libdragon sprite. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_RESOURCE\_FONT@{CT\_RESOURCE\_FONT}!Resource.h@{Resource.h}}\index{Resource.h@{Resource.h}!CT\_RESOURCE\_FONT@{CT\_RESOURCE\_FONT}}}\Hypertarget{_resource_8h_a33b389e767453c27e99a9b131ff0c041afab3abe304339f2a51ab0746933b8feb}\label{_resource_8h_a33b389e767453c27e99a9b131ff0c041afab3abe304339f2a51ab0746933b8feb} 
+CT\+\_\+\+RESOURCE\+\_\+\+FONT&Libdragon font. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_RESOURCE\_MODEL@{CT\_RESOURCE\_MODEL}!Resource.h@{Resource.h}}\index{Resource.h@{Resource.h}!CT\_RESOURCE\_MODEL@{CT\_RESOURCE\_MODEL}}}\Hypertarget{_resource_8h_a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38}\label{_resource_8h_a33b389e767453c27e99a9b131ff0c041a72128482aa93a2cf1b2e30417d376b38} 

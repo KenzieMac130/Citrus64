@@ -41,11 +41,12 @@ typedef struct {
 } ctMOReader;
 
 /*! @brief Create a MO file reader from a file of known size */
-ctResults ctMOReaderAllocFromFile(ctMOReader** readerOut, FILE* fp, int fileSize);
+ctResults ctMOReaderCreate(ctMOReader** readerOut, void* fileData, int fileSize);
 /*! @brief Free the MO file */
 void ctMOReaderFree(ctMOReader* reader);
 
 /*! @brief Find a translation that matches a string */
 const char* ctMOFindTranslation(ctMOReader* reader, const char* original);
-const char*
-ctMOFindTranslationHashed(ctMOReader* reader, uint32_t hash, const char* original);
+
+/*! @brief Find a translation that matches a string hashed with xxhash32 */
+const char* ctMOFindTranslationHashed(ctMOReader* reader, uint32_t hash);

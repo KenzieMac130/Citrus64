@@ -6,18 +6,23 @@
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_utilities_8h}{engine/utilities/Utilities.h}}"{}}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ ctGetText(\_identifier)\ \_\_CT\_COMPILED\_TRANSLATION\_LOOKUP\_\#\#\_tag}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{_translation_8h_a586b4603955365a2d616cb6a5fdd900d}{\_ctGetText}}(uint32\_t\ hash,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nativeText);}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00020\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_translation_8h_a0d9e257fdffbbd6439be797970d522fc}{ctTranslationSetBank}}(uint32\_t\ bankIndex,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ basePath);}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00029\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ \mbox{\hyperlink{_translation_8h_a82fcd214595e2b64c198df18f11fe1ae}{ctTranslationSetLanguage}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ isoCode);}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00032\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{_translation_8h_a8b8b8d3340e6dc1f7fab9a3875a34c6f}{ctTranslationGetLanguage}}();}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ ctTranslationStartup();}
-\DoxyCodeLine{00035\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ ctTranslationUpdate();}
-\DoxyCodeLine{00036\ \mbox{\hyperlink{_common_8h_a4c2ef51e097a480311ca51322ef203ca}{ctResults}}\ ctTranslationShutdown();}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}codegen/engine/core/Translation.h.gen.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ CT\_TEXT(\_msgid)\ \_\_CT\_MSGID\_GET\_TEXT\_\#\#\_msgid}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{_translation_8h_a81a1cab3fb977af66a0a5c66bc457ba1}{ctGetText}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ identifier);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{_translation_8h_a4f81a7dbe750a3fbdc01de98d52cc289}{ctGetTextHashed}}(uint32\_t\ hash);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_translation_8h_a108b95295be3ec082b3a86ef876d8cc7}{ctTranslationSetBank}}(uint32\_t\ bankIndex,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ basePath);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_translation_8h_a6821aca51909c9ac385fcc990fa53faf}{ctTranslationSetLanguage}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ isoCode);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{_translation_8h_a8b8b8d3340e6dc1f7fab9a3875a34c6f}{ctTranslationGetLanguage}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_translation_8h_a75b1c5add7694b3a947f5eaadd6af738}{ctTranslationUpdate}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ ctTranslationStartup();}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ ctTranslationShutdown();}
 
 \end{DoxyCode}

@@ -4,6 +4,7 @@
         "*.ctsi": "hlsl",
         "*.ctac": "json",
         "*.fcon": "json",
+        "*.ctscn": "json",
         "*.h": "c",
         "*.c": "c",
         "system_error": "c",
@@ -28,7 +29,11 @@
         "new": "c",
         "vector": "c",
         "*.tcc": "c",
-        "cstdio": "c"
+        "cstdio": "c",
+        "array": "c",
+        "string_view": "c",
+        "ranges": "c",
+        "span": "c"
     },
     "C_Cpp.default.compilerPath": "c:\\msys64\\usr\\bin\\gcc.exe"
 }

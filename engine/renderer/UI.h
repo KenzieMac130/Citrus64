@@ -3,8 +3,11 @@
 
 UI Drawing Library
 */
+#pragma once
 
 #include "engine/utilities/Utilities.h"
+
+#include "Renderer.h"
 
 #include "codegen/engine/renderer/UI.h.gen.h"
 
@@ -29,46 +32,31 @@ typedef enum {
 } ctUIAlignment;
 
 /*! @brief Contains the state of the UI function */
-typedef struct {
-   float pixelScaleX;
-   uint16_t viewportCoords[4];
-
-   uint16_t texCoords[4];
-
-   rdpq_textparms_t textParams;
-   uint8_t font;
-
-   uint8_t viewport;
-
-   bool dirtyBlendMode;
-   ctUIBlendMode lastBlendMode;
-   ctColorRGBA8 lastColor;
-   sprite_t* lastSpriteT0;
-   sprite_t* lastSpriteT1;
-} ctUIContext;
+typedef struct ctUIContextInternal ctUIContext;
 
 /* -------------------- Rects -------------------- */
 
 /*! @brief Set the sprite to use for rendering rects
     @param region sets the UV region of the texture */
-void ctUISetSprite(ctUIContext* ctx, sprite_t* sprite);
+CT_ENGINE_API void ctUISetSprite(ctUIContext* ctx, ctSprite* sprite);
 
 /*! @brief Set the sprites to use for rendering multi-textured blend modes
     @param sprite1 uploaded into TILE0
     @param sprite2 uploaded into TILE1 (should have same size of sprite1)
     @warning each sprite must take up at most 1/2 of TMEM so half the usual budget
 */
-void ctUISetSpriteMulti(ctUIContext* ctx, sprite_t* sprite1, sprite_t* sprite2);
+CT_ENGINE_API void
+ctUISetSpriteMulti(ctUIContext* ctx, ctSprite* sprite1, ctSprite* sprite2);
 
 /*! @brief Set the blend mode to use for rendering rects */
-void ctUISetBlendMode(ctUIContext* ctx, ctUIBlendMode mode);
+CT_ENGINE_API void ctUISetBlendMode(ctUIContext* ctx, ctUIBlendMode mode);
 
 /*! @brief Set the color to tint the upcoming rect
     @note call after ctUISetBlendMode to ensure correct settings */
-void ctUISetColor(ctUIContext* ctx, ctColorRGBA8 color);
+CT_ENGINE_API void ctUISetColor(ctUIContext* ctx, ctColorRGBA8 color);
 
 /*! @brief Draw a rectangle containing a small sprite(s) that fits in TMEM */
-void ctUIDrawRect(ctUIContext* ctx, const ctRect rect, const ctRect* uv);
+CT_ENGINE_API void ctUIDrawRect(ctUIContext* ctx, const ctRect rect, const ctRect* uv);
 
 /* -------------------- Large Sprites -------------------- */
 
@@ -77,21 +65,22 @@ void ctUIDrawRect(ctUIContext* ctx, const ctRect rect, const ctRect* uv);
     This does not support blend modes and is an expensive operation avoid for
     small icons and use for only large elements like logos, or backgrounds.
     Use multiple calls to ctUIDrawRect with mirroring/stretching if feasible */
-void ctUIDrawLargeSprite(ctUIContext* ctx, sprite_t* sprite, const ctRect rect);
+CT_ENGINE_API void
+ctUIDrawLargeSprite(ctUIContext* ctx, sprite_t* sprite, const ctRect rect);
 
 /* -------------------- Text -------------------- */
 
 /*! @brief Set the default font for rendering text */
-void ctUISetFont(ctUIContext* ctx, uint8_t fontIndex);
+CT_ENGINE_API void ctUISetFont(ctUIContext* ctx, uint8_t fontIndex);
 
 /*! @brief Set the default syle for rendering text */
-void ctUISetTextStyle(ctUIContext* ctx, uint8_t styleIndex);
+CT_ENGINE_API void ctUISetTextStyle(ctUIContext* ctx, uint8_t styleIndex);
 
 /*! @brief Set the text alignment */
-void ctUISetTextAlignment(ctUIContext* ctx, ctUIAlignment alignment);
+CT_ENGINE_API void ctUISetTextAlignment(ctUIContext* ctx, ctUIAlignment alignment);
 
 /*! @brief Set the wraping mode of text */
-void ctUISetTextWrap(ctUIContext* ctx, bool wrap);
+CT_ENGINE_API void ctUISetTextWrap(ctUIContext* ctx, bool wrap);
 
 /*! @brief Draw text
     @param format follows printf spec but uses rdpq_text specific
@@ -99,14 +88,18 @@ void ctUISetTextWrap(ctUIContext* ctx, bool wrap);
     where "xx" is the hexidecimal of the font or style index. To use
     stray $ or ^ use $$ and ^^ respectively (see rdpq_text_printn)
     @returns position of the bottom right corner of the text */
-ctVec2 ctUIDrawText(ctUIContext* ctx, const ctVec2 position, const char* format, ...);
+CT_ENGINE_API ctVec2 ctUIDrawText(ctUIContext* ctx,
+                                  const ctVec2 position,
+                                  const char* format,
+                                  ...);
 
 /*! @brief Draw a text box
 
     Similar to ctUIDrawText but supports drawing to a region
     Avoid using if you can just use ctUIDrawText as this is
     much more expensive and meant for multi-line dialogue boxes */
-void ctUIDrawTextBox(ctUIContext* ctx, const ctRect rect, const char* format, ...);
+CT_ENGINE_API void
+ctUIDrawTextBox(ctUIContext* ctx, const ctRect rect, const char* format, ...);
 
 /* -------------------- UI Layout -------------------- */
 
@@ -125,29 +118,31 @@ typedef struct {
 /*! @brief Do a layout vertically
    @param spacing amount of spacing between elements (0: use next dimensions)
  */
-ctUILayout ctUILayoutVertical(const ctRect rect, float spacing);
+CT_ENGINE_API ctUILayout ctUILayoutVertical(const ctRect rect, float spacing);
 
 /*! @brief Do a layout sideways
    @param spacing amount of spacing between elements (0: use next dimensions)
  */
-ctUILayout ctUILayoutHorizontal(const ctRect rect, float spacing);
+CT_ENGINE_API ctUILayout ctUILayoutHorizontal(const ctRect rect, float spacing);
 
 /*! @brief Do a layout in a row/column manner
    @param columns amount of columns per rowm
    @param spacingX amount of X spacing between elements (0: use next dimensions)
    @param spacingY amount of Y spacing between elements (0: use next dimensions)
  */
-ctUILayout
-ctUILayoutGrid(const ctRect rect, uint16_t columns, float spacingX, float spacingY);
+CT_ENGINE_API ctUILayout ctUILayoutGrid(const ctRect rect,
+                                        uint16_t columns,
+                                        float spacingX,
+                                        float spacingY);
 
 /*! @brief Progress in the layout based on a rect region */
-void ctUILayoutNextRect(ctUILayout* layout, const ctRect rect);
+CT_ENGINE_API void ctUILayoutNextRect(ctUILayout* layout, const ctRect rect);
 
 /*! @brief Progress in the layout based on a ctUIDrawText result */
-void ctUILayoutNextText(ctUILayout* layout, const ctVec2 result);
+CT_ENGINE_API void ctUILayoutNextText(ctUILayout* layout, const ctVec2 result);
 
 /*! @brief Progress in the layout (assumes spacing is absolute) */
-void ctUILayoutNext(ctUILayout* layout);
+CT_ENGINE_API void ctUILayoutNext(ctUILayout* layout);
 
 /* -------------------- Multi-Viewport -------------------- */
 
@@ -157,19 +152,19 @@ void ctUILayoutNext(ctUILayout* layout);
 #define CT_UI_VIEWPORT_COMPOSITE UINT8_MAX
 
 /*! @brief Get the viewport index of the context */
-uint8_t ctUIGetViewportIndex(ctUIContext* ctx);
+CT_ENGINE_API uint8_t ctUIGetViewportIndex(ctUIContext* ctx);
 
-ctRect ctUIGetViewportRect(ctUIContext* ctx, bool safeArea);
+CT_ENGINE_API ctRect ctUIGetViewportRect(ctUIContext* ctx, bool safeArea);
 
 /*! @brief Get a rect  */
-ctRect ctUIGetChildRect(ctUIContext* ctx,
-                        const ctRect parent,
-                        const ctRect child,
-                        ctUIAlignment alignment);
+CT_ENGINE_API ctRect ctUIGetChildRect(ctUIContext* ctx,
+                                      const ctRect parent,
+                                      const ctRect child,
+                                      ctUIAlignment alignment);
 
 /*! @brief Get a rect in 2D space for the active viewport */
-ctRect ctUIGetRect3D(ctUIContext* ctx,
-                     ctVec3 position,
-                     ctVec2 dimensions,
-                     ctUIAlignment alignment,
-                     bool* visible);
+CT_ENGINE_API ctRect ctUIGetRect3D(ctUIContext* ctx,
+                                   ctVec3 position,
+                                   ctVec2 dimensions,
+                                   ctUIAlignment alignment,
+                                   bool* visible);

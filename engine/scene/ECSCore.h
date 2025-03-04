@@ -3,10 +3,15 @@
 
 The foundations of the entity component system
 */
+#pragma once
 
 #include "engine/utilities/Utilities.h"
 
 #include "codegen/engine/scene/ECSCore.h.gen.h"
+
+#ifndef CT_ECS_API
+#define CT_ECS_API
+#endif
 
 typedef uint8_t ctEntity;
 
@@ -20,13 +25,13 @@ typedef struct {
 } ctECSFlags;
 
 #define CT_DECLARE_ECS_FLAGS(_NAME)                                                      \
-   void ctECSFlagSet##_NAME(ctEntity entity);                                            \
-   void ctECSFlagUnset##_NAME(ctEntity entity);                                          \
-   bool ctECSFlagGet##_NAME(ctEntity entity);                                            \
+   CT_ECS_API void ctECSFlagSet##_NAME(ctEntity entity);                                 \
+   CT_ECS_API void ctECSFlagUnset##_NAME(ctEntity entity);                               \
+   CT_ECS_API bool ctECSFlagGet##_NAME(ctEntity entity);                                 \
    /*ctECSFlags* ctECSFlags##_NAME();*/                                                  \
-   uint32_t ctECSItCount##_NAME();                                                       \
-   bool ctECSItGetState##_NAME(uint32_t idx);                                            \
-   ctEntity ctECSItGetEntity##_NAME(uint32_t idx);
+   CT_ECS_API uint32_t ctECSItCount##_NAME();                                            \
+   CT_ECS_API bool ctECSItGetState##_NAME(uint32_t idx);                                 \
+   CT_ECS_API ctEntity ctECSItGetEntity##_NAME(uint32_t idx);
 
 #define CT_DEFINE_ECS_FLAGS(_NAME)                                                       \
    ctECSFlags gEntityFlag##_NAME;                                                        \
@@ -123,15 +128,15 @@ typedef struct {
 #define CT_COMPONENT_MAX     254
 
 #define CT_DECLARE_COMPONENT(_NAME, _TYPE)                                               \
-   void ctECSInitialize##_NAME();                                                        \
+   CT_ECS_API void ctECSInitialize##_NAME();                                             \
                                                                                          \
-   _TYPE* ctECSGet##_NAME(ctEntity entity);                                              \
-   _TYPE* ctECSAdd##_NAME(ctEntity entity);                                              \
-   void ctECSRemove##_NAME(ctEntity entity);                                             \
+   CT_ECS_API _TYPE* ctECSGet##_NAME(ctEntity entity);                                   \
+   CT_ECS_API _TYPE* ctECSAdd##_NAME(ctEntity entity);                                   \
+   CT_ECS_API void ctECSRemove##_NAME(ctEntity entity);                                  \
                                                                                          \
-   uint32_t ctECSItCount##_NAME();                                                       \
-   _TYPE* ctECSItGetComponent##_NAME(uint32_t idx);                                      \
-   ctEntity ctECSItGetEntity##_NAME(uint32_t idx);                                       \
+   CT_ECS_API uint32_t ctECSItCount##_NAME();                                            \
+   CT_ECS_API _TYPE* ctECSItGetComponent##_NAME(uint32_t idx);                           \
+   CT_ECS_API ctEntity ctECSItGetEntity##_NAME(uint32_t idx);                            \
                                                                                          \
    /*ctECSFlagCache* ctECSFlagCache##_NAME();                                            \
    void ctECSFlagCacheSetHas##_NAME(ctECSFlagCache* cache);                              \

@@ -71,20 +71,20 @@ typedef struct {
    FreeData(values[idx].data);
    @endcode
 */
-ctHashTable ctHashTableInit(uint32_t capacity, ctHashTableKey* keyBuffer);
+CT_ENGINE_API_HOT ctHashTable ctHashTableInit(uint32_t capacity, ctHashTableKey* keyBuffer);
 
 /*! @brief Insert a key into the table and track its index
    @warning A key MUST NOT equal UINT32_MAX
 */
-ctResults ctHashTableInsert(ctHashTable* table, uint32_t key, uint32_t* outIdx);
+CT_ENGINE_API_HOT ctResults ctHashTableInsert(ctHashTable* table, uint32_t key, uint32_t* outIdx);
 
 /*! @brief Remove a key from the table and "free up" its index
    @warning A key MUST NOT equal UINT32_MAX
 */
-ctResults ctHashTableRemove(ctHashTable* table, uint32_t key, uint32_t* outIdx);
+CT_ENGINE_API_HOT ctResults ctHashTableRemove(ctHashTable* table, uint32_t key, uint32_t* outIdx);
 
 /*! @brief Check if a key exists in the hash table */
-bool ctHashTableExists(ctHashTable* table, uint32_t key);
+CT_ENGINE_API_HOT bool ctHashTableExists(ctHashTable* table, uint32_t key);
 
 /*! @brief Find the index of a key
 
@@ -94,7 +94,7 @@ bool ctHashTableExists(ctHashTable* table, uint32_t key);
 
    @warning A key MUST NOT equal UINT32_MAX
 */
-ctResults ctHashTableFindIdx(ctHashTable* table, uint32_t key, uint32_t* outIdx);
+CT_ENGINE_API_HOT ctResults ctHashTableFindIdx(ctHashTable* table, uint32_t key, uint32_t* outIdx);
 
 /*! @brief Clear the hash table */
-void ctHashTableClear(ctHashTable* table);
+CT_ENGINE_API_HOT void ctHashTableClear(ctHashTable* table);

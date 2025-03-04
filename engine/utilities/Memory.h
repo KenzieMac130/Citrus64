@@ -24,41 +24,41 @@ Memory allocation and manipulation utilities
    Similar to C's malloc() but guaranteed to sit on CT_ALIGNMENT_CACHE
    @warning Only free with ctFree()
 */
-void* ctMalloc(size_t size);
+CT_ENGINE_API void* ctMalloc(size_t size);
 
 /*! @brief Heap memory reallocation
 
    Similar to C's realloc() but guaranteed to sit on CT_ALIGNMENT_CACHE
    @warning Only free with ctFree()
 */
-void* ctRealloc(void* old, size_t size);
+CT_ENGINE_API void* ctRealloc(void* old, size_t size);
 
 /*! @brief Heap memory free
 
    Similar to C's free() but for use with ctAlloc functions
    @warning Only use on blocks allocated with ctAlloc variants
 */
-void ctFree(void* block);
+CT_ENGINE_API void ctFree(void* block);
 
 /*! @brief Aligned heap memory allocation
 
    Similar to C's malloc() but guaranteed to be aligned
    @warning Only free with ctFree()
 */
-void* ctAlignedMalloc(size_t size, size_t alignment);
+CT_ENGINE_API void* ctAlignedMalloc(size_t size, size_t alignment);
 
 /*! @brief Aligned heap memory reallocation
 
    Similar to C's malloc() but guaranteed to be aligned
    @warning Only free with ctFree()
 */
-void* ctAlignedRealloc(void* block, size_t size, size_t alignment);
+CT_ENGINE_API void* ctAlignedRealloc(void* block, size_t size, size_t alignment);
 
 /*! @brief Aligned heap memory free
 
    Basically just ctFree(). Its here for API symetry.
 */
-void ctAlignedFree(void* block);
+CT_ENGINE_API void ctAlignedFree(void* block);
 
 /*! @brief Allocation group descriptor for ctGroupAlloc() */
 typedef struct {
@@ -82,7 +82,7 @@ typedef struct {
    @returns A pointer to the shared block of data
    @warning Only call ctFree() on the shared block
 */
-void* ctGroupAlloc(size_t count, ctGroupAllocDesc* groups, size_t* sizeOut);
+CT_ENGINE_API void* ctGroupAlloc(size_t count, ctGroupAllocDesc* groups, size_t* sizeOut);
 
 /*! @brief Allocate memory on the stack
    @warning Only use for small allocations whose size cannot be known at compile time
@@ -93,15 +93,15 @@ void* ctGroupAlloc(size_t count, ctGroupAllocDesc* groups, size_t* sizeOut);
 
    This does not include allocations made by vanilla malloc/free
 */
-int64_t ctGetAliveAllocations();
+CT_ENGINE_API int64_t ctGetAliveAllocations();
 
 /* ------- Buffer Over/Underflow Checking ------- */
 
 /*! @brief Assert memory block against parent bounds */
-void ctBufferAssert(void* parentBuffer,
-                    size_t parentBufferSize,
-                    void* childBuffer,
-                    size_t childBufferSize);
+CT_ENGINE_API_HOT void ctBufferAssert(void* parentBuffer,
+                                      size_t parentBufferSize,
+                                      void* childBuffer,
+                                      size_t childBufferSize);
 
 /*! @brief ctBufferAssert() for single objects */
 #define ctBufferAssertSingle(_parentBuffer, _parentBufferSize, _ptr)                     \

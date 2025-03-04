@@ -18,7 +18,7 @@ Provides offline and runtime hashing functions
 #define CT_XXH32_STRING(_identifier, _text)
 
 /*! @brief Hash the buffer using the XXHash algorithm */
-uint32_t ctXXHash32Bytes(const void* buffer, size_t size);
+CT_ENGINE_API uint32_t ctXXHash32Bytes(const void* buffer, size_t size);
 
 /*! @brief Hash the string (excluding null-terminator) using the XXHash algorithm */
-uint32_t ctXXHash32String(const char* string);
+CT_ENGINE_API uint32_t ctXXHash32String(const char* string);

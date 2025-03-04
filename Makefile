@@ -7,7 +7,7 @@ ROM_TITLE="Citrus Game"
 SOURCE_DIR=.
 BUILD_DIR=build
 include $(N64_INST)/include/n64.mk
-include libs/tiny3d/t3d.mk
+include $(N64_INST)/include/t3d.mk
 
 # Uncomment this to check for memory usage errors 
 # this will use address sanitizer to look for possible bugs
@@ -87,6 +87,7 @@ SOURCES += $(wildcard engine/**/**/*.c)
 SOURCES += $(wildcard engine/**/**/**/*.c)
 SOURCES += $(wildcard engine/**/**/**/**/*.c)
 OBJECTS := $(subst engine/,$(BUILD_DIR)/engine/,$(SOURCES:.c=.o))
+OBJECTS += $(BUILD_DIR)/game/GameGlobal.o
 $(BUILD_DIR)/$(ROM_NAME).elf: $(OBJECTS) $(MAIN_ELF_EXTERNS)
 -include $(OBJECTS:.o=.d)
 

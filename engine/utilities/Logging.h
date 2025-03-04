@@ -11,10 +11,10 @@ Debug logging
 #include "codegen/engine/utilities/Logging.h.gen.h"
 
 /*! @brief Print a line of debug info to the console */
-void ctDebugLog(const char* format, ...);
+CT_ENGINE_API void ctDebugLog(const char* format, ...);
 
 /*! @brief Print a line of warning info to the console */
-void ctDebugWarning(const char* format, ...);
+CT_ENGINE_API void ctDebugWarning(const char* format, ...);
 
 /*! @brief Print a line of error info to the console */
-void ctDebugError(const char* format, ...);
+CT_ENGINE_API void ctDebugError(const char* format, ...);

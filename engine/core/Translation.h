@@ -3,6 +3,7 @@
 
 Translate text into other languages
 */
+#pragma once
 
 #include "engine/utilities/Utilities.h"
 
@@ -15,16 +16,16 @@ Translate text into other languages
 /*! @brief Get the translated text for the user's language
     @warning results may be invalid eventually, use immediately or make a copy
 */
-const char* ctGetText(const char* identifier);
+CT_ENGINE_API const char* ctGetText(const char* identifier);
 
 /*! @brief Similar to ctGetText() but faster using results of CT_XXH32_STRING
  */
-const char* ctGetTextHashed(uint32_t hash);
+CT_ENGINE_API const char* ctGetTextHashed(uint32_t hash);
 
 /*! @brief Set the base path of the translations to be loaded next frame
     @param basePath is expected to contain mo files for each language
 */
-void ctTranslationSetBank(uint32_t bankIndex, const char* basePath);
+CT_ENGINE_API void ctTranslationSetBank(uint32_t bankIndex, const char* basePath);
 
 /*! @brief Set the target language to be loaded next game update
     @param isoCode lower case "(ISO 639-1)-(ISO 3166 A2)" (ex: "en-us")
@@ -33,15 +34,15 @@ void ctTranslationSetBank(uint32_t bankIndex, const char* basePath);
     in the target language first, if this fails it will just look for the
     language. Full RFC 4646 is not supported.
 */
-void ctTranslationSetLanguage(const char* isoCode);
+CT_ENGINE_API void ctTranslationSetLanguage(const char* isoCode);
 
 /*! @brief Get the actively loaded language */
-const char* ctTranslationGetLanguage();
+CT_ENGINE_API const char* ctTranslationGetLanguage();
 
 /*! @brief Update the translation system
     @warning Any pointers to strings will be instantly invalid
 */
-void ctTranslationUpdate();
+CT_ENGINE_API void ctTranslationUpdate();
 
-void ctTranslationStartup();
-void ctTranslationShutdown();
+CT_ENGINE_API void ctTranslationStartup();
+CT_ENGINE_API void ctTranslationShutdown();

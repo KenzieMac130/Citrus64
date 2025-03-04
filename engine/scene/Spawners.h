@@ -3,6 +3,7 @@
 
 Handles spawning prefabs in the world
 */
+#pragma once
 
 #include "engine/utilities/Utilities.h"
 

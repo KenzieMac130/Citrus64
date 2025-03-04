@@ -24,10 +24,10 @@ typedef struct {
 } ctStopwatch;
 
 /*! @brief Initialize the stopwatch and start the clock immediately */
-ctStopwatch ctStopwatchInit();
+CT_ENGINE_API ctStopwatch ctStopwatchInit();
 
 /*! @brief Progress the stopwatch to the next lap (or end the timer) */
-void ctStopwatchNextLap(ctStopwatch* stopwatch);
+CT_ENGINE_API void ctStopwatchNextLap(ctStopwatch* stopwatch);
 
 /*! @brief Get the delta time of the last lap in real-world time */
-float ctStopwatchGetDeltaTime(const ctStopwatch* stopwatch);
+CT_ENGINE_API float ctStopwatchGetDeltaTime(const ctStopwatch* stopwatch);

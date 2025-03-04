@@ -78,7 +78,7 @@ ctResults ctResourceLoadLibrary(ctResource* dest,
 #endif
    dest->object = dlopen(dest->object, local ? RTLD_LOCAL : RTLD_GLOBAL);
    if (!dest->object) { return CT_FAILURE_CORRUPTED_CONTENTS; }
-   void (*fnLoad)(void) = dlsym(dest->object, "OnLibraryLoad");
+   void (*fnLoad)(void) = dlsym(dest->object, "void OnLibraryLoad(void)");
    if (fnLoad) { fnLoad(); }
    return CT_SUCCESS;
 }
@@ -86,7 +86,7 @@ ctResults ctResourceLoadLibrary(ctResource* dest,
 void ctResourceUnloadLibrary(ctResource* dest) {
    ctAssert(ctResourceTypeHasCode(dest->type));
    if (!dest->object) { return; }
-   void (*fnUnload)(void) = dlsym(dest->object, "OnLibraryUnload");
+   void (*fnUnload)(void) = dlsym(dest->object, "void OnLibraryUnload(void)");
    if (fnUnload) { fnUnload(); }
    dlclose(dest->object);
 }
@@ -184,37 +184,21 @@ const char* ctResourceGetTextHashed(ctResourceHandle handle, uint32_t hash) {
 
 /* ---------------- Font ---------------- */
 
-bool registeredFonts[CT_MAX_FONTS];
 ctResults ctResourceLoadFont(ctResource* dest, const char* path) {
    CT_RETURN_FAIL(ctResourceLoadBytes(dest, CT_RESOURCE_FONT, path, ".font64"));
-   dest->object = NULL;
-   bool foundSlot = false;
-   for (size_t i = 0; i < CT_MAX_FONTS; i++) {
-      if (!registeredFonts[i]) {
-         registeredFonts[i] = true;
-         dest->object = (void*)i;
-         foundSlot = true;
-         break;
-      }
-   }
-   ctAssert(foundSlot);
-   rdpq_text_register_font((size_t)dest->object + 1, dest->data);
+   dest->object = dest->data;
    return CT_SUCCESS;
 }
 
 void ctResourceUnloadFont(ctResource* dest) {
-   ctAssert((size_t)dest->type == CT_RESOURCE_FONT);
-   ctAssert((size_t)dest->object < CT_MAX_FONTS);
-   registeredFonts[(size_t)dest->object] = false;
-   rdpq_text_unregister_font((size_t)dest->object + 1);
    ctResourceUnloadBytes(dest);
 }
 
-int ctResourceGetFont(ctResourceHandle handle) {
+ctFont* ctResourceGetFont(ctResourceHandle handle) {
    ctResource* resource = ctResourceHandleGet(handle);
-   if (!resource) { return 0; }
-   if (resource->type != CT_RESOURCE_FONT) { return 0; }
-   return (size_t)(resource->object);
+   if (!resource) { return NULL; }
+   if (resource->type != CT_RESOURCE_FONT) { return NULL; }
+   return (ctFont*)(resource->object);
 }
 
 /* ---------------- All Resources ---------------- */
@@ -283,7 +267,7 @@ ctResourceGetOrLoad(ctResourceHandle* out, ctResourceType type, const char* path
    return CT_SUCCESS;
 }
 
-void ctResourceGarbageCollect() {
+void ctResourceManagerGarbageCollect() {
    for (uint32_t i = 0; i < CT_MAX_RESOURCES; i++) {
       if (gResourceRefcount[i] > 0) { continue; }
       ctResourceUnload(&gResources[i]);

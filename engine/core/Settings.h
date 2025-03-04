@@ -3,6 +3,7 @@
 
 Settings
 */
+#pragma once
 
 #include "engine/utilities/Utilities.h"
 
@@ -20,7 +21,7 @@ typedef enum {
 } ctSettingsColorVision;
 
 /*! @brief Get if the user has a color impediment */
-ctSettingsColorVision ctSettingsGetColorVision();
+CT_ENGINE_API ctSettingsColorVision ctSettingsGetColorVision();
 
 typedef enum {
    CT_UI_SCALE_SMALLER,
@@ -31,7 +32,7 @@ typedef enum {
 } ctSettingsUIScale;
 
 /*! @brief Desired scale to be applied to the UI */
-ctSettingsUIScale ctSettingsGetUIScale();
+CT_ENGINE_API ctSettingsUIScale ctSettingsGetUIScale();
 
 /*! @brief Priotitize readability over visuals */
-bool ctSettingsIsHighContrast();
+CT_ENGINE_API bool ctSettingsIsHighContrast();

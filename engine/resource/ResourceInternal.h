@@ -1,5 +1,4 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
-
 #pragma once
 
 #include "Resource.h"
@@ -13,4 +12,4 @@ typedef struct {
    void* object;
 } ctResource;
 
-ctResource* ctResourceHandleGet(ctResourceHandle handle);
+CT_ENGINE_API ctResource* ctResourceHandleGet(ctResourceHandle handle);

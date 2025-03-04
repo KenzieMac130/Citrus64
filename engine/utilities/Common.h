@@ -6,6 +6,8 @@ Boilerplate for all engine and game files
 
 #pragma once
 
+#include "engine/Config.h"
+
 #define __STDC_FORMAT_MACROS
 #include <inttypes.h>
 #include <stdlib.h>
@@ -20,9 +22,12 @@ Boilerplate for all engine and game files
 #include <stdarg.h>
 #include <ctype.h>
 
+#ifndef CT_IS_SCRIPT
 #include <libdragon.h>
-
-#include "engine/Config.h"
+#else
+typedef struct sprite_s sprite_t;
+typedef struct rdpq_font_s rdpq_font_t;
+#endif
 
 /*! @brief Return Codes for the engine's runtime errors */
 typedef enum {
@@ -54,7 +59,16 @@ typedef enum {
    CT_FAILURE_END_OF_STREAM = -24
 } ctResults;
 
-/*Debug*/
+/* API */
+#ifdef CT_IS_SCRIPT
+#define CT_ENGINE_API extern
+#define CT_ENGINE_API_HOT extern
+#else
+#define CT_ENGINE_API
+#define CT_ENGINE_API_HOT
+#endif
+
+/* Debug */
 #ifdef NDEBUG
 #define CT_IS_DEBUG 0
 #else

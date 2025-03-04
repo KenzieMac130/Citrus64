@@ -19,6 +19,7 @@ ctHashTable ctHashTableInit(uint32_t capacity, ctHashTableKey* keyBuffer) {
 #define USE_JUMPS 1
 uint32_t _ctHashTableFindIdx(ctHashTable* table, uint32_t key) {
    ctAssert(table);
+   ctAssert(table->capacity > 0);
    ctAssert(key != UINT32_MAX);
    uint32_t idx = key % (uint32_t)table->capacity;
 #if USE_JUMPS

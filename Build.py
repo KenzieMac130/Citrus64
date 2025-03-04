@@ -14,7 +14,7 @@ def generate_build_config(args):
     text = "#pragma once\n"
 
     for define in args.define:
-        define += f"#define {define} 1\n"
+        text += f"#define {define} 1\n"
 
     if args.test:
         text += "#define CT_BUILD_UNIT_TESTS 1\n"

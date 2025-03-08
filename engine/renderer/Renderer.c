@@ -7,20 +7,26 @@
 #include "codegen/engine/renderer/Renderer.c.gen.h"
 
 /* todo: initialize, per viewport? */
-bool fogEnable;
-float fogMin;
-float fogMax;
-color_t fogColor;
+bool gFogEnable;
+float gFogMin;
+float gFogMax;
+color_t gFogColor;
 
-color_t ambientColor;
+color_t gAmbientColor;
 
 /* ---------------------- Background ------------------------ */
 
+ctResourceHandle gBackgroundModelHandle = CT_RESOURCE_HANDLE_INVALID;
 T3DModel* gBackgroundModel;
 T3DMat4FP gBackgroundMatrix; /* expected to be a unit matrix */
 
 void ctRendererSetBackgroundModel(ctResourceHandle model) {
-   //gBackgroundModel = (T3DModel*)model;
+   if (gBackgroundModelHandle != CT_RESOURCE_HANDLE_INVALID) {
+      ctResourceRelease(gBackgroundModelHandle);
+   }
+   gBackgroundModel = (T3DModel*)ctResourceGetModel(model);
+   gBackgroundModelHandle = model;
+   ctResourceAddReference(gBackgroundModelHandle);
 }
 
 /* ---------------------- Viewports ------------------------ */
@@ -126,6 +132,11 @@ void ctRendererStartup() {
    }
    ctRendererSetViewportEnabled(0, true);
    ctRendererSetViewportRect(0, ctRendererGetScreenRect());
+
+   /* Setup Defaults */
+   t3d_mat4fp_identity((T3DMat4FP*)UncachedAddr(&gBackgroundMatrix));
+   gAmbientColor = RGBA32(255, 255, 255, 255);
+   gFogColor = RGBA32(255, 255, 255, 255);
 }
 
 void ctRendererShutdown() {
@@ -140,12 +151,12 @@ void ctRendererRenderViewport(ctViewport* viewport) {
 
    /* setup fog */
    rdpq_mode_fog(RDPQ_FOG_STANDARD);
-   rdpq_set_fog_color(fogColor);
-   t3d_fog_set_range(fogMin, fogMax);
-   t3d_fog_set_enabled(fogEnable);
+   rdpq_set_fog_color(gFogColor);
+   t3d_fog_set_range(gFogMin, gFogMax);
+   t3d_fog_set_enabled(gFogEnable);
 
    /* setup lighting */
-   t3d_light_set_ambient(&ambientColor.r);
+   t3d_light_set_ambient(&gAmbientColor.r);
    t3d_light_set_count(0);
 
    /* draw background */
@@ -160,11 +171,14 @@ void ctRendererRenderViewport(ctViewport* viewport) {
    }
 
    /* draw entities */
+   const uint32_t inflightFrame = 0;
    const uint32_t rendererCount = ctECSItCountRenderer();
    for (uint32_t i = 0; i < rendererCount; i++) {
       const ctComponentRenderer* renderer = ctECSItGetComponentRenderer(i);
-      rspq_block_run(renderer->block);
+      rspq_block_run(renderer->blocks[inflightFrame]);
    }
+
+   /* draw blob shadows */
 
    /* render debug visualizers */
    // todo
@@ -174,11 +188,13 @@ void ctRendererRenderViewport(ctViewport* viewport) {
 }
 
 void ctRendererRenderFrame() {
+   /* update matrices */
+
    /* setup */
    rdpq_attach(display_get(), display_get_zbuf());
    t3d_frame_start();
 
-   /* clear buffer */
+   /* clear buffers */
 #if CT_CLEAR_COLOR
    t3d_screen_clear_color(CT_DEFAULT_CLEAR_COLOR);
 #endif

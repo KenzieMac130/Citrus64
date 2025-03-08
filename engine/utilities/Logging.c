@@ -23,6 +23,7 @@ void ctDebugWarning(const char* format, ...) {
    va_start(args, format);
    fprintf(stderr, "[WARNING] ");
    vfprintf(stderr, format, args);
+   fprintf(stderr, "\n");
 #if CT_BUILD_UNIT_TESTS
    fprintf(stdout, "[WARNING] ");
    vfprintf(stdout, format, args);
@@ -38,6 +39,7 @@ void ctDebugError(const char* format, ...) {
    va_start(args, format);
    fprintf(stderr, "[ERROR] ");
    vfprintf(stderr, format, args);
+   fprintf(stderr, "\n");
 #if CT_BUILD_UNIT_TESTS
    fprintf(stdout, "[ERROR] ");
    vfprintf(stdout, format, args);

@@ -7,6 +7,7 @@ class TaskBase(waflib.Task.Task):
 	name = ""
 	out_extension = None
 	shell = True
+	use_codegen = False
 
 	# Check if task is responsible for file path (before checkin)
 	def poll_file_path(path : Path) -> bool:
@@ -29,7 +30,10 @@ class TaskBase(waflib.Task.Task):
 		out_path = str(path).replace(' ', '_')
 		out_path = str(out_path).encode("ascii", errors="replace").decode()
 		out_path = str(out_path).replace('?', '_')
-		out_path = str(Path("data") / out_path)
+		if self.use_codegen:
+			out_path = str(Path("assetcode") / out_path)
+		else:
+			out_path = str(Path("data") / out_path)
 		if self.out_extension:
 			out_path = str(Path(out_path).with_suffix(self.out_extension))
 

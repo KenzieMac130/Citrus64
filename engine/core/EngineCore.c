@@ -7,6 +7,7 @@
 #include "engine/core/Translation.h"
 #include "engine/resource/Resource.h"
 #include "engine/renderer/Renderer.h"
+#include "engine/scene/Scene.h"
 #include "game/GameGlobal.h"
 
 #include "codegen/engine/core/EngineCore.c.gen.h"
@@ -16,11 +17,14 @@ void ctEngineIgnite() {
    ctTranslationStartup();
    ctRendererStartup();
    OnGameStartup();
+   ctSceneSet(CT_DEFAULT_SCENE);
 }
 
 void ctEngineLoop() {
    while (1) {
       ctTranslationUpdate();
+      ctSceneLoadUpdate();
+
       ctRendererRenderFrame();
       ctResourceManagerGarbageCollect();
    }

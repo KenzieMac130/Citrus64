@@ -61,7 +61,7 @@ typedef enum {
 
 /* API */
 #ifdef CT_IS_SCRIPT
-#define CT_ENGINE_API extern
+#define CT_ENGINE_API     extern
 #define CT_ENGINE_API_HOT extern
 #else
 #define CT_ENGINE_API
@@ -77,6 +77,7 @@ typedef enum {
 
 /*! @brief Runtime Fatal Error Throwing */
 #define ctAssert(e) assert(e)
+#define ctAssertf   assertf
 
 /*! @brief Offline Compile-time Error Throwing */
 #define ctStaticAssert(e) static_assert(e)
@@ -85,7 +86,7 @@ typedef enum {
 #define ctErrorCheck(_msg) (_msg != CT_SUCCESS)
 
 /*! @brief Raise a fatal error while the game is running */
-#define ctFatalError(_MESSAGE) ctAssert(0 && _MESSAGE)
+#define ctFatalError(_MESSAGE) ctAssertf(0, _MESSAGE)
 
 /*! @brief Raise a fatal error if a ctResults runtime error occured */
 #define CT_PANIC_FAIL(_arg, _message)                                                    \

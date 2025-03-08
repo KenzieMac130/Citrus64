@@ -11,4 +11,4 @@ Manages the main game scene
 
 CT_ENGINE_API void ctSceneSet(const char* path);
 
-CT_ENGINE_API void ctSceneUpdate();
+CT_ENGINE_API void ctSceneLoadUpdate();

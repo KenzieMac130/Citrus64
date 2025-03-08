@@ -4,7 +4,7 @@
 
 #include "engine/resource/Resource.h"
 
-#include "codegen/engine/scene/Scene.h.gen.h"
+#include "codegen/engine/scene/Scene.c.gen.h"
 
 bool gWantsLoad;
 char gScenePath[128];
@@ -14,11 +14,10 @@ void (*OnSceneSetup)();
 
 void ctSceneSet(const char* path) {
    gWantsLoad = true;
-   if (gScene != CT_RESOURCE_HANDLE_INVALID) {}
-   ctResourceGetOrLoad(&gScene, CT_RESOURCE_SCRIPT, path);
+   ctStringCopy(gScenePath, 128, path);
 }
 
-void ctSceneUpdate() {
+void ctSceneLoadUpdate() {
    if (gWantsLoad) {
       if (gScene != CT_RESOURCE_HANDLE_INVALID) {
          ctResourceRelease(gScene);
@@ -26,9 +25,9 @@ void ctSceneUpdate() {
       }
       CT_PANIC_FAIL(ctResourceGetOrLoad(&gScene, CT_RESOURCE_SCRIPT, gScenePath),
                     "Failed to Load");
-      CT_PANIC_FAIL(
-        ctResourceGetSymbol(gScene, "void OnSceneSetup(void)", (void**)&OnSceneSetup),
-        "Failed to Load");
+      CT_PANIC_FAIL(ctResourceGetSymbol(gScene, "OnSceneSetup", (void**)&OnSceneSetup),
+                    "No scene setup found");
       OnSceneSetup();
+      gWantsLoad = false;
    }
 }

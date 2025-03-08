@@ -1,14 +1,18 @@
 /* By Kenzie Wright - SPDX-License-Identifier: Apache-2.0 */
 #pragma once
 
+/* --------------- Scene ----------------- */
+#define CT_DEFAULT_SCENE "demo/TestScene"
+
 /* --------------- Limits --------------- */
 #define CT_MAX_TRANSLATION_BANKS 8
 #define CT_MAX_RESOURCES 751
 #define CT_MAX_VIEWPORTS 4
 #define CT_MAX_FONTS 16
+#define CT_MAX_INFLIGHT_FRAMES 3
 
 /* --------------- Rendering ----------------- */
-#define CT_DEFAULT_CLEAR_COLOR RGBA32(0, 255, 0, 255)
+#define CT_DEFAULT_CLEAR_COLOR RGBA32(0, 0, 0, 255)
 #define CT_DEFAULT_CLIP_NEAR 10.0f
 #define CT_DEFAULT_CLIP_FAR 1000.0f
 #define CT_DEFAULT_FOV 90.0f

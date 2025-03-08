@@ -7,6 +7,8 @@
 
 #include "codegen/engine/resource/Resource.c.gen.h"
 
+#define CT_RESOURCE_UNLOADED -1
+
 ctHashTable gResourceHashTable;
 ctHashTableKey gResourceKeys[CT_MAX_RESOURCES];
 int32_t gResourceRefcount[CT_MAX_RESOURCES];
@@ -15,8 +17,10 @@ ctResource gResources[CT_MAX_RESOURCES];
 char pathScratch[128];
 
 bool ctPathExists(const char* path) {
-   if (strncmp(path, "rom://", 6) == 0) {
+   if (strncmp(path, "rom:/", 6) == 0) {
       if (!dfs_rom_addr(path + 6)) { return false; }
+   } else if (strncmp(path, "rom:/", 5) == 0) {
+      if (!dfs_rom_addr(path + 5)) { return false; }
    } else {
       ctAssert("unimplemented");
       return false;
@@ -30,7 +34,7 @@ ctResults ctResourceLoadBytes(ctResource* dest,
                               ctResourceType type,
                               const char* path,
                               const char* extension) {
-   ctStringFormat(pathScratch, 128, "rom://%s%s", path, extension);
+   ctStringFormat(pathScratch, 128, "rom:/%s%s", path, extension);
    dest->type = type;
    dest->data = NULL;
    dest->object = dest->data;
@@ -64,7 +68,7 @@ ctResults ctResourceLoadLibrary(ctResource* dest,
                                 ctResourceType type,
                                 const char* path,
                                 bool local) {
-   ctStringFormat(pathScratch, 128, "rom://%s%s", path, ".dso");
+   ctStringFormat(pathScratch, 128, "rom:/%s%s", path, ".dso");
    dest->type = type;
    dest->size = 0;
    dest->data = NULL;
@@ -76,9 +80,9 @@ ctResults ctResourceLoadLibrary(ctResource* dest,
       return CT_FAILURE_FILE_NOT_FOUND;
    }
 #endif
-   dest->object = dlopen(dest->object, local ? RTLD_LOCAL : RTLD_GLOBAL);
+   dest->object = dlopen(pathScratch, local ? RTLD_LOCAL : RTLD_GLOBAL);
    if (!dest->object) { return CT_FAILURE_CORRUPTED_CONTENTS; }
-   void (*fnLoad)(void) = dlsym(dest->object, "void OnLibraryLoad(void)");
+   void (*fnLoad)(void) = dlsym(dest->object, "OnLibraryLoad");
    if (fnLoad) { fnLoad(); }
    return CT_SUCCESS;
 }
@@ -86,7 +90,7 @@ ctResults ctResourceLoadLibrary(ctResource* dest,
 void ctResourceUnloadLibrary(ctResource* dest) {
    ctAssert(ctResourceTypeHasCode(dest->type));
    if (!dest->object) { return; }
-   void (*fnUnload)(void) = dlsym(dest->object, "void OnLibraryUnload(void)");
+   void (*fnUnload)(void) = dlsym(dest->object, "OnLibraryUnload");
    if (fnUnload) { fnUnload(); }
    dlclose(dest->object);
 }
@@ -98,7 +102,7 @@ ctResults ctResourceGetSymbol(ctResourceHandle handle, const char* symbol, void*
       *out = NULL;
       return CT_FAILURE_FILE_NOT_FOUND;
    }
-   if (ctResourceTypeHasCode(resource->type)) {
+   if (!ctResourceTypeHasCode(resource->type)) {
       *out = NULL;
       return CT_FAILURE_TYPE_ERROR;
    }
@@ -111,7 +115,7 @@ ctResults ctResourceGetSymbol(ctResourceHandle handle, const char* symbol, void*
 /* ---------------- Sprite ---------------- */
 
 ctResults ctResourceLoadSprite(ctResource* dest, const char* path) {
-   ctStringFormat(pathScratch, 128, "rom://%s%s", path, ".sprite");
+   ctStringFormat(pathScratch, 128, "rom:/%s%s", path, ".sprite");
    dest->type = CT_RESOURCE_SPRITE;
    dest->data = NULL;
    dest->size = 0;
@@ -135,7 +139,7 @@ void ctResourceUnloadSprite(ctResource* dest) {
 /* ---------------- T3D Model ---------------- */
 
 ctResults ctResourceLoadModel(ctResource* dest, const char* path) {
-   ctStringFormat(pathScratch, 128, "rom://%s%s", path, ".t3dm");
+   ctStringFormat(pathScratch, 128, "rom:/%s%s", path, ".t3dm");
    dest->type = CT_RESOURCE_MODEL;
    dest->data = NULL;
    dest->size = 0;
@@ -154,6 +158,13 @@ void ctResourceUnloadModel(ctResource* dest) {
    ctAssert((size_t)dest->type == CT_RESOURCE_MODEL);
    if (!dest->object) { return; }
    t3d_model_free((T3DModel*)dest->object);
+}
+
+ctModel* ctResourceGetModel(ctResourceHandle handle) {
+   ctResource* resource = ctResourceHandleGet(handle);
+   if (!resource) { return NULL; }
+   if (resource->type != CT_RESOURCE_MODEL) { return NULL; }
+   return (ctModel*)resource->object;
 }
 
 /* ---------------- Translation ---------------- */
@@ -209,7 +220,7 @@ ctResults ctResourceLoad(ctResource* dest, ctResourceType type, const char* path
       case CT_RESOURCE_MODULE:
          return ctResourceLoadLibrary(dest, CT_RESOURCE_MODULE, path, false);
       case CT_RESOURCE_SCRIPT:
-         return ctResourceLoadLibrary(dest, CT_RESOURCE_MODULE, path, true);
+         return ctResourceLoadLibrary(dest, CT_RESOURCE_SCRIPT, path, true);
       case CT_RESOURCE_TRANSLATION: return ctResourceLoadTranslation(dest, path);
       case CT_RESOURCE_SPRITE: return ctResourceLoadSprite(dest, path);
       case CT_RESOURCE_FONT: return ctResourceLoadFont(dest, path);
@@ -238,6 +249,13 @@ void ctResourceRelease(ctResourceHandle resource) {
    gResourceRefcount[resource]--;
 }
 
+void ctResourceAddReference(ctResourceHandle resource) {
+   if (resource == CT_RESOURCE_HANDLE_INVALID) { return; }
+   ctAssert(resource <= CT_MAX_RESOURCES);
+   ctAssert(gResourceRefcount[resource] >= 0);
+   gResourceRefcount[resource]++;
+}
+
 ctResource* ctResourceHandleGet(ctResourceHandle handle) {
    if (handle == CT_RESOURCE_HANDLE_INVALID) { return NULL; }
    ctAssert(handle < CT_MAX_RESOURCES);
@@ -262,6 +280,7 @@ ctResourceGetOrLoad(ctResourceHandle* out, ctResourceType type, const char* path
       CT_RETURN_FAIL(ctResourceLoad(&gResources[idx], type, path));
    }
    if (gResources[idx].type != type) { return CT_FAILURE_TYPE_ERROR; }
+   if (gResourceRefcount[idx] == CT_RESOURCE_UNLOADED) { gResourceRefcount[idx] = 0; }
    gResourceRefcount[idx]++;
    *out = (ctResourceHandle)idx;
    return CT_SUCCESS;
@@ -269,22 +288,22 @@ ctResourceGetOrLoad(ctResourceHandle* out, ctResourceType type, const char* path
 
 void ctResourceManagerGarbageCollect() {
    for (uint32_t i = 0; i < CT_MAX_RESOURCES; i++) {
-      if (gResourceRefcount[i] > 0) { continue; }
+      if (gResourceRefcount[i] != 0) { continue; }
       ctResourceUnload(&gResources[i]);
-      gResourceRefcount[i] = 0;
+      gResourceRefcount[i] = CT_RESOURCE_UNLOADED;
    }
 }
 
 void ctResourceManagerStartup() {
    gResourceHashTable = ctHashTableInit(CT_MAX_RESOURCES, gResourceKeys);
    for (uint32_t i = 0; i < CT_MAX_RESOURCES; i++) {
-      gResourceRefcount[i] = 0;
+      gResourceRefcount[i] = CT_RESOURCE_UNLOADED;
    }
 }
 
 void ctResourceManagerShutdown() {
    for (uint32_t i = 0; i < CT_MAX_RESOURCES; i++) {
-      if (gResourceRefcount[i] <= 0) { continue; }
+      if (gResourceRefcount[i] == CT_RESOURCE_UNLOADED) { continue; }
       ctResourceUnload(&gResources[i]);
    }
 }

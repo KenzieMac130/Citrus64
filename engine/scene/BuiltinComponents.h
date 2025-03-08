@@ -32,14 +32,26 @@ typedef struct {
 
 typedef struct {
    ctResourceHandle model;
-   uint32_t flags;
+   uint16_t flags;
 } ctComponentModel;
 
 typedef struct {
-   rspq_block_t* block;
-   uint8_t flags;
+   rspq_block_t* blocks[CT_MAX_INFLIGHT_FRAMES];
+   uint8_t flags[CT_MAX_INFLIGHT_FRAMES];
    bool _visibleCull;
 } ctComponentRenderer;
+
+typedef struct {
+   T3DMat4FP frames[CT_MAX_INFLIGHT_FRAMES];
+} ctComponentRenderMatrices;
+
+typedef struct {
+   char str[16];
+} ctComponentDebugLabel;
+
+typedef struct {
+   uint8_t shadowSize;
+} ctComponentShadowRenderer;
 
 CT_DECLARE_ECS_FLAGS(PositionDirty);
 CT_DECLARE_COMPONENT(Position, ctVec3);
@@ -53,11 +65,14 @@ CT_DECLARE_COMPONENT(LastRotationScale, ctComponentRotationScale);
 
 CT_DECLARE_COMPONENT(HitShape, ctComponentHitShape);
 
-CT_DECLARE_COMPONENT(RenderMatrix, T3DMat4FP);
+CT_DECLARE_COMPONENT(RenderMatrix, ctComponentRenderMatrices);
 
+CT_DECLARE_ECS_FLAGS(RendererDirty);
 CT_DECLARE_COMPONENT(Renderer, ctComponentRenderer);
 
-CT_DECLARE_ECS_FLAGS(ModelUpdate);
+CT_DECLARE_COMPONENT(Shadows, ctComponentShadowRenderer);
+CT_DECLARE_COMPONENT(ShadowMatrix, ctComponentRenderMatrices);
+
 CT_DECLARE_COMPONENT(Model, ctComponentModel);
 
 CT_DECLARE_ECS_FLAGS(LoadManaged);
@@ -68,5 +83,7 @@ CT_DECLARE_COMPONENT(SpawnerIndex, uint16_t);
 CT_DECLARE_COMPONENT(AudioHandle, uint16_t);
 CT_DECLARE_COMPONENT(MeshCollisionHandle, uint16_t);
 CT_DECLARE_COMPONENT(ZoneHandle, uint16_t);
+
+CT_DECLARE_COMPONENT(DebugLabel, ctComponentDebugLabel);
 
 #undef CT_ECS_API

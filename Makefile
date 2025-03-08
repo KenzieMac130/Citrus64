@@ -96,6 +96,10 @@ $(ROM_NAME).z64: N64_MKDFS_ROOT="$(BUILD_DIR)/data"
 $(ROM_NAME).z64: $(BUILD_DIR)/$(ROM_NAME).dfs
 $(BUILD_DIR)/$(ROM_NAME).dfs: $(wildcard $(BUILD_DIR)/data/*)
 
+# Main Symbols
+$(BUILD_DIR)/$(ROM_NAME).msym: $(BUILD_DIR)/$(ROM_NAME).elf
+$(ROM_NAME).z64: $(BUILD_DIR)/$(ROM_NAME).msym
+
 # Cleanup
 clean:
 	rm -f $(BUILD_DIR)/* *.z64

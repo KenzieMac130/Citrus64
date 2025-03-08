@@ -25,19 +25,27 @@ CT_DEFINE_COMPONENT(HitShape,
                     CT_COMPONENT_MAX,
                     CT_ECS_DESTRUCTOR_NONE);
 
-CT_DEFINE_COMPONENT(RenderMatrix, T3DMat4FP, CT_COMPONENT_MAX, CT_ECS_DESTRUCTOR_NONE);
+CT_DEFINE_COMPONENT(RenderMatrix,
+                    ctComponentRenderMatrices,
+                    CT_COMPONENT_MAX,
+                    CT_ECS_DESTRUCTOR_NONE);
 
+CT_DEFINE_ECS_FLAGS(RendererDirty);
 CT_DEFINE_COMPONENT(Renderer,
                     ctComponentRenderer,
                     CT_COMPONENT_MAX,
                     CT_ECS_DESTRUCTOR_NONE);
 
-CT_DEFINE_ECS_FLAGS(ModelUpdate);
 CT_DEFINE_COMPONENT(Model, ctComponentModel, CT_COMPONENT_MAX, CT_ECS_DESTRUCTOR_NONE);
 
 CT_DEFINE_ECS_FLAGS(LoadManaged);
 CT_DEFINE_COMPONENT(LoadPriority, int8_t, CT_COMPONENT_MAX, CT_ECS_DESTRUCTOR_NONE);
 CT_DEFINE_COMPONENT(Relationship,
                     ctComponentRelationship,
+                    CT_COMPONENT_MAX,
+                    CT_ECS_DESTRUCTOR_NONE);
+
+CT_DEFINE_COMPONENT(DebugLabel,
+                    ctComponentDebugLabel,
                     CT_COMPONENT_MAX,
                     CT_ECS_DESTRUCTOR_NONE);
